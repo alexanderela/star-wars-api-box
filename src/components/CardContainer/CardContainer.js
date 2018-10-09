@@ -13,6 +13,12 @@ class CardContainer extends Component {
 	render() {
 		return (
 			<div className='CardContainer'>
+				CardContainer
+				<div className="button-container">
+					<button className="cat-button people-button">People</button>
+					<button className="cat-button planets-button">Planets</button>
+					<button className="cat-button vehicles-button">Vehicles</button>
+				</div>
 				<Card />
 			</div>
 		);

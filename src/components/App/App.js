@@ -15,7 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
+        <header className="header">
+          Header
+          <h1>SWAPI Box</h1>
           <FavoriteButton />
         </header>
         <Sidebar />

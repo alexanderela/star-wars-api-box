@@ -1,6 +1,11 @@
 .App {
-  display: grid;
+  display: flex;
   text-align: center;
-  grid-template-columns: 30rem 1fr;
+  flex-direction: column;
+}
+
+.header {
+  border: 1px solid black;
+  height: 5rem;
 }
 
