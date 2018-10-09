@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './CardContainer.css';
-import Card from './Card';
+import Card from '../Card/Card';
 
 class CardContainer extends Component {
 	constructor(props) {
@@ -13,7 +13,7 @@ class CardContainer extends Component {
 	render() {
 		return (
 			<div className='CardContainer'>
-			
+				<Card />
 			</div>
 		);
 	}
