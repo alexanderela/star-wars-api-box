@@ -1,8 +1,10 @@
 import React from 'react';
+import './FavoriteButton.css';
 
 const FavoriteButton = () => (
-	<div>
-
+	<div className="FavoriteButton">
+    HEY!
+    <button>Favorites</button>
 	</div>
 )
 
