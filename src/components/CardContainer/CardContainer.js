@@ -12,7 +12,7 @@ class CardContainer extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='CardContainer'>
 			
 			</div>
 		);
