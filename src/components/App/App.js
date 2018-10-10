@@ -9,14 +9,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      dataCleaner: new DataCleaner(),
+      films: {}
     }
   }
 
 componentDidMount() {
-  const movieInfo = new DataCleaner()
+  this.setState({films: this.state.dataCleaner.getMovie()})
 }
 
+getFilms = () => {
+  return this.state.dataCleaner.getMovie()
+}
 
   render() {
     return (
