@@ -14,8 +14,7 @@ class App extends Component {
   }
 
 componentDidMount() {
-  // this.getCrawl();
-  // console.log(this.getCrawl())
+  const movieInfo = new DataCleaner()
 }
 
 
