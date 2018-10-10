@@ -14,8 +14,9 @@ class App extends Component {
     }
   }
 
-componentDidMount() {
-  this.setState({films: this.state.dataCleaner.getMovie()})
+async componentDidMount() {
+  const films = await this.state.dataCleaner.getMovie()
+  this.setState({ films })
 }
 
 getFilms = () => {
@@ -23,13 +24,14 @@ getFilms = () => {
 }
 
   render() {
+    const { films } = this.state
     return (
       <div className="App">
         <header className="header">
           <h1>SWAPI Box</h1>
           <FavoriteButton />
         </header>
-        <Sidebar />
+        { films && <Sidebar films={films}/>}
         <CardContainer />
       </div>
     );
