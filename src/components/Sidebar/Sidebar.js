@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Sidebar.css';
-// import Crawl from '../Crawl/Crawl.js';
 
 class Sidebar extends Component {
 	constructor(props) {

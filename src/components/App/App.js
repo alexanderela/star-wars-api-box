@@ -14,14 +14,10 @@ class App extends Component {
     }
   }
 
-async componentDidMount() {
-  const films = await this.state.dataCleaner.getMovie()
-  this.setState({ films })
-}
-
-getFilms = () => {
-  return this.state.dataCleaner.getMovie()
-}
+  async componentDidMount() {
+    const films = await this.state.dataCleaner.getMovie()
+    this.setState({ films })
+  }
 
   render() {
     const { films } = this.state

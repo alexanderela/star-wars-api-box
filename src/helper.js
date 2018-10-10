@@ -1,45 +1,24 @@
 class DataCleaner {
 	constructor(data) {
-		const randomEpisode = Math.round(Math.random() * 6 + 1)
-		const movieUrl = ("https://swapi.co/api/films/")
-
-		getMovie() {
-			return fetch(movieUrl)
-		 .then(response => response.json())
-		 .then(returnedMovieData => this.findMovie(returnedMovieData)) //returnedMovieData is an object
-		 .then(film => this.returnMovieInfo(film))
+		this.randomEpisode = Math.round(Math.random() * 6 + 1)
+		this.movieUrl = ("https://swapi.co/api/films/")
+	}
+		async getMovie() {
+			const response = await fetch(this.movieUrl)
+		 	const data = await response.json()
+		 	const returnedMovieData = await data.results[this.randomEpisode] 
+		 	//returnedMovieData is an object
+		 	const film = await this.returnMovieInfo(returnedMovieData)
+		 	return film
 		}
 
-		findMovie(data) {
-			data.results.find((film) => {
-				return film.episode_id === randomEpisode;
-			})
-		}
-
-		returnMovieInfo(film) {
+		async returnMovieInfo(film) {
 			return ({
 				opening_crawl: film.opening_crawl,
 		 		episode_id: film.episode_id,
 		 		title: film.title
-		 })
-		}
+		})
 	}
-
-	
-	 // 	data.results.find((film) => {
-	 // 	return film.episode_id === randomEpisode;
-	 // }))
-	 // .then(film => {
-	 // 	return {
-	 // 		opening_crawl: film.opening_crawl,
-	 // 		episode_id: film.episode_id,
-	 // 		title: film.title
-	 // 	}})
-	 // .then(film => {
-	 // 	console.log(film, randomEpisode) 
-	 // 	return 'hi'})
-		
-
 }
 
-export default dataCleaner;
+export default DataCleaner;
