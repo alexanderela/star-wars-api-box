@@ -10,6 +10,8 @@ class Sidebar extends Component {
 	}
 
 	render() {
+		const { films } = this.props
+
 		return (
 			<div className="Sidebar fade">
 				Sidebar
@@ -17,11 +19,11 @@ class Sidebar extends Component {
 					<div class="crawl">
 			    
 			    <div class="title">
-			      <p>{this.props.films.episode_id}</p>
-			      <h1>{this.props.films.title}</h1>
+			      <p>{films.episode_id}</p>
+			      <h1>{films.title}</h1>
 			    </div>
 			    
-			    <p>{this.props.films.opening_crawl}</p>
+			    <p>{films.opening_crawl}</p>
 
 			  	</div>
 				</div>
