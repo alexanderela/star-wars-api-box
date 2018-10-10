@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DatCleaner from './helper.js';
+import DataCleaner from './helper.js';
 
 describe('DataCleaner', () => {
+	const dataCleaner = new DataCleaner()
+
 	describe('getMovie', () => {
 		it('calls fetch with the correct parameters', async () => {
 
@@ -15,8 +17,14 @@ describe('DataCleaner', () => {
 	})
 
 	describe('returnMovieInfo', () => {
-		it('returns an object with the correct format', () => {
+		const mockFilm = {
+				opening_crawl: 'opening title',
+		 		episode_id: 'episode number',
+		 		title: 'title'
+		}
 
+		it('returns an object with the correct format', () => {
+			expect(typeof dataCleaner.returnMovieInfo(mockFilm)).toBe('object')
 		})
 	})
 })
