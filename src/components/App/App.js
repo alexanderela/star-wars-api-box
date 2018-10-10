@@ -3,7 +3,7 @@ import './App.css';
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
-import dataCleaner from '../../helper.js';
+import DataCleaner from '../../helper.js';
 
 class App extends Component {
   constructor(props) {
@@ -14,8 +14,10 @@ class App extends Component {
   }
 
 componentDidMount() {
-  dataCleaner();
+  // this.getCrawl();
+  // console.log(this.getCrawl())
 }
+
 
   render() {
     return (
