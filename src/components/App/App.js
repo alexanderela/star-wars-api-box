@@ -14,8 +14,8 @@ class App extends Component {
   }
 
 componentDidMount() {
-  this.getCrawl();
-  console.log(this.getCrawl())
+  // this.getCrawl();
+  // console.log(this.getCrawl())
 }
 
 
