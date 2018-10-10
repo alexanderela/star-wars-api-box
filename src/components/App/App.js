@@ -9,23 +9,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      dataCleaner: new DataCleaner(),
+      films: {}
     }
   }
 
-componentDidMount() {
-  const movieInfo = new DataCleaner()
-}
-
+  async componentDidMount() {
+    const films = await this.state.dataCleaner.getMovie()
+    this.setState({ films })
+  }
 
   render() {
+    const { films } = this.state
     return (
       <div className="App">
         <header className="header">
           <h1>SWAPI Box</h1>
           <FavoriteButton />
         </header>
-        <Sidebar />
+        { films && <Sidebar films={films}/>}
         <CardContainer />
       </div>
     );
