@@ -1,4 +1,6 @@
 .FavoriteButton {
   height: 2rem;
   background: orange;
+  width: 20%;
+  margin: 0 auto;
 }
