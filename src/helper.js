@@ -1,5 +1,5 @@
 class DataCleaner {
-	constructor(data) {
+	constructor() {
 		this.randomEpisode = Math.round(Math.random() * 6 + 1)
 		this.movieUrl = ("https://swapi.co/api/films/")
 		this.peopleUrl = ("https://swapi.co/api/people")
