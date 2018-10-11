@@ -9,39 +9,34 @@ describe('DataCleaner', () => {
 	describe('getMovie', () => {
 		it('calls fetch with the correct parameters', async () => {
 			//Setup
-			// const mockFilm = { title: 'a new hope', episode: 4 }
-			const mockFilms = [
-				{ title: 'return of the sith', episode: 6}, 
-				{ title: 'return of the jedi', episode: 5}
-			]
-			// const expected = [
-			// 	"https://swapi.co/api/films/",
-			// 	{
-			// 		method: 'POST',
-			// 		body: JSON.stringify({ film: films }),
-			// 		headers: {
-			// 			'Content-Type': 'application/json'
-			// 		}
-			// 	}
-			// ]
-
 			const expected = "https://swapi.co/api/films/"
-
-
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
 				json: () => Promise.resolve(films)
 			}))
+
 			//Execution
 			dataCleaner.getMovie()
+
 			//Expectation
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 
 		})
 
-		it('calls returnMovieInfo with the correct parameters', () => {
+		// it('calls returnMovieInfo with the correct parameters', async () => {
+		// 	//Setup
 
-		})
+		// 	const expected = {
+		// 		opening_crawl: "here's a story",
+		//  		episode_id: 4,
+		//  		title: "a new hope"
+		// }
+
+		// 	//Execution
+		// 	dataCleaner.getMovie()
+		// 	//Expectation
+		// 	await expect(dataCleaner.returnMovieInfo()).toHaveBeenCalled()
+		// })
 
 	})
 
