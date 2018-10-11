@@ -5,7 +5,8 @@ import Card from '../Card/Card';
 const CardContainer = ({ people }) => {
 
 	const peopleCards = people.map((person) => {
-		return <Card {...person}/>
+		console.log({...person})
+		return <Card {...person} key={person.name}/>
 	})
 
 		return (
