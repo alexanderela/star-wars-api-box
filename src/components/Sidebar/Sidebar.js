@@ -15,6 +15,7 @@ class Sidebar extends Component {
 		return (
 			<div className="Sidebar fade">
 				Sidebar
+				
 				<div className="star-wars">
 					<div class="crawl">
 			    

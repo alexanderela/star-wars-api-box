@@ -14,3 +14,126 @@
   /*width: 100%;*/
 }
 
+.app-title {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  /*position:absolute;*/
+  transform: translatex(0%);
+  transition: transform 0.2s ease;
+  top: 80px;
+  bottom: 0px;
+  padding-right: 16px;
+  height: 5rem;
+}
+
+.cat-button {
+  height: 3rem;
+  width: 10rem;
+  background: #000;
+  color: #fff;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  padding: 0px;
+  padding-left: 0px;
+  margin: 16px 0px;
+  border-radius: 0px 100px 100px 0px;
+  transition: padding 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.cat-button:hover {
+  /*width:100%;*/
+  padding:0px 16px 0px 0px;
+  color:black;
+}
+
+.people-button:hover {
+  background: #d9ffd9;
+}
+
+.planets-button:hover {
+  background:  #ffe6e6;
+}
+
+.vehicles-button:hover {
+  background: #ffffd9;
+}
+
+/*.button-container {
+  font-family:Open Sans;
+  color:white;
+  background:#111;
+  position:absolute;
+  transform:translatex(-100%);
+  transition:transform 0.2s ease;
+  top:80px;
+  bottom:0px;
+  padding-right:16px;
+}
+
+.show {
+    transform:translatex(0%);
+}
+
+  font-family:Open Sans;
+  color:white;
+  background:#111;
+  position:absolute;
+  transform:translatex(-100%);
+  transition:transform 0.2s ease;
+  top:$icon-size;
+  bottom:0px;
+  padding-right:16px;
+  width:$w;
+  ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+    //font-weight:bolder;
+    
+    cat-button {
+      @include lightsaber(#4df);
+      font-size:1.75em;
+      line-height:1.25em;
+      padding:0px;
+      padding-left:0px;
+      margin:16px 0px;
+      width:0;
+      border-radius:0px 100px 100px 0px;
+      transition:width 0.2s ease,
+        padding 0.2s ease,
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+      &:hover {
+        width:100%;
+        padding:0px 16px 0px 0px;
+        color:black;
+      }
+      a {
+        display:block;
+        text-decoration:none;
+        width:$w;
+        color:inherit;
+        padding-left:16px;
+      }
+      &.green {
+        @include lightsaber(#0F0);
+      }
+      &.red {
+        @include lightsaber(#F00);
+      }
+      &.purple {
+        @include lightsaber(#c0c);
+      }
+      &.yellow {
+        @include lightsaber(#FF0);
+      }
+    }
+  }
+}*/
+

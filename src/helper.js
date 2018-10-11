@@ -35,15 +35,15 @@ class DataCleaner {
 		})
 	}
 
-	// async getHomeWorld(person) {
-	// 	const response = await fetch(this.planetUrl)
-	// 	const planetData = await response.json()
-	// 	const returnedPlanetData = await planetData.results.map((planet) => {
-	// 		if (person.homeworld === planet.url) {
-	// 			return planet.name
-	// 		}
-	// 	})
-	// }
+	async getHomeWorld(person) {
+		const response = await fetch(this.planetUrl)
+		const planetData = await response.json()
+		const returnedPlanetData = await planetData.results.map((planet) => {
+			if (person.homeworld === planet.url) {
+				return planet.name
+			}
+		})
+	}
 
 	async getPlanet() {
 		let planets = []
