@@ -23,19 +23,23 @@ describe('DataCleaner', () => {
 
 		})
 
-		// it('calls returnMovieInfo with the correct parameters', async () => {
+		// xit('calls returnMovieInfo with the correct parameters', async () => {
 		// 	//Setup
-
-		// 	const expected = {
-		// 		opening_crawl: "here's a story",
-		//  		episode_id: 4,
-		//  		title: "a new hope"
-		// }
+		// 	const mockReturnMovieInfo = jest.fn()
+		// 	const mockGetMovie = jest.fn(() => {
+		// 		returnMovieInfo()
+		// 	})
+		// 	const expected = "https://swapi.co/api/films/"
+		// 	window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+		// 		status: 200,
+		// 		json: () => Promise.resolve(films)
+		// 	}))
 
 		// 	//Execution
 		// 	dataCleaner.getMovie()
+
 		// 	//Expectation
-		// 	await expect(dataCleaner.returnMovieInfo()).toHaveBeenCalled()
+		// 	await expect(mockReturnMovieInfo).toBeCalledWith(window.fetch)
 		// })
 
 	})

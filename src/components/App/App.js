@@ -12,21 +12,20 @@ class App extends Component {
     this.state = {
       dataCleaner: new DataCleaner(),
       films: {},
-      // people: [],
-      planets: []
+      people: [],
+      // planets: []
     }
   }
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
-    // const people = await this.state.dataCleaner.getPerson()
-    const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)
-    this.setState({ films })
+    const people = await this.state.dataCleaner.getPerson()
+    // console.log(people)
+    this.setState({ films, people })
   }
 
   render() {
-    const { films } = this.state
+    const { films, people } = this.state
     return (
       <div className="App">
         <header className="header">
@@ -39,7 +38,7 @@ class App extends Component {
           </div>
         </header>
         { films && <Sidebar films={films}/>}
-        <CardContainer />
+        <CardContainer people={people}/>
       </div>
     );
   }
