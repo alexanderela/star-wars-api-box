@@ -28,10 +28,11 @@ class DataCleaner {
 		const response = await fetch(this.peopleUrl)
 		const peopleData = await response.json()
 		const returnedPeopleData = await peopleData.results.map( async person => {
-			
+			// console.log(person.species[0])
 			const newPerson = {}
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
+			newPerson.species = await this.getSpecies(person)
 			console.log(newPerson)
 		})
 		return returnedPeopleData
@@ -41,35 +42,15 @@ class DataCleaner {
 		// console.log(person)
 		const response = await fetch(person.homeworld)
 		const planetData = await response.json()
-		// const returnedPlanetData = await planetData.results.map((planet) => {
-		// 	if (person.homeworld === planet.url) {
-		// 		return planet.name
-		// 	}
-		// })
 		return { planetName: planetData.name, planetPop: planetData.population}
 	}
 
+	async getSpecies(person) {
+		const response = await fetch(person.species[0])
+		const speciesData = await response.json()
+		return { speciesName: speciesData.name, language: speciesData.language }
+	}
 
-
-	// async getPlanet() {
-	// 	let planets = []
-	// 	// const pageCounter = 1
-	// 	// debugger
-	// 	for (let i = 1; i > 8; i++) {
-	// 		console.log("we're in!")
-	// 		let page = "?page=[i]"
-	// 		const response = await fetch(`https://swapi.co/api/planets/${page}`)
-	// 		// console.log(response.json())
-	// 		planets = [...response.results]
-	// 	}
-	// 	return planets		
-	// }
-	//expect planet.length = 61
-
-	// in our loop
-	// counter ++ until next value === null
-	// initial counter value = 1
-	// fetch from url 
 
 }
 
