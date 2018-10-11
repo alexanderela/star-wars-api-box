@@ -40,7 +40,6 @@ class DataCleaner {
 	}
 
 	async getHomeWorld(person) {
-		// console.log(person)
 		const response = await fetch(person.homeworld)
 		const planetData = await response.json()
 

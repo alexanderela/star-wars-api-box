@@ -2,10 +2,6 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-// import React, { Component } from 'react';
-// import './CardContainer.css';
-// import Card from '../Card/Card';
-
 const CardContainer = ({ people }) => {
 
 	const peopleCards = people.map((person) => {
@@ -14,11 +10,6 @@ const CardContainer = ({ people }) => {
 
 		return (
 			<div className='CardContainer'>
-				<div className="button-container">
-					<button className="cat-button people-button">People</button>
-					<button className="cat-button planets-button">Planets</button>
-					<button className="cat-button vehicles-button">Vehicles</button>
-				</div>
 				{ peopleCards }
 			</div>
 		);
