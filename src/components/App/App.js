@@ -10,12 +10,17 @@ class App extends Component {
     super(props);
     this.state = {
       dataCleaner: new DataCleaner(),
-      films: {}
+      films: {},
+      // people: [],
+      planets: []
     }
   }
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
+    // const people = await this.state.dataCleaner.getPerson()
+    const planets = await this.state.dataCleaner.getPlanet()
+    console.log(planets)
     this.setState({ films })
   }
 
