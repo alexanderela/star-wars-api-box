@@ -18,9 +18,9 @@ class App extends Component {
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
-    // const people = await this.state.dataCleaner.getPerson()
-    const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)
+    const people = await this.state.dataCleaner.getPerson()
+    // const species = await this.state.dataCleaner.getSpecies()
+    // console.log(people)
     this.setState({ films })
   }
 
