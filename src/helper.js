@@ -33,15 +33,17 @@ class DataCleaner {
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
 			newPerson.species = await this.getSpecies(person)
-			console.log(newPerson)
+			return newPerson
 		})
-		return returnedPeopleData
+		return Promise.all(returnedPeopleData)
+		// return returnedPeopleData
 	}
 
 	async getHomeWorld(person) {
 		// console.log(person)
 		const response = await fetch(person.homeworld)
 		const planetData = await response.json()
+
 		return { planetName: planetData.name, planetPop: planetData.population}
 	}
 

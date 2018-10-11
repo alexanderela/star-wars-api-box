@@ -16,9 +16,9 @@ class Sidebar extends Component {
 			<div className="Sidebar fade">
 				Sidebar
 				<div className="star-wars">
-					<div class="crawl">
+					<div className="crawl">
 			    
-			    <div class="title">
+			    <div className="title">
 			      <p>{films.episode_id}</p>
 			      <h1>{films.title}</h1>
 			    </div>

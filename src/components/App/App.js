@@ -20,9 +20,7 @@ class App extends Component {
     const films = await this.state.dataCleaner.getMovie()
     const people = await this.state.dataCleaner.getPerson()
     // console.log(people)
-    let peoplePromises = await Promise.all(people)
-    console.log(peoplePromises)
-    this.setState({ films })
+    this.setState({ films, people })
   }
 
   render() {
