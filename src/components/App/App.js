@@ -11,17 +11,16 @@ class App extends Component {
     this.state = {
       dataCleaner: new DataCleaner(),
       films: {},
-      // people: [],
-      planets: []
+      people: [],
+      // planets: []
     }
   }
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
-    // const people = await this.state.dataCleaner.getPerson()
-    const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)
-    this.setState({ films })
+    const people = await this.state.dataCleaner.getPerson()
+    // console.log(people)
+    this.setState({ films, people })
   }
 
   render() {
@@ -33,7 +32,7 @@ class App extends Component {
           <FavoriteButton />
         </header>
         { films && <Sidebar films={films}/>}
-        <CardContainer />
+        <CardContainer people={this.state.people}/>
       </div>
     );
   }
