@@ -3,11 +3,18 @@ import './Card.css'
 
 const Card = ({ name, homeWorld, species }) => (
 	<div className="Card">
-    <h3>{name}</h3>
-    <p>{homeWorld.planetName}</p>
-    <p>{homeWorld.planetPop}</p>
-    <p>{species.speciesName}</p>
-    <p>{species.language}</p>
+    <div className="fav-btn-card-container">
+	    <h3>{name}</h3>
+	    <button 
+	    	className="fav-btn"
+	    >
+	    	<i class="fas fa-jedi"></i>
+	    </button>
+    </div>
+    <p>Species: {species.speciesName}</p>
+    <p>Language: {species.language}</p>
+    <p>Homeworld: {homeWorld.planetName}</p>
+    <p>Population: {homeWorld.planetPop}</p>
 	</div>
 )
 
