@@ -32,7 +32,7 @@ class App extends Component {
           <FavoriteButton />
         </header>
         { films && <Sidebar films={films}/>}
-        <CardContainer />
+        <CardContainer people={this.state.people}/>
       </div>
     );
   }
