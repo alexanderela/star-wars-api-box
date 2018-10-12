@@ -47,6 +47,10 @@ class App extends Component {
 
   handleProps = (e) => {
     // debugger
+  }
+  handleSelected = (e) => {
+    const { name } = e.target
+    this.setState({ isSelected: !this.state.isSelected})
     this.newProps(e)
   }
 
@@ -59,16 +63,16 @@ class App extends Component {
   }
 
   render() {
-    const { films, people } = this.state
+    const { films, people, isSelected } = this.state
     return (
       <div className="App">
         <header className="header">
           <h1 className="app-title">SWAPI Box</h1>
           <div className="button-container">
             <button 
-              className="cat-button people-button"
+              className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.handleProps}
+              onClick={this.handleSelected}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>

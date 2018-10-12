@@ -8,6 +8,9 @@
   font-weight:normal;
   font-style:normal;
 }
+body {
+  background-color: gray;
+}
 
 .App {
   display: flex;
@@ -52,6 +55,7 @@
   width: 12rem;
   background: #000;
   color: #fff;
+  cursor: pointer;
   font-family: 'Pathway Gothic One', sans-serif;
   font-weight: 600;
   font-size: 2em;
@@ -66,12 +70,20 @@
     text-shadow 0.2s ease;
 }
 
+.cat-button-active {
+  background-color: #464545;
+}
+
+.cat-button-inactive {
+  background-color: #000;
+}
+
 .cat-button:hover {
-  padding:0px 16px 0px 0px;
   color:black;
   border-left: gray double 15px;
   cursor: pointer;
   width: 30%;
+  padding:0px 16px 0px 0px;
 }
 
 .people-button:hover {
