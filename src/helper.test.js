@@ -1,22 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DataCleaner from './helper.js';
-import films from './mockData.js';
-import people from './mockData.js';
-import planets from './mockData.js';
-import resolvedPeople from './mockData.js';
-import mockLuke from './mockData.js';
+import films from './mockFilms.js';
+import people from './mockPeople.js';
+import planets from './mockPlanets.js';
+import resolvedPeople from './mockResolvedPeople.js';
+import mockPerson from './mockPerson.js';
+import mockSpecies from './mockSpecies.js';
+
 
 
 describe('DataCleaner', () => {
 	const dataCleaner = new DataCleaner()
+	// console.log(mockPerson)
 
 	describe('getMovie', () => {
 		it('calls fetch with the correct parameters', async () => {
 			const expected = "https://swapi.co/api/films/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
-				json: () => Promise.resolve(films)
+				json: () => Promise.resolve()
 			}))
 			dataCleaner.getMovie()
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
@@ -40,7 +43,7 @@ describe('DataCleaner', () => {
 			const expected = "https://swapi.co/api/people/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
-				json: () => Promise.resolve(people)
+				json: () => Promise.resolve()
 			}))
 			dataCleaner.getPerson()
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
@@ -48,6 +51,7 @@ describe('DataCleaner', () => {
 
 		it('returns the correct value', () => {
 			const getPersonReturned = dataCleaner.getPerson()
+			console.log(dataCleaner.getPerson())
 			expect(getPersonReturned).toEqual(resolvedPeople)
 		})
 	})
@@ -76,8 +80,7 @@ describe('DataCleaner', () => {
 
 		it('returns the correct value', async () => {
 			const expected = { planetName: "Tatooine", planetPop: "200000"}
-			console.log(mockLuke)
-			const returnedHomeWorld = await dataCleaner.getHomeWorld(mockLuke)
+			const returnedHomeWorld = await dataCleaner.getHomeWorld(mockPerson)
 			await expect(returnedHomeWorld).toEqual(expected)
 		})
 	})
@@ -94,7 +97,9 @@ describe('DataCleaner', () => {
 		})
 
 		it('returns the correct value', async () => {
-			
+			const expected = { speciesName: "human", language: "Galactic Basic" }
+			const returnedSpecies = await dataCleaner.getSpecies(mockPerson)
+			await expect(returnedSpecies).toEqual(expected)
 		})
 	})
 
