@@ -76,8 +76,9 @@ describe('DataCleaner', () => {
 
 		it('returns the correct value', async () => {
 			const expected = { planetName: "Tatooine", planetPop: "200000"}
+			console.log(mockLuke)
 			const returnedHomeWorld = await dataCleaner.getHomeWorld(mockLuke)
-			expect(returnedHomeWorld).toEqual(expected)
+			await expect(returnedHomeWorld).toEqual(expected)
 		})
 	})
 

@@ -1268,7 +1268,39 @@ const vehicles = {
 
 const resolvedPeople = [{"name":"Luke Skywalker","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"C-3PO","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Droid","language":"n/a"}},{"name":"R2-D2","homeWorld":{"planetName":"Naboo","planetPop":"4500000000"},"species":{"speciesName":"Droid","language":"n/a"}},{"name":"Darth Vader","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"Leia Organa","homeWorld":{"planetName":"Alderaan","planetPop":"2000000000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"Owen Lars","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"Beru Whitesun lars","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"R5-D4","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Droid","language":"n/a"}},{"name":"Biggs Darklighter","homeWorld":{"planetName":"Tatooine","planetPop":"200000"},"species":{"speciesName":"Human","language":"Galactic Basic"}},{"name":"Obi-Wan Kenobi","homeWorld":{"planetName":"Stewjon","planetPop":"unknown"},"species":{"speciesName":"Human","language":"Galactic Basic"}}]
 
-const mockPerson = {"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male","homeworld":"https://swapi.co/api/planets/1/","films":["https://swapi.co/api/films/2/","https://swapi.co/api/films/6/","https://swapi.co/api/films/3/","https://swapi.co/api/films/1/","https://swapi.co/api/films/7/"],"species":["https://swapi.co/api/species/1/"],"vehicles":["https://swapi.co/api/vehicles/14/","https://swapi.co/api/vehicles/30/"],"starships":["https://swapi.co/api/starships/12/","https://swapi.co/api/starships/22/"],"created":"2014-12-09T13:50:51.644000Z","edited":"2014-12-20T21:17:56.891000Z","url":"https://swapi.co/api/people/1/"}
+const mockLuke = {
+            "name": "Luke Skywalker", 
+            "height": "172", 
+            "mass": "77", 
+            "hair_color": "blond", 
+            "skin_color": "fair", 
+            "eye_color": "blue", 
+            "birth_year": "19BBY", 
+            "gender": "male", 
+            "homeworld": "https://swapi.co/api/planets/1/", 
+            "films": [
+                "https://swapi.co/api/films/2/", 
+                "https://swapi.co/api/films/6/", 
+                "https://swapi.co/api/films/3/", 
+                "https://swapi.co/api/films/1/", 
+                "https://swapi.co/api/films/7/"
+            ], 
+            "species": [
+                "https://swapi.co/api/species/1/"
+            ], 
+            "vehicles": [
+                "https://swapi.co/api/vehicles/14/", 
+                "https://swapi.co/api/vehicles/30/"
+            ], 
+            "starships": [
+                "https://swapi.co/api/starships/12/", 
+                "https://swapi.co/api/starships/22/"
+            ], 
+            "created": "2014-12-09T13:50:51.644000Z", 
+            "edited": "2014-12-20T21:17:56.891000Z", 
+            "url": "https://swapi.co/api/people/1/"
+        }
+
 
 export {
   films,
@@ -1276,5 +1308,5 @@ export {
   planets,
   vehicles,
   resolvedPeople,
-  mockPerson
+  mockLuke
 }

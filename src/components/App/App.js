@@ -33,7 +33,6 @@ class App extends Component {
   handleProps = (e) => {
     // debugger
     this.newProps(e)
-    console.log('handleProps hooked up')
   }
 
   newProps = (e) => {
@@ -41,8 +40,6 @@ class App extends Component {
     const matchingStateKey = stateKeys.find((key) => {
       return key === e.target.name
     })
-    this.state[matchingStateKey]
-    console.log(this.state[matchingStateKey])
     return this.state[matchingStateKey]
   }
 
