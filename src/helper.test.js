@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DataCleaner from './helper.js';
-import films from './mockFilms.js';
-import people from './mockPeople.js';
-import planets from './mockPlanets.js';
-import resolvedPeople from './mockResolvedPeople.js';
-import mockPerson from './mockPerson.js';
-import mockSpecies from './mockSpecies.js';
+import films from './mockData/mockFilms.js';
+import people from './mockData/mockPeople.js';
+import planets from './mockData/mockData/mockPlanets.js';
+import resolvedPeople from './mockData/mockResolvedPeople.js';
+import mockPerson from './mockData/mockPerson.js';
+import mockSpecies from './mockData/mockSpecies.js';
 
 
 

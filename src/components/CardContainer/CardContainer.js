@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const CardContainer = (props) => {
 	// debugger
 if (props.people) {
-	// console.log(props)
+	console.log(props.newProps)
 		return (
 		<div className='CardContainer'>
 			Hi

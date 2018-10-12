@@ -37,6 +37,7 @@
   width: 10rem;
   background: #000;
   color: #fff;
+  cursor: pointer;
   font-family: 'Pathway Gothic One', sans-serif;
   font-weight: 600;
   font-size: 2em;
@@ -47,9 +48,17 @@
   transition: padding 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 
+.cat-button-active {
+  background-color: #464545;
+}
+
+.cat-button-inactive {
+  background-color: #000;
+}
+
 .cat-button:hover {
-  padding:0px 16px 0px 0px;
   color:black;
+  padding:0px 16px 0px 0px;
 }
 
 .people-button:hover {

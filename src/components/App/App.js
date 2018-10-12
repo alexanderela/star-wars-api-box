@@ -25,13 +25,9 @@ class App extends Component {
     this.setState({ films, people })
   }
 
-  // handleSelected = (e) => {
-  //   const { name } = e.target
-  //   this.setState({ isSelected: !this.state.isSelected})
-  // }
-
-  handleProps = (e) => {
-    // debugger
+  handleSelected = (e) => {
+    const { name } = e.target
+    this.setState({ isSelected: !this.state.isSelected})
     this.newProps(e)
   }
 
@@ -47,16 +43,16 @@ class App extends Component {
 
 
   render() {
-    const { films, people } = this.state
+    const { films, people, isSelected } = this.state
     return (
       <div className="App">
         <header className="header">
           <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
           <div className="button-container">
             <button 
-              className="cat-button people-button"
+              className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.handleProps}
+              onClick={this.handleSelected}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
