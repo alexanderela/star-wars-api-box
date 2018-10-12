@@ -13,6 +13,7 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
+      isSelected: false
       // planets: []
     }
   }
@@ -39,6 +40,24 @@ class App extends Component {
     //   }
   }
 
+  // handleSelected = (e) => {
+  //   const { name } = e.target
+  //   this.setState({ isSelected: !this.state.isSelected})
+  // }
+
+  handleProps = (e) => {
+    // debugger
+    this.newProps(e)
+  }
+
+  newProps = (e) => {
+    const stateKeys = Object.keys(this.state)
+    const matchingStateKey = stateKeys.find((key) => {
+      return key === e.target.name
+    })
+    return this.state[matchingStateKey]
+  }
+
   render() {
     const { films, people } = this.state
     return (
@@ -46,14 +65,18 @@ class App extends Component {
         <header className="header">
           <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
           <div className="button-container">
-            <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
+            <button 
+              className="cat-button people-button"
+              name="people"
+              onClick={this.handleProps}
+            >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
         { films && <Sidebar id="Sidebar" films={films}/>}
-        <CardContainer people={people}/>
+        <CardContainer newProps={this.newProps} people={people}/>
       </div>
     );
   }
@@ -61,4 +84,5 @@ class App extends Component {
 
 export default App;
           // <h1 className="app-title">SWAPI Box</h1>
+            // <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
           // 
