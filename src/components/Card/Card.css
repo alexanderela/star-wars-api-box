@@ -2,4 +2,30 @@
   border: 1px dotted blue;
   background: magenta;
   height: 20rem;
+  cursor: pointer;
 }
+
+.fav-btn-card-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 2rem;
+}
+
+.fav-btn {
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.fav-btn-inactive {
+	background-color: #FFF;
+}
+
+.fav-btn-active {
+	background-color: #ffdf00;
+}
+
+.fa-jedi {
+	color: #000;
+	font-size: 2rem;
+}
+
