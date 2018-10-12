@@ -25,6 +25,29 @@ class App extends Component {
     this.setState({ films, people })
   }
 
+  hideSidebar = () => {
+    var sidebar = document.getElementById("Sidebar");
+    sidebar.classList.add('Sidebar-hidden')
+    // sidebar.classList.remove('.Sidebar');
+    // sidebar.classList.add('Sidebar-hidden');
+
+    // if (sidebar.classList.contains('Sidebar')) {
+    //     sidebar.classList.remove('Sidebar');
+    //     // alert("remove faq display!");
+    //   } else {
+    //     sidebar.classList.add('Sidebar-hidden');
+    //     // alert("add faq display!");
+    //   }
+  }
+
+  // handleSelected = (e) => {
+  //   const { name } = e.target
+  //   this.setState({ isSelected: !this.state.isSelected})
+  // }
+
+  handleProps = (e) => {
+    // debugger
+  }
   handleSelected = (e) => {
     const { name } = e.target
     this.setState({ isSelected: !this.state.isSelected})
@@ -39,15 +62,12 @@ class App extends Component {
     return this.state[matchingStateKey]
   }
 
-
-
-
   render() {
     const { films, people, isSelected } = this.state
     return (
       <div className="App">
         <header className="header">
-          <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
+          <h1 className="app-title">SWAPI Box</h1>
           <div className="button-container">
             <button 
               className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
@@ -59,7 +79,7 @@ class App extends Component {
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        { films && <Sidebar films={films}/>}
+        { films && <Sidebar id="Sidebar" films={films}/>}
         <CardContainer newProps={this.newProps} people={people}/>
       </div>
     );
@@ -67,5 +87,4 @@ class App extends Component {
 }
 
 export default App;
-          // <h1 className="app-title">SWAPI Box</h1>
-          // 
+            // <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
