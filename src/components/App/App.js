@@ -13,17 +13,42 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
-      isSelected: false
+      isSelected: ''
       // planets: []
     }
   }
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
-    const people = await this.state.dataCleaner.getPerson()
-    // console.log(people)
-    this.setState({ films, people })
+    this.setState({ films })
   }
+
+  showCards = async (e) => {
+    // const { dataCleaner } = this.state
+    const { name } = e.target
+    const { dataCleaner } = this.state
+    
+    const people = await dataCleaner.getPerson()
+    const planets = 'planets'
+    const vehicles = 'vehicles'
+    const dataArray = [people, planets, vehicles]
+
+    const results = dataArray.forEach((arrayItem) => {
+      // if (displayCategory === name) { 
+        this.setState({[name]: arrayItem})
+      // }
+    })
+
+
+
+    // const stateKeys = Object.keys(this.state)
+    // const matchingStateKey = stateKeys.forEach((key) => {
+    //   if (displayCategory == key) {
+    //     this.setState({ [matchingStateKey]: [displayCategory]})
+    //   }
+    // })
+  }
+
 
   hideSidebar = () => {
     var sidebar = document.getElementById("Sidebar");
@@ -45,22 +70,24 @@ class App extends Component {
   //   this.setState({ isSelected: !this.state.isSelected})
   // }
 
-  handleProps = (e) => {
-    // debugger
-  }
+  // handleProps = (e) => {
+  //   // debugger
+  // }
+
   handleSelected = (e) => {
     const { name } = e.target
-    this.setState({ isSelected: !this.state.isSelected})
-    this.newProps(e)
+    this.setState({ isSelected: name})
+
+    // this.newProps(e)
   }
 
-  newProps = (e) => {
-    const stateKeys = Object.keys(this.state)
-    const matchingStateKey = stateKeys.find((key) => {
-      return key === e.target.name
-    })
-    return this.state[matchingStateKey]
-  }
+  // newProps = (e) => {
+  //   const stateKeys = Object.keys(this.state)
+  //   const matchingStateKey = stateKeys.find((key) => {
+  //     return key === e.target.name
+  //   })
+  //   return this.state[matchingStateKey]
+  // }
 
   render() {
     const { films, people, isSelected } = this.state
@@ -72,7 +99,7 @@ class App extends Component {
             <button 
               className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.handleSelected}
+              onClick={this.showCards}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
