@@ -4,13 +4,13 @@ import App from './App';
 import { shallow, mount } from 'enzyme';
 // import dataCleaner from '../../helper.js'
 
-xit('renders without crashing', () => {
+it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-xit('matches the snapshot', () => {
+it('matches the snapshot', () => {
 	const wrapper = shallow(<App />);
 	expect(wrapper).toMatchSnapshot();
 })

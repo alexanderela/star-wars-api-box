@@ -4,15 +4,15 @@ import Card from '../Card/Card';
 
 const CardContainer = (props) => {
 	// debugger
-if (props.people) {
-	// console.log(props)
-		return (
-		<div className='CardContainer'>
-			Hi
-		</div>
-	);
-} else {
-	const peopleCards = this.newProps.map((person) => {
+// if (props.people) {
+// 	console.log(props.newProps)
+// 		return (
+// 		<div className='CardContainer'>
+// 			Hi
+// 		</div>
+// 	);
+// } else {
+	const peopleCards = props.people.map((person) => {
 		// console.log({...person})
 		return <Card {...person} key={person.name}/>
 	})
@@ -25,7 +25,7 @@ if (props.people) {
 
 
 
-}
+// }
 
 export default CardContainer;
 

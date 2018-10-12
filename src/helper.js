@@ -9,12 +9,16 @@ class DataCleaner {
 
 	async getMovie() {
 		const response = await fetch(this.movieUrl)
-	 	const movieData = await response.json()
-	 	const returnedMovieData = await movieData.results[this.randomEpisode] 
-	 	//returnedMovieData is an object
-	 	const film = await this.returnMovieInfo(returnedMovieData)
-	 	// console.log(film)
-	 	return film
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+		 	const movieData = await response.json()
+		 	const returnedMovieData = await movieData.results[this.randomEpisode] 
+		 	//returnedMovieData is an object
+		 	const film = await this.returnMovieInfo(returnedMovieData)
+		 	// console.log(film)
+		 	return film
+		}
 	}
 
 	async returnMovieInfo(film) {
@@ -27,9 +31,11 @@ class DataCleaner {
 
 	async getPerson() {
 		const response = await fetch(this.peopleUrl)
-		const peopleData = await response.json()
-		const returnedPeopleData = await peopleData.results.map( async person => {
-			// console.log(person)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const peopleData = await response.json()
+			const returnedPeopleData = await peopleData.results.map( async person => {
 			const newPerson = {}
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
@@ -40,21 +46,33 @@ class DataCleaner {
 		return Promise.all(returnedPeopleData)
 		// return returnedPeopleData
 	}
+}
+
+
+
+
+
+
 
 	async getHomeWorld(person) {
-		// console.log(person)
 		const response = await fetch(person.homeworld)
-		const planetData = await response.json()
-
-		return { planetName: planetData.name, planetPop: planetData.population }
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const planetData = await response.json()
+			return { planetName: planetData.name, planetPop: planetData.population }
 	}
+}
 
 	async getSpecies(person) {
 		const response = await fetch(person.species[0])
-		const speciesData = await response.json()
-		return { speciesName: speciesData.name, language: speciesData.language }
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const speciesData = await response.json()
+			return { speciesName: speciesData.name, language: speciesData.language }
+		}
 	}
-
 
 }
 

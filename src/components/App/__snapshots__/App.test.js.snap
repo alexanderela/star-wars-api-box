@@ -21,13 +21,42 @@ ShallowWrapper {
         <header
           className="header"
         >
-          <h1>
-            SWAPI Box
-          </h1>
-          <FavoriteButton />
+          <img
+            className="app-title"
+            src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
+          />
+          <div
+            className="button-container"
+          >
+            <button
+              className="cat-button people-button cat-button-inactive"
+              name="people"
+              onClick={[Function]}
+            >
+              People
+            </button>
+            <button
+              className="cat-button planets-button"
+            >
+              Planets
+            </button>
+            <button
+              className="cat-button vehicles-button"
+            >
+              Vehicles
+            </button>
+            <FavoriteButton
+              className="FavoriteButton"
+            />
+          </div>
         </header>,
-        <Sidebar />,
-        <CardContainer />,
+        <Sidebar
+          films={Object {}}
+        />,
+        <CardContainer
+          newProps={[Function]}
+          people={Array []}
+        />,
       ],
       "className": "App",
     },
@@ -39,10 +68,34 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h1>
-              SWAPI Box
-            </h1>,
-            <FavoriteButton />,
+            <img
+              className="app-title"
+              src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
+            />,
+            <div
+              className="button-container"
+            >
+              <button
+                className="cat-button people-button cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>
+              <button
+                className="cat-button planets-button"
+              >
+                Planets
+              </button>
+              <button
+                className="cat-button vehicles-button"
+              >
+                Vehicles
+              </button>
+              <FavoriteButton
+                className="FavoriteButton"
+              />
+            </div>,
           ],
           "className": "header",
         },
@@ -53,20 +106,95 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "SWAPI Box",
+              "className": "app-title",
+              "src": "https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png",
             },
             "ref": null,
-            "rendered": "SWAPI Box",
-            "type": "h1",
+            "rendered": null,
+            "type": "img",
           },
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button"
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button"
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "button-container",
+            },
             "ref": null,
-            "rendered": null,
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "People",
+                  "className": "cat-button people-button cat-button-inactive",
+                  "name": "people",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "People",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Planets",
+                  "className": "cat-button planets-button",
+                },
+                "ref": null,
+                "rendered": "Planets",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Vehicles",
+                  "className": "cat-button vehicles-button",
+                },
+                "ref": null,
+                "rendered": "Vehicles",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "className": "FavoriteButton",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
         ],
         "type": "header",
@@ -75,7 +203,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "films": Object {},
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -83,8 +213,11 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "nodeType": "function",
+        "props": Object {
+          "newProps": [Function],
+          "people": Array [],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -102,13 +235,42 @@ ShallowWrapper {
           <header
             className="header"
           >
-            <h1>
-              SWAPI Box
-            </h1>
-            <FavoriteButton />
+            <img
+              className="app-title"
+              src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
+            />
+            <div
+              className="button-container"
+            >
+              <button
+                className="cat-button people-button cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>
+              <button
+                className="cat-button planets-button"
+              >
+                Planets
+              </button>
+              <button
+                className="cat-button vehicles-button"
+              >
+                Vehicles
+              </button>
+              <FavoriteButton
+                className="FavoriteButton"
+              />
+            </div>
           </header>,
-          <Sidebar />,
-          <CardContainer />,
+          <Sidebar
+            films={Object {}}
+          />,
+          <CardContainer
+            newProps={[Function]}
+            people={Array []}
+          />,
         ],
         "className": "App",
       },
@@ -120,10 +282,34 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h1>
-                SWAPI Box
-              </h1>,
-              <FavoriteButton />,
+              <img
+                className="app-title"
+                src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
+              />,
+              <div
+                className="button-container"
+              >
+                <button
+                  className="cat-button people-button cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>
+                <button
+                  className="cat-button planets-button"
+                >
+                  Planets
+                </button>
+                <button
+                  className="cat-button vehicles-button"
+                >
+                  Vehicles
+                </button>
+                <FavoriteButton
+                  className="FavoriteButton"
+                />
+              </div>,
             ],
             "className": "header",
           },
@@ -134,20 +320,95 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "SWAPI Box",
+                "className": "app-title",
+                "src": "https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png",
               },
               "ref": null,
-              "rendered": "SWAPI Box",
-              "type": "h1",
+              "rendered": null,
+              "type": "img",
             },
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
-              "props": Object {},
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="cat-button people-button cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>,
+                  <button
+                    className="cat-button planets-button"
+                  >
+                    Planets
+                  </button>,
+                  <button
+                    className="cat-button vehicles-button"
+                  >
+                    Vehicles
+                  </button>,
+                  <FavoriteButton
+                    className="FavoriteButton"
+                  />,
+                ],
+                "className": "button-container",
+              },
               "ref": null,
-              "rendered": null,
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "People",
+                    "className": "cat-button people-button cat-button-inactive",
+                    "name": "people",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "People",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Planets",
+                    "className": "cat-button planets-button",
+                  },
+                  "ref": null,
+                  "rendered": "Planets",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Vehicles",
+                    "className": "cat-button vehicles-button",
+                  },
+                  "ref": null,
+                  "rendered": "Vehicles",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "className": "FavoriteButton",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
           ],
           "type": "header",
@@ -156,7 +417,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "films": Object {},
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -164,8 +427,11 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "nodeType": "function",
+          "props": Object {
+            "newProps": [Function],
+            "people": Array [],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],

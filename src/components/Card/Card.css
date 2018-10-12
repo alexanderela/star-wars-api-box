@@ -1,6 +1,7 @@
 .Card {
-  border: 1px dotted blue;
-  background: magenta;
+  border-radius: 10px;
+  background: #444444;
+  color: white;
   height: 20rem;
   cursor: pointer;
 }

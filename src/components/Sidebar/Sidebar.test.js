@@ -4,7 +4,8 @@ import Sidebar from './Sidebar';
 import { shallow } from 'enzyme';
 
 describe('Sidebar', () => {
-	it('', () => {
-		
+	it('matches the snapshot', () => {
+		const wrapper = shallow(<Sidebar />);
+		expect(wrapper).toMatchSnapshot();
 	})
 })
