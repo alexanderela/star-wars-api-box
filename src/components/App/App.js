@@ -24,6 +24,21 @@ class App extends Component {
     this.setState({ films, people })
   }
 
+  hideSidebar = () => {
+    var sidebar = document.getElementById("Sidebar");
+    sidebar.classList.add('Sidebar-hidden')
+    // sidebar.classList.remove('.Sidebar');
+    // sidebar.classList.add('Sidebar-hidden');
+
+    // if (sidebar.classList.contains('Sidebar')) {
+    //     sidebar.classList.remove('Sidebar');
+    //     // alert("remove faq display!");
+    //   } else {
+    //     sidebar.classList.add('Sidebar-hidden');
+    //     // alert("add faq display!");
+    //   }
+  }
+
   render() {
     const { films, people } = this.state
     return (
@@ -31,13 +46,13 @@ class App extends Component {
         <header className="header">
           <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
           <div className="button-container">
-            <button className="cat-button people-button">People</button>
+            <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        { films && <Sidebar films={films}/>}
+        { films && <Sidebar id="Sidebar" films={films}/>}
         <CardContainer people={people}/>
       </div>
     );

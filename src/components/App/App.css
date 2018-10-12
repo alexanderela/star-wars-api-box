@@ -34,7 +34,7 @@
 
 .cat-button {
   height: 3rem;
-  width: 10rem;
+  width: 12rem;
   background: #000;
   color: #fff;
   font-family: 'Pathway Gothic One', sans-serif;
@@ -50,6 +50,8 @@
 .cat-button:hover {
   padding:0px 16px 0px 0px;
   color:black;
+  border-left: gray double 15px;
+  cursor: pointer;
 }
 
 .people-button:hover {
