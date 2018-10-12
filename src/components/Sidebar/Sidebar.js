@@ -13,9 +13,8 @@ class Sidebar extends Component {
 		const { films } = this.props
 
 		return (
-			<div className="Sidebar fade">
-				Sidebar
-				
+			<div className="Sidebar">
+				<div className="fade"></div>
 				<div className="star-wars">
 					<div className="crawl">
 			    

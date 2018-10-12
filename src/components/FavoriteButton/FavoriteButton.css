@@ -1,12 +1,12 @@
 .FavoriteButton {
-  /*height: 2rem;*/
-  /*background: orange;*/
-  /*width: 20%;*/
   margin: 0;
 }
 
 .favorites-button:hover {
   background: #f7d9f7;
   box-shadow: #f7d9f7 0px 0px 20px 2px;
-  text-shadow: #c0c 0px 0px 6px, #c0c 0px 0px 10px;
+  text-shadow: 
+    #c0c 0px 0px 6px, 
+    #c0c 0px 0px 10px;
+  width:200%;
 }

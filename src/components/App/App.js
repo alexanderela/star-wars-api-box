@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
+          <h1 className="app-title">SWAPI Box</h1>
           <div className="button-container">
             <button 
               className="cat-button people-button"
@@ -83,6 +83,4 @@ class App extends Component {
 }
 
 export default App;
-          // <h1 className="app-title">SWAPI Box</h1>
             // <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
-          // 
