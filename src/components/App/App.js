@@ -13,6 +13,7 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
+      isSelected: false
       // planets: []
     }
   }
@@ -24,6 +25,30 @@ class App extends Component {
     this.setState({ films, people })
   }
 
+  // handleSelected = (e) => {
+  //   const { name } = e.target
+  //   this.setState({ isSelected: !this.state.isSelected})
+  // }
+
+  handleProps = (e) => {
+    // debugger
+    this.newProps(e)
+    console.log('handleProps hooked up')
+  }
+
+  newProps = (e) => {
+    const stateKeys = Object.keys(this.state)
+    const matchingStateKey = stateKeys.find((key) => {
+      return key === e.target.name
+    })
+    this.state[matchingStateKey]
+    console.log(this.state[matchingStateKey])
+    return this.state[matchingStateKey]
+  }
+
+
+
+
   render() {
     const { films, people } = this.state
     return (
@@ -31,14 +56,18 @@ class App extends Component {
         <header className="header">
           <img className="app-title" src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"/>
           <div className="button-container">
-            <button className="cat-button people-button">People</button>
+            <button 
+              className="cat-button people-button"
+              name="people"
+              onClick={this.handleProps}
+            >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
         { films && <Sidebar films={films}/>}
-        <CardContainer people={people}/>
+        <CardContainer newProps={this.newProps} people={people}/>
       </div>
     );
   }

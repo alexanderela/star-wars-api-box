@@ -2,18 +2,29 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-const CardContainer = ({ people }) => {
-
-	const peopleCards = people.map((person) => {
-		console.log({...person})
+const CardContainer = (props) => {
+	// debugger
+if (props.people) {
+	// console.log(props)
+		return (
+		<div className='CardContainer'>
+			Hi
+		</div>
+	);
+} else {
+	const peopleCards = this.newProps.map((person) => {
+		// console.log({...person})
 		return <Card {...person} key={person.name}/>
 	})
-
 		return (
 			<div className='CardContainer'>
 				{ peopleCards }
 			</div>
 		);
+}
+
+
+
 }
 
 export default CardContainer;
