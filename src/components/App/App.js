@@ -13,6 +13,7 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
+      vehicles: [],
       isSelected: false
       // planets: []
     }
@@ -29,8 +30,7 @@ class App extends Component {
   }
 
   showPeople = async (e) => {
-    const { dataCleaner } = this.state
-    const people = await dataCleaner.getPerson()
+    const people = await this.state.dataCleaner.getPerson()
 
     if (this.state.isSelected === true) {
       this.setState({ isSelected: false })
@@ -42,8 +42,21 @@ class App extends Component {
     }
   }
 
+  showVehicles = async (e) => {
+    const vehicles = await this.state.dataCleaner.getVehicle()
+
+    if (this.state.isSelected === true) {
+      this.setState({ isSelected: false })
+    } else {
+      this.setState({
+        vehicles: vehicles,
+        isSelected: true
+      })
+    }
+  }
+
   render() {
-    const { films, people, isSelected } = this.state
+    const { films, people, vehicles, isSelected } = this.state
     return (
       <div className="App">
         <header className="header">
@@ -55,12 +68,17 @@ class App extends Component {
               onClick={this.showPeople}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
-            <button className="cat-button vehicles-button">Vehicles</button>
+            <button 
+              className={`cat-button vehicles-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="vehicles"
+              onClick={this.showVehicles}
+            >Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        {!people.length ? <Sidebar id="Sidebar" films={films}/> : null}
+        {(!people.length || vehicles.length) ? <Sidebar id="Sidebar" films={films}/> : null}
         {people ?  <CardContainer people={people}/> : null}
+        {vehicles ?  <CardContainer vehicles={vehicles}/> : null}
       </div>
     );
   }

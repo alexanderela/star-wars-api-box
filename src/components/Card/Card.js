@@ -17,9 +17,10 @@ selectCard = (card) => {
 }
 
 render() {
-	const { name, species, homeWorld } = this.props
+	const { name, species, homeWorld, vehicles, people } = this.props
 	const { isSelected } = this.state
 
+if (people) {
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -37,6 +38,24 @@ render() {
 	    <p>Population: {homeWorld.planetPop}</p>
 		</div>
 	)
+} else if (vehicles) {
+	return (
+		<div className="Card">
+	    <div className="fav-btn-card-container">
+		    <h3>{vehicles.name}</h3>
+		    <button 
+		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
+		    	onClick={() => this.selectCard(name)}
+		    >
+		    	<i className="fas fa-jedi"></i>
+		    </button>
+	    </div>
+	    <p>Model: {vehicles.model}</p>
+	    <p>Class: {vehicles.vehicle_class}</p>
+	    <p>Passengers: {vehicles.passengers}</p>
+		</div>
+	)
+}
 }
 }
 

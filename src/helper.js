@@ -5,6 +5,24 @@ class DataCleaner {
 		this.peopleUrl = ("https://swapi.co/api/people/")
 		this.planetUrl = ("https://swapi.co/api/planets/")
 		this.speciesUrl = ("https://swapi.co/api/species/")
+		this.vehicleUrl = ("https://swapi.co/api/vehicles/")
+	}
+
+	async getVehicle() {
+		const response = await fetch(this.vehicleUrl)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		}	else {
+			const vehicleData = await response.json()
+			const returnedVehicleData = await vehicleData.results.map( async vehicle => {
+				const newVehicle = {}
+				newVehicle.name = vehicle.name
+				newVehicle.model = vehicle.model
+				newVehicle.class = vehicle.vehicle_class
+				newVehicle.passengers = vehicle.passengers
+				return newVehicle
+			})
+		}
 	}
 
 	async getMovie() {
@@ -47,12 +65,6 @@ class DataCleaner {
 		// return returnedPeopleData
 	}
 }
-
-
-
-
-
-
 
 	async getHomeWorld(person) {
 		const response = await fetch(person.homeworld)

@@ -2,16 +2,28 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-const CardContainer = ({people}) => {
-	const peopleCards = people.map((person) => {
-		return <Card {...person} key={person.name} />
+const CardContainer = ({people, vehicles}) => {
+	if (people) {
+		const peopleCards = people.map((person) => {
+			return <Card people={people} {...person} key={person.name} />
+		})
+
+			return (
+				<div className='CardContainer'>
+					{ peopleCards }
+				</div>
+			);
+	} else if (vehicles) {
+		const vehicleCards = vehicles.map((vehicle) => {
+		return <Card vehicles={vehicles} {...vehicle} key={vehicle.name} />
 	})
 
 		return (
 			<div className='CardContainer'>
-				{ peopleCards }
+				{ vehicleCards }
 			</div>
 		);
+	}
 }
 
 
