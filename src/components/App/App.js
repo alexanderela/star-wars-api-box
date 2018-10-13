@@ -13,53 +13,179 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
-      isSelected: false
-      // planets: []
+      vehicles: [],
+      planets: [],
+      peopleSelected: false,
+      vehiclesSelected: false,
+      planetsSelected: false
     }
   }
 
+
   async componentDidMount() {
+    this.showFilm()
+  }
+
+  showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
     this.setState({ films })
   }
 
-  showPeopleCards = async (e) => {
-    this.setState({ people, isSelected: false })
-    this.setState({ people, isSelected: true })
-    const { name } = e.target
-    const { dataCleaner } = this.state
-    const people = await dataCleaner.getPerson()
-    this.setState({ people })
+  showPeople = async (e) => {
+    const people = await this.state.dataCleaner.getPerson()
+    if (this.state.peopleSelected === true) {
+      this.setState({ peopleSelected: false })
+    } else {
+    this.setState({ 
+      people: people, 
+      vehiclesSelected: false,        
+      planetsSelected: false,        
+      peopleSelected: true  
+      })
+    }
   }
 
+  showVehicles = async (e) => {
+    const vehicles = await this.state.dataCleaner.getVehicle()
+    if (this.state.vehiclesSelected === true) {
+      this.setState({ vehiclesSelected: false })
+    } else {
+    this.setState({  
+      vehicles: vehicles, 
+      peopleSelected: false,        
+      planetsSelected: false,        
+      vehiclesSelected: true  
+      })
+    }
+  }
 
-  // hideSidebar = () => {
-  //   var sidebar = document.getElementById("Sidebar");
-  //   sidebar.classList.add('Sidebar-hidden')
-  // }
-
+  showPlanets = async (e) => {
+    const planets = await this.state.dataCleaner.getPlanet()
+    console.log(planets)
+    if (this.state.planetSelected === true) {
+      this.setState({ planetSelected: false })
+    } else {
+      this.setState({
+        planets: planets,
+        peopleSelected: false,        
+        vehiclesSelected: false, 
+        planetsSelected: true        
+      })
+    }
+  }
 
   render() {
-    const { films, people, isSelected } = this.state
+    const { films, people, vehicles, planets, peopleSelected, planetsSelected, vehiclesSelected } = this.state
+
+    if (peopleSelected) {
     return (
       <div className="App">
         <header className="header">
           <h1 className="app-title">SWAPI Box</h1>
           <div className="button-container">
             <button 
-              className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.showPeopleCards}
+              onClick={this.showPeople}
             >People</button>
-            <button className="cat-button planets-button">Planets</button>
-            <button className="cat-button vehicles-button">Vehicles</button>
+            <button 
+              className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
+              name="planets"
+              onClick={this.showPlanets}
+            >Planets</button>
+            <button 
+              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="vehicles"
+              onClick={this.showVehicles}
+            >Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        { films && <Sidebar id="Sidebar" films={films}/>}
-        <CardContainer people={people}/>
+        {people ? <CardContainer people={people} /> : null}
       </div>
     );
+    } else if (vehiclesSelected) {
+      return (
+       <div className="App">
+        <header className="header">
+          <h1 className="app-title">SWAPI Box</h1>
+          <div className="button-container">
+            <button 
+              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="people"
+              onClick={this.showPeople}
+            >People</button>
+            <button 
+              className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
+              name="planets"
+              onClick={this.showPlanets}
+            >Planets</button>
+            <button 
+              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="vehicles"
+              onClick={this.showVehicles}
+            >Vehicles</button>
+            <FavoriteButton className="FavoriteButton" />
+          </div>
+        </header>
+        {vehicles ? <CardContainer vehicles={vehicles} /> : null}
+      </div>
+    ); 
+    } else if (planetsSelected) {
+      return (
+       <div className="App">
+          <header className="header">
+            <h1 className="app-title">SWAPI Box</h1>
+            <div className="button-container">
+              <button 
+                className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
+                name="people"
+                onClick={this.showPeople}
+              >People</button>
+              <button 
+                className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
+                name="planets"
+                onClick={this.showPlanets}
+              >Planets</button>
+              <button 
+                className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+                name="vehicles"
+                onClick={this.showVehicles}
+              >Vehicles</button>
+              <FavoriteButton className="FavoriteButton" />
+            </div>
+          </header>
+          {planets ? <CardContainer planets={planets} /> : null}
+        </div>
+    );
+    } else {
+      return (
+       <div className="App">
+          <header className="header">
+            <h1 className="app-title">SWAPI Box</h1>
+            <div className="button-container">
+              <button 
+                className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
+                name="people"
+                onClick={this.showPeople}
+              >People</button>
+              <button 
+                className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
+                name="planets"
+                onClick={this.showPlanets}
+              >Planets</button>
+              <button 
+                className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+                name="vehicles"
+                onClick={this.showVehicles}
+              >Vehicles</button>
+              <FavoriteButton className="FavoriteButton" />
+            </div>
+          </header>
+          <Sidebar films={films}/>
+        </div>
+      )
+    }
   }
 }
 
