@@ -13,7 +13,7 @@ class App extends Component {
       dataCleaner: new DataCleaner(),
       films: {},
       people: [],
-      isSelected: ''
+      isSelected: false
       // planets: []
     }
   }
@@ -23,46 +23,19 @@ class App extends Component {
     this.setState({ films })
   }
 
-  showCards = async (e) => {
-    // const { dataCleaner } = this.state
+  showPeopleCards = async (e) => {
+    this.setState({ people, isSelected: false })
+    this.setState({ people, isSelected: true })
     const { name } = e.target
     const { dataCleaner } = this.state
-    
     const people = await dataCleaner.getPerson()
-    const planets = 'planets'
-    const vehicles = 'vehicles'
-    const dataArray = [people, planets, vehicles]
-
-    const results = dataArray.forEach((arrayItem) => {
-      // if (displayCategory === name) { 
-        this.setState({[name]: arrayItem})
-      // }
-    })
-
-
-
-    // const stateKeys = Object.keys(this.state)
-    // const matchingStateKey = stateKeys.forEach((key) => {
-    //   if (displayCategory == key) {
-    //     this.setState({ [matchingStateKey]: [displayCategory]})
-    //   }
-    // })
+    this.setState({ people })
   }
 
 
   hideSidebar = () => {
     var sidebar = document.getElementById("Sidebar");
     sidebar.classList.add('Sidebar-hidden')
-    // sidebar.classList.remove('.Sidebar');
-    // sidebar.classList.add('Sidebar-hidden');
-
-    // if (sidebar.classList.contains('Sidebar')) {
-    //     sidebar.classList.remove('Sidebar');
-    //     // alert("remove faq display!");
-    //   } else {
-    //     sidebar.classList.add('Sidebar-hidden');
-    //     // alert("add faq display!");
-    //   }
   }
 
   // handleSelected = (e) => {
@@ -70,24 +43,6 @@ class App extends Component {
   //   this.setState({ isSelected: !this.state.isSelected})
   // }
 
-  // handleProps = (e) => {
-  //   // debugger
-  // }
-
-  handleSelected = (e) => {
-    const { name } = e.target
-    this.setState({ isSelected: name})
-
-    // this.newProps(e)
-  }
-
-  // newProps = (e) => {
-  //   const stateKeys = Object.keys(this.state)
-  //   const matchingStateKey = stateKeys.find((key) => {
-  //     return key === e.target.name
-  //   })
-  //   return this.state[matchingStateKey]
-  // }
 
   render() {
     const { films, people, isSelected } = this.state
@@ -99,7 +54,7 @@ class App extends Component {
             <button 
               className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.showCards}
+              onClick={this.showPeopleCards}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
@@ -107,7 +62,7 @@ class App extends Component {
           </div>
         </header>
         { films && <Sidebar id="Sidebar" films={films}/>}
-        <CardContainer newProps={this.newProps} people={people}/>
+        <CardContainer people={people}/>
       </div>
     );
   }

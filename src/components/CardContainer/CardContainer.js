@@ -2,7 +2,7 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-const CardContainer = (props) => {
+const CardContainer = ({people}) => {
 	// debugger
 // if (props.people) {
 // 	console.log(props.newProps)
@@ -12,7 +12,8 @@ const CardContainer = (props) => {
 // 		</div>
 // 	);
 // } else {
-	const peopleCards = props.people.map((person) => {
+	console.log(people)
+	const peopleCards = people.map((person) => {
 		// console.log({...person})
 		return <Card {...person} key={person.name}/>
 	})
