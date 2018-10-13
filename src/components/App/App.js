@@ -20,15 +20,15 @@ class App extends Component {
 
 
   async componentDidMount() {
-    this.getFilm()
+    this.showFilm()
   }
 
-  getFilm = async () => {
+  showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
     this.setState({ films })
   }
 
-  showPeopleCards = async (e) => {
+  showPeople = async (e) => {
     const { dataCleaner } = this.state
     const people = await dataCleaner.getPerson()
 
@@ -42,13 +42,6 @@ class App extends Component {
     }
   }
 
-
-  // hideSidebar = () => {
-  //   var sidebar = document.getElementById("Sidebar");
-  //   sidebar.classList.add('Sidebar-hidden')
-  // }
-
-
   render() {
     const { films, people, isSelected } = this.state
     return (
@@ -59,14 +52,14 @@ class App extends Component {
             <button 
               className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.showPeopleCards}
+              onClick={this.showPeople}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        <Sidebar id="Sidebar" films={films}/>
+        {!people.length ? <Sidebar id="Sidebar" films={films}/> : null}
         {people ?  <CardContainer people={people}/> : null}
       </div>
     );
