@@ -1,5 +1,5 @@
 const planets = {
-    "count": 61,
+    "count": 10,
     "next": "https://swapi.co/api/planets/?page=2",
     "previous": null,
     "results": [
