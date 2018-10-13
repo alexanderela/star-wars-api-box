@@ -2,74 +2,75 @@
 
 @font-face {
   font-family: "STARWARS";
+  font-style:normal;
+  font-weight:normal;
   src: 
       url("./swapi.ttf") format("truetype"),
       url("./swapi.svg#swapi") format("svg");
-  font-weight:normal;
-  font-style:normal;
 }
+
 body {
   background-color: gray;
 }
 
 .App {
   display: flex;
-  text-align: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .header {
-  display: flex;
-  border: 1px solid black;
-  height: 20rem;
-  justify-content: center;
   align-items: center;
   background: url('../../assets/SWAPI-background.jpg');
+  border: 1px solid black;
+  display: flex;
   flex-direction: column;
+  height: 20rem;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
 
 .app-title {
-  font-family: "STARWARS";
   color: #f9d500;
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #f9d500;
+  font-family: "STARWARS";
   font-size: 10em;
   margin: 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: #f9d500;
+  -webkit-text-stroke-width: 2px;
 }
 
 .button-container {
+  bottom: 0px;
   display: flex;
+  height: 5rem;
   justify-content: space-around;
-  width: 80%;
+  padding-right: 16px;
+  top: 80px;
   transform: translatex(0%);
   transition: transform 0.2s ease;
-  top: 80px;
-  bottom: 0px;
-  padding-right: 16px;
-  height: 5rem;
+  width: 80%;
 }
 
 .cat-button {
-  height: 3rem;
-  width: 12rem;
   background: #000;
+  border-radius: 0px 100px 100px 0px;
   color: #fff;
   cursor: pointer;
   font-family: 'Pathway Gothic One', sans-serif;
-  font-weight: 600;
   font-size: 2em;
+  font-weight: 600;
+  height: 3rem;
+  margin: 16px 0px;
   padding: 0px;
   padding-left: 0px;
-  margin: 16px 0px;
-  border-radius: 0px 100px 100px 0px;
   transition: 
     width 0.5s ease,
     padding 0.2s ease, 
     color 0.2s ease, 
     text-shadow 0.2s ease;
+  width: 12rem;
 }
 
 .cat-button-active {
@@ -81,11 +82,11 @@ body {
 }
 
 .cat-button:hover {
-  color:black;
   border-left: gray double 15px;
+  color:black;
   cursor: pointer;
-  width: 30%;
   padding:0px 16px 0px 0px;
+  width: 30%;
 }
 
 .people-button:hover {
