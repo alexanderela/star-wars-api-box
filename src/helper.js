@@ -8,7 +8,7 @@ class DataCleaner {
 		this.vehicleUrl = ("https://swapi.co/api/vehicles/")
 	}
 
-
+//Get films
 	async getMovie() {
 		const response = await fetch(this.movieUrl)
 		if (response.status >= 400) {
@@ -31,6 +31,7 @@ class DataCleaner {
 		})
 	}
 
+//Get people
 	async getPerson() {
 		const response = await fetch(this.peopleUrl)
 		if (response.status >= 400) {
@@ -48,6 +49,58 @@ class DataCleaner {
 	}
 }
 
+	async getHomeWorld(person) {
+		const response = await fetch(person.homeworld)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const homeWorldData = await response.json()
+			return { planetName: homeWorldData.name, planetPop: homeWorldData.population }
+	}
+}
+
+	async getSpecies(person) {
+		const response = await fetch(person.species[0])
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const speciesData = await response.json()
+			return { speciesName: speciesData.name, language: speciesData.language }
+		}
+	}
+
+//Get planets
+	async getPlanet() {
+		const response = await fetch(this.planetUrl)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		}	else {
+			const planetData = await response.json()
+			const returnedPlanetData = await planetData.results.map( async planet => {
+				const newPlanet = {}
+				newPlanet.name = planet.name
+				newPlanet.terrain = planet.terrain
+				newPlanet.population = planet.population
+				newPlanet.climate = planet.climate
+				newPlanet.residents = await this.getResidents(planet)
+				// console.log(newPlanet)
+			// console.log(newPlanet)
+				return newPlanet
+			})
+			return Promise.all(returnedPlanetData)
+		}
+	}
+
+	async getResidents(planet) {
+		const fetchResidents = await planet.residents.map( async resident => {
+			const response = await fetch(resident)
+			const residentData = await response.json()
+			return residentData.name
+		})
+		return Promise.all(fetchResidents)
+	}
+
+//Get vehicles
 	async getVehicle() {
 		const response = await fetch(this.vehicleUrl)
 		if (response.status >= 400) {
@@ -63,26 +116,6 @@ class DataCleaner {
 				return newVehicle
 			})
 			return Promise.all(returnedVehicleData)
-		}
-	}
-
-	async getHomeWorld(person) {
-		const response = await fetch(person.homeworld)
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-			const planetData = await response.json()
-			return { planetName: planetData.name, planetPop: planetData.population }
-	}
-}
-
-	async getSpecies(person) {
-		const response = await fetch(person.species[0])
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-			const speciesData = await response.json()
-			return { speciesName: speciesData.name, language: speciesData.language }
 		}
 	}
 
