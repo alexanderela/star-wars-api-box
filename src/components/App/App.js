@@ -20,47 +20,24 @@ class App extends Component {
 
   async componentDidMount() {
     const films = await this.state.dataCleaner.getMovie()
-    const people = await this.state.dataCleaner.getPerson()
-    // console.log(people)
-    this.setState({ films, people })
+    this.setState({ films })
   }
 
-  hideSidebar = () => {
-    var sidebar = document.getElementById("Sidebar");
-    sidebar.classList.add('Sidebar-hidden')
-    // sidebar.classList.remove('.Sidebar');
-    // sidebar.classList.add('Sidebar-hidden');
-
-    // if (sidebar.classList.contains('Sidebar')) {
-    //     sidebar.classList.remove('Sidebar');
-    //     // alert("remove faq display!");
-    //   } else {
-    //     sidebar.classList.add('Sidebar-hidden');
-    //     // alert("add faq display!");
-    //   }
+  showPeopleCards = async (e) => {
+    this.setState({ people, isSelected: false })
+    this.setState({ people, isSelected: true })
+    const { name } = e.target
+    const { dataCleaner } = this.state
+    const people = await dataCleaner.getPerson()
+    this.setState({ people })
   }
 
-  // handleSelected = (e) => {
-  //   const { name } = e.target
-  //   this.setState({ isSelected: !this.state.isSelected})
+
+  // hideSidebar = () => {
+  //   var sidebar = document.getElementById("Sidebar");
+  //   sidebar.classList.add('Sidebar-hidden')
   // }
 
-  handleProps = (e) => {
-    // debugger
-  }
-  handleSelected = (e) => {
-    const { name } = e.target
-    this.setState({ isSelected: !this.state.isSelected})
-    this.newProps(e)
-  }
-
-  newProps = (e) => {
-    const stateKeys = Object.keys(this.state)
-    const matchingStateKey = stateKeys.find((key) => {
-      return key === e.target.name
-    })
-    return this.state[matchingStateKey]
-  }
 
   render() {
     const { films, people, isSelected } = this.state
@@ -72,7 +49,7 @@ class App extends Component {
             <button 
               className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
-              onClick={this.handleSelected}
+              onClick={this.showPeopleCards}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button className="cat-button vehicles-button">Vehicles</button>
@@ -80,11 +57,10 @@ class App extends Component {
           </div>
         </header>
         { films && <Sidebar id="Sidebar" films={films}/>}
-        <CardContainer newProps={this.newProps} people={people}/>
+        <CardContainer people={people}/>
       </div>
     );
   }
 }
 
 export default App;
-            // <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
