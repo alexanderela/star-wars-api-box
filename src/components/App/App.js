@@ -18,18 +18,28 @@ class App extends Component {
     }
   }
 
+
   async componentDidMount() {
+    this.getFilm()
+  }
+
+  getFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
     this.setState({ films })
   }
 
   showPeopleCards = async (e) => {
-    this.setState({ people, isSelected: false })
-    this.setState({ people, isSelected: true })
-    const { name } = e.target
     const { dataCleaner } = this.state
     const people = await dataCleaner.getPerson()
-    this.setState({ people })
+
+    if (this.state.isSelected === true) {
+      this.setState({ isSelected: false })
+    } else {
+      this.setState({ 
+        people: people, 
+        isSelected: true 
+      })
+    }
   }
 
 
@@ -56,8 +66,8 @@ class App extends Component {
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        { films && <Sidebar id="Sidebar" films={films}/>}
-        <CardContainer people={people}/>
+        <Sidebar id="Sidebar" films={films}/>
+        {people ?  <CardContainer people={people}/> : null}
       </div>
     );
   }
