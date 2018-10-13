@@ -2,66 +2,40 @@ import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
 
-const CardContainer = (props) => {
-	// debugger
-// if (props.people) {
-// 	console.log(props.newProps)
-// 		return (
-// 		<div className='CardContainer'>
-// 			Hi
-// 		</div>
-// 	);
-// } else {
-	const peopleCards = props.people.map((person) => {
-		// console.log({...person})
-		return <Card {...person} key={person.name}/>
+const CardContainer = ({people, vehicles, planets}) => {
+	console.log(vehicles)
+	if (people) {
+		const peopleCards = people.map((person) => {
+			return <Card people={people} {...person} key={person.name} />
+		})
+
+			return (
+				<div className='CardContainer'>
+					{ peopleCards }
+				</div>
+			);
+	} else if (vehicles) {
+		const vehicleCards = vehicles.map((vehicle) => {
+			return <Card vehicles={vehicle} key={vehicle.name} />
 	})
+
 		return (
 			<div className='CardContainer'>
-				{ peopleCards }
+				{ vehicleCards }
 			</div>
 		);
+	} else if (planets) {
+		const planetCards = planets.map((planet) => {
+			return <Card planets={planet} key={planet.name} />
+	})
+
+		return (
+			<div className='CardContainer'>
+				{ planetCards }
+			</div>
+		);
+	}
 }
 
 
-
-// }
-
 export default CardContainer;
-
-
-
-// class CardContainer extends Component {
-// 	constructor({props}) {
-// 		super(props);
-// 		this.state = {
-
-// 		}
-
-
-// 	}
-
-// 	const peopleCards = this.props.people.map((person) => {
-// 		return <Card {...person}/>
-// 	})
-
-// 	const peopleCards = this.props.people.map((person) => {
-// 		return <Card {...person}/>
-// 	})
-
-// 	render() {
-// 		return (
-// 			<div className='CardContainer'>
-// 				<div className="button-container">
-// 					<button className="cat-button people-button">People</button>
-// 					<button className="cat-button planets-button">Planets</button>
-// 					<button className="cat-button vehicles-button">Vehicles</button>
-// 				</div>
-// 				{ peopleCards }
-
-// 			</div>
-// 		);
-// 	}
-// }
-
-// export default CardContainer;
