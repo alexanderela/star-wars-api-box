@@ -33,14 +33,9 @@ class App extends Component {
   }
 
 
-  hideSidebar = () => {
-    var sidebar = document.getElementById("Sidebar");
-    sidebar.classList.add('Sidebar-hidden')
-  }
-
-  // handleSelected = (e) => {
-  //   const { name } = e.target
-  //   this.setState({ isSelected: !this.state.isSelected})
+  // hideSidebar = () => {
+  //   var sidebar = document.getElementById("Sidebar");
+  //   sidebar.classList.add('Sidebar-hidden')
   // }
 
 
@@ -69,4 +64,3 @@ class App extends Component {
 }
 
 export default App;
-            // <button className="cat-button people-button" onClick={this.hideSidebar}>People</button>
