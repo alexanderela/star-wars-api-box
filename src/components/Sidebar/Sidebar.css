@@ -17,46 +17,41 @@
   top: -25px;
   background-image: linear-gradient(0deg, transparent, black 75%);
   z-index: 1;
-  background: url('../../assets/SWAPI-background.jpg');
-
 }
 
 .star-wars {
   display: flex;
   justify-content: center;
-  position: relative;
-  height: 800px;
+  height: 500px;
   color: #feda4a;
   font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 500%;
+  font-size: 550%;
   font-weight: 600;
-  letter-spacing: 6px;
-  line-height: 150%;
+  letter-spacing: 4px;
+  line-height: 125%;
   perspective: 400px;
   text-align: justify;
   background: url('../../assets/SWAPI-background.jpg');
+  word-spacing: normal;
+  position: relative;
+  z-index: 1;
+  top: -25px;
+
 }
 
 .crawl {
   position: relative;
-  /*top: 99999px;*/
   transform-origin: 50% 100%;
   animation: crawl 60s linear;
 }
 
-/*.crawl > .title {
-  font-size: 90%;
+.title {
   text-align: center;
 }
 
-.crawl > .title h1 {
-  margin: 0 0 100px;
-  text-transform: uppercase;
-}*/
-
 @keyframes crawl {
   0% {
-    top: -100px;
+    top: 0px;
     transform: rotateX(20deg)  translateZ(0);
   }
   100% { 

@@ -26,6 +26,8 @@ body {
   align-items: center;
   background: url('../../assets/SWAPI-background.jpg');
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .app-title {
