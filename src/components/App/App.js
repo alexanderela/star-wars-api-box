@@ -14,8 +14,8 @@ class App extends Component {
       films: {},
       people: [],
       vehicles: [],
-      isSelected: false
-      // planets: []
+      peopleSelected: false,
+      vehiclesSelected: false
     }
   }
 
@@ -31,56 +31,106 @@ class App extends Component {
 
   showPeople = async (e) => {
     const people = await this.state.dataCleaner.getPerson()
-
-    if (this.state.isSelected === true) {
-      this.setState({ isSelected: false })
+    if (this.state.peopleSelected === true) {
+      this.setState({ peopleSelected: false })
     } else {
-      this.setState({ 
-        people: people, 
-        isSelected: true 
+    this.setState({ 
+      people: people, 
+      vehiclesSelected: false,        
+      peopleSelected: true  
       })
     }
   }
 
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
-
-    if (this.state.isSelected === true) {
-      this.setState({ isSelected: false })
+    if (this.state.vehiclesSelected === true) {
+      this.setState({ vehiclesSelected: false })
     } else {
-      this.setState({
-        vehicles: vehicles,
-        isSelected: true
+    this.setState({  
+      vehicles: vehicles, 
+      peopleSelected: false,        
+      vehiclesSelected: true  
       })
     }
   }
 
   render() {
-    const { films, people, vehicles, isSelected } = this.state
+    const { films, people, vehicles, peopleSelected, vehiclesSelected } = this.state
+
+    if (peopleSelected) {
     return (
       <div className="App">
         <header className="header">
           <h1 className="app-title">SWAPI Box</h1>
           <div className="button-container">
             <button 
-              className={`cat-button people-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="people"
               onClick={this.showPeople}
             >People</button>
             <button className="cat-button planets-button">Planets</button>
             <button 
-              className={`cat-button vehicles-button ${isSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
               name="vehicles"
               onClick={this.showVehicles}
             >Vehicles</button>
             <FavoriteButton className="FavoriteButton" />
           </div>
         </header>
-        {(!people.length || vehicles.length) ? <Sidebar id="Sidebar" films={films}/> : null}
-        {people ?  <CardContainer people={people}/> : null}
-        {vehicles ?  <CardContainer vehicles={vehicles}/> : null}
+        
+        {people ? <CardContainer people={people} /> : null}
       </div>
     );
+    } else if (vehiclesSelected) {
+         return (
+      <div className="App">
+        <header className="header">
+          <h1 className="app-title">SWAPI Box</h1>
+          <div className="button-container">
+            <button 
+              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="people"
+              onClick={this.showPeople}
+            >People</button>
+            <button className="cat-button planets-button">Planets</button>
+            <button 
+              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="vehicles"
+              onClick={this.showVehicles}
+            >Vehicles</button>
+            <FavoriteButton className="FavoriteButton" />
+          </div>
+        </header>
+        
+        {vehicles ? <CardContainer vehicles={vehicles} /> : null}
+      </div>
+    ); 
+    } else {
+          return (
+      <div className="App">
+        <header className="header">
+          <h1 className="app-title">SWAPI Box</h1>
+          <div className="button-container">
+            <button 
+              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="people"
+              onClick={this.showPeople}
+            >People</button>
+            <button className="cat-button planets-button">Planets</button>
+            <button 
+              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
+              name="vehicles"
+              onClick={this.showVehicles}
+            >Vehicles</button>
+            <FavoriteButton className="FavoriteButton" />
+          </div>
+        </header>
+        <Sidebar id="Sidebar" films={films}/>
+
+      </div>
+    );
+    }
   }
 }
 

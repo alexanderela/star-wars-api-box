@@ -3,6 +3,7 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 
 const CardContainer = ({people, vehicles}) => {
+	console.log(vehicles)
 	if (people) {
 		const peopleCards = people.map((person) => {
 			return <Card people={people} {...person} key={person.name} />
@@ -15,7 +16,7 @@ const CardContainer = ({people, vehicles}) => {
 			);
 	} else if (vehicles) {
 		const vehicleCards = vehicles.map((vehicle) => {
-		return <Card vehicles={vehicles} {...vehicle} key={vehicle.name} />
+			return <Card vehicles={vehicle} key={vehicle.name} />
 	})
 
 		return (

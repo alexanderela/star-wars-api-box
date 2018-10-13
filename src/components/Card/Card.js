@@ -21,6 +21,7 @@ render() {
 	const { isSelected } = this.state
 
 if (people) {
+	console.log(people)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -39,6 +40,7 @@ if (people) {
 		</div>
 	)
 } else if (vehicles) {
+	console.log(vehicles)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -51,7 +53,7 @@ if (people) {
 		    </button>
 	    </div>
 	    <p>Model: {vehicles.model}</p>
-	    <p>Class: {vehicles.vehicle_class}</p>
+	    <p>Class: {vehicles.class.toUpperCase()}</p>
 	    <p>Passengers: {vehicles.passengers}</p>
 		</div>
 	)
