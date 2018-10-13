@@ -8,8 +8,9 @@
   font-weight:normal;
   font-style:normal;
 }
+
 body {
-  background-color: gray;
+background: url('../../assets/SWAPI-background.jpg');
 }
 
 .App {
@@ -37,7 +38,7 @@ body {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #f9d500;
   font-size: 10em;
-  margin: 0;
+  margin: 3rem 0 0 0;
 }
 
 .button-container {
@@ -50,6 +51,7 @@ body {
   bottom: 0px;
   padding-right: 16px;
   height: 5rem;
+  margin: 0 0 5rem 0;
 }
 
 .cat-button {

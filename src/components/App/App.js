@@ -21,7 +21,6 @@ class App extends Component {
     }
   }
 
-
   async componentDidMount() {
     this.showFilm()
   }

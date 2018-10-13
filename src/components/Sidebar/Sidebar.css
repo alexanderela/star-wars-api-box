@@ -22,7 +22,7 @@
 .star-wars {
   display: flex;
   justify-content: center;
-  height: 500px;
+  height: 30rem;
   color: #feda4a;
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 550%;
@@ -35,8 +35,8 @@
   word-spacing: normal;
   position: relative;
   z-index: 1;
-  top: -25px;
-
+  top: -1rem;
+  overflow: hidden;
 }
 
 .crawl {

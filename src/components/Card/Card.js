@@ -72,7 +72,7 @@ if (people) {
 	    <p>Terrain: {planets.terrain}</p>
 	    <p>Population: {planets.population}</p>
 	    <p>Climate: {planets.climate}</p>
-	    <p>Residents: {planets.residents.join(", ") || "N/A"}</p>
+	    <p>Residents: {planets.residents.join(", ") || "n/a"}</p>
 		</div>
 	)	
 }
