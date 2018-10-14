@@ -81,13 +81,16 @@ it('should toggle the state of vehicles if it is already selected', () => {
 })
 
 it('sets vehicles to state ', async () => {
-		const mockVehicle = {"class": "wheeled", 
+		mockVehicle = {
+			"class": "wheeled", 
 			"model": "Digger Crawler",
-			"name": "Sand Crawler", "passengers": "30"}		
+			"name": "Sand Crawler", 
+			"passengers": "30"
+		}		
 	wrapper.state().dataCleaner.getVehicle = jest.fn().mockImplementation(() => Promise.resolve(
  		mockVehicle))
 	await wrapper.instance().showVehicles()
-  await expect(wrapper.state().vehicle).toEqual(mockVehicle)
+  await expect(wrapper.state().vehicles).toEqual(mockVehicle)
 })
 
 it('should toggle the state of planets if it is already selected', () => {
