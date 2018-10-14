@@ -102,7 +102,10 @@ if (people) {
 
 }
 Card.propTypes = {
-	people: PropTypes.object,
+		people: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+]),
 	vehicles: PropTypes.object,
 	planets: PropTypes.object
 }

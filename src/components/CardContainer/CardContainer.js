@@ -1,6 +1,7 @@
 import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({people, vehicles, planets}) => {
 
@@ -40,7 +41,10 @@ const CardContainer = ({people, vehicles, planets}) => {
 }
 
 CardContainer.propTypes = {
-	people: PropTypes.array,
+	people: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+]),
 	vehicles: PropTypes.array,
 	planets: PropTypes.array
 }

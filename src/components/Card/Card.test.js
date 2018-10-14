@@ -4,10 +4,11 @@ import Card from './Card';
 import { shallow } from 'enzyme';
 
 describe('Card', () => {
-xit('matches the snapshot', () => {
-	const wrapper = shallow(<Card />);
-	expect(wrapper).toMatchSnapshot();
-})
+	let wrapper;
+	it('matches the snapshot', () => {
+		const wrapper = shallow(<Card />);
+		expect(wrapper).toMatchSnapshot();
+	})
 
 	it('renders people cards if people props are present', () => {
 			const mockPeople = [{

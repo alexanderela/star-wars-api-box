@@ -87,8 +87,12 @@ render() {
 		  </div>
 		)
 	}
+}
 
-
+Nav.propTypes = {
+	showPeople: PropTypes.func,
+	showVehicle: PropTypes.func,
+	showPlanet: PropTypes.func
 }
 
 export default Nav;
