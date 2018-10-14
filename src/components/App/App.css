@@ -44,6 +44,7 @@ background: url('../../assets/SWAPI-background.jpg');
 .button-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 80%;
   transform: translatex(0%);
   transition: transform 0.2s ease;
@@ -75,7 +76,7 @@ background: url('../../assets/SWAPI-background.jpg');
 }
 
 .cat-button-active {
-  background-color: #464545;
+  background-color: #363535;
 }
 
 .cat-button-inactive {

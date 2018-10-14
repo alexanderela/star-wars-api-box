@@ -22,7 +22,7 @@ ShallowWrapper {
       >
         Favorites 
         <i
-          className="far fa-star"
+          className="fas fa-jedi"
         />
       </button>,
       "className": "FavoriteButton",
@@ -36,7 +36,7 @@ ShallowWrapper {
         "children": Array [
           "Favorites ",
           <i
-            className="far fa-star"
+            className="fas fa-jedi"
           />,
         ],
         "className": "cat-button favorites-button",
@@ -49,7 +49,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "far fa-star",
+            "className": "fas fa-jedi",
           },
           "ref": null,
           "rendered": null,
@@ -71,7 +71,7 @@ ShallowWrapper {
         >
           Favorites 
           <i
-            className="far fa-star"
+            className="fas fa-jedi"
           />
         </button>,
         "className": "FavoriteButton",
@@ -85,7 +85,7 @@ ShallowWrapper {
           "children": Array [
             "Favorites ",
             <i
-              className="far fa-star"
+              className="fas fa-jedi"
             />,
           ],
           "className": "cat-button favorites-button",
@@ -98,7 +98,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "far fa-star",
+              "className": "fas fa-jedi",
             },
             "ref": null,
             "rendered": null,
