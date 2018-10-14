@@ -12,6 +12,10 @@
   letter-spacing: 0.1rem;
 }
 
+.Card:hover {
+  box-shadow: #d9ffd9 0px 0px 15px 2px;
+}
+
 .fav-btn-card-container {
 	display: flex;
 	justify-content: space-between;
