@@ -25,7 +25,7 @@ background: url('../../assets/SWAPI-background.jpg');
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  height: 20%;
   justify-content: center;
   position: relative;
   z-index: 1;
