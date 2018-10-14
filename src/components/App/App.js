@@ -28,6 +28,7 @@ class App extends Component {
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
+    console.log(films)
     this.setState({ films })
   }
 
@@ -62,7 +63,6 @@ class App extends Component {
 
   showPlanets = async (e) => {
     const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)
     if (this.state.planetSelected === true) {
       this.setState({ planetSelected: false })
     } else {
@@ -89,7 +89,9 @@ class App extends Component {
             showVehicle={this.showVehicles}
           />
         </header>
-        {people ? <CardContainer people={people} /> : null}
+        {people ? <CardContainer 
+            className="Card-Container-people" 
+            people={people} /> : null}
       </div>
     );
     } else if (vehiclesSelected) {

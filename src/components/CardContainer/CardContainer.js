@@ -1,11 +1,13 @@
 import React from 'react';
 import './CardContainer.css';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({people, vehicles, planets}) => {
+
 	if (people) {
 		const peopleCards = people.map((person) => {
-	console.log(person)
+	// console.log(person)
 			return <Card people={people} {...person} key={person.name} />
 		})
 
@@ -15,6 +17,7 @@ const CardContainer = ({people, vehicles, planets}) => {
 				</div>
 			);
 	} else if (vehicles) {
+
 		const vehicleCards = vehicles.map((vehicle) => {
 			return <Card vehicles={vehicle} key={vehicle.name} />
 	})
@@ -37,5 +40,13 @@ const CardContainer = ({people, vehicles, planets}) => {
 	}
 }
 
+CardContainer.propTypes = {
+	people: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+]),
+	vehicles: PropTypes.array,
+	planets: PropTypes.array
+}
 
 export default CardContainer;
