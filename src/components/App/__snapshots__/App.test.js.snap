@@ -21,10 +21,11 @@ ShallowWrapper {
         <header
           className="header"
         >
-          <img
+          <h1
             className="app-title"
-            src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
-          />
+          >
+            SWAPI Box
+          </h1>
           <div
             className="button-container"
           >
@@ -36,12 +37,16 @@ ShallowWrapper {
               People
             </button>
             <button
-              className="cat-button planets-button"
+              className="cat-button planets-button cat-button-inactive ? "
+              name="planets"
+              onClick={[Function]}
             >
               Planets
             </button>
             <button
-              className="cat-button vehicles-button"
+              className="cat-button vehicles-button cat-button-inactive"
+              name="vehicles"
+              onClick={[Function]}
             >
               Vehicles
             </button>
@@ -52,10 +57,6 @@ ShallowWrapper {
         </header>,
         <Sidebar
           films={Object {}}
-        />,
-        <CardContainer
-          newProps={[Function]}
-          people={Array []}
         />,
       ],
       "className": "App",
@@ -68,10 +69,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <img
+            <h1
               className="app-title"
-              src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
-            />,
+            >
+              SWAPI Box
+            </h1>,
             <div
               className="button-container"
             >
@@ -83,12 +85,16 @@ ShallowWrapper {
                 People
               </button>
               <button
-                className="cat-button planets-button"
+                className="cat-button planets-button cat-button-inactive ? "
+                name="planets"
+                onClick={[Function]}
               >
                 Planets
               </button>
               <button
-                className="cat-button vehicles-button"
+                className="cat-button vehicles-button cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
               >
                 Vehicles
               </button>
@@ -106,12 +112,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "SWAPI Box",
               "className": "app-title",
-              "src": "https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png",
             },
             "ref": null,
-            "rendered": null,
-            "type": "img",
+            "rendered": "SWAPI Box",
+            "type": "h1",
           },
           Object {
             "instance": null,
@@ -127,12 +133,16 @@ ShallowWrapper {
                   People
                 </button>,
                 <button
-                  className="cat-button planets-button"
+                  className="cat-button planets-button cat-button-inactive ? "
+                  name="planets"
+                  onClick={[Function]}
                 >
                   Planets
                 </button>,
                 <button
-                  className="cat-button vehicles-button"
+                  className="cat-button vehicles-button cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
                 >
                   Vehicles
                 </button>,
@@ -164,7 +174,9 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Planets",
-                  "className": "cat-button planets-button",
+                  "className": "cat-button planets-button cat-button-inactive ? ",
+                  "name": "planets",
+                  "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": "Planets",
@@ -176,7 +188,9 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": "Vehicles",
-                  "className": "cat-button vehicles-button",
+                  "className": "cat-button vehicles-button cat-button-inactive",
+                  "name": "vehicles",
+                  "onClick": [Function],
                 },
                 "ref": null,
                 "rendered": "Vehicles",
@@ -210,18 +224,6 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "newProps": [Function],
-          "people": Array [],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
     ],
     "type": "div",
   },
@@ -235,10 +237,11 @@ ShallowWrapper {
           <header
             className="header"
           >
-            <img
+            <h1
               className="app-title"
-              src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
-            />
+            >
+              SWAPI Box
+            </h1>
             <div
               className="button-container"
             >
@@ -250,12 +253,16 @@ ShallowWrapper {
                 People
               </button>
               <button
-                className="cat-button planets-button"
+                className="cat-button planets-button cat-button-inactive ? "
+                name="planets"
+                onClick={[Function]}
               >
                 Planets
               </button>
               <button
-                className="cat-button vehicles-button"
+                className="cat-button vehicles-button cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
               >
                 Vehicles
               </button>
@@ -266,10 +273,6 @@ ShallowWrapper {
           </header>,
           <Sidebar
             films={Object {}}
-          />,
-          <CardContainer
-            newProps={[Function]}
-            people={Array []}
           />,
         ],
         "className": "App",
@@ -282,10 +285,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <img
+              <h1
                 className="app-title"
-                src="https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png"
-              />,
+              >
+                SWAPI Box
+              </h1>,
               <div
                 className="button-container"
               >
@@ -297,12 +301,16 @@ ShallowWrapper {
                   People
                 </button>
                 <button
-                  className="cat-button planets-button"
+                  className="cat-button planets-button cat-button-inactive ? "
+                  name="planets"
+                  onClick={[Function]}
                 >
                   Planets
                 </button>
                 <button
-                  className="cat-button vehicles-button"
+                  className="cat-button vehicles-button cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
                 >
                   Vehicles
                 </button>
@@ -320,12 +328,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "children": "SWAPI Box",
                 "className": "app-title",
-                "src": "https://fontmeme.com/permalink/181011/77642b270be5b116183f969599b14285.png",
               },
               "ref": null,
-              "rendered": null,
-              "type": "img",
+              "rendered": "SWAPI Box",
+              "type": "h1",
             },
             Object {
               "instance": null,
@@ -341,12 +349,16 @@ ShallowWrapper {
                     People
                   </button>,
                   <button
-                    className="cat-button planets-button"
+                    className="cat-button planets-button cat-button-inactive ? "
+                    name="planets"
+                    onClick={[Function]}
                   >
                     Planets
                   </button>,
                   <button
-                    className="cat-button vehicles-button"
+                    className="cat-button vehicles-button cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
                   >
                     Vehicles
                   </button>,
@@ -378,7 +390,9 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Planets",
-                    "className": "cat-button planets-button",
+                    "className": "cat-button planets-button cat-button-inactive ? ",
+                    "name": "planets",
+                    "onClick": [Function],
                   },
                   "ref": null,
                   "rendered": "Planets",
@@ -390,7 +404,9 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Vehicles",
-                    "className": "cat-button vehicles-button",
+                    "className": "cat-button vehicles-button cat-button-inactive",
+                    "name": "vehicles",
+                    "onClick": [Function],
                   },
                   "ref": null,
                   "rendered": "Vehicles",
@@ -419,18 +435,6 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "films": Object {},
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "newProps": [Function],
-            "people": Array [],
           },
           "ref": null,
           "rendered": null,

@@ -1,20 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+
 .Card {
   border-radius: 10px;
-  background: #444444;
+  background: #363535;
   color: white;
   height: 20rem;
   cursor: pointer;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
 }
 
 .fav-btn-card-container {
 	display: flex;
 	justify-content: space-between;
-	padding: 0 2rem;
+	align-items: center;
+	padding: 0.5rem 2rem;
 }
 
 .fav-btn {
 	border-radius: 10px;
 	cursor: pointer;
+	height: 3.5rem;
+	width: 3.5rem;
 }
 
 .fav-btn-inactive {
@@ -30,3 +38,11 @@
 	font-size: 2rem;
 }
 
+.card-text {
+	margin: 0.5rem 0.75rem;
+}
+
+.card-header {
+	color: red;
+	font-weight: 600;
+}
