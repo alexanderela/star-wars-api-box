@@ -80,9 +80,8 @@ class DataCleaner {
 		}	else {
 			const planetData = await response.json()
 			const returnedPlanetData = await returnPlanetData(planetData.results)
-			})
+			}
 			return Promise.all(returnedPlanetData)
-		}
 	}
 
 	async returnPlanetData(planetCollection) {
