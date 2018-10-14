@@ -1,7 +1,7 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/alexanderela/swapibox.svg?columns=all)](https://waffle.io/alexanderela/swapibox)
 
 
-![Alt text](./assets/SWAPI-Box-Wireframe.png, "Wireframe")
+![Alt text](.src/assets/SWAPI-Box-Wireframe.png, "Wireframe")
 <!-- ![Alt text](./src/assets/images/inspiration.png "Inspiration") -->
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
