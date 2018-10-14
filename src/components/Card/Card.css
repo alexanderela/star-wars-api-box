@@ -1,21 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+
 .Card {
-  border-radius: 10px;
-  background: #444444;
+  border-radius: 50px;
+  /*background: #363535;*/
+  background: url('../../assets/swapi_rough_gray.jpg');
   color: white;
   height: 20rem;
   cursor: pointer;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.Card:hover {
+  box-shadow: #d9ffd9 0px 0px 15px 2px;
 }
 
 .fav-btn-card-container {
 	display: flex;
 	justify-content: space-between;
-	padding: 0 2rem;
+	align-items: center;
+	padding: 0.5rem 2rem;
 }
 
 .fav-btn {
-	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
 	cursor: pointer;
+	height: 3.5rem;
+	width: 3.5rem;
+	box-shadow: ;
 }
+
+.fav-btn:hover {
+  box-shadow: #d9ffd9 0px 0px 20px 2px;
+}
+
 
 .fav-btn-inactive {
 	background-color: #FFF;
@@ -30,3 +52,11 @@
 	font-size: 2rem;
 }
 
+.card-text {
+	margin: 0.5rem 0.75rem;
+}
+
+.card-header {
+  color: #f9d500;
+ 	font-weight: 600;
+}

@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 import DataCleaner from '../../helper.js';
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
+import Nav from '../Nav/Nav.js';
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
 
   showPeople = async (e) => {
     const people = await this.state.dataCleaner.getPerson()
+
     if (this.state.peopleSelected === true) {
       this.setState({ peopleSelected: false })
     } else {
@@ -81,24 +83,11 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <h1 className="app-title">SWAPI Box</h1>
-          <div className="button-container">
-            <button 
-              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
-              name="people"
-              onClick={this.showPeople}
-            >People</button>
-            <button 
-              className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
-              name="planets"
-              onClick={this.showPlanets}
-            >Planets</button>
-            <button 
-              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
-              name="vehicles"
-              onClick={this.showVehicles}
-            >Vehicles</button>
-            <FavoriteButton className="FavoriteButton" />
-          </div>
+          <Nav 
+            showPeople={this.showPeople}
+            showPlanet={this.showPlanets}
+            showVehicle={this.showVehicles}
+          />
         </header>
         {people ? <CardContainer people={people} /> : null}
       </div>
@@ -108,24 +97,11 @@ class App extends Component {
        <div className="App">
         <header className="header">
           <h1 className="app-title">SWAPI Box</h1>
-          <div className="button-container">
-            <button 
-              className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
-              name="people"
-              onClick={this.showPeople}
-            >People</button>
-            <button 
-              className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
-              name="planets"
-              onClick={this.showPlanets}
-            >Planets</button>
-            <button 
-              className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
-              name="vehicles"
-              onClick={this.showVehicles}
-            >Vehicles</button>
-            <FavoriteButton className="FavoriteButton" />
-          </div>
+          <Nav 
+            showPeople={this.showPeople}
+            showPlanet={this.showPlanets}
+            showVehicle={this.showVehicles}
+          />
         </header>
         {vehicles ? <CardContainer vehicles={vehicles} /> : null}
       </div>
@@ -135,24 +111,11 @@ class App extends Component {
        <div className="App">
           <header className="header">
             <h1 className="app-title">SWAPI Box</h1>
-            <div className="button-container">
-              <button 
-                className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
-                name="people"
-                onClick={this.showPeople}
-              >People</button>
-              <button 
-                className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
-                name="planets"
-                onClick={this.showPlanets}
-              >Planets</button>
-              <button 
-                className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
-                name="vehicles"
-                onClick={this.showVehicles}
-              >Vehicles</button>
-              <FavoriteButton className="FavoriteButton" />
-            </div>
+            <Nav 
+            showPeople={this.showPeople}
+            showPlanet={this.showPlanets}
+            showVehicle={this.showVehicles}
+          />
           </header>
           {planets ? <CardContainer planets={planets} /> : null}
         </div>
@@ -162,24 +125,11 @@ class App extends Component {
        <div className="App">
           <header className="header">
             <h1 className="app-title">SWAPI Box</h1>
-            <div className="button-container">
-              <button 
-                className={`cat-button people-button ${peopleSelected ? "cat-button-active" : "cat-button-inactive" }`}
-                name="people"
-                onClick={this.showPeople}
-              >People</button>
-              <button 
-                className={`cat-button planets-button ${planetsSelected ? "cat-button-active" : "cat-button-inactive" } ? `}
-                name="planets"
-                onClick={this.showPlanets}
-              >Planets</button>
-              <button 
-                className={`cat-button vehicles-button ${vehiclesSelected ? "cat-button-active" : "cat-button-inactive" }`}
-                name="vehicles"
-                onClick={this.showVehicles}
-              >Vehicles</button>
-              <FavoriteButton className="FavoriteButton" />
-            </div>
+             <Nav 
+            showPeople={this.showPeople}
+            showPlanet={this.showPlanets}
+            showVehicle={this.showVehicles}
+          />
           </header>
           <Sidebar films={films}/>
         </div>
