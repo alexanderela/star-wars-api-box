@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './Card';
-import mockPerson from '../../mockData/mockPerson.js';
 import { shallow } from 'enzyme';
 
 describe('Card', () => {
@@ -17,8 +16,20 @@ describe('Card', () => {
 	})
 
 	it('renders people cards if people props are present', () => {
-		wrapper = shallow(<Card people={mockPerson}/>)
-		expect(wrapper.find('h3').length).toEqual(7)
+			const mockPeople = [{
+	          "name": "Luke Skywalker",
+	          "homeworld": { 
+	            "planetName":"Tatooine",
+	            "planetPop": "200000"
+	            },
+	          "species": {
+	              "speciesName": "Human",
+	              "language": "Galactic Basic"
+	            }
+	        }]
+
+			wrapper = shallow(<Card people={mockPeople}/>)
+			expect(wrapper.find('h3').length).toEqual(7)
 	})
 
 	it('renders vehicle cards if vehicle props are present', () => {
@@ -34,7 +45,5 @@ describe('Card', () => {
 		wrapper.instance().selectCard('people')
 		expect(wrapper.state().isSelected).toBe(true)
 	})
-
-
 
 })

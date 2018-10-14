@@ -99,6 +99,12 @@ if (people) {
 	)	
 }
 }
+
+}
+Card.propTypes = {
+	people: PropTypes.object,
+	vehicles: PropTypes.object,
+	planets: PropTypes.object
 }
 
 export default Card
