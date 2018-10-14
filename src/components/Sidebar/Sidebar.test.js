@@ -4,10 +4,26 @@ import Sidebar from './Sidebar';
 import { shallow } from 'enzyme';
 
 describe('Sidebar', () => {
-	xit('matches the snapshot', () => {
-		const wrapper = shallow(<Sidebar />);
+	let wrapper;
+
+	beforeEach(() => {
+		const mockFilm = {"opening_crawl": "Oh hayyyyy...", "episode_id": 3, 
+		"title": "Revenge of the Sith"}
+		wrapper = shallow(<Sidebar films={mockFilm}/>);
+
+	})
+	
+	it('matches the snapshot', () => {
 		expect(wrapper).toMatchSnapshot();
 	})
 
+	it('converts numbers to roman numerals', () => {
+	
+
+	})
+
+	it('displays a scrolling title page', () => {
+
+	})
 
 })

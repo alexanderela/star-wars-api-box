@@ -28,6 +28,7 @@ class App extends Component {
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
+    console.log(films)
     this.setState({ films })
   }
 

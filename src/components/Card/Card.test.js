@@ -5,15 +5,18 @@ import { shallow } from 'enzyme';
 
 describe('Card', () => {
 	let wrapper;
+
+	const selectCardFunc = jest.fn()
+
 	it('matches the snapshot', () => {
 		const wrapper = shallow(<Card />);
 		expect(wrapper).toMatchSnapshot();
 	})
 
 	it('renders people cards if people props are present', () => {
-			const mockPeople = [{
+			const mockPeople = {
 	          "name": "Luke Skywalker",
-	          "homeworld": { 
+	          "homeWorld": { 
 	            "planetName":"Tatooine",
 	            "planetPop": "200000"
 	            },
@@ -21,24 +24,74 @@ describe('Card', () => {
 	              "speciesName": "Human",
 	              "language": "Galactic Basic"
 	            }
-	        }]
+	        }
 
 			wrapper = shallow(<Card people={mockPeople}/>)
-			expect(wrapper.find('h3').length).toEqual(7)
+			expect(wrapper.find('h3').length).toEqual(1)
 	})
 
 	it('renders vehicle cards if vehicle props are present', () => {
-		wrapper = shallow(<Card vehicles={vehicles}/>)
+			const mockVehicles = {"class": "wheeled", 
+				"model": "Digger Crawler",
+				"name": "Sand Crawler", "passengers": "30"}
+			
+		const wrapper = shallow(<Card vehicles={mockVehicles} />)
+		expect(wrapper.find('h3').length).toEqual(1)
 	})
 
 	it('renders planet cards if planet props are present', () => {
-		wrapper = shallow(<Card planets={planets}/>)
+			const mockPlanets = {"name": "Alderaan", 
+				"terrain": "grasslands, mountains", 
+				"population": "2000000000", "climate": "temperate", 
+			"residents": 
+				["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}
+		wrapper = shallow(<Card planets={mockPlanets}/>)
+		expect(wrapper.find('h3').length).toEqual(1)
 	})
 
-	it('highlights favorite button on click', () => {
-		wrapper = shallow(<Card />)
-		wrapper.instance().selectCard('people')
+	it('highlights people favorite button on click', () => {
+			const mockPeople = {
+	          "name": "Luke Skywalker",
+	          "homeWorld": { 
+	            "planetName":"Tatooine",
+	            "planetPop": "200000"
+	            },
+	          "species": {
+	              "speciesName": "Human",
+	              "language": "Galactic Basic"
+	            }
+	        }
+		wrapper = shallow(<Card people={mockPeople}/>)		
+		wrapper.find('.people-fav').simulate('click')
 		expect(wrapper.state().isSelected).toBe(true)
 	})
 
+	it('highlights vehicle favorite button on click', () => {
+		const mockVehicles = {"class": "wheeled", 
+			"model": "Digger Crawler",
+			"name": "Sand Crawler", "passengers": "30"}		
+		wrapper = shallow(<Card vehicles={mockVehicles}/>)		
+		wrapper.find('.vehicle-fav').simulate('click')
+		expect(wrapper.state().isSelected).toBe(true)
+	})
+
+	it('highlights planet favorite button on click', () => {
+		const mockPlanets = {"name": "Alderaan", 
+			"terrain": "grasslands, mountains", 
+			"population": "2000000000", "climate": "temperate", 
+		"residents": 
+			["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}
+		wrapper = shallow(<Card planets={mockPlanets}/>)		
+		wrapper.find('.planet-fav').simulate('click')
+		expect(wrapper.state().isSelected).toBe(true)
+	})
+
+	it('prints default entry if data provides no residents', () => {
+			const mockPlanets = {"name": "Alderaan", 
+				"terrain": "grasslands, mountains", 
+				"population": "2000000000", "climate": "temperate", 
+			"residents": []}
+		wrapper = shallow(<Card planets={mockPlanets}/>)
+		expect(wrapper.find('.planet-residents')).toBeDefined()
+	})
 })
