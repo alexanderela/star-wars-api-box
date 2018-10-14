@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Nav';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import people from '../../mockData/mockPeople.js';
 
 describe('Nav', () => {
 	let wrapper;
 	let mockFunction;
 
 	beforeEach(() => {
-		wrapper = shallow(<Nav   
-						showPeople={jest.fn()}
-            showPlanet={jest.fn()}
-            showVehicle={jest.fn()}/>)
     mockFunction = jest.fn()
+		wrapper = shallow(<Nav   
+						showPeople={mockFunction}
+            showPlanet={mockFunction}
+            showVehicle={mockFunction}/>)
 	})
 
 	it('matches the snapshot', () => {
@@ -21,7 +22,6 @@ describe('Nav', () => {
 
 	it('activates People category on click of People button', () => {
 		const expectedState = {
-			people: people,
       peopleSelected: true,
       vehiclesSelected: false,
       planetsSelected: false
@@ -36,9 +36,19 @@ describe('Nav', () => {
       vehiclesSelected: false,
       planetsSelected: false
 		}
-		wrapper.setState({peopleSelected: true })
+		wrapper.setState({ peopleSelected: true })
 		wrapper.find('.people-button').simulate('click')
 		expect(wrapper.state()).toEqual(expectedState)
+	})
+
+	it('invokes showPeople', () => {
+				wrapper = mount(<Nav   
+						showPeople={mockFunction}
+            showPlanet={mockFunction}
+            showVehicle={mockFunction}/>)
+		const spy = spyOn(wrapper,'showPeople')
+		wrapper.instance().handlePeopleClick
+		expect(spy).toBeCalled()
 	})
 
 	it('activates Planets category on click of Planets button', () => {

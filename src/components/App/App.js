@@ -32,12 +32,13 @@ class App extends Component {
     this.setState({ films })
   }
 
-  showPeople = async (e) => {
+  showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
-
+    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({ peopleSelected: false })
     } else {
+
     this.setState({ 
       people: people, 
       vehiclesSelected: false,        
@@ -49,9 +50,12 @@ class App extends Component {
 
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
+    console.log(vehicles)
     if (this.state.vehiclesSelected === true) {
+      // console.log('1st conditional firing')
       this.setState({ vehiclesSelected: false })
     } else {
+      // console.log('2nd conditional firing')
     this.setState({  
       vehicles: vehicles, 
       peopleSelected: false,        
