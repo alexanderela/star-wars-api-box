@@ -16,9 +16,7 @@ class DataCleaner {
 		} else {
 		 	const movieData = await response.json()
 		 	const returnedMovieData = await movieData.results[this.randomEpisode] 
-		 	//returnedMovieData is an object
 		 	const film = await this.returnMovieInfo(returnedMovieData)
-		 	// console.log(film)
 		 	return film
 		}
 	}
@@ -38,16 +36,21 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		} else {
 			const peopleData = await response.json()
-			const returnedPeopleData = await peopleData.results.map( async person => {
+			const returnedPeopleData = await this.returnPeopleData(peopleData.results)
+			return Promise.all(returnedPeopleData)
+		}
+	}
+
+	async returnPeopleData(personCollection) {
+		debugger
+		await personCollection.map( async person => {
 			const newPerson = {}
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
 			newPerson.species = await this.getSpecies(person)
 			return newPerson
 		})
-		return Promise.all(returnedPeopleData)
 	}
-}
 
 	async getHomeWorld(person) {
 		const response = await fetch(person.homeworld)
@@ -56,8 +59,8 @@ class DataCleaner {
 		} else {
 			const homeWorldData = await response.json()
 			return { planetName: homeWorldData.name, planetPop: homeWorldData.population }
+		}
 	}
-}
 
 	async getSpecies(person) {
 		const response = await fetch(person.species[0])
@@ -76,28 +79,34 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		}	else {
 			const planetData = await response.json()
-			const returnedPlanetData = await planetData.results.map( async planet => {
-				const newPlanet = {}
-				newPlanet.name = planet.name
-				newPlanet.terrain = planet.terrain
-				newPlanet.population = planet.population
-				newPlanet.climate = planet.climate
-				newPlanet.residents = await this.getResidents(planet)
-				// console.log(newPlanet)
-			// console.log(newPlanet)
-				return newPlanet
+			const returnedPlanetData = await returnPlanetData(planetData.results)
 			})
 			return Promise.all(returnedPlanetData)
 		}
 	}
 
+	async returnPlanetData(planetCollection) {
+		await planetCollection.results.map( async planet => {
+			const newPlanet = {}
+			newPlanet.name = planet.name
+			newPlanet.terrain = planet.terrain
+			newPlanet.population = planet.population
+			newPlanet.climate = planet.climate
+			newPlanet.residents = await this.getResidents(planet)
+			return newPlanet
+	})
+
 	async getResidents(planet) {
-		const fetchResidents = await planet.residents.map( async resident => {
+		const fetchResidents = await fetchTenants(planet.residents)
+		return Promise.all(fetchResidents)
+	}
+
+	async fetchTenants(planetResidentCollection) {
+		planetResidentCollection.map( async resident => {
 			const response = await fetch(resident)
 			const residentData = await response.json()
 			return residentData.name
 		})
-		return Promise.all(fetchResidents)
 	}
 
 //Get vehicles
