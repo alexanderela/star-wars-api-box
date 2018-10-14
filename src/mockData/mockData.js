@@ -1313,7 +1313,7 @@ const mockLuke = {
         }
 
 
-export default {
+export {
   films,
   people,
   planets,

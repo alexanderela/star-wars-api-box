@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow, mount } from 'enzyme';
-// import dataCleaner from '../../helper.js'
+import DataCleaner from '../../helper.js'
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -15,15 +15,30 @@ it('matches the snapshot', () => {
 	expect(wrapper).toMatchSnapshot();
 })
 
-xit('invokes scrollFilm function on componentDidMount', () => {
-	const dataCleaner = jest.fn()
-	const wrapper = mount(<App />);
+it('invokes showFilm function on componentDidMount', () => {
+	const showFilm = jest.fn()
+	const wrapper = shallow(<App />);
 	wrapper.update();
-	expect(dataCleaner).toBeCalled()
+	expect(showFilm).toHaveBeCalled()
 })
 
-xit('displays randomly scrolling film', () => {
+it('has the correct default state', () => {
+	const mockMath = Object.create(global.Math)
+	mockMath.random = () => 0.5;
+	global.Math = mockMath
+
 	const wrapper = shallow(<App />);
+	const expected = {
+		dataCleaner: new DataCleaner(),
+    films: {},
+    people: [],
+    vehicles: [],
+    planets: [],
+    peopleSelected: false,
+    vehiclesSelected: false,
+    planetsSelected: false
+	}
+	expect(wrapper.state()).toEqual(expected)
 
 })
 

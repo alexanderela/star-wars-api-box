@@ -62,7 +62,6 @@ class App extends Component {
 
   showPlanets = async (e) => {
     const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)
     if (this.state.planetSelected === true) {
       this.setState({ planetSelected: false })
     } else {

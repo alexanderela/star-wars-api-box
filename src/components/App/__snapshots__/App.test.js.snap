@@ -26,34 +26,11 @@ ShallowWrapper {
           >
             SWAPI Box
           </h1>
-          <div
-            className="button-container"
-          >
-            <button
-              className="cat-button people-button cat-button-inactive"
-              name="people"
-              onClick={[Function]}
-            >
-              People
-            </button>
-            <button
-              className="cat-button planets-button cat-button-inactive ? "
-              name="planets"
-              onClick={[Function]}
-            >
-              Planets
-            </button>
-            <button
-              className="cat-button vehicles-button cat-button-inactive"
-              name="vehicles"
-              onClick={[Function]}
-            >
-              Vehicles
-            </button>
-            <FavoriteButton
-              className="FavoriteButton"
-            />
-          </div>
+          <Nav
+            showPeople={[Function]}
+            showPlanet={[Function]}
+            showVehicle={[Function]}
+          />
         </header>,
         <Sidebar
           films={Object {}}
@@ -74,34 +51,11 @@ ShallowWrapper {
             >
               SWAPI Box
             </h1>,
-            <div
-              className="button-container"
-            >
-              <button
-                className="cat-button people-button cat-button-inactive"
-                name="people"
-                onClick={[Function]}
-              >
-                People
-              </button>
-              <button
-                className="cat-button planets-button cat-button-inactive ? "
-                name="planets"
-                onClick={[Function]}
-              >
-                Planets
-              </button>
-              <button
-                className="cat-button vehicles-button cat-button-inactive"
-                name="vehicles"
-                onClick={[Function]}
-              >
-                Vehicles
-              </button>
-              <FavoriteButton
-                className="FavoriteButton"
-              />
-            </div>,
+            <Nav
+              showPeople={[Function]}
+              showPlanet={[Function]}
+              showVehicle={[Function]}
+            />,
           ],
           "className": "header",
         },
@@ -122,93 +76,15 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
-              "children": Array [
-                <button
-                  className="cat-button people-button cat-button-inactive"
-                  name="people"
-                  onClick={[Function]}
-                >
-                  People
-                </button>,
-                <button
-                  className="cat-button planets-button cat-button-inactive ? "
-                  name="planets"
-                  onClick={[Function]}
-                >
-                  Planets
-                </button>,
-                <button
-                  className="cat-button vehicles-button cat-button-inactive"
-                  name="vehicles"
-                  onClick={[Function]}
-                >
-                  Vehicles
-                </button>,
-                <FavoriteButton
-                  className="FavoriteButton"
-                />,
-              ],
-              "className": "button-container",
+              "showPeople": [Function],
+              "showPlanet": [Function],
+              "showVehicle": [Function],
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "People",
-                  "className": "cat-button people-button cat-button-inactive",
-                  "name": "people",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "People",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Planets",
-                  "className": "cat-button planets-button cat-button-inactive ? ",
-                  "name": "planets",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Planets",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Vehicles",
-                  "className": "cat-button vehicles-button cat-button-inactive",
-                  "name": "vehicles",
-                  "onClick": [Function],
-                },
-                "ref": null,
-                "rendered": "Vehicles",
-                "type": "button",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "className": "FavoriteButton",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-            ],
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": "header",
@@ -242,34 +118,11 @@ ShallowWrapper {
             >
               SWAPI Box
             </h1>
-            <div
-              className="button-container"
-            >
-              <button
-                className="cat-button people-button cat-button-inactive"
-                name="people"
-                onClick={[Function]}
-              >
-                People
-              </button>
-              <button
-                className="cat-button planets-button cat-button-inactive ? "
-                name="planets"
-                onClick={[Function]}
-              >
-                Planets
-              </button>
-              <button
-                className="cat-button vehicles-button cat-button-inactive"
-                name="vehicles"
-                onClick={[Function]}
-              >
-                Vehicles
-              </button>
-              <FavoriteButton
-                className="FavoriteButton"
-              />
-            </div>
+            <Nav
+              showPeople={[Function]}
+              showPlanet={[Function]}
+              showVehicle={[Function]}
+            />
           </header>,
           <Sidebar
             films={Object {}}
@@ -290,34 +143,11 @@ ShallowWrapper {
               >
                 SWAPI Box
               </h1>,
-              <div
-                className="button-container"
-              >
-                <button
-                  className="cat-button people-button cat-button-inactive"
-                  name="people"
-                  onClick={[Function]}
-                >
-                  People
-                </button>
-                <button
-                  className="cat-button planets-button cat-button-inactive ? "
-                  name="planets"
-                  onClick={[Function]}
-                >
-                  Planets
-                </button>
-                <button
-                  className="cat-button vehicles-button cat-button-inactive"
-                  name="vehicles"
-                  onClick={[Function]}
-                >
-                  Vehicles
-                </button>
-                <FavoriteButton
-                  className="FavoriteButton"
-                />
-              </div>,
+              <Nav
+                showPeople={[Function]}
+                showPlanet={[Function]}
+                showVehicle={[Function]}
+              />,
             ],
             "className": "header",
           },
@@ -338,93 +168,15 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
-                "children": Array [
-                  <button
-                    className="cat-button people-button cat-button-inactive"
-                    name="people"
-                    onClick={[Function]}
-                  >
-                    People
-                  </button>,
-                  <button
-                    className="cat-button planets-button cat-button-inactive ? "
-                    name="planets"
-                    onClick={[Function]}
-                  >
-                    Planets
-                  </button>,
-                  <button
-                    className="cat-button vehicles-button cat-button-inactive"
-                    name="vehicles"
-                    onClick={[Function]}
-                  >
-                    Vehicles
-                  </button>,
-                  <FavoriteButton
-                    className="FavoriteButton"
-                  />,
-                ],
-                "className": "button-container",
+                "showPeople": [Function],
+                "showPlanet": [Function],
+                "showVehicle": [Function],
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "People",
-                    "className": "cat-button people-button cat-button-inactive",
-                    "name": "people",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "People",
-                  "type": "button",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Planets",
-                    "className": "cat-button planets-button cat-button-inactive ? ",
-                    "name": "planets",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Planets",
-                  "type": "button",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Vehicles",
-                    "className": "cat-button vehicles-button cat-button-inactive",
-                    "name": "vehicles",
-                    "onClick": [Function],
-                  },
-                  "ref": null,
-                  "rendered": "Vehicles",
-                  "type": "button",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "className": "FavoriteButton",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
-                },
-              ],
-              "type": "div",
+              "rendered": null,
+              "type": [Function],
             },
           ],
           "type": "header",

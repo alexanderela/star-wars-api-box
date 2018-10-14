@@ -20,10 +20,7 @@ ShallowWrapper {
       "children": <button
         className="cat-button favorites-button"
       >
-        Favorites 
-        <i
-          className="fas fa-jedi"
-        />
+        Favorites
       </button>,
       "className": "FavoriteButton",
     },
@@ -33,29 +30,11 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          "Favorites ",
-          <i
-            className="fas fa-jedi"
-          />,
-        ],
+        "children": "Favorites",
         "className": "cat-button favorites-button",
       },
       "ref": null,
-      "rendered": Array [
-        "Favorites ",
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "fas fa-jedi",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "i",
-        },
-      ],
+      "rendered": "Favorites",
       "type": "button",
     },
     "type": "div",
@@ -69,10 +48,7 @@ ShallowWrapper {
         "children": <button
           className="cat-button favorites-button"
         >
-          Favorites 
-          <i
-            className="fas fa-jedi"
-          />
+          Favorites
         </button>,
         "className": "FavoriteButton",
       },
@@ -82,29 +58,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            "Favorites ",
-            <i
-              className="fas fa-jedi"
-            />,
-          ],
+          "children": "Favorites",
           "className": "cat-button favorites-button",
         },
         "ref": null,
-        "rendered": Array [
-          "Favorites ",
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "fas fa-jedi",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "i",
-          },
-        ],
+        "rendered": "Favorites",
         "type": "button",
       },
       "type": "div",
