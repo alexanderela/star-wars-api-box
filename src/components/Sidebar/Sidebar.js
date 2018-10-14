@@ -11,27 +11,14 @@ class Sidebar extends Component {
 
 	romanizeNum = (episodeNum) => {
 	  let roman = ''
-	  if (episodeNum === 1) {
-	    roman = 'I'
-	  } else if (episodeNum === 2) {
-	    roman = 'II'
-	  } else if (episodeNum === 3) {
-	    roman = 'III'
-	  } else if (episodeNum === 4) {
-	    roman = 'IV'
-	  } else if (episodeNum === 5) {
-	    roman = 'V'
-	  } else if (episodeNum === 6) {
-	    roman = 'VI'
-	  } else if (episodeNum === 7) {
-	    roman = 'VII'
-	  } else if (episodeNum === 8) {
-	    roman = 'VIII'
-	  } else if (episodeNum === 9) {
-	    roman = 'IX'
-	  } else if (episodeNum === 10) {
-	    roman = 'X'
-	  }
+	  let romanNums = [
+	  	'I','II','III','IV','V','VI','VII','VIII','IX', 'X'
+	  ]
+	  romanNums.forEach(num => {
+	  	if(romanNums[episodeNum]) {
+	  		roman = romanNums[episodeNum]
+	  	}
+	  })
 
 	  return roman
 	}

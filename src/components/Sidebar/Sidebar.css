@@ -33,16 +33,16 @@
   text-align: justify;
   background: url('../../assets/SWAPI-background.jpg');
   word-spacing: normal;
-  position: relative;
-  z-index: 1;
-  top: -1rem;
   overflow: hidden;
+  position: relative;
+  top: -1rem;
+  z-index: 1;
 }
 
 .crawl {
   position: relative;
   transform-origin: 50% 100%;
-  animation: crawl 60s linear;
+  animation: crawl 90s linear;
 }
 
 .title {
