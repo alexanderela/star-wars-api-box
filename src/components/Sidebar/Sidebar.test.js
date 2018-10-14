@@ -17,13 +17,13 @@ describe('Sidebar', () => {
 		expect(wrapper).toMatchSnapshot();
 	})
 
-	it('converts numbers to roman numerals', () => {
+	// it('converts numbers to roman numerals', () => {
 	
 
-	})
+	// })
 
-	it('displays a scrolling title page', () => {
+	// it('displays a scrolling title page', () => {
 
-	})
+	// })
 
 })
