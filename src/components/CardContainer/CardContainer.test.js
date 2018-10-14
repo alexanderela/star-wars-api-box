@@ -14,6 +14,6 @@ it('matches the snapshot', () => {
 
 it('renders each card', () => {
 	const mockData = [{"luke skywalker": {}}, {"C3P0": {}}, {"leia organa": {}}]
-	const wrapper = shallow(<CardContainer people={mockData} key={Date.now()} />);
+	const wrapper = shallow(<CardContainer person={people.results}w />);
 	expect(wrapper.find(Card).length).toEqual(3)
 })
