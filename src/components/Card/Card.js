@@ -33,10 +33,18 @@ if (people) {
 		    	<i className="fas fa-jedi"></i>
 		    </button>
 	    </div>
-	    <p>Species: {species.speciesName}</p>
-	    <p>Language: {species.language}</p>
-	    <p>Homeworld: {homeWorld.planetName}</p>
-	    <p>Population: {homeWorld.planetPop}</p>
+	    <p className="card-text" >
+	    	<span className="card-header">Species:
+	    	</span> {species.speciesName}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Language:
+	    	</span> {species.language}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Homeworld:
+	    	</span> {homeWorld.planetName}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Population:
+	    	</span> {homeWorld.planetPop}</p>
 		</div>
 	)
 } else if (vehicles) {
@@ -52,9 +60,15 @@ if (people) {
 		    	<i className="fas fa-jedi"></i>
 		    </button>
 	    </div>
-	    <p>Model: {vehicles.model}</p>
-	    <p>Class: {vehicles.class.toUpperCase()}</p>
-	    <p>Passengers: {vehicles.passengers}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Model:
+	    	</span> {vehicles.model}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Class:
+	    	</span> {vehicles.class.toUpperCase()}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Passengers:
+	    	</span> {vehicles.passengers}</p>
 		</div>
 	)
 } else if (planets) {
@@ -69,10 +83,18 @@ if (people) {
 		    	<i className="fas fa-jedi"></i>
 		    </button>
 	    </div>
-	    <p>Terrain: {planets.terrain}</p>
-	    <p>Population: {planets.population}</p>
-	    <p>Climate: {planets.climate}</p>
-	    <p>Residents: {planets.residents.join(", ") || "n/a"}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Terrain:
+	    	</span> {planets.terrain}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Population:
+	    	</span> {planets.population}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Climate:
+	    	</span> {planets.climate}</p>
+	    <p className="card-text">
+	    	<span className="card-header">Residents:
+	    	</span> {planets.residents.join(", ") || "n/a"}</p>
 		</div>
 	)	
 }

@@ -3,9 +3,9 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 
 const CardContainer = ({people, vehicles, planets}) => {
-	console.log(vehicles)
 	if (people) {
 		const peopleCards = people.map((person) => {
+	console.log(person)
 			return <Card people={people} {...person} key={person.name} />
 		})
 
