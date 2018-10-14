@@ -82,14 +82,14 @@ it('sets people to state ', async () => {
   await expect(wrapper.state().people).toEqual(mockLuke)
 })
 
-it('should toggle the state of vehicles if it is already selected', () => {
-	wrapper.state({ 
+it('should toggle the state of vehicles if it is already selected', async () => {
+	wrapper.setState({ 
 		vehicles: [], 
 		peopleSelected: false, 
 		planetsSelected: false, 
 		vehiclesSelected: true,
 	})
-	wrapper.instance().showVehicles()
+	wrapper.instance().toggleCategoryState()
 	expect(wrapper.state().vehiclesSelected).toBe(false)
 })
 
@@ -107,7 +107,7 @@ it('sets vehicles to state ', async () => {
 })
 
 it('should toggle the state of planets if it is already selected', () => {
-	wrapper.state({ planetsSelected: true })
+	wrapper.setState({ planetsSelected: true })
 	wrapper.instance().showPlanets()
 	expect(wrapper.state().planetsSelected).toBe(false)
 })

@@ -41,16 +41,6 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('invokes showPeople', () => {
-				wrapper = mount(<Nav   
-						showPeople={mockFunction}
-            showPlanet={mockFunction}
-            showVehicle={mockFunction}/>)
-		const spy = spyOn(wrapper,'showPeople')
-		wrapper.instance().handlePeopleClick
-		expect(spy).toBeCalled()
-	})
-
 	it('activates Planets category on click of Planets button', () => {
 		const expectedState = {
       peopleSelected: false,

@@ -28,12 +28,27 @@ class App extends Component {
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
-    console.log(films)
+    // console.log(films)
     this.setState({ films })
+  }
+
+  toggleCategoryState = (categoryName) => {
+    console.log('toggleCategory hooked up')
+    if (categoryName === 'people') {
+      this.setState({ peopleSelected: true })
+      this.showPeople()
+    } else if (categoryName === 'vehicles') {
+      this.setState({ vehiclesSelected: true })
+      this.showVehicles()
+    } else if (categoryName === 'planets') {
+      this.setState({ planetsSelected: true })
+      this.showPlanets()
+    }
   }
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
+    // console.log(people + 'state: ' + this.state.peopleSelected)
     if (this.state.peopleSelected === true) {
       this.setState({ peopleSelected: false })
     } else {
@@ -86,11 +101,10 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
+            toggleCategoryState={this.toggleCategoryState}
           />
         </header>
-        {people ? <CardContainer 
-            className="Card-Container-people" 
-            people={people} /> : null}
+        {people ? <CardContainer people={people} /> : null}
       </div>
     );
     } else if (vehiclesSelected) {
@@ -102,6 +116,7 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
+            toggleCategoryState={this.toggleCategoryState}
           />
         </header>
         {vehicles ? <CardContainer vehicles={vehicles} /> : null}
@@ -116,6 +131,7 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
+            toggleCategoryState={this.toggleCategoryState}
           />
           </header>
           {planets ? <CardContainer planets={planets} /> : null}
@@ -130,6 +146,7 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
+            toggleCategoryState={this.toggleCategoryState}            
           />
           </header>
           <Sidebar films={films}/>

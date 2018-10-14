@@ -16,7 +16,9 @@ class Nav extends Component {
 
 	handlePeopleClick = (e) => {
 		if (this.state.peopleSelected === true) {
+			const { name } = e.target
 			this.setState({ peopleSelected: false })
+			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: true,      
@@ -28,8 +30,10 @@ class Nav extends Component {
 	}
 
 	handlePlanetClick = (e) => {
+		const { name } = e.target
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })
+			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: false,      
@@ -41,8 +45,10 @@ class Nav extends Component {
 	}
 
 	handleVehicleClick = (e) => {
+		const { name } = e.target
 		if (this.state.vehiclesSelected === true) {
 			this.setState({ vehiclesSelected: false })
+			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 				
 				peopleSelected: false,      
@@ -71,7 +77,7 @@ render() {
 		      className={`cat-button planets-button 
 		      	${planetsSelected 
 		      		? "cat-button-active" 
-		      		: "cat-button-inactive" } ? `}
+		      		: "cat-button-inactive" }`}
 		      name="planets"
 		      onClick={this.handlePlanetClick}
 		    >Planets</button>
