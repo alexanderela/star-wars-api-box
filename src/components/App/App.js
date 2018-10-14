@@ -57,7 +57,6 @@ class App extends Component {
       planetsSelected: false,        
       vehiclesSelected: true  
       })
-    console.log(this.state.vehiclesSelected)
     }
   }
 

@@ -25,6 +25,7 @@ let mockEvent;
 let mockLuke;
 let mockVehicle;
 let mockPlanet;
+let mockFilm;
 
 beforeEach(() => {
 	wrapper = shallow(<App />);	
@@ -43,8 +44,20 @@ it('invokes showFilm function on componentDidMount', () => {
 
 it('has the correct default state for films', () => {
 	expect(wrapper.state().films).not.toBe('{}')
-
 })
+
+it('sets film to state', async () => {
+	mockFilm = {
+		opening_crawl: "Heyy youu guyyyys", 
+		episode_id: 7, 
+		title: "The Force Awakens"
+	}
+	wrapper.state().dataCleaner.getMovie = jest.fn().mockImplementation(() => Promise.resolve(
+		mockFilm))
+	await wrapper.instance().showFilm()
+	await expect(wrapper.state().films).toEqual(mockFilm)
+})
+
 it('should toggle the state of people if it is already selected', () => {
 	wrapper.state({ peopleSelected: true })
 	wrapper.instance().showPeople()
