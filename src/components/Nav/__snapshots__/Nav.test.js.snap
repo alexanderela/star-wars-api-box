@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav Component should render without crashing 1`] = `
+exports[`Nav matches the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Nav />,
+  Symbol(enzyme.__unrendered__): <Nav
+    showPeople={[MockFunction]}
+    showPlanet={[MockFunction]}
+    showVehicle={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

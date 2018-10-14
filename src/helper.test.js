@@ -123,7 +123,7 @@ describe('DataCleaner', () => {
 
 	
 	describe('getSpecies', () => {
-		xit('calls fetch with the correct parameters', async () => {
+		it('calls fetch with the correct parameters', async () => {
 			const expected = "https://swapi.co/api/species/1/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status:200,
@@ -133,7 +133,7 @@ describe('DataCleaner', () => {
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', async () => {
+		it('throws an error if the fetch call fails', async () => {
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,

@@ -17,45 +17,47 @@ selectCard = (card) => {
 }
 
 render() {
-	const { name, species, homeWorld, vehicles, people, planets } = this.props
+	const { people, vehicles, planets } = this.props
 	const { isSelected } = this.state
 
 if (people) {
-	console.log(people)
+
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
-		    <h3>{name}</h3>
+		    <h3>{people.name}</h3>
 		    <button 
-		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	className={ `fav-btn people-fav 
+		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
+		    	onClick={() => this.selectCard(people.name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
 	    </div>
 	    <p className="card-text" >
 	    	<span className="card-header">Species:
-	    	</span> {species.speciesName}</p>
+	    	</span> {people.species.speciesName}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Language:
-	    	</span> {species.language}</p>
+	    	</span> {people.species.language}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Homeworld:
-	    	</span> {homeWorld.planetName}</p>
+	    	</span> {people.homeWorld.planetName}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Population:
-	    	</span> {homeWorld.planetPop}</p>
+	    	</span> {people.homeWorld.planetPop}</p>
 		</div>
 	)
 } else if (vehicles) {
-	console.log(vehicles)
+
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
 		    <h3>{vehicles.name}</h3>
 		    <button 
-		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	className={ `fav-btn vehicle-fav 
+		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
+		    	onClick={() => this.selectCard(vehicles.name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -65,7 +67,7 @@ if (people) {
 	    	</span> {vehicles.model}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Class:
-	    	</span> {vehicles.class.toUpperCase()}</p>
+	    	</span> {vehicles.class}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Passengers:
 	    	</span> {vehicles.passengers}</p>
@@ -77,8 +79,9 @@ if (people) {
 	    <div className="fav-btn-card-container">
 		    <h3>{planets.name}</h3>
 		    <button 
-		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	className={ `fav-btn planet-fav
+		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
+		    	onClick={() => this.selectCard(planets.name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -94,11 +97,23 @@ if (people) {
 	    	</span> {planets.climate}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Residents:
-	    	</span> {planets.residents.join(", ") || "n/a"}</p>
+	    	</span> 
+	    		<span className="planet-residents">
+	    			{planets.residents.join(", ") || "n/a"}
+	    		</span></p>
 		</div>
 	)	
 }
 }
+
+}
+Card.propTypes = {
+		people: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+]),
+	vehicles: PropTypes.object,
+	planets: PropTypes.object
 }
 
 export default Card
