@@ -21,7 +21,7 @@ render() {
 	const { isSelected } = this.state
 
 if (people) {
-	console.log(people)
+
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -48,14 +48,14 @@ if (people) {
 		</div>
 	)
 } else if (vehicles) {
-	console.log(vehicles)
+
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
 		    <h3>{vehicles.name}</h3>
 		    <button 
 		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	onClick={() => this.selectCard(vehicles.name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -65,7 +65,7 @@ if (people) {
 	    	</span> {vehicles.model}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Class:
-	    	</span> {vehicles.class.toUpperCase()}</p>
+	    	</span> {vehicles.class}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Passengers:
 	    	</span> {vehicles.passengers}</p>
@@ -78,7 +78,7 @@ if (people) {
 		    <h3>{planets.name}</h3>
 		    <button 
 		    	className={ `fav-btn ${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	onClick={() => this.selectCard(planets.name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>

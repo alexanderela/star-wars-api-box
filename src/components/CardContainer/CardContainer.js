@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 const CardContainer = ({people, vehicles, planets}) => {
 	if (people) {
 		const peopleCards = people.map((person) => {
-	console.log(person)
+	// console.log(person)
 			return <Card people={people} {...person} key={person.name} />
 		})
 
