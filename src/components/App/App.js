@@ -89,7 +89,9 @@ class App extends Component {
             showVehicle={this.showVehicles}
           />
         </header>
-        {people ? <CardContainer people={people} /> : null}
+        {people ? <CardContainer 
+            className="Card-Container-people" 
+            people={people} /> : null}
       </div>
     );
     } else if (vehiclesSelected) {

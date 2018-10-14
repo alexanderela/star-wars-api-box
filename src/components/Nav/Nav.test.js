@@ -21,6 +21,7 @@ describe('Nav', () => {
 
 	it('activates People category on click of People button', () => {
 		const expectedState = {
+			people: people,
       peopleSelected: true,
       vehiclesSelected: false,
       planetsSelected: false
