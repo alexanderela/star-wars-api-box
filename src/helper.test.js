@@ -4,6 +4,7 @@ import DataCleaner from './helper.js';
 import films from './mockData/mockFilms.js';
 import people from './mockData/mockPeople.js';
 import planets from './mockData/mockPlanets.js';
+import vehicles from './mockData/mockVehicles.js';
 import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
@@ -209,7 +210,7 @@ describe('DataCleaner', () => {
 			//Execution
 			getPlanet()
 			//Expectation
-			expect(returnPlanetData).toHaveBeenCalledWith(mockPlanetData)
+			await expect(returnPlanetData).toHaveBeenCalledWith(mockPlanetData)
 		})
 	})
 
@@ -290,24 +291,40 @@ describe('DataCleaner', () => {
 			await expect(window.fetch).toHaveBeenCalledWith(residents[0])
 			await expect(window.fetch).toHaveBeenCalledWith(residents[1])
 			await expect(window.fetch).toHaveBeenCalledWith(residents[2])
-			})
-
-		xit('throws an error if the fetch call fails', async () => {
-
 		})
 	})
 
 	describe('getVehicle', () => {
-		xit('should call fetch with the correct parameters', async () => {
-
+		it('should call fetch with the correct parameters', async () => {
+			const expected = "https://swapi.co/api/vehicles/"
+			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+				status:200,
+				json: () => Promise.resolve(vehicles)
+			}))
+			dataCleaner.getVehicle()
+			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', async () => {
-
+		it('throws an error if the fetch call fails', async () => {
+			const expected = Error('Fetch has failed')
+			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+				status: 500,
+				json: () => Promise.resolve(vehicles)
+			}))
+			await expect(dataCleaner.getPlanet()).rejects.toEqual(expected)
 		})
 
-		xit('should call returnVehicleData with the correct parameters', async () => {
-
+		it('should call returnVehicleData with the correct parameters', async () => {
+			//Setup
+			const mockVehicleData = await vehicles.results
+			const returnVehicleData = jest.fn()
+			const getVehicle = jest.fn(() => {
+				returnVehicleData(mockVehicleData)
+			})
+			//Execution
+			getVehicle()
+			//Expectation
+			expect(returnVehicleData).toHaveBeenCalledWith(mockVehicleData)
 		})
 	})
 })
