@@ -137,7 +137,10 @@ describe('DataCleaner', () => {
 	
 	describe('getHomeWorld', () => {
 		xit('calls fetch with the correct parameters', async () => {
-			const mockPerson = {name: 'Helpy Helperton', homeWorld: 'https://swapi.co/api/planets/'}
+			const mockPerson = {
+				name: 'Helpy Helperton', 
+				homeWorld: 'https://swapi.co/api/planets/'
+			}
 			const expected = "https://swapi.co/api/planets/1/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
@@ -199,8 +202,17 @@ describe('DataCleaner', () => {
 			await expect(dataCleaner.getPlanet()).rejects.toEqual(expected)
 		})
 
-		xit('calls returnPlanetData with the correct parameters', async () => {
-
+		it('calls returnPlanetData with the correct parameters', async () => {
+			//Setup
+			const mockPlanetData = await planets.results
+			const returnPlanetData = jest.fn()
+			const getPlanet = jest.fn(() => {
+				returnPlanetData(mockPlanetData)
+			})
+			//Execution
+			getPlanet()
+			//Expectation
+			expect(returnPlanetData).toHaveBeenCalledWith(mockPlanetData)
 		})
 	})
 
