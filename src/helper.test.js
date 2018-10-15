@@ -180,8 +180,8 @@ describe('DataCleaner', () => {
 	})
 
 	describe('getPlanet', () => {
-		xit('calls fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/planets/1/"
+		it('calls fetch with the correct parameters', async () => {
+			const expected = "https://swapi.co/api/planets/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status:200,
 				json: () => Promise.resolve(planets)
@@ -190,7 +190,7 @@ describe('DataCleaner', () => {
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', async () => {
+		it('throws an error if the fetch call fails', async () => {
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,
@@ -252,39 +252,45 @@ describe('DataCleaner', () => {
 	})
 
 	describe('getResidents', () => {
-		it('should call fetchTenants with the correct parameters', async () => {
+		it('should call getTenants with the correct parameters', async () => {
 			//Setup
 			const residents = [
         "https://swapi.co/api/people/5/",
         "https://swapi.co/api/people/68/",
         "https://swapi.co/api/people/81/"
       ]
-			const fetchTenants = jest.fn()
+			const getTenants = jest.fn()
 			const getResidents = jest.fn(() => {
-				fetchTenants(residents)
+				getTenants(residents)
 			})
 			//Execution
 			getResidents()
 			//Expectation
-			await expect(fetchTenants).toBeCalled()
+			await expect(getTenants).toBeCalled()
 		})
 	})
 
-	describe('fetchTenants', () => {
+	describe('getTenants', () => {
 		const residents = [
       "https://swapi.co/api/people/5/",
       "https://swapi.co/api/people/68/",
       "https://swapi.co/api/people/81/"
     ]
-		it('should call fetch with the correct parameters', async () => {
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 200,
-				json: () => Promise.resolve()
-				// const fetchTenants = jest.fn(() => {
-				// 	console.log('hi')
-				// })
-			}))
-		})
+		it('should call fetch for each resident', async () => {
+			const getTenants = jest.fn((mockResidentCollection) => {
+				mockResidentCollection.map(async resident => {
+					window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+						status:200,
+						json: () => Promise.resolve(residents)
+					}))		
+				})
+			})
+			
+			dataCleaner.getTenants(residents)
+			await expect(window.fetch).toHaveBeenCalledWith(residents[0])
+			await expect(window.fetch).toHaveBeenCalledWith(residents[1])
+			await expect(window.fetch).toHaveBeenCalledWith(residents[2])
+			})
 
 		xit('throws an error if the fetch call fails', async () => {
 

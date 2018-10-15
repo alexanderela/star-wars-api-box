@@ -102,11 +102,11 @@ class DataCleaner {
 	}
 
 	getResidents = async (planet) => {
-		const fetchResidents = await this.fetchTenants(planet.residents)
+		const fetchResidents = await this.getTenants(planet.residents)
 		return Promise.all(fetchResidents)
 	}
 
-	fetchTenants = async (planetResidentCollection) => {
+	getTenants = async (planetResidentCollection) => {
 		planetResidentCollection.map( async resident => {
 			const response = await fetch(resident)
 			const residentData = await response.json()
