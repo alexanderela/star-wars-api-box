@@ -17,11 +17,11 @@ selectCard = (card) => {
 }
 
 render() {
-	const { people, vehicles, planets } = this.props
+	const { name, homeWorld, species, people, vehicles, planets } = this.props
 	const { isSelected } = this.state
 
 if (people) {
-
+	console.log(people)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -29,23 +29,23 @@ if (people) {
 		    <button 
 		    	className={ `fav-btn people-fav 
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(people.name)}
+		    	onClick={() => this.selectCard(name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
 	    </div>
 	    <p className="card-text" >
 	    	<span className="card-header">Species:
-	    	</span> {people.species.speciesName}</p>
+	    	</span> {species.speciesName}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Language:
-	    	</span> {people.species.language}</p>
+	    	</span> {species.language}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Homeworld:
-	    	</span> {people.homeWorld.planetName}</p>
+	    	</span> {homeWorld.planetName}</p>
 	    <p className="card-text">
 	    	<span className="card-header">Population:
-	    	</span> {people.homeWorld.planetPop}</p>
+	    	</span> {homeWorld.planetPop}</p>
 		</div>
 	)
 } else if (vehicles) {
