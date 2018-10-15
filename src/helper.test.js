@@ -153,7 +153,7 @@ describe('DataCleaner', () => {
 				status: 500,
 				json: () => Promise.resolve(planets)
 			}))
-			 expect(dataCleaner.getHomeWorld(mockPerson)).rejects.toEqual(expected)
+			 expect(dataCleaner.getHomeWorld(mockNewPerson)).rejects.toEqual(expected)
 		})
 	})
 
@@ -169,13 +169,13 @@ describe('DataCleaner', () => {
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', async () => {
+		it('throws an error if the fetch call fails', async () => {
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,
-				json: () => Promise.resolve(species)
+				json: () => Promise.resolve(mockNewPerson)
 			}))
-			await expect(dataCleaner.getSpecies(mockPerson)).rejects.toEqual(expected)
+			await expect(dataCleaner.getSpecies(mockNewPerson)).rejects.toEqual(expected)
 		})
 	})
 
