@@ -38,7 +38,6 @@ describe('DataCleaner', () => {
 
 		it('calls returnMovieInfo with the correct parameters',  async () => {
 			//Setup
-			const dataCleaner = new DataCleaner()
 			const mockRandomEpisode = 5
 			const mockReturnedMovieData = await films.results[mockRandomEpisode]
 			const returnMovieInfo = jest.fn()
@@ -88,7 +87,6 @@ describe('DataCleaner', () => {
 
 		it('calls returnPeopleData with the correct parameters', async () => {
 			//Setup
-			const dataCleaner = new DataCleaner()
 			const mockPeopleData = await people.results
 			const returnPeopleData = jest.fn()
 			const getPerson = jest.fn(() => {
@@ -103,8 +101,20 @@ describe('DataCleaner', () => {
 
 	
 	describe('returnPeopleData', () => {
-		xit('calls getHomeWorld with the correct parameters', async () => {
-
+		it('calls getHomeWorld with the correct parameters', async () => {
+			//Setup
+			const mockPersonCollection = await people.results
+			const getHomeWorld = jest.fn()
+			const returnPeopleData = jest.fn((mockPersonCollection) => {
+				mockPersonCollection.map(async person => {
+					const mockNewPerson = {}
+					mockNewPerson.homeWorld = await getHomeWorld(person)
+				})
+			})
+			//Execution
+			returnPeopleData(mockPersonCollection)
+			//Expectation
+			await expect(getHomeWorld).toBeCalled()
 		})
 
 		xit('calls getSpecies with the correct parameters', async () => {
