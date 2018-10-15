@@ -21,7 +21,7 @@ render() {
 	const { isSelected } = this.state
 
 if (people) {
-
+	console.log(people)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
