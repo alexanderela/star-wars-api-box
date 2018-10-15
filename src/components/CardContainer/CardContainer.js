@@ -45,8 +45,14 @@ CardContainer.propTypes = {
   PropTypes.array,
   PropTypes.object
 ]),
-	vehicles: PropTypes.array,
-	planets: PropTypes.array
+	vehicles: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+]),
+	planets: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.object
+])
 }
 
 export default CardContainer;

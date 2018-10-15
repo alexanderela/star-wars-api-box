@@ -7,15 +7,20 @@ import mockPerson from '../../mockData/mockPerson.js';
 import people from '../../mockData/mockPeople.js';
 
 
-xit('matches the snapshot', () => {
+it('matches the snapshot', () => {
 	const wrapper = shallow(<CardContainer person={people.results}/>);
 	expect(wrapper).toMatchSnapshot();
 })
 
-xit('renders each card', () => {
-	const mockData = [{"luke skywalker": {}}, {"C3P0": {}}, {"leia organa": {}}]
-	const wrapper = shallow(<CardContainer person={people.results} />);
-	expect(wrapper.find(Card).length).toEqual(3)
+it('renders each card', () => {
+	const mockVehicles = [
+		{"class": "wheeled", "model": "Digger Crawler",
+		"name": "Sand Crawler", "passengers": "30"}, 
+		{"class": "wheeled", "model": "Digger Crawler",
+		"name": "Sand Crawler", "passengers": "30"}
+		]
+	const wrapper = shallow(<CardContainer vehicles={mockVehicles} />);
+	expect(wrapper.find(Card).length).toEqual(2)
 })
 
 it('renders people cards if people props are present', () => {
