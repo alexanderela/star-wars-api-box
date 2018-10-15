@@ -101,7 +101,7 @@ describe('DataCleaner', () => {
 
 	
 	describe('returnPeopleData', () => {
-		it('calls getHomeWorld with the correct parameters', async () => {
+		it('should call getHomeWorld', async () => {
 			//Setup
 			const mockPersonCollection = await people.results
 			const getHomeWorld = jest.fn()
@@ -117,24 +117,37 @@ describe('DataCleaner', () => {
 			await expect(getHomeWorld).toBeCalled()
 		})
 
-		xit('calls getSpecies with the correct parameters', async () => {
-
+		it('should call getSpecies', async () => {
+			//Setup
+			const mockPersonCollection = await people.results
+			const getSpecies = jest.fn()
+			const returnPeopleData = jest.fn((mockPersonCollection) => {
+				mockPersonCollection.map(async person => {
+					const mockNewPerson = {}
+					mockNewPerson.species = await getSpecies(person)
+				})
+			})
+			//Execution
+			returnPeopleData(mockPersonCollection)
+			//Expectation
+			await expect(getSpecies).toBeCalled()
 		})
 	})
 
 	
 	describe('getHomeWorld', () => {
 		xit('calls fetch with the correct parameters', async () => {
+			const mockPerson = {name: 'Helpy Helperton', homeWorld: 'https://swapi.co/api/planets/'}
 			const expected = "https://swapi.co/api/planets/1/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
-				json: () => Promise.resolve(planets)
+				json: () => Promise.resolve(mockPerson.homeWorld)
 			}))
 			dataCleaner.getHomeWorld(mockPerson)
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', () => {
+		it('throws an error if the fetch call fails', () => {
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,

@@ -57,7 +57,10 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		} else {
 			const homeWorldData = await response.json()
-			return { planetName: homeWorldData.name, planetPop: homeWorldData.population }
+			return { 
+				planetName: homeWorldData.name, 
+				planetPop: homeWorldData.population
+			}
 		}
 	}
 
@@ -67,7 +70,10 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		} else {
 			const speciesData = await response.json()
-			return { speciesName: speciesData.name, language: speciesData.language }
+			return { 
+				speciesName: speciesData.name, 
+				language: speciesData.language 
+			}
 		}
 	}
 
