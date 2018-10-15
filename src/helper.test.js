@@ -13,25 +13,29 @@ describe('DataCleaner', () => {
 
 	describe('getMovie', () => {
 		it('calls fetch with the correct parameters', async () => {
+			//Setup
 			const expected = "https://swapi.co/api/films/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
 				json: () => Promise.resolve()
 			}))
+			//Execution
 			dataCleaner.getMovie()
+			//Expectation
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
 		it('throws an error if fetch fails', () => {
+			//Setup & Execution
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,
 				json: () => Promise.resolve(people)
 			}))
+			//Expectation
 			expect(dataCleaner.getMovie()).rejects.toEqual(expected)
 		})
 
-		//not passing
 		it('calls returnMovieInfo with the correct parameters',  async () => {
 			//Setup
 			const dataCleaner = new DataCleaner()
@@ -41,9 +45,9 @@ describe('DataCleaner', () => {
 			const getMovie = jest.fn(() => {
 				returnMovieInfo(mockReturnedMovieData);
 			})
-			//execution
+			//Execution
 			getMovie()
-			//expectation
+			//Expectation
 			expect(returnMovieInfo).toHaveBeenCalledWith(mockReturnedMovieData)
 		})
 	})
@@ -56,14 +60,14 @@ describe('DataCleaner', () => {
 		 		title: 'title'
 		}
 
-		xit('returns an object with the correct format', () => {
+		it('returns an object with the correct format', () => {
 			expect(typeof dataCleaner.returnMovieInfo(mockFilm)).toBe('object')
 		})
 	})
 
 	
 	describe('getPerson', () => {
-		xit('calls fetch with the correct parameters', async () => {
+		it('calls fetch with the correct parameters', async () => {
 			const expected = "https://swapi.co/api/people/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
@@ -73,7 +77,7 @@ describe('DataCleaner', () => {
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
-		xit('throws an error if the fetch call fails', async () => {
+		it('throws an error if the fetch call fails', async () => {
 			const expected = Error('Fetch has failed')
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 500,
@@ -82,12 +86,18 @@ describe('DataCleaner', () => {
 			await expect(dataCleaner.getPerson()).rejects.toEqual(expected)
 		})
 
-		//not passing
-		xit('calls returnPeopleData with the correct parameters', async () => {
-			console.table(people.results)
-			returnPeopleData = jest.fn(people.results)
-			dataCleaner.getPerson()
-			expect(dataCleaner.returnPeopleData).toHaveBeenCalledWith(people.results)
+		it('calls returnPeopleData with the correct parameters', async () => {
+			//Setup
+			const dataCleaner = new DataCleaner()
+			const mockPeopleData = await people.results
+			const returnPeopleData = jest.fn()
+			const getPerson = jest.fn(() => {
+				returnPeopleData(mockPeopleData)
+			})
+			//Execution
+			getPerson()
+			//Expectation
+			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
 		})
 	})
 
