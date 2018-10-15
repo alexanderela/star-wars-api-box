@@ -7,6 +7,7 @@ import planets from './mockData/mockPlanets.js';
 import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
+import mockNewPerson from './mockData/mockNewPerson.js';
 
 describe('DataCleaner', () => {
 	const dataCleaner = new DataCleaner()
@@ -136,17 +137,13 @@ describe('DataCleaner', () => {
 
 	
 	describe('getHomeWorld', () => {
-		xit('calls fetch with the correct parameters', async () => {
-			const mockPerson = {
-				name: 'Helpy Helperton', 
-				homeWorld: 'https://swapi.co/api/planets/'
-			}
+		it('calls fetch with the correct parameters', async () => {
 			const expected = "https://swapi.co/api/planets/1/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status: 200,
-				json: () => Promise.resolve(mockPerson.homeWorld)
+				json: () => Promise.resolve(mockNewPerson)
 			}))
-			dataCleaner.getHomeWorld(mockPerson)
+			await dataCleaner.getHomeWorld(mockNewPerson)
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
@@ -217,20 +214,76 @@ describe('DataCleaner', () => {
 	})
 
 	describe('returnPlanetData', () => {
-		xit('should call getResidents with the correct parameters', async () => {
-
+		it('should call getResidents', async () => {
+			//Setup
+			const planets ={
+				results: [
+			    {
+			      "name": "Alderaan",
+			      "residents": [
+			          "https://swapi.co/api/people/5/",
+			          "https://swapi.co/api/people/68/",
+			          "https://swapi.co/api/people/81/"
+			      	],
+			    },
+			    {
+			      "name": "Yavin IV",
+			      "residents": [],
+			    },
+			    {
+			      "name": "Hoth",
+			      "residents": [],
+			    }
+    		]
+    	}
+			const mockPlanetCollection = await planets.results
+			const getResidents = jest.fn()
+			const returnPlanetData = jest.fn((mockPlanetCollection) => {
+				mockPlanetCollection.map(async planet => {
+					const mockNewPlanet = {}
+					mockNewPlanet.residents = await getResidents(planet)
+				})
+			})
+			//Execution
+			returnPlanetData(mockPlanetCollection)
+			//Expectation
+			await expect(getResidents).toBeCalled()
 		})
 	})
 
 	describe('getResidents', () => {
-		xit('should call fetchTenants with the correct parameters', async () => {
-
+		it('should call fetchTenants with the correct parameters', async () => {
+			//Setup
+			const residents = [
+        "https://swapi.co/api/people/5/",
+        "https://swapi.co/api/people/68/",
+        "https://swapi.co/api/people/81/"
+      ]
+			const fetchTenants = jest.fn()
+			const getResidents = jest.fn(() => {
+				fetchTenants(residents)
+			})
+			//Execution
+			getResidents()
+			//Expectation
+			await expect(fetchTenants).toBeCalled()
 		})
 	})
 
 	describe('fetchTenants', () => {
-		xit('should call fetch with the correct parameters', async () => {
-
+		const residents = [
+      "https://swapi.co/api/people/5/",
+      "https://swapi.co/api/people/68/",
+      "https://swapi.co/api/people/81/"
+    ]
+		it('should call fetch with the correct parameters', async () => {
+			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+				status: 200,
+				json: () => Promise.resolve()
+				// const fetchTenants = jest.fn(() => {
+				// 	console.log('hi')
+				// })
+			}))
 		})
 
 		xit('throws an error if the fetch call fails', async () => {
