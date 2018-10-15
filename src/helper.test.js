@@ -159,13 +159,13 @@ describe('DataCleaner', () => {
 
 	
 	describe('getSpecies', () => {
-		xit('calls fetch with the correct parameters', async () => {
+		it('calls fetch with the correct parameters', async () => {
 			const expected = "https://swapi.co/api/species/1/"
 			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
 				status:200,
-				json: () => Promise.resolve(species)
+				json: () => Promise.resolve(mockNewPerson)
 			}))
-			dataCleaner.getSpecies(mockPerson)
+			dataCleaner.getSpecies(mockNewPerson)
 			await expect(window.fetch).toHaveBeenCalledWith(expected)
 		})
 
