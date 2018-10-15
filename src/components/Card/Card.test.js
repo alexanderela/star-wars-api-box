@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './Card';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 describe('Card', () => {
 	let wrapper;
@@ -26,7 +26,7 @@ describe('Card', () => {
 	            }
 	        }
 
-			wrapper = shallow(<Card people={mockPeople}/>)
+			wrapper = mount(<Card people={mockPeople} {...mockPeople}/>)
 			expect(wrapper.find('h3').length).toEqual(1)
 	})
 
@@ -61,10 +61,27 @@ describe('Card', () => {
 	              "language": "Galactic Basic"
 	            }
 	        }
-		wrapper = shallow(<Card people={mockPeople}/>)		
+		wrapper = shallow(<Card people={mockPeople} {...mockPeople}/>)		
 		wrapper.find('.people-fav').simulate('click')
 		expect(wrapper.state().isSelected).toBe(true)
 	})
+
+	// it('invokes selectCard on click of favorite button', () => {
+	// 		const mockPeople = {
+	//           "name": "Luke Skywalker",
+	//           "homeWorld": { 
+	//             "planetName":"Tatooine",
+	//             "planetPop": "200000"
+	//             },
+	//           "species": {
+	//               "speciesName": "Human",
+	//               "language": "Galactic Basic"
+	//             }
+	//         }
+	// 	wrapper = shallow(<Card people={mockPeople} {...mockPeople}/>)		
+	// 	wrapper.find('.people-fav').simulate('click')
+	// 	expect(wrapper.instance().selectCard).toBeCalled()			
+	// })
 
 	it('highlights vehicle favorite button on click', () => {
 		const mockVehicles = {"class": "wheeled", 
