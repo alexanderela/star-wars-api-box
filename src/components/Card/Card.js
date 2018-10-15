@@ -29,7 +29,7 @@ if (people) {
 		    <button 
 		    	className={ `fav-btn people-fav 
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(people.name)}
+		    	onClick={() => this.selectCard(name)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>

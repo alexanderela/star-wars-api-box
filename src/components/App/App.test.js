@@ -59,7 +59,7 @@ it('sets film to state', async () => {
 })
 
 it('should toggle the state of people if it is already selected', () => {
-	wrapper.state({ peopleSelected: true })
+	wrapper.setState({ peopleSelected: true })
 	wrapper.instance().showPeople()
 	expect(wrapper.state().peopleSelected).toBe(false)
 })
@@ -83,14 +83,35 @@ it('sets people to state ', async () => {
 })
 
 it('should toggle the state of vehicles if it is already selected', async () => {
-	wrapper.setState({ 
-		vehicles: [], 
+	mockFilm = {
+		opening_crawl: "Heyy youu guyyyys", 
+		episode_id: 7, 
+		title: "The Force Awakens"
+	}
+	const initialState = { 
+    films: mockFilm,
+    people: [],
+    planets: [],
+		vehicles: [mockVehicle],
 		peopleSelected: false, 
-		planetsSelected: false, 
 		vehiclesSelected: true,
-	})
-	wrapper.instance().toggleCategoryState()
-	expect(wrapper.state().vehiclesSelected).toBe(false)
+		planetsSelected: false, 
+	}
+	const expectedState = {
+    films: {},
+    people: [],
+    vehicles: [],
+    planets: [],
+    peopleSelected: false,
+    vehiclesSelected: false,
+    planetsSelected: false
+  }
+
+	const categoryName = 'vehicle'
+	jest.fn().mockImplementation(() => Promise.resolve(
+ 	initialState))
+	await wrapper.instance().toggleCategoryState(categoryName)
+	await expect(wrapper.state()).toEqual(expectedState)
 })
 
 it('sets vehicles to state ', async () => {
@@ -107,8 +128,9 @@ it('sets vehicles to state ', async () => {
 })
 
 it('should toggle the state of planets if it is already selected', () => {
-	wrapper.setState({ planetsSelected: true })
-	wrapper.instance().showPlanets()
+	// const categoryName = 'planets'
+	let planetsSelected = true
+	wrapper.instance().toggleCategoryState()
 	expect(wrapper.state().planetsSelected).toBe(false)
 })
 
@@ -145,28 +167,31 @@ it('renders a card container displaying planets if planetsSelected is true', () 
 	expect(spy).toHaveBeenCalled()	
 })
 
+it('stringifies and sets data local storage', () => {
+	const mockKey = 'test array'
+	const mockData = ['luke', 'leia', 'R2-D2']
+	wrapper.instance().stringifyAndSetLocalStorage(mockKey, mockData)
+	expect(localStorage.setItem(mockKey, mockData)).toHaveBeenCalled()
+})
 
-	// wrapper = mount(<App />);	
-	// const people = [{"luke": "human"}, {"leia": "human"}]
-	// const mockShowPeople = jest.fn()
- //  const spy = spyOn(wrapper.instance(), 'showPeople');
- //  const nav = mount(<Nav showPeople={mockShowPeople} />)
- //  nav.find('.people-button').simulate('click')
- //  expect(spy).toHaveBeenCalled()
+it('gets and parses data from local storage', () => {
 
-    
-    	// const mockPlanets = {"name": "Alderaan", 
-	// 	"terrain": "grasslands, mountains", 
-	// 	"population": "2000000000", "climate": "temperate", 
-	// "residents": 
-	// 	["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}
+})
 
 
-	// const expected = "https://swapi.co/api/planets/"
-	// const mockFunc = jest.fn(() => [])
-	// window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-	// 	ok: true,
-	// 	json: () => Promse.resolve(planets)
-	// }))
-	// await wrapper.showPlanets
-	// expect(wrapper.state().planets).toEqual(planets)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,9 +26,20 @@ class App extends Component {
     this.showFilm()
   }
 
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category))
+  }
+
+  getLocalStorage = (categoryName) => {
+    if(localStorage.length) {
+      JSON.parse(localStorage.getItem(categoryName))
+    }
+  }
+
+
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
-    // console.log(films)
+    
     this.setState({ films })
   }
 
@@ -37,12 +48,12 @@ class App extends Component {
     if (categoryName === 'people') {
       this.setState({ peopleSelected: true })
       this.showPeople()
-    } else if (categoryName === 'vehicles') {
-      this.setState({ vehiclesSelected: true })
-      this.showVehicles()
     } else if (categoryName === 'planets') {
       this.setState({ planetsSelected: true })
       this.showPlanets()
+    } else if (categoryName === 'vehicles') {
+      this.setState({ vehiclesSelected: true })
+      this.showVehicles()
     }
   }
 
@@ -50,41 +61,63 @@ class App extends Component {
     const people = await this.state.dataCleaner.getPerson()
     // console.log(people + 'state: ' + this.state.peopleSelected)
     if (this.state.peopleSelected === true) {
-      this.setState({ peopleSelected: false })
+      this.setState({
+        people: [], 
+        vehicles: [],
+        planets: [],
+        peopleSelected: false 
+      })
     } else {
     this.setState({ 
-      people: people, 
+      people: people,
+      vehicles: [],
+      planets: [], 
+      peopleSelected: true,  
       vehiclesSelected: false,        
-      planetsSelected: false,        
-      peopleSelected: true  
+      planetsSelected: false       
       })
+    this.setLocalStorage()
     }
   }
 
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
     if (this.state.vehiclesSelected === true) {
-      this.setState({ vehiclesSelected: false })
+      this.setState({ 
+        vehicles: [],
+        people: [],
+        planets: [],
+        vehiclesSelected: false 
+      })
     } else {
-    this.setState({  
-      vehicles: vehicles, 
-      peopleSelected: false,        
-      planetsSelected: false,        
-      vehiclesSelected: true  
+      this.setState({  
+        vehicles: vehicles, 
+        people: [],
+        planets: [],
+        vehiclesSelected: true,  
+        peopleSelected: false,        
+        planetsSelected: false        
       })
     }
   }
 
   showPlanets = async (e) => {
     const planets = await this.state.dataCleaner.getPlanet()
-    if (this.state.planetSelected === true) {
-      this.setState({ planetSelected: false })
+    if (this.state.planetsSelected === true) {
+      this.setState({ 
+        vehicles: [],
+        people: [],
+        planets: [],
+        planetsSelected: false 
+      })
     } else {
-      this.setState({
+      this.setState({  
         planets: planets,
+        vehicles: [], 
+        people: [],
+        planetsSelected: true,        
         peopleSelected: false,        
-        vehiclesSelected: false, 
-        planetsSelected: true        
+        vehiclesSelected: false  
       })
     }
   }
