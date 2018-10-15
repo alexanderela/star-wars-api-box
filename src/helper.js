@@ -83,7 +83,6 @@ class DataCleaner {
 				newPlanet.population = planet.population
 				newPlanet.climate = planet.climate
 				newPlanet.residents = await this.getResidents(planet)
-				// console.log(newPlanet)
 			// console.log(newPlanet)
 				return newPlanet
 			})

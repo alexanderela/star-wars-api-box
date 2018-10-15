@@ -32,7 +32,6 @@ class App extends Component {
 
   getLocalStorage = (categoryName) => {
     if(localStorage.length) {
-      console.log(JSON.parse(localStorage.getItem(categoryName)))
       return JSON.parse(localStorage.getItem(categoryName))
     }
   }
@@ -52,7 +51,6 @@ class App extends Component {
       this.setState({ planetsSelected: true })
       this.showPlanets()
     } else if (categoryName === 'vehicles') {
-      // console.log('deez nuts')
       this.setState({ vehiclesSelected: true })
       this.showVehicles()
     }
@@ -148,7 +146,6 @@ class App extends Component {
       this.setLocalStorage('planets', planets)
     } else {
         const retrievedPlanets = this.getLocalStorage('planets')
-        console.log('planets hooked up')
         this.setState({ planets: retrievedPlanets })
       }
    }
