@@ -82,8 +82,4 @@ describe('Nav', () => {
 		wrapper.find('.vehicles-button').simulate('click')
 		expect(wrapper.state()).toEqual(expectedState)
 	})
-	// it('invokes handleVehicleClick on click of Vehicles button', () => {
-	// 	wrapper .find.simulate click
-	// 	expect mockfunction to be called
-	// })
 })

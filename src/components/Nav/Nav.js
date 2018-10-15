@@ -30,7 +30,6 @@ class Nav extends Component {
 	}
 
 	handlePlanetClick = (e) => {
-
 		const { name } = e.target
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })

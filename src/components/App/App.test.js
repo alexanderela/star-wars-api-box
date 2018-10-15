@@ -26,6 +26,7 @@ let mockLuke;
 let mockVehicle;
 let mockPlanet;
 let mockFilm;
+let expected;
 
 beforeEach(() => {
 	wrapper = shallow(<App />);	
@@ -58,7 +59,7 @@ it('sets film to state', async () => {
 	await expect(wrapper.state().films).toEqual(mockFilm)
 })
 
-it('should toggle the state of people if it is already selected', () => {
+xit('should toggle the state of people if it is already selected', () => {
 	wrapper.setState({ peopleSelected: true })
 	wrapper.instance().showPeople()
 	expect(wrapper.state().peopleSelected).toBe(false)
@@ -83,35 +84,31 @@ it('sets people to state ', async () => {
 })
 
 it('should toggle the state of vehicles if it is already selected', async () => {
-	mockFilm = {
-		opening_crawl: "Heyy youu guyyyys", 
-		episode_id: 7, 
-		title: "The Force Awakens"
-	}
 	const initialState = { 
-    films: mockFilm,
+		dataCleaner: null,
+    films: {},
     people: [],
     planets: [],
-		vehicles: [mockVehicle],
+		vehicles: [],
 		peopleSelected: false, 
-		vehiclesSelected: true,
-		planetsSelected: false, 
+		vehiclesSelected: false,
+		planetsSelected: false 
 	}
+
 	const expectedState = {
+		dataCleaner: null,
     films: {},
     people: [],
     vehicles: [],
     planets: [],
     peopleSelected: false,
-    vehiclesSelected: false,
+    vehiclesSelected: true,
     planetsSelected: false
   }
 
-	const categoryName = 'vehicle'
-	jest.fn().mockImplementation(() => Promise.resolve(
- 	initialState))
-	await wrapper.instance().toggleCategoryState(categoryName)
-	await expect(wrapper.state()).toEqual(expectedState)
+  wrapper.setState(initialState)
+	wrapper.instance().toggleCategoryState('vehicles')
+	expect(wrapper.state()).toEqual(expectedState)
 })
 
 it('sets vehicles to state ', async () => {
@@ -125,6 +122,34 @@ it('sets vehicles to state ', async () => {
  		mockVehicle))
 	await wrapper.instance().showVehicles()
   await expect(wrapper.state().vehicles).toEqual(mockVehicle)
+})
+
+xit('deselects vehicles state if it is already selected', async () => {
+	const initialState = { 
+		dataCleaner: null,
+    films: {},
+    people: [],
+    planets: [],
+		vehicles: [],
+		peopleSelected: false, 
+		vehiclesSelected: true,
+		planetsSelected: false 
+	}
+
+	const expectedState = {
+		dataCleaner: null,
+    films: {},
+    people: [],
+    vehicles: [],
+    planets: [],
+    peopleSelected: false,
+    vehiclesSelected: false,
+    planetsSelected: false
+  }
+  wrapper.setState(initialState)	
+  wrapper.instance().showVehicles()
+  console.log(wrapper.state().vehiclesSelected)
+  expect(wrapper.state()).toEqual(expectedState)	
 })
 
 it('should toggle the state of planets if it is already selected', () => {
@@ -167,15 +192,20 @@ it('renders a card container displaying planets if planetsSelected is true', () 
 	expect(spy).toHaveBeenCalled()	
 })
 
-it('stringifies and sets data local storage', () => {
-	const mockKey = 'test array'
-	const mockData = ['luke', 'leia', 'R2-D2']
-	wrapper.instance().stringifyAndSetLocalStorage(mockKey, mockData)
-	expect(localStorage.setItem(mockKey, mockData)).toHaveBeenCalled()
+it('sets people data to local storage', () => {
+	const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
+	{"class": "tires", "model": "Mustang"}]
+	wrapper.instance().setLocalStorage('mockData', mockData)
+	expect(JSON.parse(localStorage.getItem('mockData'))).toEqual(mockData)
 })
 
 it('gets and parses data from local storage', () => {
-
+	localStorage.clear()
+	const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
+	{"class": "tires", "model": "Mustang"}]
+	localStorage.setItem('mockData', JSON.stringify(mockData))
+	const	getStorage = wrapper.instance().getLocalStorage('mockData')
+	expect(getStorage).toEqual(mockData) 
 })
 
 
@@ -190,6 +220,11 @@ it('gets and parses data from local storage', () => {
 
 
 
+	// const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
+	// 		{"class": "tires", "model": "Mustang"}]
+	// const mockAddition = [{ "class": "unicycle", "model": "n/a" }]
+	// expected = [{ "class": "wheeled", "model": "Digger Crawler" }, 
+	// 		{"class": "tires", "model": "Mustang"}, { "class": "unicycle", "model": "n/a" }]
 
 
 

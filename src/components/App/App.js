@@ -32,10 +32,10 @@ class App extends Component {
 
   getLocalStorage = (categoryName) => {
     if(localStorage.length) {
-      JSON.parse(localStorage.getItem(categoryName))
+      console.log(JSON.parse(localStorage.getItem(categoryName)))
+      return JSON.parse(localStorage.getItem(categoryName))
     }
   }
-
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   toggleCategoryState = (categoryName) => {
-    console.log('toggleCategory hooked up')
+    // console.log('toggleCategory hooked up')
     if (categoryName === 'people') {
       this.setState({ peopleSelected: true })
       this.showPeople()
@@ -52,6 +52,7 @@ class App extends Component {
       this.setState({ planetsSelected: true })
       this.showPlanets()
     } else if (categoryName === 'vehicles') {
+      // console.log('deez nuts')
       this.setState({ vehiclesSelected: true })
       this.showVehicles()
     }
@@ -59,7 +60,6 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
-    // console.log(people + 'state: ' + this.state.peopleSelected)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
@@ -68,18 +68,27 @@ class App extends Component {
         peopleSelected: false 
       })
     } else {
-    this.setState({ 
-      people: people,
-      vehicles: [],
-      planets: [], 
-      peopleSelected: true,  
-      vehiclesSelected: false,        
-      planetsSelected: false       
+      this.checkLocalStoragePeople(people)
+      this.setState({ 
+        vehicles: [],
+        planets: [], 
+        peopleSelected: true,  
+        vehiclesSelected: false,        
+        planetsSelected: false       
       })
-    this.setLocalStorage()
     }
   }
 
+  checkLocalStoragePeople = (people) => {
+    if (!localStorage.people) {
+      this.setState({ people })
+      this.setLocalStorage('people', people)
+    } else {
+        const retrievedPeople = this.getLocalStorage('people')
+        this.setState({ people: retrievedPeople })
+      }
+    }
+  
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
     if (this.state.vehiclesSelected === true) {
@@ -90,8 +99,9 @@ class App extends Component {
         vehiclesSelected: false 
       })
     } else {
+      this.checkLocalStorageVehicles(vehicles)
+      console.log('vehicles hooked up')
       this.setState({  
-        vehicles: vehicles, 
         people: [],
         planets: [],
         vehiclesSelected: true,  
@@ -100,6 +110,16 @@ class App extends Component {
       })
     }
   }
+
+  checkLocalStorageVehicles = (vehicles) => {
+    if (!localStorage.vehicles) {
+      this.setState({ vehicles })
+      this.setLocalStorage('vehicles', vehicles)
+    } else {
+        const retrievedVehicles = this.getLocalStorage('vehicles')
+        this.setState({ vehicles: retrievedVehicles })
+      }
+    }
 
   showPlanets = async (e) => {
     const planets = await this.state.dataCleaner.getPlanet()
@@ -111,8 +131,8 @@ class App extends Component {
         planetsSelected: false 
       })
     } else {
+      this.checkLocalStoragePlanets(planets)
       this.setState({  
-        planets: planets,
         vehicles: [], 
         people: [],
         planetsSelected: true,        
@@ -121,6 +141,17 @@ class App extends Component {
       })
     }
   }
+
+  checkLocalStoragePlanets = (planets) => {
+    if (!localStorage.planets) {
+      this.setState({ planets })
+      this.setLocalStorage('planets', planets)
+    } else {
+        const retrievedPlanets = this.getLocalStorage('planets')
+        console.log('planets hooked up')
+        this.setState({ planets: retrievedPlanets })
+      }
+   }
 
   render() {
     const { films, people, vehicles, planets, peopleSelected, planetsSelected, vehiclesSelected } = this.state
