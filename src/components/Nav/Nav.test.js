@@ -7,13 +7,16 @@ import people from '../../mockData/mockPeople.js';
 describe('Nav', () => {
 	let wrapper;
 	let mockFunction;
+	let mockEvent;
 
 	beforeEach(() => {
     mockFunction = jest.fn()
-		wrapper = shallow(<Nav   
+    mockEvent = { target: true }
+		wrapper = mount(<Nav   
 						showPeople={mockFunction}
             showPlanet={mockFunction}
-            showVehicle={mockFunction}/>)
+            showVehicle={mockFunction}
+            toggleCategoryState={mockFunction}/>)
 	})
 
 	it('matches the snapshot', () => {
@@ -82,4 +85,11 @@ describe('Nav', () => {
 		wrapper.find('.vehicles-button').simulate('click')
 		expect(wrapper.state()).toEqual(expectedState)
 	})
+
+	// it('invokes toggleCategoryState() if vehiclesSelected is false', () => {
+	// 	wrapper.setState({ vehiclesSelected: true })
+	// 	wrapper.instance().handleVehicleClick(mockEvent)
+	// 	expect(toggleCategoryState).toHaveBeenCalled()
+	// })
+
 })
