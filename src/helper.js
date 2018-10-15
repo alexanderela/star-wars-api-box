@@ -31,66 +31,77 @@ class DataCleaner {
 
 //Get people
 	async getPerson() {
+		let returnedPeopleData;
 		const response = await fetch(this.peopleUrl)
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		} else {
 			const peopleData = await response.json()
-			const returnedPeopleData = await this.returnPeopleData(peopleData.results)
-			return Promise.all(returnedPeopleData)
+			returnedPeopleData = await this.returnPeopleData(peopleData.results)
 		}
+		return Promise.all(returnedPeopleData)
 	}
 
 	async returnPeopleData(personCollection) {
-		await personCollection.map( async person => {
+		const peoplePromises = await personCollection.map( async person => {
 			const newPerson = {}
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
 			newPerson.species = await this.getSpecies(person)
+			// console.log(newPerson.species)
 			return newPerson
 		})
+		return Promise.all(peoplePromises)
 	}
 
 	async getHomeWorld(person) {
+		let homeWorld;
 		const response = await fetch(person.homeworld)
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		} else {
 			const homeWorldData = await response.json()
-			return { 
+			homeWorld = { 
 				planetName: homeWorldData.name, 
 				planetPop: homeWorldData.population
 			}
+			// return homeWorld
 		}
+		return homeWorld
 	}
 
 	async getSpecies(person) {
+		let species;
 		const response = await fetch(person.species[0])
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		} else {
 			const speciesData = await response.json()
-			return { 
+			species = { 
 				speciesName: speciesData.name, 
 				language: speciesData.language 
 			}
+			// return species
 		}
+		return species
 	}
 
 //Get planets
 	async getPlanet() {
+		let returnedPlanetData;
 		const response = await fetch(this.planetUrl)
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		}	else {
 			const planetData = await response.json()
-			const returnedPlanetData = await this.returnPlanetData(planetData.results)
+			returnedPlanetData = await this.returnPlanetData(planetData.results)			
 			}
 		return Promise.all(returnedPlanetData)
 	}
 
 	async returnPlanetData(planetCollection) {
-		await planetCollection.results.map( async planet => {
+		// console.table(planetCollection)
+		const planetPromises = await planetCollection.map( async planet => {
 			const newPlanet = {}
 			newPlanet.name = planet.name
 			newPlanet.terrain = planet.terrain
@@ -99,35 +110,39 @@ class DataCleaner {
 			newPlanet.residents = await this.getResidents(planet)
 			return newPlanet
 		})
+		return Promise.all(planetPromises)
 	}
 
-	getResidents = async (planet) => {
-		const fetchResidents = await this.getTenants(planet.residents)
-		return Promise.all(fetchResidents)
+	async getResidents(planet) {
+		const getResidents = await this.getTenants(planet.residents)
+		return Promise.all(getResidents)
 	}
 
-	getTenants = async (planetResidentCollection) => {
-		planetResidentCollection.map( async resident => {
+	async getTenants(planetResidentCollection) {
+		const tenantPromises = planetResidentCollection.map( async resident => {
 			const response = await fetch(resident)
 			const residentData = await response.json()
 			return residentData.name
 		})
+		return Promise.all(tenantPromises)
 	}
 
 //Get vehicles
-	getVehicle = async () => {
+	async getVehicle() {
+		let returnedVehicleData;
 		const response = await fetch(this.vehicleUrl)
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		}	else {
 			const vehicleData = await response.json()
-			const returnedVehicleData = await this.returnVehicleData(vehicleData.results)
-			return Promise.all(returnedVehicleData)
+			returnedVehicleData = await this.returnVehicleData(vehicleData.results)
 		}
+		return Promise.all(returnedVehicleData)
 	}
 
-	returnVehicleData = (vehicleCollection) => {
-		vehicleCollection.map( async vehicle => {
+	async returnVehicleData(vehicleCollection) {
+		
+		const vehiclePromises = await vehicleCollection.map( async vehicle => {
 			const newVehicle = {}
 			newVehicle.name = vehicle.name
 			newVehicle.model = vehicle.model
@@ -135,12 +150,10 @@ class DataCleaner {
 			newVehicle.passengers = vehicle.passengers
 			return newVehicle
 		})
+		return Promise.all(vehiclePromises)
 	}
 
 }
 
-	// capitalizeSentence(sentence) {
-	// 	return sentence.charAtt(0).toUpperCase() + sentence.slice(1)
-	// }
 
 export default DataCleaner;
