@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Nav';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import people from '../../mockData/mockPeople.js';
 
 describe('Nav', () => {
 	let wrapper;
 	let mockFunction;
+	let mockEvent;
 
 	beforeEach(() => {
-		wrapper = shallow(<Nav   
-						showPeople={jest.fn()}
-            showPlanet={jest.fn()}
-            showVehicle={jest.fn()}/>)
     mockFunction = jest.fn()
+    mockEvent = { target: true }
+		wrapper = mount(<Nav   
+						showPeople={mockFunction}
+            showPlanet={mockFunction}
+            showVehicle={mockFunction}
+            toggleCategoryState={mockFunction}/>)
 	})
 
 	xit('matches the snapshot', () => {
@@ -21,7 +25,6 @@ describe('Nav', () => {
 
 	xit('activates People category on click of People button', () => {
 		const expectedState = {
-			people: people,
       peopleSelected: true,
       vehiclesSelected: false,
       planetsSelected: false
@@ -36,7 +39,7 @@ describe('Nav', () => {
       vehiclesSelected: false,
       planetsSelected: false
 		}
-		wrapper.setState({peopleSelected: true })
+		wrapper.setState({ peopleSelected: true })
 		wrapper.find('.people-button').simulate('click')
 		expect(wrapper.state()).toEqual(expectedState)
 	})
@@ -82,8 +85,11 @@ describe('Nav', () => {
 		wrapper.find('.vehicles-button').simulate('click')
 		expect(wrapper.state()).toEqual(expectedState)
 	})
-	// it('invokes handleVehicleClick on click of Vehicles button', () => {
-	// 	wrapper .find.simulate click
-	// 	expect mockfunction to be called
+
+	// it('invokes toggleCategoryState() if vehiclesSelected is false', () => {
+	// 	wrapper.setState({ vehiclesSelected: true })
+	// 	wrapper.instance().handleVehicleClick(mockEvent)
+	// 	expect(toggleCategoryState).toHaveBeenCalled()
 	// })
+
 })

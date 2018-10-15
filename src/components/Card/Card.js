@@ -25,7 +25,7 @@ if (people) {
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
-		    <h3>{people.name}</h3>
+		    <h3>{name}</h3>
 		    <button 
 		    	className={ `fav-btn people-fav 
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
