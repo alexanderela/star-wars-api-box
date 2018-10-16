@@ -30,6 +30,7 @@ class App extends Component {
   addToFavorites = (card) => {
     const favorites = [...this.state.favorites, card]
     this.setState({ favorites })
+    this.setLocalStorage('favorites', favorites)
   }
 
   removeFromFavorites = (id) => {
@@ -181,8 +182,8 @@ class App extends Component {
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
            />
-          }
       </div>
     );
     } else if (vehiclesSelected) {
@@ -202,6 +203,7 @@ class App extends Component {
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
           />
       </div>
     ); 
@@ -222,6 +224,7 @@ class App extends Component {
             planets={planets} 
             addToFavorites={this.addToFavorites}
             removeFromFavorites={this.removeFromFavorites}
+            favorites={favorites}
             />
         </div>
     );

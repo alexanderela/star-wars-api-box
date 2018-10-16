@@ -59,6 +59,7 @@ it('sets film to state', async () => {
 	await expect(wrapper.state().films).toEqual(mockFilm)
 })
 
+
 it('should toggle the state of people if it is already selected', async () => {
 	mockFilm = {
 		opening_crawl: "Heyy youu guyyyys", 
@@ -136,6 +137,8 @@ it('sets planets to state ', async () => {
   await expect(wrapper.state().planets).toEqual(mockPlanet)	
 })
 
+
+
 it('renders a card container displaying people if peopleSelected is true', () => {
 	wrapper.setState({ peopleSelected: true })
   const spy = spyOn(wrapper.instance(), 'showPeople');
@@ -207,7 +210,6 @@ it('gets people data from local storage if it already exists there', () => {
 	expect(wrapper.state().people).toEqual(mockPeople)
 	localStorage.clear()
 })
-
 
 it('adds cards to favorites', () => {
 	const card = { "name": "Luke Skywalker", "species": "human" }
@@ -296,23 +298,3 @@ it('passes favoritesCount props to Nav if they exist in state', () => {
 // 	// expect(cardContainer.props().vehicles).exists().toEqual(false)
 // 	expect(wrapper.contains(<CardContainer vehicles={mockVehicles}/>)).toBe(true)
 // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

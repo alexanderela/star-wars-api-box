@@ -3,7 +3,7 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFavorites}) => {
+const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFavorites, favorites}) => {
 
 	if (people) {
 		const peopleCards = people.map((person) => {
@@ -14,6 +14,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={person.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
           			/>
 		})
 
@@ -30,6 +31,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={vehicle.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
 								/>
 	})
 
@@ -45,6 +47,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={planet.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
 								/>
 	})
 
@@ -70,7 +73,8 @@ CardContainer.propTypes = {
   PropTypes.object
 ]),
 	addToFavorites: PropTypes.func,
-	removeFromFavorites: PropTypes.func
+	removeFromFavorites: PropTypes.func,
+	favorites: PropTypes.array
 }
 
 export default CardContainer;
