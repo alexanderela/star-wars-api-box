@@ -232,12 +232,31 @@ it('selects people in state when toggleCategory is called', () => {
 	expect(wrapper.state().peopleSelected).toEqual(true)
 })
 
+it('invokes showPeople when toggleCategory is called', () => {
+	const instance = wrapper.instance()
+	const category = 'people'
+	const spy = jest.spyOn(instance, 'showPeople')
+	// wrapper.setState({ peopleSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(spy).toHaveBeenCalled()
+})
+
 it('selects vehicles in state when toggleCategory is called', () => {
 	const category = 'vehicles'
 	wrapper.setState({ vehiclesSelected: false })
 	wrapper.instance().toggleCategoryState(category)
 	expect(wrapper.state().vehiclesSelected).toEqual(true)
 })
+
+it('invokes showVehicles when toggleCategory is called', () => {
+	const instance = wrapper.instance()
+	const category = 'vehicles'
+	const spy = jest.spyOn(instance, 'showVehicles')
+	// wrapper.setState({ vehiclesSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(spy).toHaveBeenCalled()
+})
+
 
 it('selects planets in state when toggleCategory is called', () => {
 	const category = 'planets'
@@ -246,8 +265,37 @@ it('selects planets in state when toggleCategory is called', () => {
 	expect(wrapper.state().planetsSelected).toEqual(true)
 })
 
+it('invokes showPlanets when toggleCategory is called', () => {
+	const instance = wrapper.instance()
+	const category = 'planets'
+	const spy = jest.spyOn(instance, 'showPlanets')
+	// wrapper.setState({ planetsSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(spy).toHaveBeenCalled()
+})
 
 
+it('passes the correct favoritesCount props to Nav', () => {
+	wrapper.setState({ favorites: [] })
+	const navComponent = wrapper.find(Nav)
+	expect(navComponent.props().favoritesCount).toEqual(0)
+})
+
+it('passes favoritesCount props to Nav if they exist in state', () => {
+	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
+	wrapper.setState({ favorites: mockVehicles })
+	const navComponent = wrapper.find(Nav)
+	expect(navComponent.props().favoritesCount).toEqual(2)
+})
+
+// it('renders CardContainer with vehicles props if vehicles are selected', () => {
+// 	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
+// 	wrapper.setState({ vehiclesSelected: true, vehicles: mockVehicles })
+// 	console.log(wrapper.state().vehiclesSelected)
+// 	// const cardContainer = wrapper.find(CardContainer)
+// 	// expect(cardContainer.props().vehicles).exists().toEqual(false)
+// 	expect(wrapper.contains(<CardContainer vehicles={mockVehicles}/>)).toBe(true)
+// })
 
 
 

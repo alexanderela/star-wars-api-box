@@ -176,11 +176,11 @@ class App extends Component {
             favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
-        {people ? <CardContainer 
+        <CardContainer 
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-           /> : null}
+           />
           }
       </div>
     );
@@ -197,11 +197,11 @@ class App extends Component {
             favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
-        {vehicles ? <CardContainer 
+        <CardContainer 
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-          /> : null}
+          />
       </div>
     ); 
     } else if (planetsSelected) {
@@ -217,11 +217,11 @@ class App extends Component {
             favoritesCount={!favorites.length ? 0 : favorites.length}
           />
           </header>
-          {planets ? <CardContainer 
+          <CardContainer 
             planets={planets} 
             addToFavorites={this.addToFavorites}
             removeFromFavorites={this.removeFromFavorites}
-            /> : null}
+            />
         </div>
     );
     } else {
