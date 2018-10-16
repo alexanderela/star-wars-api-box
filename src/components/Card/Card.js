@@ -4,29 +4,46 @@ import PropTypes from 'prop-types';
 
 
 class Card extends Component {
-	constructor(props) {
-		super(props)
+	constructor({favorites}) {
+		super(favorites)
 		this.state = {
-			isSelected: false,
+			isSelected: false
 		}
 	}
 
 selectCard = (card) => {
-	console.log(card)
 	card.isFavorite = !card.isFavorite
 	this.setState({ 
 		isSelected: !this.state.isSelected
 	})
 	if (card.isFavorite === true) {
 		this.props.addToFavorites(card)
-	
+		this.setState({ 
+			isSelected: true
+		})	
 	} else if (card.isFavorite === false) {
 		this.props.removeFromFavorites(card.id)
+		this.setState({ 
+				isSelected: false
+			})	
+	}
+}
+
+componentDidUpdate(favorites){
+	debugger
+	if(favorites.length) {
+		favorites.forEach(person => {
+
+			// this.setState({ 
+			// 	isSelected: true
+			// })
+			console.log('componentDidUpdate getting thereeeeee')
+		})
 	}
 }
 
 render() {
-	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person } = this.props
+	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites } = this.props
 	const { isSelected } = this.state
 
 if (people) {
@@ -123,7 +140,8 @@ Card.propTypes = {
 	vehicles: PropTypes.object,
 	planets: PropTypes.object,
 	addToFavorites: PropTypes.func,
-	removeFromFavorites: PropTypes.func
+	removeFromFavorites: PropTypes.func,
+	favorites: PropTypes.array
 }
 
 export default Card
