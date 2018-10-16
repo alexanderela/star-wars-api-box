@@ -32,9 +32,8 @@ class App extends Component {
     this.setState({ favorites })
   }
 
-  removeFromFavorites = (name) => {
-    const favorites = this.state.favorites.filter(card => card.name !== name)
-    console.log(favorites)
+  removeFromFavorites = (id) => {
+    const favorites = this.state.favorites.filter(card => card.id !== id)
     this.setState({ favorites })
   }
 
@@ -98,6 +97,7 @@ class App extends Component {
         this.setState({ people: retrievedPeople })
       }
     }
+
   
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
