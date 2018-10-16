@@ -10,6 +10,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 	// console.log(person)
 			return <Card 
 								people={people} {...person} 
+								person={person}
 								key={person.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}

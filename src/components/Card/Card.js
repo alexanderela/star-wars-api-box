@@ -25,9 +25,9 @@ selectCard = (card) => {
 }
 
 render() {
-	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, id } = this.props
+	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person } = this.props
 	const { isSelected } = this.state
-
+console.log(people)
 if (people) {
 	return (
 		<div className="Card">
@@ -35,8 +35,8 @@ if (people) {
 		    <h3>{name}</h3>
 		    <button 
 		    	className={ `fav-btn people-fav 
-		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(people)}
+		    		${(isSelected) ? "fav-btn-active" : "fav-btn-inactive"}` }
+		    	onClick={() => this.selectCard(person)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
