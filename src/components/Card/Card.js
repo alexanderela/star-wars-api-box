@@ -12,6 +12,7 @@ class Card extends Component {
 	}
 
 selectCard = (card) => {
+	console.log(card)
 	card.isFavorite = !card.isFavorite
 	this.setState({ 
 		isSelected: !this.state.isSelected

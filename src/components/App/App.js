@@ -68,6 +68,7 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
+    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
