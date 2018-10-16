@@ -12,7 +12,7 @@ class Card extends Component {
 	}
 
 selectCard = (card) => {
-	// card.isFavorite = !card.isFavorite
+	card.isFavorite = !card.isFavorite
 	this.setState({ 
 		isSelected: !this.state.isSelected
 	})
@@ -20,7 +20,6 @@ selectCard = (card) => {
 		this.props.addToFavorites(card)
 	
 	} else if (card.isFavorite === false) {
-	console.log(card)
 		this.props.removeFromFavorites(card.name)
 	}
 }
@@ -30,7 +29,6 @@ render() {
 	const { isSelected } = this.state
 
 if (people) {
-	// console.log(people)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">

@@ -43,8 +43,8 @@ class App extends Component {
   }
 
   removeFromFavorites = (name) => {
-    console.log(name)
     const favorites = this.state.favorites.filter(card => card.name !== name)
+    console.log(favorites)
     this.setState({ favorites })
   }
 
@@ -196,6 +196,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
+            favoritesCount={favorites.length}
           />
         </header>
         {vehicles ? <CardContainer 
@@ -215,6 +216,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
+            favoritesCount={favorites.length}
           />
           </header>
           {planets ? <CardContainer 
@@ -233,7 +235,8 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}            
+            toggleCategoryState={this.toggleCategoryState}    
+            favoritesCount={favorites.length}  
           />
           </header>
           <Sidebar films={films}/>
