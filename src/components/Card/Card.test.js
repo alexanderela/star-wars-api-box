@@ -66,23 +66,6 @@ describe('Card', () => {
 		expect(wrapper.state().isSelected).toBe(true)
 	})
 
-	// it('invokes selectCard on click of favorite button', () => {
-	// 		const mockPeople = {
-	//           "name": "Luke Skywalker",
-	//           "homeWorld": { 
-	//             "planetName":"Tatooine",
-	//             "planetPop": "200000"
-	//             },
-	//           "species": {
-	//               "speciesName": "Human",
-	//               "language": "Galactic Basic"
-	//             }
-	//         }
-	// 	wrapper = shallow(<Card people={mockPeople} {...mockPeople}/>)		
-	// 	wrapper.find('.people-fav').simulate('click')
-	// 	expect(wrapper.instance().selectCard).toBeCalled()			
-	// })
-
 	it('highlights vehicle favorite button on click', () => {
 		const mockVehicles = {"class": "wheeled", 
 			"model": "Digger Crawler",
@@ -112,3 +95,11 @@ describe('Card', () => {
 		expect(wrapper.find('.planet-residents')).toBeDefined()
 	})
 })
+
+	it('adds cards to favorites if card.type is true', () => {
+
+	})
+
+	it('removes cards from favorites if card.type is false', () => {
+	
+	})

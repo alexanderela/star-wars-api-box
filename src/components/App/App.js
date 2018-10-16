@@ -44,7 +44,6 @@ class App extends Component {
   }
 
   toggleCategoryState = (categoryName) => {
-    // console.log('toggleCategory hooked up')
     if (categoryName === 'people') {
       this.setState({ peopleSelected: true })
       this.showPeople()
@@ -174,7 +173,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
         {people ? <CardContainer 
@@ -195,7 +194,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
         {vehicles ? <CardContainer 
@@ -215,7 +214,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
           </header>
           {planets ? <CardContainer 
@@ -235,7 +234,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}    
-            favoritesCount={favorites.length}  
+            favoritesCount={!favorites.length ? 0 : favorites.length}  
           />
           </header>
           <Sidebar films={films}/>

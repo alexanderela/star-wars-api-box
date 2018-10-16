@@ -162,6 +162,7 @@ it('sets people data to local storage', () => {
 	{"class": "tires", "model": "Mustang"}]
 	wrapper.instance().setLocalStorage('mockData', mockData)
 	expect(JSON.parse(localStorage.getItem('mockData'))).toEqual(mockData)
+	localStorage.clear()
 })
 
 it('gets and parses data from local storage', () => {
@@ -171,4 +172,99 @@ it('gets and parses data from local storage', () => {
 	localStorage.setItem('mockData', JSON.stringify(mockData))
 	const	getStorage = wrapper.instance().getLocalStorage('mockData')
 	expect(getStorage).toEqual(mockData) 
+	localStorage.clear()
 })
+
+it('gets vehicle data from local storage if it already exists there', () => {
+	mockVehicle = [{
+		"class": "wheeled", 
+		"model": "Digger Crawler",
+		"name": "Sand Crawler", 
+		"passengers": "30"
+	}]
+	wrapper.instance().setLocalStorage('vehicles', mockVehicle)	
+	wrapper.instance().checkLocalStorageVehicles(mockVehicle)
+	expect(wrapper.state().vehicles).toEqual(mockVehicle)
+	localStorage.clear()
+})
+
+it('gets planet data from local storage if it already exists there', () => {
+	mockPlanet = [{"name": "Alderaan", 
+		"terrain": "grasslands, mountains", 
+		"population": "2000000000", "climate": "temperate", 
+	"residents": 
+		["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}]
+	wrapper.instance().setLocalStorage('planets', mockPlanet)	
+	wrapper.instance().checkLocalStoragePlanets(mockPlanet)
+	expect(wrapper.state().planets).toEqual(mockPlanet)
+	localStorage.clear()
+})
+
+it('gets people data from local storage if it already exists there', () => {
+	const mockPeople = [{ "name": "Luke", "species": "human" }]
+	wrapper.instance().setLocalStorage('people', mockPeople)	
+	wrapper.instance().checkLocalStoragePeople(mockPeople)
+	expect(wrapper.state().people).toEqual(mockPeople)
+	localStorage.clear()
+})
+
+
+it('adds cards to favorites', () => {
+	const card = { "name": "Luke Skywalker", "species": "human" }
+	const expected = [card]
+	wrapper.instance().addToFavorites(card)
+	expect(wrapper.state().favorites).toEqual(expected)
+})
+
+it('removes cards from favorites', () => {
+	expected = []
+	const mockId = "Luke"
+	const mockCard = [{ "name": "Luke", "id": "Luke" }]
+	wrapper.setState({ favorites: mockCard })
+	wrapper.instance().removeFromFavorites(mockId)
+	expect(wrapper.state().favorites).toEqual(expected)
+})
+
+it('selects people in state when toggleCategory is called', () => {
+	const category = 'people'
+	wrapper.setState({ peopleSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(wrapper.state().peopleSelected).toEqual(true)
+})
+
+it('selects vehicles in state when toggleCategory is called', () => {
+	const category = 'vehicles'
+	wrapper.setState({ vehiclesSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(wrapper.state().vehiclesSelected).toEqual(true)
+})
+
+it('selects planets in state when toggleCategory is called', () => {
+	const category = 'planets'
+	wrapper.setState({ planetsSelected: false })
+	wrapper.instance().toggleCategoryState(category)
+	expect(wrapper.state().planetsSelected).toEqual(true)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
