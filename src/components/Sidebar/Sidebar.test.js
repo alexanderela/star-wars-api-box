@@ -17,13 +17,4 @@ describe('Sidebar', () => {
 		expect(wrapper).toMatchSnapshot();
 	})
 
-	// it('converts numbers to roman numerals', () => {
-	
-
-	// })
-
-	// it('displays a scrolling title page', () => {
-
-	// })
-
 })
