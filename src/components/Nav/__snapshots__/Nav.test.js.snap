@@ -138,6 +138,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>
                     </div>
                   </div>
@@ -283,6 +286,9 @@ ReactWrapper {
                       class="cat-button favorites-button"
                     >
                       Favorites
+                      <span
+                        class="favorites-count"
+                      />
                     </button>
                   </div>
                 </div>
@@ -385,7 +391,7 @@ ReactWrapper {
           "_debugIsCurrentlyTiming": false,
           "_debugOwner": [Circular],
           "_debugSource": Object {
-            "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+            "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
             "lineNumber": 67,
           },
           "actualDuration": 0,
@@ -396,7 +402,7 @@ ReactWrapper {
             "_debugIsCurrentlyTiming": false,
             "_debugOwner": [Circular],
             "_debugSource": Object {
-              "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
               "lineNumber": 68,
             },
             "actualDuration": 0,
@@ -436,7 +442,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                 "lineNumber": 76,
               },
               "actualDuration": 0,
@@ -476,7 +482,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                  "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                   "lineNumber": 84,
                 },
                 "actualDuration": 0,
@@ -516,7 +522,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                    "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                     "lineNumber": 92,
                   },
                   "actualDuration": 0,
@@ -527,7 +533,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                      "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
                       "lineNumber": 5,
                     },
                     "actualDuration": 0,
@@ -538,13 +544,86 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                        "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
                         "lineNumber": 6,
                       },
                       "actualDuration": 0,
                       "actualStartTime": -1,
                       "alternate": null,
-                      "child": null,
+                      "child": FiberNode {
+                        "_debugID": 58,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugOwner": null,
+                        "_debugSource": null,
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": null,
+                        "childExpirationTime": 0,
+                        "effectTag": 0,
+                        "expirationTime": 0,
+                        "firstContextDependency": null,
+                        "firstEffect": null,
+                        "index": 0,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": "Favorites",
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": "Favorites",
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": FiberNode {
+                          "_debugID": 59,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugOwner": [Circular],
+                          "_debugSource": Object {
+                            "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                            "lineNumber": 8,
+                          },
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "effectTag": 0,
+                          "expirationTime": 0,
+                          "firstContextDependency": null,
+                          "firstEffect": null,
+                          "index": 1,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": Object {
+                            "children": undefined,
+                            "className": "favorites-count",
+                          },
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": Object {
+                            "children": undefined,
+                            "className": "favorites-count",
+                          },
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": null,
+                          "stateNode": <span
+                            class="favorites-count"
+                          />,
+                          "tag": 7,
+                          "treeBaseDuration": 0,
+                          "type": "span",
+                          "updateQueue": null,
+                        },
+                        "stateNode": Favorites,
+                        "tag": 8,
+                        "treeBaseDuration": 0,
+                        "type": null,
+                        "updateQueue": null,
+                      },
                       "childExpirationTime": 0,
                       "effectTag": 0,
                       "expirationTime": 0,
@@ -554,14 +633,24 @@ ReactWrapper {
                       "key": null,
                       "lastEffect": null,
                       "memoizedProps": Object {
-                        "children": "Favorites",
+                        "children": Array [
+                          "Favorites",
+                          <span
+                            className="favorites-count"
+                          />,
+                        ],
                         "className": "cat-button favorites-button",
                       },
                       "memoizedState": null,
                       "mode": 0,
                       "nextEffect": null,
                       "pendingProps": Object {
-                        "children": "Favorites",
+                        "children": Array [
+                          "Favorites",
+                          <span
+                            className="favorites-count"
+                          />,
+                        ],
                         "className": "cat-button favorites-button",
                       },
                       "ref": null,
@@ -572,6 +661,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>,
                       "tag": 7,
                       "treeBaseDuration": 0,
@@ -591,6 +683,9 @@ ReactWrapper {
                         className="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          className="favorites-count"
+                        />
                       </button>,
                       "className": "FavoriteButton",
                     },
@@ -602,6 +697,9 @@ ReactWrapper {
                         className="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          className="favorites-count"
+                        />
                       </button>,
                       "className": "FavoriteButton",
                     },
@@ -616,6 +714,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>
                     </div>,
                     "tag": 7,
@@ -633,12 +734,14 @@ ReactWrapper {
                   "lastEffect": null,
                   "memoizedProps": Object {
                     "className": "FavoriteButton",
+                    "favoritesCount": undefined,
                   },
                   "memoizedState": null,
                   "mode": 0,
                   "nextEffect": null,
                   "pendingProps": Object {
                     "className": "FavoriteButton",
+                    "favoritesCount": undefined,
                   },
                   "ref": null,
                   "return": [Circular],
@@ -796,6 +899,9 @@ ReactWrapper {
                 class="cat-button favorites-button"
               >
                 Favorites
+                <span
+                  class="favorites-count"
+                />
               </button>
             </div>
           </div>,
@@ -948,6 +1054,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>
                     </div>
                   </div>
@@ -1093,6 +1202,9 @@ ReactWrapper {
                       class="cat-button favorites-button"
                     >
                       Favorites
+                      <span
+                        class="favorites-count"
+                      />
                     </button>
                   </div>
                 </div>
@@ -1259,6 +1371,9 @@ ReactWrapper {
             class="cat-button favorites-button"
           >
             Favorites
+            <span
+              class="favorites-count"
+            />
           </button>
         </div>
       </div>,
@@ -1373,6 +1488,7 @@ ReactWrapper {
           "nodeType": "function",
           "props": Object {
             "className": "FavoriteButton",
+            "favoritesCount": undefined,
           },
           "ref": null,
           "rendered": Object {
@@ -1383,6 +1499,9 @@ ReactWrapper {
                 class="cat-button favorites-button"
               >
                 Favorites
+                <span
+                  class="favorites-count"
+                />
               </button>
             </div>,
             "key": undefined,
@@ -1392,6 +1511,9 @@ ReactWrapper {
                 className="cat-button favorites-button"
               >
                 Favorites
+                <span
+                  className="favorites-count"
+                />
               </button>,
               "className": "FavoriteButton",
             },
@@ -1402,16 +1524,40 @@ ReactWrapper {
                   class="cat-button favorites-button"
                 >
                   Favorites
+                  <span
+                    class="favorites-count"
+                  />
                 </button>,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Favorites",
+                  "children": Array [
+                    "Favorites",
+                    <span
+                      className="favorites-count"
+                    />,
+                  ],
                   "className": "cat-button favorites-button",
                 },
                 "ref": null,
                 "rendered": Array [
                   "Favorites",
+                  Object {
+                    "instance": <span
+                      class="favorites-count"
+                    />,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "className": "favorites-count",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                    ],
+                    "type": "span",
+                  },
                 ],
                 "type": "button",
               },
@@ -1547,6 +1693,9 @@ ReactWrapper {
                           class="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            class="favorites-count"
+                          />
                         </button>
                       </div>
                     </div>
@@ -1692,6 +1841,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>
                     </div>
                   </div>
@@ -1794,7 +1946,7 @@ ReactWrapper {
             "_debugIsCurrentlyTiming": false,
             "_debugOwner": [Circular],
             "_debugSource": Object {
-              "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
               "lineNumber": 67,
             },
             "actualDuration": 0,
@@ -1805,7 +1957,7 @@ ReactWrapper {
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
-                "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                 "lineNumber": 68,
               },
               "actualDuration": 0,
@@ -1845,7 +1997,7 @@ ReactWrapper {
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
-                  "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                  "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                   "lineNumber": 76,
                 },
                 "actualDuration": 0,
@@ -1885,7 +2037,7 @@ ReactWrapper {
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
-                    "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                    "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                     "lineNumber": 84,
                   },
                   "actualDuration": 0,
@@ -1925,7 +2077,7 @@ ReactWrapper {
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                      "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
                       "lineNumber": 92,
                     },
                     "actualDuration": 0,
@@ -1936,7 +2088,7 @@ ReactWrapper {
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                        "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
                         "lineNumber": 5,
                       },
                       "actualDuration": 0,
@@ -1947,13 +2099,86 @@ ReactWrapper {
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
-                          "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                          "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
                           "lineNumber": 6,
                         },
                         "actualDuration": 0,
                         "actualStartTime": -1,
                         "alternate": null,
-                        "child": null,
+                        "child": FiberNode {
+                          "_debugID": 58,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugOwner": null,
+                          "_debugSource": null,
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "effectTag": 0,
+                          "expirationTime": 0,
+                          "firstContextDependency": null,
+                          "firstEffect": null,
+                          "index": 0,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": "Favorites",
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": "Favorites",
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": FiberNode {
+                            "_debugID": 59,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugOwner": [Circular],
+                            "_debugSource": Object {
+                              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                              "lineNumber": 8,
+                            },
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "effectTag": 0,
+                            "expirationTime": 0,
+                            "firstContextDependency": null,
+                            "firstEffect": null,
+                            "index": 1,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": Object {
+                              "children": undefined,
+                              "className": "favorites-count",
+                            },
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": Object {
+                              "children": undefined,
+                              "className": "favorites-count",
+                            },
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": null,
+                            "stateNode": <span
+                              class="favorites-count"
+                            />,
+                            "tag": 7,
+                            "treeBaseDuration": 0,
+                            "type": "span",
+                            "updateQueue": null,
+                          },
+                          "stateNode": Favorites,
+                          "tag": 8,
+                          "treeBaseDuration": 0,
+                          "type": null,
+                          "updateQueue": null,
+                        },
                         "childExpirationTime": 0,
                         "effectTag": 0,
                         "expirationTime": 0,
@@ -1963,14 +2188,24 @@ ReactWrapper {
                         "key": null,
                         "lastEffect": null,
                         "memoizedProps": Object {
-                          "children": "Favorites",
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            />,
+                          ],
                           "className": "cat-button favorites-button",
                         },
                         "memoizedState": null,
                         "mode": 0,
                         "nextEffect": null,
                         "pendingProps": Object {
-                          "children": "Favorites",
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            />,
+                          ],
                           "className": "cat-button favorites-button",
                         },
                         "ref": null,
@@ -1981,6 +2216,9 @@ ReactWrapper {
                           class="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            class="favorites-count"
+                          />
                         </button>,
                         "tag": 7,
                         "treeBaseDuration": 0,
@@ -2000,6 +2238,9 @@ ReactWrapper {
                           className="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            className="favorites-count"
+                          />
                         </button>,
                         "className": "FavoriteButton",
                       },
@@ -2011,6 +2252,9 @@ ReactWrapper {
                           className="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            className="favorites-count"
+                          />
                         </button>,
                         "className": "FavoriteButton",
                       },
@@ -2025,6 +2269,9 @@ ReactWrapper {
                           class="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            class="favorites-count"
+                          />
                         </button>
                       </div>,
                       "tag": 7,
@@ -2042,12 +2289,14 @@ ReactWrapper {
                     "lastEffect": null,
                     "memoizedProps": Object {
                       "className": "FavoriteButton",
+                      "favoritesCount": undefined,
                     },
                     "memoizedState": null,
                     "mode": 0,
                     "nextEffect": null,
                     "pendingProps": Object {
                       "className": "FavoriteButton",
+                      "favoritesCount": undefined,
                     },
                     "ref": null,
                     "return": [Circular],
@@ -2205,6 +2454,9 @@ ReactWrapper {
                   class="cat-button favorites-button"
                 >
                   Favorites
+                  <span
+                    class="favorites-count"
+                  />
                 </button>
               </div>
             </div>,
@@ -2357,6 +2609,9 @@ ReactWrapper {
                           class="cat-button favorites-button"
                         >
                           Favorites
+                          <span
+                            class="favorites-count"
+                          />
                         </button>
                       </div>
                     </div>
@@ -2502,6 +2757,9 @@ ReactWrapper {
                         class="cat-button favorites-button"
                       >
                         Favorites
+                        <span
+                          class="favorites-count"
+                        />
                       </button>
                     </div>
                   </div>
@@ -2668,6 +2926,9 @@ ReactWrapper {
               class="cat-button favorites-button"
             >
               Favorites
+              <span
+                class="favorites-count"
+              />
             </button>
           </div>
         </div>,
@@ -2782,6 +3043,7 @@ ReactWrapper {
             "nodeType": "function",
             "props": Object {
               "className": "FavoriteButton",
+              "favoritesCount": undefined,
             },
             "ref": null,
             "rendered": Object {
@@ -2792,6 +3054,9 @@ ReactWrapper {
                   class="cat-button favorites-button"
                 >
                   Favorites
+                  <span
+                    class="favorites-count"
+                  />
                 </button>
               </div>,
               "key": undefined,
@@ -2801,6 +3066,9 @@ ReactWrapper {
                   className="cat-button favorites-button"
                 >
                   Favorites
+                  <span
+                    className="favorites-count"
+                  />
                 </button>,
                 "className": "FavoriteButton",
               },
@@ -2811,16 +3079,40 @@ ReactWrapper {
                     class="cat-button favorites-button"
                   >
                     Favorites
+                    <span
+                      class="favorites-count"
+                    />
                   </button>,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Favorites",
+                    "children": Array [
+                      "Favorites",
+                      <span
+                        className="favorites-count"
+                      />,
+                    ],
                     "className": "cat-button favorites-button",
                   },
                   "ref": null,
                   "rendered": Array [
                     "Favorites",
+                    Object {
+                      "instance": <span
+                        class="favorites-count"
+                      />,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                        "className": "favorites-count",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                      ],
+                      "type": "span",
+                    },
                   ],
                   "type": "button",
                 },
