@@ -132,8 +132,7 @@ class App extends Component {
     }
 
   showPlanets = async (e) => {
-    const planets = await this.state.dataCleaner.getPlanet()
-    console.log(planets)   
+    const planets = await this.state.dataCleaner.getPlanet()  
     if (this.state.planetsSelected === true) {
       this.setState({ 
         vehicles: [],

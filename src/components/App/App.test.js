@@ -14,7 +14,7 @@ import mockPerson from '../../mockData/mockPerson.js';
 import mockSpecies from '../../mockData/mockSpecies.js';
 
 
-xit('renders without crashing', () => {
+it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
@@ -33,11 +33,11 @@ beforeEach(() => {
 	mockEvent = { target: true }
 })
 
-xit('matches the snapshot', () => {
+it('matches the snapshot', () => {
 	expect(wrapper).toMatchSnapshot();
 })
 
-xit('invokes showFilm function on componentDidMount', () => {
+it('invokes showFilm function on componentDidMount', () => {
 	wrapper.instance().showFilm = jest.fn()
 	wrapper.instance().componentDidMount()
 	expect(wrapper.instance().showFilm).toHaveBeenCalled()
@@ -60,7 +60,7 @@ it('sets film to state', async () => {
 })
 
 it('should toggle the state of people if it is already selected', async () => {
-		mockFilm = {
+	mockFilm = {
 		opening_crawl: "Heyy youu guyyyys", 
 		episode_id: 7, 
 		title: "The Force Awakens"
@@ -68,7 +68,6 @@ it('should toggle the state of people if it is already selected', async () => {
 	wrapper.setState({ peopleSelected: true, films: mockFilm })
 	await wrapper.instance().showPeople()
 	await expect(wrapper.state().peopleSelected).toBe(false)
-	// expect(wrapper.instance().showPeople).toHaveBeenCalled
 })
 
 it('sets people to state ', async () => {
@@ -90,33 +89,14 @@ it('sets people to state ', async () => {
 })
 
 it('should toggle the state of vehicles if it is already selected', async () => {
-	const initialState = { 
-		dataCleaner: null,
-    films: {},
-    people: [],
-    planets: [],
-		vehicles: [],
-		peopleSelected: false, 
-		vehiclesSelected: false,
-		planetsSelected: false,
-		favorites: [] 
+	mockFilm = {
+		opening_crawl: "Heyy youu guyyyys", 
+		episode_id: 7, 
+		title: "The Force Awakens"
 	}
-
-	const expectedState = {
-		dataCleaner: null,
-    films: {},
-    people: [],
-    vehicles: [],
-    planets: [],
-    peopleSelected: false,
-    vehiclesSelected: true,
-    planetsSelected: false,
-		favorites: []
-  }
-
-  wrapper.setState(initialState)
-	wrapper.instance().toggleCategoryState('vehicles')
-	expect(wrapper.state()).toEqual(expectedState)
+	wrapper.setState({ vehiclesSelected: true, films: mockFilm })
+	await wrapper.instance().showVehicles()
+	await expect(wrapper.state().vehiclesSelected).toBe(false)
 })
 
 it('sets vehicles to state ', async () => {
@@ -132,39 +112,16 @@ it('sets vehicles to state ', async () => {
   await expect(wrapper.state().vehicles).toEqual(mockVehicle)
 })
 
-xit('deselects vehicles state if it is already selected', async () => {
-	const initialState = { 
-		dataCleaner: null,
-    films: {},
-    people: [],
-    planets: [],
-		vehicles: [],
-		peopleSelected: false, 
-		vehiclesSelected: true,
-		planetsSelected: false 
+
+it('should toggle the state of planets if it is already selected', async () => {
+	mockFilm = {
+		opening_crawl: "Heyy youu guyyyys", 
+		episode_id: 7, 
+		title: "The Force Awakens"
 	}
-
-	const expectedState = {
-		dataCleaner: null,
-    films: {},
-    people: [],
-    vehicles: [],
-    planets: [],
-    peopleSelected: false,
-    vehiclesSelected: false,
-    planetsSelected: false
-  }
-  wrapper.setState(initialState)	
-  wrapper.instance().showVehicles()
-  console.log(wrapper.state().vehiclesSelected)
-  expect(wrapper.state()).toEqual(expectedState)	
-})
-
-it('should toggle the state of planets if it is already selected', () => {
-	// const categoryName = 'planets'
-	let planetsSelected = true
-	wrapper.instance().toggleCategoryState()
-	expect(wrapper.state().planetsSelected).toBe(false)
+	wrapper.setState({ planetsSelected: true, films: mockFilm })
+	await wrapper.instance().showPlanets()
+	await expect(wrapper.state().planetsSelected).toBe(false)
 })
 
 it('sets planets to state ', async () => {
@@ -215,26 +172,3 @@ it('gets and parses data from local storage', () => {
 	const	getStorage = wrapper.instance().getLocalStorage('mockData')
 	expect(getStorage).toEqual(mockData) 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
-	// 		{"class": "tires", "model": "Mustang"}]
-	// const mockAddition = [{ "class": "unicycle", "model": "n/a" }]
-	// expected = [{ "class": "wheeled", "model": "Digger Crawler" }, 
-	// 		{"class": "tires", "model": "Mustang"}, { "class": "unicycle", "model": "n/a" }]
-
-
-
-
-
