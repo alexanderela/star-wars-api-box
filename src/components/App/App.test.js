@@ -171,21 +171,21 @@ it('sets planets to state ', async () => {
   await expect(wrapper.state().planets).toEqual(mockPlanet)	
 })
 
-xit('renders a card container displaying people if peopleSelected is true', () => {
+it('renders a card container displaying people if peopleSelected is true', () => {
 	wrapper.setState({ peopleSelected: true })
   const spy = spyOn(wrapper.instance(), 'showPeople');
   wrapper.instance().showPeople()
 	expect(spy).toHaveBeenCalled()
 })
 
-xit('renders a card container displaying vehicles if vehiclesSelected is true', () => {
+it('renders a card container displaying vehicles if vehiclesSelected is true', () => {
 	wrapper.setState({ vehiclesSelected: true })
 	const spy = spyOn(wrapper.instance(), 'showVehicles');
 	wrapper.instance().showVehicles()
 	expect(spy).toHaveBeenCalled()
 })
 
-xit('renders a card container displaying planets if planetsSelected is true', () => {
+it('renders a card container displaying planets if planetsSelected is true', () => {
 	wrapper.setState({ planetsSelected: true })
 	const spy = spyOn(wrapper.instance(), 'showPlanets');
 	wrapper.instance().showPlanets()

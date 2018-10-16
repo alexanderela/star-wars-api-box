@@ -7,21 +7,30 @@ class Card extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			isSelected: false
+			isSelected: false,
 		}
 	}
 
-
 selectCard = (card) => {
-	this.setState({ isSelected: !this.state.isSelected})
+	// card.isFavorite = !card.isFavorite
+	this.setState({ 
+		isSelected: !this.state.isSelected
+	})
+	if (card.isFavorite === true) {
+		this.props.addToFavorites(card)
+	
+	} else if (card.isFavorite === false) {
+	console.log(card)
+		this.props.removeFromFavorites(card.name)
+	}
 }
 
 render() {
-	const { name, homeWorld, species, people, vehicles, planets } = this.props
+	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, id } = this.props
 	const { isSelected } = this.state
 
 if (people) {
-	console.log(people)
+	// console.log(people)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
@@ -29,7 +38,7 @@ if (people) {
 		    <button 
 		    	className={ `fav-btn people-fav 
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(name)}
+		    	onClick={() => this.selectCard(people)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -57,7 +66,7 @@ if (people) {
 		    <button 
 		    	className={ `fav-btn vehicle-fav 
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(vehicles.name)}
+		    	onClick={() => this.selectCard(vehicles)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -81,7 +90,7 @@ if (people) {
 		    <button 
 		    	className={ `fav-btn planet-fav
 		    		${isSelected ? "fav-btn-active" : "fav-btn-inactive"}` }
-		    	onClick={() => this.selectCard(planets.name)}
+		    	onClick={() => this.selectCard(planets)}
 		    >
 		    	<i className="fas fa-jedi"></i>
 		    </button>
@@ -113,7 +122,9 @@ Card.propTypes = {
   PropTypes.object
 ]),
 	vehicles: PropTypes.object,
-	planets: PropTypes.object
+	planets: PropTypes.object,
+	addToFavorites: PropTypes.func,
+	removeFromFavorites: PropTypes.func
 }
 
 export default Card

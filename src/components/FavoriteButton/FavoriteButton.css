@@ -17,4 +17,10 @@
   width:200%;
 }
 
+.favorites-count {
+  border: 1px solid #FFF;
+  padding: 0 0.25rem;
+  border-radius: 5px;
+}
+
 
