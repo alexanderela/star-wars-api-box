@@ -59,10 +59,16 @@ it('sets film to state', async () => {
 	await expect(wrapper.state().films).toEqual(mockFilm)
 })
 
-xit('should toggle the state of people if it is already selected', () => {
-	wrapper.setState({ peopleSelected: true })
-	wrapper.instance().showPeople()
-	expect(wrapper.state().peopleSelected).toBe(false)
+it('should toggle the state of people if it is already selected', async () => {
+		mockFilm = {
+		opening_crawl: "Heyy youu guyyyys", 
+		episode_id: 7, 
+		title: "The Force Awakens"
+	}
+	wrapper.setState({ peopleSelected: true, films: mockFilm })
+	await wrapper.instance().showPeople()
+	await expect(wrapper.state().peopleSelected).toBe(false)
+	// expect(wrapper.instance().showPeople).toHaveBeenCalled
 })
 
 it('sets people to state ', async () => {
@@ -92,7 +98,8 @@ it('should toggle the state of vehicles if it is already selected', async () => 
 		vehicles: [],
 		peopleSelected: false, 
 		vehiclesSelected: false,
-		planetsSelected: false 
+		planetsSelected: false,
+		favorites: [] 
 	}
 
 	const expectedState = {
@@ -103,7 +110,8 @@ it('should toggle the state of vehicles if it is already selected', async () => 
     planets: [],
     peopleSelected: false,
     vehiclesSelected: true,
-    planetsSelected: false
+    planetsSelected: false,
+		favorites: []
   }
 
   wrapper.setState(initialState)

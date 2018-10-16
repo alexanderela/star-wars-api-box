@@ -27,16 +27,6 @@ class App extends Component {
     this.showFilm()
   }
 
-  setLocalStorage = (key, category) => {
-    localStorage.setItem(key, JSON.stringify(category))
-  }
-
-  getLocalStorage = (categoryName) => {
-    if(localStorage.length) {
-      return JSON.parse(localStorage.getItem(categoryName))
-    }
-  }
-
   addToFavorites = (card) => {
     const favorites = [...this.state.favorites, card]
     this.setState({ favorites })
@@ -65,6 +55,16 @@ class App extends Component {
     } else if (categoryName === 'vehicles') {
       this.setState({ vehiclesSelected: true })
       this.showVehicles()
+    }
+  }
+
+  setLocalStorage = (key, category) => {
+    localStorage.setItem(key, JSON.stringify(category))
+  }
+
+  getLocalStorage = (categoryName) => {
+    if(localStorage.length) {
+      return JSON.parse(localStorage.getItem(categoryName))
     }
   }
 
