@@ -60,9 +60,9 @@ class Nav extends Component {
 	}
 
 render() {
-	const { showPeople, showVehicles, showPlanets } = this.props
+	const { showPeople, showVehicles, showPlanets, favoritesCount } = this.props
 	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
-	
+	console.log(favoritesCount)
 	return(
 		<div className="button-container">
 		    <button 
@@ -89,7 +89,10 @@ render() {
 		      name="vehicles"
 		      onClick={this.handleVehicleClick}
 		    >Vehicles</button>
-		    <FavoriteButton className="FavoriteButton" />
+		    <FavoriteButton 
+		    	className="FavoriteButton"
+		    	favoritesCount={favoritesCount}
+		    />
 		  </div>
 		)
 	}

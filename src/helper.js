@@ -48,7 +48,8 @@ class DataCleaner {
 			newPerson.name = person.name
 			newPerson.homeWorld = await this.getHomeWorld(person)
 			newPerson.species = await this.getSpecies(person)
-			// console.log(newPerson.species)
+			newPerson.isFavorite = false
+			newPerson.type = 'people'
 			return newPerson
 		})
 		return Promise.all(peoplePromises)
@@ -108,6 +109,8 @@ class DataCleaner {
 			newPlanet.population = planet.population
 			newPlanet.climate = planet.climate
 			newPlanet.residents = await this.getResidents(planet)
+			newPlanet.isFavorite = false
+			newPlanet.type = 'planets'
 			return newPlanet
 		})
 		return Promise.all(planetPromises)
@@ -148,6 +151,8 @@ class DataCleaner {
 			newVehicle.model = vehicle.model
 			newVehicle.class = vehicle.vehicle_class
 			newVehicle.passengers = vehicle.passengers
+			newVehicle.isFavorite = false
+			newVehicle.type = 'vehicles'
 			return newVehicle
 		})
 		return Promise.all(vehiclePromises)

@@ -27,6 +27,7 @@ ShallowWrapper {
             SWAPI Box
           </h1>
           <Nav
+            favoritesCount={0}
             showPeople={[Function]}
             showPlanet={[Function]}
             showVehicle={[Function]}
@@ -53,6 +54,7 @@ ShallowWrapper {
               SWAPI Box
             </h1>,
             <Nav
+              favoritesCount={0}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
@@ -80,6 +82,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "favoritesCount": 0,
               "showPeople": [Function],
               "showPlanet": [Function],
               "showVehicle": [Function],
@@ -122,6 +125,7 @@ ShallowWrapper {
               SWAPI Box
             </h1>
             <Nav
+              favoritesCount={0}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
@@ -148,6 +152,7 @@ ShallowWrapper {
                 SWAPI Box
               </h1>,
               <Nav
+                favoritesCount={0}
                 showPeople={[Function]}
                 showPlanet={[Function]}
                 showVehicle={[Function]}
@@ -175,6 +180,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "favoritesCount": 0,
                 "showPeople": [Function],
                 "showPlanet": [Function],
                 "showVehicle": [Function],
