@@ -32,9 +32,8 @@ class App extends Component {
     this.setState({ favorites })
   }
 
-  removeFromFavorites = (name) => {
-    const favorites = this.state.favorites.filter(card => card.name !== name)
-    console.log(favorites)
+  removeFromFavorites = (id) => {
+    const favorites = this.state.favorites.filter(card => card.id !== id)
     this.setState({ favorites })
   }
 
@@ -45,7 +44,6 @@ class App extends Component {
   }
 
   toggleCategoryState = (categoryName) => {
-    // console.log('toggleCategory hooked up')
     if (categoryName === 'people') {
       this.setState({ peopleSelected: true })
       this.showPeople()
@@ -70,6 +68,7 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
+    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
@@ -98,6 +97,7 @@ class App extends Component {
         this.setState({ people: retrievedPeople })
       }
     }
+
   
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
@@ -174,14 +174,14 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
-        {people ? <CardContainer 
+        <CardContainer 
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-           /> : null}
+           />
           }
       </div>
     );
@@ -195,14 +195,14 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
         </header>
-        {vehicles ? <CardContainer 
+        <CardContainer 
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-          /> : null}
+          />
       </div>
     ); 
     } else if (planetsSelected) {
@@ -215,14 +215,14 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={favorites.length}
+            favoritesCount={!favorites.length ? 0 : favorites.length}
           />
           </header>
-          {planets ? <CardContainer 
+          <CardContainer 
             planets={planets} 
             addToFavorites={this.addToFavorites}
             removeFromFavorites={this.removeFromFavorites}
-            /> : null}
+            />
         </div>
     );
     } else {
@@ -235,7 +235,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}    
-            favoritesCount={favorites.length}  
+            favoritesCount={!favorites.length ? 0 : favorites.length}  
           />
           </header>
           <Sidebar films={films}/>

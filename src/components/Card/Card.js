@@ -12,6 +12,7 @@ class Card extends Component {
 	}
 
 selectCard = (card) => {
+	console.log(card)
 	card.isFavorite = !card.isFavorite
 	this.setState({ 
 		isSelected: !this.state.isSelected
@@ -20,14 +21,14 @@ selectCard = (card) => {
 		this.props.addToFavorites(card)
 	
 	} else if (card.isFavorite === false) {
-		this.props.removeFromFavorites(card.name)
+		this.props.removeFromFavorites(card.id)
 	}
 }
 
 render() {
 	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person } = this.props
 	const { isSelected } = this.state
-console.log(people)
+
 if (people) {
 	return (
 		<div className="Card">

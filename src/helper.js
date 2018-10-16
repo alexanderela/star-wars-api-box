@@ -50,6 +50,7 @@ class DataCleaner {
 			newPerson.species = await this.getSpecies(person)
 			newPerson.isFavorite = false
 			newPerson.type = 'people'
+			newPerson.id = person.name
 			return newPerson
 		})
 		return Promise.all(peoplePromises)
@@ -108,6 +109,7 @@ class DataCleaner {
 			newPlanet.residents = await this.getResidents(planet)
 			newPlanet.isFavorite = false
 			newPlanet.type = 'planets'
+			newPlanet.id = planet.name
 			return newPlanet
 		})
 		return Promise.all(planetPromises)
@@ -150,6 +152,7 @@ class DataCleaner {
 			newVehicle.passengers = vehicle.passengers
 			newVehicle.isFavorite = false
 			newVehicle.type = 'vehicles'
+			newVehicle.id = vehicle.name
 			return newVehicle
 		})
 		return Promise.all(vehiclePromises)
