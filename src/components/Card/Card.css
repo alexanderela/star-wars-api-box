@@ -5,10 +5,10 @@
   /*background: #363535;*/
   background: url('../../assets/swapi_rough_gray.jpg');
   color: white;
-  height: 20rem;
   cursor: pointer;
   font-family: 'Pathway Gothic One', sans-serif;
   font-size: 1.2rem;
+  height: 20rem;
   letter-spacing: 0.1rem;
 }
 
@@ -17,34 +17,37 @@
 }
 
 .fav-btn-card-container {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	padding: 0.5rem 2rem;
 }
 
 .fav-btn {
-	display: flex;
-	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-	cursor: pointer;
-	height: 3.5rem;
-	width: 3.5rem;
 	box-shadow: ;
+	cursor: pointer;
+	display: flex;
+	height: 3.5rem;
+	justify-content: center;
+	width: 3.5rem;
 }
 
 .fav-btn:hover {
   box-shadow: #d9ffd9 0px 0px 20px 2px;
+ 	border-radius: 50%;
 }
 
 
 .fav-btn-inactive {
 	background-color: #FFF;
+	border-radius: 50%;
 }
 
 .fav-btn-active {
 	background-color: #ffdf00;
+	border-radius: 50%;
 }
 
 .fa-jedi {
