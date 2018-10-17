@@ -111,7 +111,7 @@ class DataCleaner {
 			newPlanet.terrain = planet.terrain
 			newPlanet.population = planet.population
 			newPlanet.climate = planet.climate
-			newPlanet.residents = await this.getResidents(planet)
+			newPlanet.residents = await this.getResidents(planet.residents)
 			newPlanet.isFavorite = false
 			newPlanet.type = 'planets'
 			newPlanet.id = planet.name

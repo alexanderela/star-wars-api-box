@@ -11,8 +11,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 
 
 	if (people) {
-		const cards = people.map((person) => {
-	// console.log(person)
+		cards = people.map((person) => {
 			return <Card 
 								people={people} {...person} 
 								person={person}
@@ -23,7 +22,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
           			/>
 		})
 	} else if (vehicles) {
-		const cards = vehicles.map((vehicle) => {
+		cards = vehicles.map((vehicle) => {
 			return <Card 
 								vehicles={vehicle} {...vehicle} 
 								key={vehicle.name} 
@@ -33,7 +32,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								/>
 		})
 	} else if (planets) {
-		const cards = planets.map((planet) => {
+		cards = planets.map((planet) => {
 			return <Card 
 								planets={planet} {...planet} 
 								key={planet.name} 
