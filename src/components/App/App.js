@@ -30,14 +30,11 @@ class App extends Component {
 
   addToFavorites = (card) => {
     if(this.state.favorites.includes(card)) {
-      console.log(card)
     } else if (!this.state.favorites.includes(card)) {
-      console.log('deez nuts')
     }
       const favorites = [...this.state.favorites, card]
       this.setState({ favorites })
       this.setLocalStorage('favorites', favorites)
-    
   }
 
   removeFromFavorites = (id) => {
@@ -45,6 +42,12 @@ class App extends Component {
     this.setState({ favorites })
     this.setLocalStorage('favorites', favorites)
   }
+
+  // showFavorites = (allFavs) => {
+  //   const favorites = this.state.favorites.filter(card => card.id !== id)
+  //   const category = this.state[type].filter(card => card.id !== id)
+  //   this.setState({ [type]: category, favorites: favorites })   
+  // }
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
@@ -193,7 +196,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={!favorites.length ? 0 : favorites.length}
+            favorites={favorites}
           />
         </header>
         {peopleSelected && 
@@ -201,21 +204,18 @@ class App extends Component {
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-          favorites={favorites}
            />}
         {vehiclesSelected && 
         <CardContainer 
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-          favorites={favorites}
           />}
         {planetsSelected && 
         <CardContainer 
           planets={planets} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
-          favorites={favorites}
           />} 
         {scroll && 
         <Sidebar films={films}/>

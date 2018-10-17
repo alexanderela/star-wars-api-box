@@ -2,23 +2,30 @@ import React from 'react';
 import './FavoriteButton.css';
 import PropTypes from 'prop-types';
 
-const FavoriteButton = ({favoritesCount, checkIfAnyFavorites}) => (
-	<div className="FavoriteButton">
-    <button 
-    	className="cat-button favorites-button"
-    	onClick={() => checkIfAnyFavorites()}
-    	>
-      Favorites
-      	<span 
-      		className="favorites-count">
-      		{favoritesCount}
-      	</span>
-    </button>
-	</div>
-)
+const FavoriteButton = ({favorites, checkIfAnyFavorites}) => {
+
+	return(
+		<div className="FavoriteButton">
+	    <button 
+	    	className="cat-button favorites-button"
+	    	// onClick={() => showFavorites(favorites)}
+	    	onClick={() => checkIfAnyFavorites()}
+	    	>
+	      Favorites
+	      	<span 
+	      		className="favorites-count">
+	      		{favorites ? favorites.length : 0}
+	      	</span>
+	    </button>
+		</div>
+	)
+}
 
 FavoriteButton.propTypes = {
-	favoritesCount: PropTypes.array,
+	favoritesCount: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.number
+  ]),
 	checkIfAnyFavorites: PropTypes.func
 }
 

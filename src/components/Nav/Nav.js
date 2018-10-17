@@ -62,13 +62,12 @@ class Nav extends Component {
 
 	checkIfAnyFavorites = (e) => {
 		if(!this.props.favoritesCount) {
-			console.log('checkiffunctionset up!')
 			this.setState({ favoritesExist: false })
 		}
 	}
 
 render() {
-	const { showPeople, showVehicles, showPlanets, favoritesCount } = this.props
+	const { showPeople, showVehicles, showPlanets, favorites } = this.props
 	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesExist } = this.state
 	return(
 			<div className="button-container">
@@ -99,7 +98,7 @@ render() {
 				    >Vehicles</button>
 				    <FavoriteButton 
 				    	className="FavoriteButton"
-				    	favoritesCount={favoritesCount}
+				    	favorites={favorites}
 				    	checkIfAnyFavorites={this.checkIfAnyFavorites}
 				    />
 				</div>
@@ -115,7 +114,11 @@ render() {
 Nav.propTypes = {
 	showPeople: PropTypes.func,
 	showVehicle: PropTypes.func,
-	showPlanet: PropTypes.func
+	showPlanet: PropTypes.func,
+	favoritesCount: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.number
+  ])
 }
 
 export default Nav;
