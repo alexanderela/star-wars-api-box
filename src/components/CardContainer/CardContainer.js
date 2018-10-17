@@ -7,10 +7,11 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 	// {people.length > 0 && <div/>}
 	// {vehicles.length > 0 && <div/>}
 	// {planets.length > 0 && <div/>}
+	let cards
 
 
 	if (people) {
-		const peopleCards = people.map((person) => {
+		const cards = people.map((person) => {
 	// console.log(person)
 			return <Card 
 								people={people} {...person} 
@@ -21,15 +22,8 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
           			favorites={favorites}
           			/>
 		})
-
-			return (
-				<div className='CardContainer'>
-					{ peopleCards }
-				</div>
-			);
 	} else if (vehicles) {
-
-		const vehicleCards = vehicles.map((vehicle) => {
+		const cards = vehicles.map((vehicle) => {
 			return <Card 
 								vehicles={vehicle} {...vehicle} 
 								key={vehicle.name} 
@@ -37,15 +31,9 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
           			removeFromFavorites={removeFromFavorites}
           			favorites={favorites}
 								/>
-	})
-
-		return (
-			<div className='CardContainer'>
-				{ vehicleCards }
-			</div>
-		);
+		})
 	} else if (planets) {
-		const planetCards = planets.map((planet) => {
+		const cards = planets.map((planet) => {
 			return <Card 
 								planets={planet} {...planet} 
 								key={planet.name} 
@@ -53,14 +41,13 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
           			removeFromFavorites={removeFromFavorites}
           			favorites={favorites}
 								/>
-	})
-
-		return (
-			<div className='CardContainer'>
-				{ planetCards }
-			</div>
-		);
+		})
 	}
+	return (
+		<div className='CardContainer'>
+			{ cards }
+		</div>
+	)
 }
 
 CardContainer.propTypes = {
