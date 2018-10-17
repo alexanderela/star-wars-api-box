@@ -4,43 +4,42 @@ import PropTypes from 'prop-types';
 
 
 class Card extends Component {
-	constructor({favorites}) {
-		super(favorites)
+	constructor(props) {
+		super(props)
 		this.state = {
 			isSelected: false
 		}
 	}
 
-selectCard = (card) => {
-	card.isFavorite = !card.isFavorite
-	this.setState({ 
-		isSelected: !this.state.isSelected
-	})
-	if (card.isFavorite === true) {
-		this.props.addToFavorites(card)
+	selectCard = (card) => {
+		card.isFavorite = !card.isFavorite
 		this.setState({ 
-			isSelected: true
-		})	
-	} else if (card.isFavorite === false) {
-		this.props.removeFromFavorites(card.id)
-		this.setState({ 
-				isSelected: false
+			isSelected: !this.state.isSelected
+		})
+		if (card.isFavorite === true) {
+			this.props.addToFavorites(card)
+			this.setState({ 
+				isSelected: true
 			})	
+		} else if (card.isFavorite === false) {
+			this.props.removeFromFavorites(card.id)
+			this.setState({ 
+					isSelected: false
+				})	
+		}
 	}
-}
 
-componentDidUpdate(favorites){
-	debugger
-	if(favorites.length) {
-		favorites.forEach(person => {
-
-			// this.setState({ 
-			// 	isSelected: true
-			// })
-			console.log('componentDidUpdate getting thereeeeee')
+	componentDidMount() {
+		if (this.props.favorites){
+		this.props.favorites.find((favorite) => {
+			if(favorite.id === this.props.name) {
+				this.setState({ 
+					isSelected: true
+				})	 
+			}
 		})
 	}
-}
+	}
 
 render() {
 	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites } = this.props
