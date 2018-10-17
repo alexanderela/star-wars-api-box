@@ -14,11 +14,11 @@ import mockPerson from '../../mockData/mockPerson.js';
 import mockSpecies from '../../mockData/mockSpecies.js';
 
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+// it('renders without crashing', () => {
+//   const div = document.createElement('div');
+//   ReactDOM.render(<App />, div);
+//   ReactDOM.unmountComponentAtNode(div);
+// });
 
 let wrapper;
 let mockEvent;
@@ -31,6 +31,10 @@ let expected;
 beforeEach(() => {
 	wrapper = shallow(<App />);	
 	mockEvent = { target: true }
+})
+
+afterEach(() => {
+	localStorage.clear()
 })
 
 it('matches the snapshot', () => {
@@ -278,17 +282,19 @@ it('invokes showPlanets when toggleCategory is called', () => {
 
 
 it('passes the correct favoritesCount props to Nav', () => {
+	const wrapper = mount(<App />);	
+	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
 	wrapper.setState({ favorites: [] })
 	const navComponent = wrapper.find(Nav)
 	expect(navComponent.props().favoritesCount).toEqual(0)
+	wrapper.setState({ favorites: mockVehicles })
+	const updatedNavComponent = wrapper.find(Nav)
+	console.log(updatedNavComponent.props())
+	expect(updatedNavComponent.props().favoritesCount).toEqual(2)
 })
 
-it('passes favoritesCount props to Nav if they exist in state', () => {
-	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
-	wrapper.setState({ favorites: mockVehicles })
-	const navComponent = wrapper.find(Nav)
-	expect(navComponent.props().favoritesCount).toEqual(2)
-})
+// it('passes favoritesCount props to Nav if they exist in state', () => {
+// })
 
 // it('renders CardContainer with vehicles props if vehicles are selected', () => {
 // 	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
