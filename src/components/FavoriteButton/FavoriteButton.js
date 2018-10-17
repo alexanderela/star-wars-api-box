@@ -1,5 +1,6 @@
 import React from 'react';
 import './FavoriteButton.css';
+import PropTypes from 'prop-types';
 
 const FavoriteButton = ({favoritesCount, checkIfAnyFavorites}) => (
 	<div className="FavoriteButton">
