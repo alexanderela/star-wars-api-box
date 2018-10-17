@@ -3,7 +3,7 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFavorites}) => {
+const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFavorites, favorites}) => {
 	// {people.length > 0 && <div/>}
 	// {vehicles.length > 0 && <div/>}
 	// {planets.length > 0 && <div/>}
@@ -18,6 +18,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={person.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
           			/>
 		})
 
@@ -34,6 +35,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={vehicle.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
 								/>
 	})
 
@@ -49,6 +51,7 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 								key={planet.name} 
 								addToFavorites={addToFavorites}
           			removeFromFavorites={removeFromFavorites}
+          			favorites={favorites}
 								/>
 	})
 

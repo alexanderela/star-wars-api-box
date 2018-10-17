@@ -29,9 +29,9 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
-    // if(this.state.favorites.includes(card)) {
-    // } else if (!this.state.favorites.includes(card)) {
-    // }
+    if(this.state.favorites.includes(card)) {
+      } else if (!this.state.favorites.includes(card)) {
+    }
       const favorites = [...this.state.favorites, card]
       this.setState({ favorites })
       this.setLocalStorage('favorites', favorites)
@@ -207,18 +207,21 @@ class App extends Component {
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
            />}
         {vehiclesSelected && 
         <CardContainer 
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
           />}
         {planetsSelected && 
         <CardContainer 
           planets={planets} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
           />} 
         {scroll && 
         <Sidebar films={films}/>
