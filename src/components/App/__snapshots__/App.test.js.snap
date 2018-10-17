@@ -27,13 +27,16 @@ ShallowWrapper {
             SWAPI Box
           </h1>
           <Nav
-            favoritesCount={0}
+            favorites={Array []}
             showPeople={[Function]}
             showPlanet={[Function]}
             showVehicle={[Function]}
             toggleCategoryState={[Function]}
           />
         </header>,
+        false,
+        false,
+        false,
         <Sidebar
           films={Object {}}
         />,
@@ -54,7 +57,7 @@ ShallowWrapper {
               SWAPI Box
             </h1>,
             <Nav
-              favoritesCount={0}
+              favorites={Array []}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
@@ -82,7 +85,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "favoritesCount": 0,
+              "favorites": Array [],
               "showPeople": [Function],
               "showPlanet": [Function],
               "showVehicle": [Function],
@@ -95,6 +98,9 @@ ShallowWrapper {
         ],
         "type": "header",
       },
+      false,
+      false,
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -125,13 +131,16 @@ ShallowWrapper {
               SWAPI Box
             </h1>
             <Nav
-              favoritesCount={0}
+              favorites={Array []}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
               toggleCategoryState={[Function]}
             />
           </header>,
+          false,
+          false,
+          false,
           <Sidebar
             films={Object {}}
           />,
@@ -152,7 +161,7 @@ ShallowWrapper {
                 SWAPI Box
               </h1>,
               <Nav
-                favoritesCount={0}
+                favorites={Array []}
                 showPeople={[Function]}
                 showPlanet={[Function]}
                 showVehicle={[Function]}
@@ -180,7 +189,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "favoritesCount": 0,
+                "favorites": Array [],
                 "showPeople": [Function],
                 "showPlanet": [Function],
                 "showVehicle": [Function],
@@ -193,6 +202,9 @@ ShallowWrapper {
           ],
           "type": "header",
         },
+        false,
+        false,
+        false,
         Object {
           "instance": null,
           "key": undefined,

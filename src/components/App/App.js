@@ -29,9 +29,9 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
-    if(this.state.favorites.includes(card)) {
-    } else if (!this.state.favorites.includes(card)) {
-    }
+    // if(this.state.favorites.includes(card)) {
+    // } else if (!this.state.favorites.includes(card)) {
+    // }
       const favorites = [...this.state.favorites, card]
       this.setState({ favorites })
       this.setLocalStorage('favorites', favorites)
@@ -44,9 +44,11 @@ class App extends Component {
   }
 
   // showFavorites = (allFavs) => {
-  //   const favorites = this.state.favorites.filter(card => card.id !== id)
-  //   const category = this.state[type].filter(card => card.id !== id)
-  //   this.setState({ [type]: category, favorites: favorites })   
+  //   const allFavorites = allFavs.map(fav => fav)
+  //   console.log(allFavorites)
+  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
+  //   // const category = this.state[type].filter(card => card.id !== allFavorites.id)
+  //   // this.setState({ [type]: category, favorites: favorites })   
   // }
 
   showFilm = async () => {
@@ -196,6 +198,7 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
+            showFavorites={this.showFavorites}
             favorites={favorites}
           />
         </header>

@@ -67,7 +67,7 @@ class Nav extends Component {
 	}
 
 render() {
-	const { showPeople, showVehicles, showPlanets, favorites } = this.props
+	const { showPeople, showVehicles, showPlanets, favorites, showFavorites } = this.props
 	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesExist } = this.state
 	return(
 			<div className="button-container">
@@ -100,6 +100,7 @@ render() {
 				    	className="FavoriteButton"
 				    	favorites={favorites}
 				    	checkIfAnyFavorites={this.checkIfAnyFavorites}
+				      showFavorites={showFavorites}
 				    />
 				</div>
 				{!favoritesExist 

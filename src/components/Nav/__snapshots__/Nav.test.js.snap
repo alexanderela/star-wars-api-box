@@ -110,39 +110,48 @@ ReactWrapper {
                   <div
                     class="button-container"
                   >
-                    <button
-                      class="cat-button people-button 
-		      	cat-button-inactive"
-                      name="people"
-                    >
-                      People
-                    </button>
-                    <button
-                      class="cat-button planets-button 
-		      	cat-button-inactive"
-                      name="planets"
-                    >
-                      Planets
-                    </button>
-                    <button
-                      class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                      name="vehicles"
-                    >
-                      Vehicles
-                    </button>
                     <div
-                      class="FavoriteButton"
+                      class="nav-buttons"
                     >
                       <button
-                        class="cat-button favorites-button"
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
                       >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
+                        People
                       </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
                     </div>
+                    <p
+                      class="error-favorites"
+                    />
                   </div>
                 </div>,
                 "context": Object {},
@@ -258,39 +267,48 @@ ReactWrapper {
                 <div
                   class="button-container"
                 >
-                  <button
-                    class="cat-button people-button 
-		      	cat-button-inactive"
-                    name="people"
-                  >
-                    People
-                  </button>
-                  <button
-                    class="cat-button planets-button 
-		      	cat-button-inactive"
-                    name="planets"
-                  >
-                    Planets
-                  </button>
-                  <button
-                    class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                    name="vehicles"
-                  >
-                    Vehicles
-                  </button>
                   <div
-                    class="FavoriteButton"
+                    class="nav-buttons"
                   >
                     <button
-                      class="cat-button favorites-button"
+                      class="cat-button people-button 
+				      	cat-button-inactive"
+                      name="people"
                     >
-                      Favorites
-                      <span
-                        class="favorites-count"
-                      />
+                      People
                     </button>
+                    <button
+                      class="cat-button planets-button 
+				      	cat-button-inactive"
+                      name="planets"
+                    >
+                      Planets
+                    </button>
+                    <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>
+                    <div
+                      class="FavoriteButton"
+                    >
+                      <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>
+                    </div>
                   </div>
+                  <p
+                    class="error-favorites"
+                  />
                 </div>
               </div>,
               "context": Object {},
@@ -392,7 +410,7 @@ ReactWrapper {
           "_debugOwner": [Circular],
           "_debugSource": Object {
             "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
-            "lineNumber": 66,
+            "lineNumber": 73,
           },
           "actualDuration": 0,
           "actualStartTime": -1,
@@ -403,42 +421,13 @@ ReactWrapper {
             "_debugOwner": [Circular],
             "_debugSource": Object {
               "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
-              "lineNumber": 67,
+              "lineNumber": 74,
             },
             "actualDuration": 0,
             "actualStartTime": -1,
             "alternate": null,
-            "child": null,
-            "childExpirationTime": 0,
-            "effectTag": 0,
-            "expirationTime": 0,
-            "firstContextDependency": null,
-            "firstEffect": null,
-            "index": 0,
-            "key": null,
-            "lastEffect": null,
-            "memoizedProps": Object {
-              "children": "People",
-              "className": "cat-button people-button 
-		      	cat-button-inactive",
-              "name": "people",
-              "onClick": [Function],
-            },
-            "memoizedState": null,
-            "mode": 0,
-            "nextEffect": null,
-            "pendingProps": Object {
-              "children": "People",
-              "className": "cat-button people-button 
-		      	cat-button-inactive",
-              "name": "people",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "return": [Circular],
-            "selfBaseDuration": 0,
-            "sibling": FiberNode {
-              "_debugID": 53,
+            "child": FiberNode {
+              "_debugID": 54,
               "_debugIsCurrentlyTiming": false,
               "_debugOwner": [Circular],
               "_debugSource": Object {
@@ -454,31 +443,31 @@ ReactWrapper {
               "expirationTime": 0,
               "firstContextDependency": null,
               "firstEffect": null,
-              "index": 1,
+              "index": 0,
               "key": null,
               "lastEffect": null,
               "memoizedProps": Object {
-                "children": "Planets",
-                "className": "cat-button planets-button 
-		      	cat-button-inactive",
-                "name": "planets",
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
                 "onClick": [Function],
               },
               "memoizedState": null,
               "mode": 0,
               "nextEffect": null,
               "pendingProps": Object {
-                "children": "Planets",
-                "className": "cat-button planets-button 
-		      	cat-button-inactive",
-                "name": "planets",
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
                 "onClick": [Function],
               },
               "ref": null,
               "return": [Circular],
               "selfBaseDuration": 0,
               "sibling": FiberNode {
-                "_debugID": 54,
+                "_debugID": 55,
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
@@ -494,31 +483,31 @@ ReactWrapper {
                 "expirationTime": 0,
                 "firstContextDependency": null,
                 "firstEffect": null,
-                "index": 2,
+                "index": 1,
                 "key": null,
                 "lastEffect": null,
                 "memoizedProps": Object {
-                  "children": "Vehicles",
-                  "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-                  "name": "vehicles",
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
                   "onClick": [Function],
                 },
                 "memoizedState": null,
                 "mode": 0,
                 "nextEffect": null,
                 "pendingProps": Object {
-                  "children": "Vehicles",
-                  "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-                  "name": "vehicles",
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
                   "onClick": [Function],
                 },
                 "ref": null,
                 "return": [Circular],
                 "selfBaseDuration": 0,
                 "sibling": FiberNode {
-                  "_debugID": 55,
+                  "_debugID": 56,
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
@@ -528,61 +517,73 @@ ReactWrapper {
                   "actualDuration": 0,
                   "actualStartTime": -1,
                   "alternate": null,
-                  "child": FiberNode {
-                    "_debugID": 56,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstContextDependency": null,
+                  "firstEffect": null,
+                  "index": 2,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "Vehicles",
+                    "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                    "name": "vehicles",
+                    "onClick": [Function],
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "Vehicles",
+                    "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                    "name": "vehicles",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 57,
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
-                      "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                      "lineNumber": 5,
+                      "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                      "lineNumber": 99,
                     },
                     "actualDuration": 0,
                     "actualStartTime": -1,
                     "alternate": null,
                     "child": FiberNode {
-                      "_debugID": 57,
+                      "_debugID": 58,
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
                         "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                        "lineNumber": 6,
+                        "lineNumber": 8,
                       },
                       "actualDuration": 0,
                       "actualStartTime": -1,
                       "alternate": null,
                       "child": FiberNode {
-                        "_debugID": 58,
+                        "_debugID": 59,
                         "_debugIsCurrentlyTiming": false,
-                        "_debugOwner": null,
-                        "_debugSource": null,
+                        "_debugOwner": [Circular],
+                        "_debugSource": Object {
+                          "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                          "lineNumber": 9,
+                        },
                         "actualDuration": 0,
                         "actualStartTime": -1,
                         "alternate": null,
-                        "child": null,
-                        "childExpirationTime": 0,
-                        "effectTag": 0,
-                        "expirationTime": 0,
-                        "firstContextDependency": null,
-                        "firstEffect": null,
-                        "index": 0,
-                        "key": null,
-                        "lastEffect": null,
-                        "memoizedProps": "Favorites",
-                        "memoizedState": null,
-                        "mode": 0,
-                        "nextEffect": null,
-                        "pendingProps": "Favorites",
-                        "ref": null,
-                        "return": [Circular],
-                        "selfBaseDuration": 0,
-                        "sibling": FiberNode {
-                          "_debugID": 59,
+                        "child": FiberNode {
+                          "_debugID": 60,
                           "_debugIsCurrentlyTiming": false,
-                          "_debugOwner": [Circular],
-                          "_debugSource": Object {
-                            "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                            "lineNumber": 8,
-                          },
+                          "_debugOwner": null,
+                          "_debugSource": null,
                           "actualDuration": 0,
                           "actualStartTime": -1,
                           "alternate": null,
@@ -592,36 +593,120 @@ ReactWrapper {
                           "expirationTime": 0,
                           "firstContextDependency": null,
                           "firstEffect": null,
-                          "index": 1,
+                          "index": 0,
                           "key": null,
                           "lastEffect": null,
-                          "memoizedProps": Object {
-                            "children": undefined,
-                            "className": "favorites-count",
-                          },
+                          "memoizedProps": "Favorites",
                           "memoizedState": null,
                           "mode": 0,
                           "nextEffect": null,
-                          "pendingProps": Object {
-                            "children": undefined,
-                            "className": "favorites-count",
-                          },
+                          "pendingProps": "Favorites",
                           "ref": null,
                           "return": [Circular],
                           "selfBaseDuration": 0,
-                          "sibling": null,
-                          "stateNode": <span
-                            class="favorites-count"
-                          />,
-                          "tag": 7,
+                          "sibling": FiberNode {
+                            "_debugID": 61,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugOwner": [Circular],
+                            "_debugSource": Object {
+                              "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                              "lineNumber": 15,
+                            },
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "effectTag": 0,
+                            "expirationTime": 0,
+                            "firstContextDependency": null,
+                            "firstEffect": null,
+                            "index": 1,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": Object {
+                              "children": 0,
+                              "className": "favorites-count",
+                            },
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": Object {
+                              "children": 0,
+                              "className": "favorites-count",
+                            },
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": null,
+                            "stateNode": <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>,
+                            "tag": 7,
+                            "treeBaseDuration": 0,
+                            "type": "span",
+                            "updateQueue": null,
+                          },
+                          "stateNode": Favorites,
+                          "tag": 8,
                           "treeBaseDuration": 0,
-                          "type": "span",
+                          "type": null,
                           "updateQueue": null,
                         },
-                        "stateNode": Favorites,
-                        "tag": 8,
+                        "childExpirationTime": 0,
+                        "effectTag": 0,
+                        "expirationTime": 0,
+                        "firstContextDependency": null,
+                        "firstEffect": null,
+                        "index": 0,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": Object {
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>,
+                          ],
+                          "className": "cat-button favorites-button",
+                          "onClick": [Function],
+                        },
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": Object {
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>,
+                          ],
+                          "className": "cat-button favorites-button",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": null,
+                        "stateNode": <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "tag": 7,
                         "treeBaseDuration": 0,
-                        "type": null,
+                        "type": "button",
                         "updateQueue": null,
                       },
                       "childExpirationTime": 0,
@@ -633,132 +718,108 @@ ReactWrapper {
                       "key": null,
                       "lastEffect": null,
                       "memoizedProps": Object {
-                        "children": Array [
-                          "Favorites",
+                        "children": <button
+                          className="cat-button favorites-button"
+                          onClick={[Function]}
+                        >
+                          Favorites
                           <span
                             className="favorites-count"
-                          />,
-                        ],
-                        "className": "cat-button favorites-button",
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "className": "FavoriteButton",
                       },
                       "memoizedState": null,
                       "mode": 0,
                       "nextEffect": null,
                       "pendingProps": Object {
-                        "children": Array [
-                          "Favorites",
+                        "children": <button
+                          className="cat-button favorites-button"
+                          onClick={[Function]}
+                        >
+                          Favorites
                           <span
                             className="favorites-count"
-                          />,
-                        ],
-                        "className": "cat-button favorites-button",
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "className": "FavoriteButton",
                       },
                       "ref": null,
                       "return": [Circular],
                       "selfBaseDuration": 0,
                       "sibling": null,
-                      "stateNode": <button
-                        class="cat-button favorites-button"
+                      "stateNode": <div
+                        class="FavoriteButton"
                       >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
-                      </button>,
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>,
                       "tag": 7,
                       "treeBaseDuration": 0,
-                      "type": "button",
+                      "type": "div",
                       "updateQueue": null,
                     },
                     "childExpirationTime": 0,
-                    "effectTag": 0,
+                    "effectTag": 1,
                     "expirationTime": 0,
                     "firstContextDependency": null,
                     "firstEffect": null,
-                    "index": 0,
+                    "index": 3,
                     "key": null,
                     "lastEffect": null,
                     "memoizedProps": Object {
-                      "children": <button
-                        className="cat-button favorites-button"
-                      >
-                        Favorites
-                        <span
-                          className="favorites-count"
-                        />
-                      </button>,
+                      "checkIfAnyFavorites": [Function],
                       "className": "FavoriteButton",
+                      "favorites": undefined,
                     },
                     "memoizedState": null,
                     "mode": 0,
                     "nextEffect": null,
                     "pendingProps": Object {
-                      "children": <button
-                        className="cat-button favorites-button"
-                      >
-                        Favorites
-                        <span
-                          className="favorites-count"
-                        />
-                      </button>,
+                      "checkIfAnyFavorites": [Function],
                       "className": "FavoriteButton",
+                      "favorites": undefined,
                     },
                     "ref": null,
                     "return": [Circular],
                     "selfBaseDuration": 0,
                     "sibling": null,
-                    "stateNode": <div
-                      class="FavoriteButton"
-                    >
-                      <button
-                        class="cat-button favorites-button"
-                      >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
-                      </button>
-                    </div>,
-                    "tag": 7,
+                    "stateNode": null,
+                    "tag": 0,
                     "treeBaseDuration": 0,
-                    "type": "div",
+                    "type": [Function],
                     "updateQueue": null,
                   },
-                  "childExpirationTime": 0,
-                  "effectTag": 1,
-                  "expirationTime": 0,
-                  "firstContextDependency": null,
-                  "firstEffect": null,
-                  "index": 3,
-                  "key": null,
-                  "lastEffect": null,
-                  "memoizedProps": Object {
-                    "className": "FavoriteButton",
-                    "favoritesCount": undefined,
-                  },
-                  "memoizedState": null,
-                  "mode": 0,
-                  "nextEffect": null,
-                  "pendingProps": Object {
-                    "className": "FavoriteButton",
-                    "favoritesCount": undefined,
-                  },
-                  "ref": null,
-                  "return": [Circular],
-                  "selfBaseDuration": 0,
-                  "sibling": null,
-                  "stateNode": null,
-                  "tag": 0,
+                  "stateNode": <button
+                    class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                  >
+                    Vehicles
+                  </button>,
+                  "tag": 7,
                   "treeBaseDuration": 0,
-                  "type": [Function],
+                  "type": "button",
                   "updateQueue": null,
                 },
                 "stateNode": <button
-                  class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                  name="vehicles"
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
                 >
-                  Vehicles
+                  Planets
                 </button>,
                 "tag": 7,
                 "treeBaseDuration": 0,
@@ -766,27 +827,180 @@ ReactWrapper {
                 "updateQueue": null,
               },
               "stateNode": <button
-                class="cat-button planets-button 
-		      	cat-button-inactive"
-                name="planets"
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
               >
-                Planets
+                People
               </button>,
               "tag": 7,
               "treeBaseDuration": 0,
               "type": "button",
               "updateQueue": null,
             },
-            "stateNode": <button
-              class="cat-button people-button 
-		      	cat-button-inactive"
-              name="people"
+            "childExpirationTime": 0,
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": FiberNode {
+              "_debugID": 53,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                "lineNumber": 108,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 1,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "className": "error-favorites",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "className": "error-favorites",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": <p
+                class="error-favorites"
+              />,
+              "tag": 7,
+              "treeBaseDuration": 0,
+              "type": "p",
+              "updateQueue": null,
+            },
+            "stateNode": <div
+              class="nav-buttons"
             >
-              People
-            </button>,
+              <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
+                class="FavoriteButton"
+              >
+                <button
+                  class="cat-button favorites-button"
+                >
+                  Favorites
+                  <span
+                    class="favorites-count"
+                  >
+                    0
+                  </span>
+                </button>
+              </div>
+            </div>,
             "tag": 7,
             "treeBaseDuration": 0,
-            "type": "button",
+            "type": "div",
             "updateQueue": null,
           },
           "childExpirationTime": 0,
@@ -799,32 +1013,40 @@ ReactWrapper {
           "lastEffect": null,
           "memoizedProps": Object {
             "children": Array [
-              <button
-                className="cat-button people-button 
-		      	cat-button-inactive"
-                name="people"
-                onClick={[Function]}
+              <div
+                className="nav-buttons"
               >
-                People
-              </button>,
-              <button
-                className="cat-button planets-button 
-		      	cat-button-inactive"
-                name="planets"
-                onClick={[Function]}
-              >
-                Planets
-              </button>,
-              <button
-                className="cat-button vehicles-button 
-		      	cat-button-inactive"
-                name="vehicles"
-                onClick={[Function]}
-              >
-                Vehicles
-              </button>,
-              <FavoriteButton
-                className="FavoriteButton"
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />
+              </div>,
+              <p
+                className="error-favorites"
               />,
             ],
             "className": "button-container",
@@ -834,32 +1056,40 @@ ReactWrapper {
           "nextEffect": null,
           "pendingProps": Object {
             "children": Array [
-              <button
-                className="cat-button people-button 
-		      	cat-button-inactive"
-                name="people"
-                onClick={[Function]}
+              <div
+                className="nav-buttons"
               >
-                People
-              </button>,
-              <button
-                className="cat-button planets-button 
-		      	cat-button-inactive"
-                name="planets"
-                onClick={[Function]}
-              >
-                Planets
-              </button>,
-              <button
-                className="cat-button vehicles-button 
-		      	cat-button-inactive"
-                name="vehicles"
-                onClick={[Function]}
-              >
-                Vehicles
-              </button>,
-              <FavoriteButton
-                className="FavoriteButton"
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />
+              </div>,
+              <p
+                className="error-favorites"
               />,
             ],
             "className": "button-container",
@@ -871,39 +1101,48 @@ ReactWrapper {
           "stateNode": <div
             class="button-container"
           >
-            <button
-              class="cat-button people-button 
-		      	cat-button-inactive"
-              name="people"
-            >
-              People
-            </button>
-            <button
-              class="cat-button planets-button 
-		      	cat-button-inactive"
-              name="planets"
-            >
-              Planets
-            </button>
-            <button
-              class="cat-button vehicles-button 
-		      	cat-button-inactive"
-              name="vehicles"
-            >
-              Vehicles
-            </button>
             <div
-              class="FavoriteButton"
+              class="nav-buttons"
             >
               <button
-                class="cat-button favorites-button"
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
               >
-                Favorites
-                <span
-                  class="favorites-count"
-                />
+                People
               </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
+                class="FavoriteButton"
+              >
+                <button
+                  class="cat-button favorites-button"
+                >
+                  Favorites
+                  <span
+                    class="favorites-count"
+                  >
+                    0
+                  </span>
+                </button>
+              </div>
             </div>
+            <p
+              class="error-favorites"
+            />
           </div>,
           "tag": 7,
           "treeBaseDuration": 0,
@@ -925,6 +1164,7 @@ ReactWrapper {
           "toggleCategoryState": [MockFunction],
         },
         "memoizedState": Object {
+          "favoritesExist": true,
           "peopleSelected": false,
           "planetsSelected": false,
           "vehiclesSelected": false,
@@ -1026,39 +1266,48 @@ ReactWrapper {
                   <div
                     class="button-container"
                   >
-                    <button
-                      class="cat-button people-button 
-		      	cat-button-inactive"
-                      name="people"
-                    >
-                      People
-                    </button>
-                    <button
-                      class="cat-button planets-button 
-		      	cat-button-inactive"
-                      name="planets"
-                    >
-                      Planets
-                    </button>
-                    <button
-                      class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                      name="vehicles"
-                    >
-                      Vehicles
-                    </button>
                     <div
-                      class="FavoriteButton"
+                      class="nav-buttons"
                     >
                       <button
-                        class="cat-button favorites-button"
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
                       >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
+                        People
                       </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
                     </div>
+                    <p
+                      class="error-favorites"
+                    />
                   </div>
                 </div>,
                 "context": Object {},
@@ -1174,39 +1423,48 @@ ReactWrapper {
                 <div
                   class="button-container"
                 >
-                  <button
-                    class="cat-button people-button 
-		      	cat-button-inactive"
-                    name="people"
-                  >
-                    People
-                  </button>
-                  <button
-                    class="cat-button planets-button 
-		      	cat-button-inactive"
-                    name="planets"
-                  >
-                    Planets
-                  </button>
-                  <button
-                    class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                    name="vehicles"
-                  >
-                    Vehicles
-                  </button>
                   <div
-                    class="FavoriteButton"
+                    class="nav-buttons"
                   >
                     <button
-                      class="cat-button favorites-button"
+                      class="cat-button people-button 
+				      	cat-button-inactive"
+                      name="people"
                     >
-                      Favorites
-                      <span
-                        class="favorites-count"
-                      />
+                      People
                     </button>
+                    <button
+                      class="cat-button planets-button 
+				      	cat-button-inactive"
+                      name="planets"
+                    >
+                      Planets
+                    </button>
+                    <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>
+                    <div
+                      class="FavoriteButton"
+                    >
+                      <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>
+                    </div>
                   </div>
+                  <p
+                    class="error-favorites"
+                  />
                 </div>
               </div>,
               "context": Object {},
@@ -1307,6 +1565,7 @@ ReactWrapper {
         "updateQueue": null,
       },
       "_reactInternalInstance": Object {},
+      "checkIfAnyFavorites": [Function],
       "context": Object {},
       "handlePeopleClick": [Function],
       "handlePlanetClick": [Function],
@@ -1319,6 +1578,7 @@ ReactWrapper {
       },
       "refs": Object {},
       "state": Object {
+        "favoritesExist": true,
         "peopleSelected": false,
         "planetsSelected": false,
         "vehiclesSelected": false,
@@ -1343,70 +1603,87 @@ ReactWrapper {
       "instance": <div
         class="button-container"
       >
-        <button
-          class="cat-button people-button 
-		      	cat-button-inactive"
-          name="people"
-        >
-          People
-        </button>
-        <button
-          class="cat-button planets-button 
-		      	cat-button-inactive"
-          name="planets"
-        >
-          Planets
-        </button>
-        <button
-          class="cat-button vehicles-button 
-		      	cat-button-inactive"
-          name="vehicles"
-        >
-          Vehicles
-        </button>
         <div
-          class="FavoriteButton"
+          class="nav-buttons"
         >
           <button
-            class="cat-button favorites-button"
+            class="cat-button people-button 
+				      	cat-button-inactive"
+            name="people"
           >
-            Favorites
-            <span
-              class="favorites-count"
-            />
+            People
           </button>
+          <button
+            class="cat-button planets-button 
+				      	cat-button-inactive"
+            name="planets"
+          >
+            Planets
+          </button>
+          <button
+            class="cat-button vehicles-button 
+				      	cat-button-inactive"
+            name="vehicles"
+          >
+            Vehicles
+          </button>
+          <div
+            class="FavoriteButton"
+          >
+            <button
+              class="cat-button favorites-button"
+            >
+              Favorites
+              <span
+                class="favorites-count"
+              >
+                0
+              </span>
+            </button>
+          </div>
         </div>
+        <p
+          class="error-favorites"
+        />
       </div>,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            className="cat-button people-button 
-		      	cat-button-inactive"
-            name="people"
-            onClick={[Function]}
+          <div
+            className="nav-buttons"
           >
-            People
-          </button>,
-          <button
-            className="cat-button planets-button 
-		      	cat-button-inactive"
-            name="planets"
-            onClick={[Function]}
-          >
-            Planets
-          </button>,
-          <button
-            className="cat-button vehicles-button 
-		      	cat-button-inactive"
-            name="vehicles"
-            onClick={[Function]}
-          >
-            Vehicles
-          </button>,
-          <FavoriteButton
-            className="FavoriteButton"
+            <button
+              className="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
+              onClick={[Function]}
+            >
+              People
+            </button>
+            <button
+              className="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+              onClick={[Function]}
+            >
+              Planets
+            </button>
+            <button
+              className="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+              onClick={[Function]}
+            >
+              Vehicles
+            </button>
+            <FavoriteButton
+              checkIfAnyFavorites={[Function]}
+              className="FavoriteButton"
+            />
+          </div>,
+          <p
+            className="error-favorites"
           />,
         ],
         "className": "button-container",
@@ -1414,85 +1691,31 @@ ReactWrapper {
       "ref": null,
       "rendered": Array [
         Object {
-          "instance": <button
-            class="cat-button people-button 
-		      	cat-button-inactive"
-            name="people"
+          "instance": <div
+            class="nav-buttons"
           >
-            People
-          </button>,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "People",
-            "className": "cat-button people-button 
-		      	cat-button-inactive",
-            "name": "people",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": Array [
-            "People",
-          ],
-          "type": "button",
-        },
-        Object {
-          "instance": <button
-            class="cat-button planets-button 
-		      	cat-button-inactive"
-            name="planets"
-          >
-            Planets
-          </button>,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Planets",
-            "className": "cat-button planets-button 
-		      	cat-button-inactive",
-            "name": "planets",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Planets",
-          ],
-          "type": "button",
-        },
-        Object {
-          "instance": <button
-            class="cat-button vehicles-button 
-		      	cat-button-inactive"
-            name="vehicles"
-          >
-            Vehicles
-          </button>,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Vehicles",
-            "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-            "name": "vehicles",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": Array [
-            "Vehicles",
-          ],
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "className": "FavoriteButton",
-            "favoritesCount": undefined,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": <div
+            <button
+              class="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
+            >
+              People
+            </button>
+            <button
+              class="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+            >
+              Planets
+            </button>
+            <button
+              class="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+            >
+              Vehicles
+            </button>
+            <div
               class="FavoriteButton"
             >
               <button
@@ -1501,70 +1724,232 @@ ReactWrapper {
                 Favorites
                 <span
                   class="favorites-count"
-                />
-              </button>
-            </div>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": <button
-                className="cat-button favorites-button"
-              >
-                Favorites
-                <span
-                  className="favorites-count"
-                />
-              </button>,
-              "className": "FavoriteButton",
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": <button
-                  class="cat-button favorites-button"
                 >
-                  Favorites
-                  <span
-                    class="favorites-count"
-                  />
-                </button>,
+                  0
+                </span>
+              </button>
+            </div>
+          </div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>,
+              <button
+                className="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+                onClick={[Function]}
+              >
+                Planets
+              </button>,
+              <button
+                className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
+              >
+                Vehicles
+              </button>,
+              <FavoriteButton
+                checkIfAnyFavorites={[Function]}
+                className="FavoriteButton"
+              />,
+            ],
+            "className": "nav-buttons",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "People",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Planets",
+                "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                "name": "planets",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Planets",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Vehicles",
+                "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                "name": "vehicles",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Vehicles",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "checkIfAnyFavorites": [Function],
+                "className": "FavoriteButton",
+                "favorites": undefined,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>,
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": Array [
-                    "Favorites",
+                  "children": <button
+                    className="cat-button favorites-button"
+                    onClick={[Function]}
+                  >
+                    Favorites
                     <span
                       className="favorites-count"
-                    />,
-                  ],
-                  "className": "cat-button favorites-button",
+                    >
+                      0
+                    </span>
+                  </button>,
+                  "className": "FavoriteButton",
                 },
                 "ref": null,
                 "rendered": Array [
-                  "Favorites",
                   Object {
-                    "instance": <span
-                      class="favorites-count"
-                    />,
+                    "instance": <button
+                      class="cat-button favorites-button"
+                    >
+                      Favorites
+                      <span
+                        class="favorites-count"
+                      >
+                        0
+                      </span>
+                    </button>,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": undefined,
-                      "className": "favorites-count",
+                      "children": Array [
+                        "Favorites",
+                        <span
+                          className="favorites-count"
+                        >
+                          0
+                        </span>,
+                      ],
+                      "className": "cat-button favorites-button",
+                      "onClick": [Function],
                     },
                     "ref": null,
                     "rendered": Array [
-                      undefined,
+                      "Favorites",
+                      Object {
+                        "instance": <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 0,
+                          "className": "favorites-count",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          0,
+                        ],
+                        "type": "span",
+                      },
                     ],
-                    "type": "span",
+                    "type": "button",
                   },
                 ],
-                "type": "button",
+                "type": "div",
               },
-            ],
-            "type": "div",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <p
+            class="error-favorites"
+          />,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "error-favorites",
           },
-          "type": [Function],
+          "ref": null,
+          "rendered": Array [
+            undefined,
+          ],
+          "type": "p",
         },
       ],
       "type": "div",
@@ -1665,39 +2050,48 @@ ReactWrapper {
                     <div
                       class="button-container"
                     >
-                      <button
-                        class="cat-button people-button 
-		      	cat-button-inactive"
-                        name="people"
-                      >
-                        People
-                      </button>
-                      <button
-                        class="cat-button planets-button 
-		      	cat-button-inactive"
-                        name="planets"
-                      >
-                        Planets
-                      </button>
-                      <button
-                        class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                        name="vehicles"
-                      >
-                        Vehicles
-                      </button>
                       <div
-                        class="FavoriteButton"
+                        class="nav-buttons"
                       >
                         <button
-                          class="cat-button favorites-button"
+                          class="cat-button people-button 
+				      	cat-button-inactive"
+                          name="people"
                         >
-                          Favorites
-                          <span
-                            class="favorites-count"
-                          />
+                          People
                         </button>
+                        <button
+                          class="cat-button planets-button 
+				      	cat-button-inactive"
+                          name="planets"
+                        >
+                          Planets
+                        </button>
+                        <button
+                          class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                          name="vehicles"
+                        >
+                          Vehicles
+                        </button>
+                        <div
+                          class="FavoriteButton"
+                        >
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>
                       </div>
+                      <p
+                        class="error-favorites"
+                      />
                     </div>
                   </div>,
                   "context": Object {},
@@ -1813,39 +2207,48 @@ ReactWrapper {
                   <div
                     class="button-container"
                   >
-                    <button
-                      class="cat-button people-button 
-		      	cat-button-inactive"
-                      name="people"
-                    >
-                      People
-                    </button>
-                    <button
-                      class="cat-button planets-button 
-		      	cat-button-inactive"
-                      name="planets"
-                    >
-                      Planets
-                    </button>
-                    <button
-                      class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                      name="vehicles"
-                    >
-                      Vehicles
-                    </button>
                     <div
-                      class="FavoriteButton"
+                      class="nav-buttons"
                     >
                       <button
-                        class="cat-button favorites-button"
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
                       >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
+                        People
                       </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
                     </div>
+                    <p
+                      class="error-favorites"
+                    />
                   </div>
                 </div>,
                 "context": Object {},
@@ -1947,7 +2350,7 @@ ReactWrapper {
             "_debugOwner": [Circular],
             "_debugSource": Object {
               "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
-              "lineNumber": 66,
+              "lineNumber": 73,
             },
             "actualDuration": 0,
             "actualStartTime": -1,
@@ -1958,42 +2361,13 @@ ReactWrapper {
               "_debugOwner": [Circular],
               "_debugSource": Object {
                 "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
-                "lineNumber": 67,
+                "lineNumber": 74,
               },
               "actualDuration": 0,
               "actualStartTime": -1,
               "alternate": null,
-              "child": null,
-              "childExpirationTime": 0,
-              "effectTag": 0,
-              "expirationTime": 0,
-              "firstContextDependency": null,
-              "firstEffect": null,
-              "index": 0,
-              "key": null,
-              "lastEffect": null,
-              "memoizedProps": Object {
-                "children": "People",
-                "className": "cat-button people-button 
-		      	cat-button-inactive",
-                "name": "people",
-                "onClick": [Function],
-              },
-              "memoizedState": null,
-              "mode": 0,
-              "nextEffect": null,
-              "pendingProps": Object {
-                "children": "People",
-                "className": "cat-button people-button 
-		      	cat-button-inactive",
-                "name": "people",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "return": [Circular],
-              "selfBaseDuration": 0,
-              "sibling": FiberNode {
-                "_debugID": 53,
+              "child": FiberNode {
+                "_debugID": 54,
                 "_debugIsCurrentlyTiming": false,
                 "_debugOwner": [Circular],
                 "_debugSource": Object {
@@ -2009,31 +2383,31 @@ ReactWrapper {
                 "expirationTime": 0,
                 "firstContextDependency": null,
                 "firstEffect": null,
-                "index": 1,
+                "index": 0,
                 "key": null,
                 "lastEffect": null,
                 "memoizedProps": Object {
-                  "children": "Planets",
-                  "className": "cat-button planets-button 
-		      	cat-button-inactive",
-                  "name": "planets",
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
                   "onClick": [Function],
                 },
                 "memoizedState": null,
                 "mode": 0,
                 "nextEffect": null,
                 "pendingProps": Object {
-                  "children": "Planets",
-                  "className": "cat-button planets-button 
-		      	cat-button-inactive",
-                  "name": "planets",
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
                   "onClick": [Function],
                 },
                 "ref": null,
                 "return": [Circular],
                 "selfBaseDuration": 0,
                 "sibling": FiberNode {
-                  "_debugID": 54,
+                  "_debugID": 55,
                   "_debugIsCurrentlyTiming": false,
                   "_debugOwner": [Circular],
                   "_debugSource": Object {
@@ -2049,31 +2423,31 @@ ReactWrapper {
                   "expirationTime": 0,
                   "firstContextDependency": null,
                   "firstEffect": null,
-                  "index": 2,
+                  "index": 1,
                   "key": null,
                   "lastEffect": null,
                   "memoizedProps": Object {
-                    "children": "Vehicles",
-                    "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-                    "name": "vehicles",
+                    "children": "Planets",
+                    "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                    "name": "planets",
                     "onClick": [Function],
                   },
                   "memoizedState": null,
                   "mode": 0,
                   "nextEffect": null,
                   "pendingProps": Object {
-                    "children": "Vehicles",
-                    "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-                    "name": "vehicles",
+                    "children": "Planets",
+                    "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                    "name": "planets",
                     "onClick": [Function],
                   },
                   "ref": null,
                   "return": [Circular],
                   "selfBaseDuration": 0,
                   "sibling": FiberNode {
-                    "_debugID": 55,
+                    "_debugID": 56,
                     "_debugIsCurrentlyTiming": false,
                     "_debugOwner": [Circular],
                     "_debugSource": Object {
@@ -2083,61 +2457,73 @@ ReactWrapper {
                     "actualDuration": 0,
                     "actualStartTime": -1,
                     "alternate": null,
-                    "child": FiberNode {
-                      "_debugID": 56,
+                    "child": null,
+                    "childExpirationTime": 0,
+                    "effectTag": 0,
+                    "expirationTime": 0,
+                    "firstContextDependency": null,
+                    "firstEffect": null,
+                    "index": 2,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": "Vehicles",
+                      "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                      "name": "vehicles",
+                      "onClick": [Function],
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": "Vehicles",
+                      "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                      "name": "vehicles",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": FiberNode {
+                      "_debugID": 57,
                       "_debugIsCurrentlyTiming": false,
                       "_debugOwner": [Circular],
                       "_debugSource": Object {
-                        "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                        "lineNumber": 5,
+                        "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                        "lineNumber": 99,
                       },
                       "actualDuration": 0,
                       "actualStartTime": -1,
                       "alternate": null,
                       "child": FiberNode {
-                        "_debugID": 57,
+                        "_debugID": 58,
                         "_debugIsCurrentlyTiming": false,
                         "_debugOwner": [Circular],
                         "_debugSource": Object {
                           "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                          "lineNumber": 6,
+                          "lineNumber": 8,
                         },
                         "actualDuration": 0,
                         "actualStartTime": -1,
                         "alternate": null,
                         "child": FiberNode {
-                          "_debugID": 58,
+                          "_debugID": 59,
                           "_debugIsCurrentlyTiming": false,
-                          "_debugOwner": null,
-                          "_debugSource": null,
+                          "_debugOwner": [Circular],
+                          "_debugSource": Object {
+                            "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                            "lineNumber": 9,
+                          },
                           "actualDuration": 0,
                           "actualStartTime": -1,
                           "alternate": null,
-                          "child": null,
-                          "childExpirationTime": 0,
-                          "effectTag": 0,
-                          "expirationTime": 0,
-                          "firstContextDependency": null,
-                          "firstEffect": null,
-                          "index": 0,
-                          "key": null,
-                          "lastEffect": null,
-                          "memoizedProps": "Favorites",
-                          "memoizedState": null,
-                          "mode": 0,
-                          "nextEffect": null,
-                          "pendingProps": "Favorites",
-                          "ref": null,
-                          "return": [Circular],
-                          "selfBaseDuration": 0,
-                          "sibling": FiberNode {
-                            "_debugID": 59,
+                          "child": FiberNode {
+                            "_debugID": 60,
                             "_debugIsCurrentlyTiming": false,
-                            "_debugOwner": [Circular],
-                            "_debugSource": Object {
-                              "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
-                              "lineNumber": 8,
-                            },
+                            "_debugOwner": null,
+                            "_debugSource": null,
                             "actualDuration": 0,
                             "actualStartTime": -1,
                             "alternate": null,
@@ -2147,36 +2533,120 @@ ReactWrapper {
                             "expirationTime": 0,
                             "firstContextDependency": null,
                             "firstEffect": null,
-                            "index": 1,
+                            "index": 0,
                             "key": null,
                             "lastEffect": null,
-                            "memoizedProps": Object {
-                              "children": undefined,
-                              "className": "favorites-count",
-                            },
+                            "memoizedProps": "Favorites",
                             "memoizedState": null,
                             "mode": 0,
                             "nextEffect": null,
-                            "pendingProps": Object {
-                              "children": undefined,
-                              "className": "favorites-count",
-                            },
+                            "pendingProps": "Favorites",
                             "ref": null,
                             "return": [Circular],
                             "selfBaseDuration": 0,
-                            "sibling": null,
-                            "stateNode": <span
-                              class="favorites-count"
-                            />,
-                            "tag": 7,
+                            "sibling": FiberNode {
+                              "_debugID": 61,
+                              "_debugIsCurrentlyTiming": false,
+                              "_debugOwner": [Circular],
+                              "_debugSource": Object {
+                                "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                                "lineNumber": 15,
+                              },
+                              "actualDuration": 0,
+                              "actualStartTime": -1,
+                              "alternate": null,
+                              "child": null,
+                              "childExpirationTime": 0,
+                              "effectTag": 0,
+                              "expirationTime": 0,
+                              "firstContextDependency": null,
+                              "firstEffect": null,
+                              "index": 1,
+                              "key": null,
+                              "lastEffect": null,
+                              "memoizedProps": Object {
+                                "children": 0,
+                                "className": "favorites-count",
+                              },
+                              "memoizedState": null,
+                              "mode": 0,
+                              "nextEffect": null,
+                              "pendingProps": Object {
+                                "children": 0,
+                                "className": "favorites-count",
+                              },
+                              "ref": null,
+                              "return": [Circular],
+                              "selfBaseDuration": 0,
+                              "sibling": null,
+                              "stateNode": <span
+                                class="favorites-count"
+                              >
+                                0
+                              </span>,
+                              "tag": 7,
+                              "treeBaseDuration": 0,
+                              "type": "span",
+                              "updateQueue": null,
+                            },
+                            "stateNode": Favorites,
+                            "tag": 8,
                             "treeBaseDuration": 0,
-                            "type": "span",
+                            "type": null,
                             "updateQueue": null,
                           },
-                          "stateNode": Favorites,
-                          "tag": 8,
+                          "childExpirationTime": 0,
+                          "effectTag": 0,
+                          "expirationTime": 0,
+                          "firstContextDependency": null,
+                          "firstEffect": null,
+                          "index": 0,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": Object {
+                            "children": Array [
+                              "Favorites",
+                              <span
+                                className="favorites-count"
+                              >
+                                0
+                              </span>,
+                            ],
+                            "className": "cat-button favorites-button",
+                            "onClick": [Function],
+                          },
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": Object {
+                            "children": Array [
+                              "Favorites",
+                              <span
+                                className="favorites-count"
+                              >
+                                0
+                              </span>,
+                            ],
+                            "className": "cat-button favorites-button",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": null,
+                          "stateNode": <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "tag": 7,
                           "treeBaseDuration": 0,
-                          "type": null,
+                          "type": "button",
                           "updateQueue": null,
                         },
                         "childExpirationTime": 0,
@@ -2188,132 +2658,108 @@ ReactWrapper {
                         "key": null,
                         "lastEffect": null,
                         "memoizedProps": Object {
-                          "children": Array [
-                            "Favorites",
+                          "children": <button
+                            className="cat-button favorites-button"
+                            onClick={[Function]}
+                          >
+                            Favorites
                             <span
                               className="favorites-count"
-                            />,
-                          ],
-                          "className": "cat-button favorites-button",
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "className": "FavoriteButton",
                         },
                         "memoizedState": null,
                         "mode": 0,
                         "nextEffect": null,
                         "pendingProps": Object {
-                          "children": Array [
-                            "Favorites",
+                          "children": <button
+                            className="cat-button favorites-button"
+                            onClick={[Function]}
+                          >
+                            Favorites
                             <span
                               className="favorites-count"
-                            />,
-                          ],
-                          "className": "cat-button favorites-button",
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "className": "FavoriteButton",
                         },
                         "ref": null,
                         "return": [Circular],
                         "selfBaseDuration": 0,
                         "sibling": null,
-                        "stateNode": <button
-                          class="cat-button favorites-button"
+                        "stateNode": <div
+                          class="FavoriteButton"
                         >
-                          Favorites
-                          <span
-                            class="favorites-count"
-                          />
-                        </button>,
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>,
                         "tag": 7,
                         "treeBaseDuration": 0,
-                        "type": "button",
+                        "type": "div",
                         "updateQueue": null,
                       },
                       "childExpirationTime": 0,
-                      "effectTag": 0,
+                      "effectTag": 1,
                       "expirationTime": 0,
                       "firstContextDependency": null,
                       "firstEffect": null,
-                      "index": 0,
+                      "index": 3,
                       "key": null,
                       "lastEffect": null,
                       "memoizedProps": Object {
-                        "children": <button
-                          className="cat-button favorites-button"
-                        >
-                          Favorites
-                          <span
-                            className="favorites-count"
-                          />
-                        </button>,
+                        "checkIfAnyFavorites": [Function],
                         "className": "FavoriteButton",
+                        "favorites": undefined,
                       },
                       "memoizedState": null,
                       "mode": 0,
                       "nextEffect": null,
                       "pendingProps": Object {
-                        "children": <button
-                          className="cat-button favorites-button"
-                        >
-                          Favorites
-                          <span
-                            className="favorites-count"
-                          />
-                        </button>,
+                        "checkIfAnyFavorites": [Function],
                         "className": "FavoriteButton",
+                        "favorites": undefined,
                       },
                       "ref": null,
                       "return": [Circular],
                       "selfBaseDuration": 0,
                       "sibling": null,
-                      "stateNode": <div
-                        class="FavoriteButton"
-                      >
-                        <button
-                          class="cat-button favorites-button"
-                        >
-                          Favorites
-                          <span
-                            class="favorites-count"
-                          />
-                        </button>
-                      </div>,
-                      "tag": 7,
+                      "stateNode": null,
+                      "tag": 0,
                       "treeBaseDuration": 0,
-                      "type": "div",
+                      "type": [Function],
                       "updateQueue": null,
                     },
-                    "childExpirationTime": 0,
-                    "effectTag": 1,
-                    "expirationTime": 0,
-                    "firstContextDependency": null,
-                    "firstEffect": null,
-                    "index": 3,
-                    "key": null,
-                    "lastEffect": null,
-                    "memoizedProps": Object {
-                      "className": "FavoriteButton",
-                      "favoritesCount": undefined,
-                    },
-                    "memoizedState": null,
-                    "mode": 0,
-                    "nextEffect": null,
-                    "pendingProps": Object {
-                      "className": "FavoriteButton",
-                      "favoritesCount": undefined,
-                    },
-                    "ref": null,
-                    "return": [Circular],
-                    "selfBaseDuration": 0,
-                    "sibling": null,
-                    "stateNode": null,
-                    "tag": 0,
+                    "stateNode": <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>,
+                    "tag": 7,
                     "treeBaseDuration": 0,
-                    "type": [Function],
+                    "type": "button",
                     "updateQueue": null,
                   },
                   "stateNode": <button
-                    class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                    name="vehicles"
+                    class="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
                   >
-                    Vehicles
+                    Planets
                   </button>,
                   "tag": 7,
                   "treeBaseDuration": 0,
@@ -2321,27 +2767,180 @@ ReactWrapper {
                   "updateQueue": null,
                 },
                 "stateNode": <button
-                  class="cat-button planets-button 
-		      	cat-button-inactive"
-                  name="planets"
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
                 >
-                  Planets
+                  People
                 </button>,
                 "tag": 7,
                 "treeBaseDuration": 0,
                 "type": "button",
                 "updateQueue": null,
               },
-              "stateNode": <button
-                class="cat-button people-button 
-		      	cat-button-inactive"
-                name="people"
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": Array [
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>,
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>,
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>,
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />,
+                ],
+                "className": "nav-buttons",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": Array [
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>,
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>,
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>,
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />,
+                ],
+                "className": "nav-buttons",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": FiberNode {
+                "_debugID": 53,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/alexanderela/Desktop/Personal Dropbox/Dropbox/_Turing_2018/Mod_3/Projects/swapibox/src/components/Nav/Nav.js",
+                  "lineNumber": 108,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "className": "error-favorites",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "className": "error-favorites",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": <p
+                  class="error-favorites"
+                />,
+                "tag": 7,
+                "treeBaseDuration": 0,
+                "type": "p",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="nav-buttons"
               >
-                People
-              </button>,
+                <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>
+                <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>
+                <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>
+                <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>
+              </div>,
               "tag": 7,
               "treeBaseDuration": 0,
-              "type": "button",
+              "type": "div",
               "updateQueue": null,
             },
             "childExpirationTime": 0,
@@ -2354,32 +2953,40 @@ ReactWrapper {
             "lastEffect": null,
             "memoizedProps": Object {
               "children": Array [
-                <button
-                  className="cat-button people-button 
-		      	cat-button-inactive"
-                  name="people"
-                  onClick={[Function]}
+                <div
+                  className="nav-buttons"
                 >
-                  People
-                </button>,
-                <button
-                  className="cat-button planets-button 
-		      	cat-button-inactive"
-                  name="planets"
-                  onClick={[Function]}
-                >
-                  Planets
-                </button>,
-                <button
-                  className="cat-button vehicles-button 
-		      	cat-button-inactive"
-                  name="vehicles"
-                  onClick={[Function]}
-                >
-                  Vehicles
-                </button>,
-                <FavoriteButton
-                  className="FavoriteButton"
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />
+                </div>,
+                <p
+                  className="error-favorites"
                 />,
               ],
               "className": "button-container",
@@ -2389,32 +2996,40 @@ ReactWrapper {
             "nextEffect": null,
             "pendingProps": Object {
               "children": Array [
-                <button
-                  className="cat-button people-button 
-		      	cat-button-inactive"
-                  name="people"
-                  onClick={[Function]}
+                <div
+                  className="nav-buttons"
                 >
-                  People
-                </button>,
-                <button
-                  className="cat-button planets-button 
-		      	cat-button-inactive"
-                  name="planets"
-                  onClick={[Function]}
-                >
-                  Planets
-                </button>,
-                <button
-                  className="cat-button vehicles-button 
-		      	cat-button-inactive"
-                  name="vehicles"
-                  onClick={[Function]}
-                >
-                  Vehicles
-                </button>,
-                <FavoriteButton
-                  className="FavoriteButton"
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />
+                </div>,
+                <p
+                  className="error-favorites"
                 />,
               ],
               "className": "button-container",
@@ -2426,39 +3041,48 @@ ReactWrapper {
             "stateNode": <div
               class="button-container"
             >
-              <button
-                class="cat-button people-button 
-		      	cat-button-inactive"
-                name="people"
-              >
-                People
-              </button>
-              <button
-                class="cat-button planets-button 
-		      	cat-button-inactive"
-                name="planets"
-              >
-                Planets
-              </button>
-              <button
-                class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                name="vehicles"
-              >
-                Vehicles
-              </button>
               <div
-                class="FavoriteButton"
+                class="nav-buttons"
               >
                 <button
-                  class="cat-button favorites-button"
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
                 >
-                  Favorites
-                  <span
-                    class="favorites-count"
-                  />
+                  People
                 </button>
+                <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>
+                <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>
+                <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>
               </div>
+              <p
+                class="error-favorites"
+              />
             </div>,
             "tag": 7,
             "treeBaseDuration": 0,
@@ -2480,6 +3104,7 @@ ReactWrapper {
             "toggleCategoryState": [MockFunction],
           },
           "memoizedState": Object {
+            "favoritesExist": true,
             "peopleSelected": false,
             "planetsSelected": false,
             "vehiclesSelected": false,
@@ -2581,39 +3206,48 @@ ReactWrapper {
                     <div
                       class="button-container"
                     >
-                      <button
-                        class="cat-button people-button 
-		      	cat-button-inactive"
-                        name="people"
-                      >
-                        People
-                      </button>
-                      <button
-                        class="cat-button planets-button 
-		      	cat-button-inactive"
-                        name="planets"
-                      >
-                        Planets
-                      </button>
-                      <button
-                        class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                        name="vehicles"
-                      >
-                        Vehicles
-                      </button>
                       <div
-                        class="FavoriteButton"
+                        class="nav-buttons"
                       >
                         <button
-                          class="cat-button favorites-button"
+                          class="cat-button people-button 
+				      	cat-button-inactive"
+                          name="people"
                         >
-                          Favorites
-                          <span
-                            class="favorites-count"
-                          />
+                          People
                         </button>
+                        <button
+                          class="cat-button planets-button 
+				      	cat-button-inactive"
+                          name="planets"
+                        >
+                          Planets
+                        </button>
+                        <button
+                          class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                          name="vehicles"
+                        >
+                          Vehicles
+                        </button>
+                        <div
+                          class="FavoriteButton"
+                        >
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>
                       </div>
+                      <p
+                        class="error-favorites"
+                      />
                     </div>
                   </div>,
                   "context": Object {},
@@ -2729,39 +3363,48 @@ ReactWrapper {
                   <div
                     class="button-container"
                   >
-                    <button
-                      class="cat-button people-button 
-		      	cat-button-inactive"
-                      name="people"
-                    >
-                      People
-                    </button>
-                    <button
-                      class="cat-button planets-button 
-		      	cat-button-inactive"
-                      name="planets"
-                    >
-                      Planets
-                    </button>
-                    <button
-                      class="cat-button vehicles-button 
-		      	cat-button-inactive"
-                      name="vehicles"
-                    >
-                      Vehicles
-                    </button>
                     <div
-                      class="FavoriteButton"
+                      class="nav-buttons"
                     >
                       <button
-                        class="cat-button favorites-button"
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
                       >
-                        Favorites
-                        <span
-                          class="favorites-count"
-                        />
+                        People
                       </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
                     </div>
+                    <p
+                      class="error-favorites"
+                    />
                   </div>
                 </div>,
                 "context": Object {},
@@ -2862,6 +3505,7 @@ ReactWrapper {
           "updateQueue": null,
         },
         "_reactInternalInstance": Object {},
+        "checkIfAnyFavorites": [Function],
         "context": Object {},
         "handlePeopleClick": [Function],
         "handlePlanetClick": [Function],
@@ -2874,6 +3518,7 @@ ReactWrapper {
         },
         "refs": Object {},
         "state": Object {
+          "favoritesExist": true,
           "peopleSelected": false,
           "planetsSelected": false,
           "vehiclesSelected": false,
@@ -2898,70 +3543,87 @@ ReactWrapper {
         "instance": <div
           class="button-container"
         >
-          <button
-            class="cat-button people-button 
-		      	cat-button-inactive"
-            name="people"
-          >
-            People
-          </button>
-          <button
-            class="cat-button planets-button 
-		      	cat-button-inactive"
-            name="planets"
-          >
-            Planets
-          </button>
-          <button
-            class="cat-button vehicles-button 
-		      	cat-button-inactive"
-            name="vehicles"
-          >
-            Vehicles
-          </button>
           <div
-            class="FavoriteButton"
+            class="nav-buttons"
           >
             <button
-              class="cat-button favorites-button"
+              class="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
             >
-              Favorites
-              <span
-                class="favorites-count"
-              />
+              People
             </button>
+            <button
+              class="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+            >
+              Planets
+            </button>
+            <button
+              class="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+            >
+              Vehicles
+            </button>
+            <div
+              class="FavoriteButton"
+            >
+              <button
+                class="cat-button favorites-button"
+              >
+                Favorites
+                <span
+                  class="favorites-count"
+                >
+                  0
+                </span>
+              </button>
+            </div>
           </div>
+          <p
+            class="error-favorites"
+          />
         </div>,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <button
-              className="cat-button people-button 
-		      	cat-button-inactive"
-              name="people"
-              onClick={[Function]}
+            <div
+              className="nav-buttons"
             >
-              People
-            </button>,
-            <button
-              className="cat-button planets-button 
-		      	cat-button-inactive"
-              name="planets"
-              onClick={[Function]}
-            >
-              Planets
-            </button>,
-            <button
-              className="cat-button vehicles-button 
-		      	cat-button-inactive"
-              name="vehicles"
-              onClick={[Function]}
-            >
-              Vehicles
-            </button>,
-            <FavoriteButton
-              className="FavoriteButton"
+              <button
+                className="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>
+              <button
+                className="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+                onClick={[Function]}
+              >
+                Planets
+              </button>
+              <button
+                className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
+              >
+                Vehicles
+              </button>
+              <FavoriteButton
+                checkIfAnyFavorites={[Function]}
+                className="FavoriteButton"
+              />
+            </div>,
+            <p
+              className="error-favorites"
             />,
           ],
           "className": "button-container",
@@ -2969,85 +3631,31 @@ ReactWrapper {
         "ref": null,
         "rendered": Array [
           Object {
-            "instance": <button
-              class="cat-button people-button 
-		      	cat-button-inactive"
-              name="people"
+            "instance": <div
+              class="nav-buttons"
             >
-              People
-            </button>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "People",
-              "className": "cat-button people-button 
-		      	cat-button-inactive",
-              "name": "people",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              "People",
-            ],
-            "type": "button",
-          },
-          Object {
-            "instance": <button
-              class="cat-button planets-button 
-		      	cat-button-inactive"
-              name="planets"
-            >
-              Planets
-            </button>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Planets",
-              "className": "cat-button planets-button 
-		      	cat-button-inactive",
-              "name": "planets",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Planets",
-            ],
-            "type": "button",
-          },
-          Object {
-            "instance": <button
-              class="cat-button vehicles-button 
-		      	cat-button-inactive"
-              name="vehicles"
-            >
-              Vehicles
-            </button>,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Vehicles",
-              "className": "cat-button vehicles-button 
-		      	cat-button-inactive",
-              "name": "vehicles",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Vehicles",
-            ],
-            "type": "button",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "className": "FavoriteButton",
-              "favoritesCount": undefined,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": <div
+              <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
                 class="FavoriteButton"
               >
                 <button
@@ -3056,70 +3664,232 @@ ReactWrapper {
                   Favorites
                   <span
                     class="favorites-count"
-                  />
-                </button>
-              </div>,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": <button
-                  className="cat-button favorites-button"
-                >
-                  Favorites
-                  <span
-                    className="favorites-count"
-                  />
-                </button>,
-                "className": "FavoriteButton",
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": <button
-                    class="cat-button favorites-button"
                   >
-                    Favorites
-                    <span
-                      class="favorites-count"
-                    />
-                  </button>,
+                    0
+                  </span>
+                </button>
+              </div>
+            </div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "People",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Planets",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Vehicles",
+                  "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                  "name": "vehicles",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Vehicles",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "checkIfAnyFavorites": [Function],
+                  "className": "FavoriteButton",
+                  "favorites": undefined,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": <div
+                    class="FavoriteButton"
+                  >
+                    <button
+                      class="cat-button favorites-button"
+                    >
+                      Favorites
+                      <span
+                        class="favorites-count"
+                      >
+                        0
+                      </span>
+                    </button>
+                  </div>,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": Array [
-                      "Favorites",
+                    "children": <button
+                      className="cat-button favorites-button"
+                      onClick={[Function]}
+                    >
+                      Favorites
                       <span
                         className="favorites-count"
-                      />,
-                    ],
-                    "className": "cat-button favorites-button",
+                      >
+                        0
+                      </span>
+                    </button>,
+                    "className": "FavoriteButton",
                   },
                   "ref": null,
                   "rendered": Array [
-                    "Favorites",
                     Object {
-                      "instance": <span
-                        class="favorites-count"
-                      />,
+                      "instance": <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>,
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": undefined,
-                        "className": "favorites-count",
+                        "children": Array [
+                          "Favorites",
+                          <span
+                            className="favorites-count"
+                          >
+                            0
+                          </span>,
+                        ],
+                        "className": "cat-button favorites-button",
+                        "onClick": [Function],
                       },
                       "ref": null,
                       "rendered": Array [
-                        undefined,
+                        "Favorites",
+                        Object {
+                          "instance": <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 0,
+                            "className": "favorites-count",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            0,
+                          ],
+                          "type": "span",
+                        },
                       ],
-                      "type": "span",
+                      "type": "button",
                     },
                   ],
-                  "type": "button",
+                  "type": "div",
                 },
-              ],
-              "type": "div",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <p
+              class="error-favorites"
+            />,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "error-favorites",
             },
-            "type": [Function],
+            "ref": null,
+            "rendered": Array [
+              undefined,
+            ],
+            "type": "p",
           },
         ],
         "type": "div",
