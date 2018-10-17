@@ -8,6 +8,12 @@ const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFav
 	// {vehicles.length > 0 && <div/>}
 	// {planets.length > 0 && <div/>}
 
+	// if(!favorites.length) {
+	// 	return 	 <p className="error-favorites">
+	// 						You have not selected any favorites yet!</p>
+	// 	} else {
+			
+	// 	}
 
 	if (people) {
 		const peopleCards = people.map((person) => {

@@ -20,7 +20,8 @@ class App extends Component {
       vehiclesSelected: false,
       planetsSelected: false,
       favorites: [],
-      scroll: true
+      scroll: true,
+      favoritesSelected: false
     }
   }
 
@@ -43,17 +44,16 @@ class App extends Component {
     this.setLocalStorage('favorites', favorites)
   }
 
-  // showFavorites = (allFavs) => {
-  //   const allFavorites = allFavs.map(fav => fav)
-  //   console.log(allFavorites)
-  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
-  //   // const category = this.state[type].filter(card => card.id !== allFavorites.id)
-  //   // this.setState({ [type]: category, favorites: favorites })   
-  // }
+  showFavorites = (allFavs) => {
+    const allFavorites = allFavs.map(fav => fav)
+    console.log(allFavorites)
+    const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
+    // const category = this.state[type].filter(card => card.id !== allFavorites.id)
+    // this.setState({ [type]: category, favorites: favorites })   
+  }
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
-    
     this.setState({ films })
   }
 
@@ -93,8 +93,8 @@ class App extends Component {
     } else {
       this.checkLocalStoragePeople(people)
       this.setState({ 
-        vehicles: [],
-        planets: [], 
+        // vehicles: [],
+        // planets: [], 
         peopleSelected: true,  
         vehiclesSelected: false,        
         planetsSelected: false,
@@ -126,8 +126,8 @@ class App extends Component {
     } else {
       this.checkLocalStorageVehicles(vehicles)
       this.setState({  
-        people: [],
-        planets: [],
+        // people: [],
+        // planets: [],
         vehiclesSelected: true,  
         peopleSelected: false,        
         planetsSelected: false        
@@ -157,8 +157,8 @@ class App extends Component {
     } else {
       this.checkLocalStoragePlanets(planets)
       this.setState({  
-        vehicles: [], 
-        people: [],
+        // vehicles: [], 
+        // people: [],
         planetsSelected: true,        
         peopleSelected: false,        
         vehiclesSelected: false  
@@ -186,7 +186,8 @@ class App extends Component {
             planetsSelected, 
             vehiclesSelected, 
             favorites, 
-            scroll 
+            scroll ,
+            favoritesSelected
           } = this.state
 
     return (
@@ -222,8 +223,14 @@ class App extends Component {
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-          />} 
-        {scroll && 
+          />}
+        {favoritesSelected && 
+        <CardContainer 
+          addToFavorites={this.addToFavorites}
+          removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
+          />}
+        {scroll &&
         <Sidebar films={films}/>
         }
       </div>
