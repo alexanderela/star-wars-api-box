@@ -308,32 +308,3 @@ describe('App component', () => {
 		})
 	})
 })
-
-// it('renders CardContainer with vehicles props if vehicles are selected', () => {
-// 	const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
-// 	wrapper.setState({ vehiclesSelected: true, vehicles: mockVehicles })
-// 	console.log(wrapper.state().vehiclesSelected)
-// 	// const cardContainer = wrapper.find(CardContainer)
-// 	// expect(cardContainer.props().vehicles).exists().toEqual(false)
-// 	expect(wrapper.contains(<CardContainer vehicles={mockVehicles}/>)).toBe(true)
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
