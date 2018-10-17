@@ -29,14 +29,21 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
-    const favorites = [...this.state.favorites, card]
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)
+    if(this.state.favorites.includes(card)) {
+      console.log(card)
+    } else if (!this.state.favorites.includes(card)) {
+      console.log('deez nuts')
+    }
+      const favorites = [...this.state.favorites, card]
+      this.setState({ favorites })
+      this.setLocalStorage('favorites', favorites)
+    
   }
 
   removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id)
+    const favorites = this.state.favorites.filter(card => card.id !== id) 
     this.setState({ favorites })
+    this.setLocalStorage('favorites', favorites)
   }
 
   showFilm = async () => {
@@ -113,7 +120,6 @@ class App extends Component {
       })
     } else {
       this.checkLocalStorageVehicles(vehicles)
-      console.log('vehicles hooked up')
       this.setState({  
         people: [],
         planets: [],
@@ -166,7 +172,17 @@ class App extends Component {
    }
 
   render() {
-    const { films, people, vehicles, planets, peopleSelected, planetsSelected, vehiclesSelected, favorites, scroll } = this.state
+    const { 
+            films, 
+            people, 
+            vehicles, 
+            planets, 
+            peopleSelected, 
+            planetsSelected, 
+            vehiclesSelected, 
+            favorites, 
+            scroll 
+          } = this.state
 
     return (
       <div className="App">

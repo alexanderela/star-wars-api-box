@@ -32,7 +32,7 @@ class Card extends Component {
 	componentDidMount() {
 		if (this.props.favorites){
 		this.props.favorites.find((favorite) => {
-			if(favorite.id === this.props.name) {
+			if(favorite.id === this.props.id) {
 				this.setState({ 
 					isSelected: true
 				})	 
@@ -41,11 +41,18 @@ class Card extends Component {
 	}
 	}
 
+	checkFavoriteHighlights = () => {
+		if (this.props.favorites) {
+
+		}
+	}
+
 render() {
-	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites } = this.props
+	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites, id } = this.props
 	const { isSelected } = this.state
 
 if (people) {
+// console.log(id)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">

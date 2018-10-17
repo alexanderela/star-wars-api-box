@@ -289,7 +289,6 @@ it('passes the correct favoritesCount props to Nav', () => {
 	expect(navComponent.props().favoritesCount).toEqual(0)
 	wrapper.setState({ favorites: mockVehicles })
 	const updatedNavComponent = wrapper.find(Nav)
-	console.log(updatedNavComponent.props())
 	expect(updatedNavComponent.props().favoritesCount).toEqual(2)
 })
 

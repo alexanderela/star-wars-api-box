@@ -173,17 +173,16 @@ describe('Card', () => {
 	})
 
 describe('componentDidMount', () => {
-	it('sets isSelected state to false if item is in favorites', () => {
-		const mockFavs = [{"name": "mustang", id: "mustang"}, {"name": "camaro", "id": "camaro"}]
-		const wrapper = shallow(<Card favorites={mockFavs}/>)
-		wrapper.update()
+	it('sets isSelected state to true if item is in favorites', () => {
+		const wrapper = shallow(<Card favorites={people.results}/>)
+		wrapper.instance().componentDidMount()
 		expect(wrapper.state().isSelected).toBe(true)
 	})
 
-	it('doesnt change isSelected state if item is already in favorites', () => {
+	// it('doesnt change isSelected state if item is already in favorites', () => {
 		
 
-	})
+	// })
 
 })
 
