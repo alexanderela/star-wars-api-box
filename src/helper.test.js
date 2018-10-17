@@ -99,6 +99,45 @@ describe('DataCleaner', () => {
 			//Expectation
 			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
 		})
+
+		it('resolvess to expected', async () => {
+			//Setup
+			const mockReturnedPeopleData = [
+				{
+					name: 'Luke Skywalker',
+					homeWorld: 'Tatooine',
+					species: 'human',
+					isFavorite: false,
+					type: 'people'
+				},
+				{
+					name: 'C-3PO',
+					homeWorld: 'Tatooine',
+					species: 'droid',
+					isFavorite: false,
+					type: 'people'
+				}
+			]
+			const expected = [
+				{
+					name: 'Luke Skywalker', 
+					homeWorld: 'Tatooine', 
+					species: 'human', 
+					isFavorite: false, 
+					type: 'people'
+				},
+				{
+					name: 'C-3PO',
+					homeWorld: 'Tatooine',
+					species: 'droid',
+					isFavorite: false,
+					type: 'people'
+				}
+			]
+			Promise.all(mockReturnedPeopleData)
+
+			expect(Promise.all(mockReturnedPeopleData)).resolves.toEqual(expected)
+		})
 	})
 
 	

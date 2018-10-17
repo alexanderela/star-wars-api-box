@@ -40,7 +40,6 @@ class App extends Component {
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
-    
     this.setState({ films })
   }
 
