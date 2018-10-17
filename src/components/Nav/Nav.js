@@ -10,7 +10,8 @@ class Nav extends Component {
 		this.state = {
       peopleSelected: false,
       vehiclesSelected: false,
-      planetsSelected: false
+      planetsSelected: false,
+      favoritesExist: true
 		}
 	}
 
@@ -59,40 +60,54 @@ class Nav extends Component {
 		}
 	}
 
+	checkIfAnyFavorites = (e) => {
+		if(!this.props.favoritesCount) {
+			this.setState({ favoritesExist: false })
+		}
+	}
+
 render() {
-	const { showPeople, showVehicles, showPlanets, favoritesCount } = this.props
-	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
+	const { showPeople, showVehicles, showPlanets, favorites, showFavorites } = this.props
+	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesExist } = this.state
 	return(
-		<div className="button-container">
-		    <button 
-		      className={`cat-button people-button 
-		      	${peopleSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="people"
-		      onClick={this.handlePeopleClick}
-		    >People</button>
-		    <button 
-		      className={`cat-button planets-button 
-		      	${planetsSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="planets"
-		      onClick={this.handlePlanetClick}
-		    >Planets</button>
-		    <button 
-		      className={`cat-button vehicles-button 
-		      	${vehiclesSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="vehicles"
-		      onClick={this.handleVehicleClick}
-		    >Vehicles</button>
-		    <FavoriteButton 
-		    	className="FavoriteButton"
-		    	favoritesCount={favoritesCount}
-		    />
-		  </div>
+			<div className="button-container">
+				<div className="nav-buttons">
+				    <button 
+				      className={`cat-button people-button 
+				      	${peopleSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="people"
+				      onClick={this.handlePeopleClick}
+				    >People</button>
+				    <button 
+				      className={`cat-button planets-button 
+				      	${planetsSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="planets"
+				      onClick={this.handlePlanetClick}
+				    >Planets</button>
+				    <button 
+				      className={`cat-button vehicles-button 
+				      	${vehiclesSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="vehicles"
+				      onClick={this.handleVehicleClick}
+				    >Vehicles</button>
+				    <FavoriteButton 
+				    	className="FavoriteButton"
+				    	favorites={favorites}
+				    	checkIfAnyFavorites={this.checkIfAnyFavorites}
+				      showFavorites={showFavorites}
+				    />
+				</div>
+				{!favoritesExist 
+					? <p className="error-favorites">
+							You have not selected any favorites yet!</p> 
+					: <p className="error-favorites"></p>}
+			</div>
 		)
 	}
 }
@@ -100,7 +115,11 @@ render() {
 Nav.propTypes = {
 	showPeople: PropTypes.func,
 	showVehicle: PropTypes.func,
-	showPlanet: PropTypes.func
+	showPlanet: PropTypes.func,
+	favoritesCount: PropTypes.oneOfType([
+  PropTypes.array,
+  PropTypes.number
+  ])
 }
 
 export default Nav;

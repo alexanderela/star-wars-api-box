@@ -16,6 +16,10 @@
   box-shadow: #d9ffd9 0px 0px 15px 2px;
 }
 
+.Card-active {
+	box-shadow: #d9ffd9 0px 0px 15px 2px;
+}
+
 .fav-btn-card-container {
 	align-items: center;
 	display: flex;

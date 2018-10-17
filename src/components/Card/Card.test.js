@@ -6,9 +6,14 @@ import people from '../../mockData/mockPeople.js';
 
 describe('Card', () => {
 	let wrapper;
+	let mockFavs
 
 	const selectCardFunc = jest.fn()
 
+	// beforeEach(() => {
+	// 	wrapper = shallow(<Card favorites={mockFavs}/>)
+	// 	mockFavs = [{"name": "mustang", id: "mustang"}, {"name": "camaro", "id": "camaro"}]
+	// })
 	it('matches the snapshot', () => {
 		const wrapper = shallow(<Card />);
 		expect(wrapper).toMatchSnapshot();
@@ -130,11 +135,15 @@ describe('Card', () => {
 					"isFavorite": false,
 					"type": "people"
         }
+
 		const mockAdd = jest.fn()
 		const wrapper = shallow(<Card 
 			person={mockPeople} 
 			addToFavorites={mockAdd}
-			people={people} {...mockPeople}/>)
+			people={people} {...mockPeople}
+		 />)
+		const mockFavs = [{"name": "mustang", id: "mustang"}, {"name": "camaro", "id": "camaro"}]
+		wrapper.state().favorites = mockFavs
 		wrapper.instance().selectCard(mockPeople)
 		expect(mockAdd).toHaveBeenCalled()		
 	})
@@ -162,6 +171,20 @@ describe('Card', () => {
 		wrapper.instance().selectCard(mockPeople)
 		expect(mockRemove).toHaveBeenCalled()		
 	})
+
+describe('componentDidMount', () => {
+	it('sets isSelected state to true if item is in favorites', () => {
+		const wrapper = shallow(<Card favorites={people.results}/>)
+		wrapper.instance().componentDidMount()
+		expect(wrapper.state().isSelected).toBe(true)
+	})
+
+	// it('doesnt change isSelected state if item is already in favorites', () => {
+		
+
+	// })
+
+})
 
 	// it('toggles isFavorite property upon calling selectCard', () => {
 	// 	const mockPeople = {

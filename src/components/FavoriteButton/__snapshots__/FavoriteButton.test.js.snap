@@ -25,11 +25,15 @@ ShallowWrapper {
     "props": Object {
       "children": <button
         className="cat-button favorites-button"
+        onClick={[Function]}
+
       >
         Favorites
         <span
           className="favorites-count"
-        />
+        >
+          0
+        </span>
       </button>,
       "className": "FavoriteButton",
     },
@@ -43,9 +47,12 @@ ShallowWrapper {
           "Favorites",
           <span
             className="favorites-count"
-          />,
+          >
+            0
+          </span>,
         ],
         "className": "cat-button favorites-button",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -55,13 +62,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              Array [],
-            ],
+            "children": 0,
             "className": "favorites-count",
           },
           "ref": null,
-          "rendered": Array [],
+          "rendered": 0,
           "type": "span",
         },
       ],
@@ -77,11 +82,14 @@ ShallowWrapper {
       "props": Object {
         "children": <button
           className="cat-button favorites-button"
+          onClick={[Function]}
         >
           Favorites
           <span
             className="favorites-count"
-          />
+          >
+            0
+          </span>
         </button>,
         "className": "FavoriteButton",
       },
@@ -95,9 +103,12 @@ ShallowWrapper {
             "Favorites",
             <span
               className="favorites-count"
-            />,
+            >
+              0
+            </span>,
           ],
           "className": "cat-button favorites-button",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": Array [
@@ -107,13 +118,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                Array [],
-              ],
+              "children": 0,
               "className": "favorites-count",
             },
             "ref": null,
-            "rendered": Array [],
+            "rendered": 0,
             "type": "span",
           },
         ],

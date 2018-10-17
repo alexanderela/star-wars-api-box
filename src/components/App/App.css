@@ -42,17 +42,37 @@ background: url('../../assets/SWAPI-background.jpg');
 }
 
 .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-right: 16px;
+  top: 80px;
+  width: 80%;
+}
+
+.error-favorites {
+  height: 5rem;
+  font-size: 1.5rem;
+  color: #f9d500;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; 
+  margin: 1rem 0;
+}
+
+.nav-buttons {
   align-items: center;
   bottom: 0px;
   display: flex;
   height: 5rem;
   justify-content: space-around;
-  margin: 0 0 5rem 0;
+  /*margin: 0 0 5rem 0;*/
   padding-right: 16px;
   top: 80px;
   transform: translatex(0%);
   transition: transform 0.2s ease;
-  width: 80%;
+  width: 100%;
 }
 
 .cat-button {

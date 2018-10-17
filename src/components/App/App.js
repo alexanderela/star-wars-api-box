@@ -19,7 +19,8 @@ class App extends Component {
       peopleSelected: false,
       vehiclesSelected: false,
       planetsSelected: false,
-      favorites: []
+      favorites: [],
+      scroll: true
     }
   }
 
@@ -28,15 +29,27 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
-    const favorites = [...this.state.favorites, card]
+    if(this.state.favorites.includes(card)) {
+      } else if (!this.state.favorites.includes(card)) {
+    }
+      const favorites = [...this.state.favorites, card]
+      this.setState({ favorites })
+      this.setLocalStorage('favorites', favorites)
+  }
+
+  removeFromFavorites = (id) => {
+    const favorites = this.state.favorites.filter(card => card.id !== id) 
     this.setState({ favorites })
     this.setLocalStorage('favorites', favorites)
   }
 
-  removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id)
-    this.setState({ favorites })
-  }
+  // showFavorites = (allFavs) => {
+  //   const allFavorites = allFavs.map(fav => fav)
+  //   console.log(allFavorites)
+  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
+  //   // const category = this.state[type].filter(card => card.id !== allFavorites.id)
+  //   // this.setState({ [type]: category, favorites: favorites })   
+  // }
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
@@ -68,13 +81,13 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
-    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
         vehicles: [],
         planets: [],
-        peopleSelected: false 
+        peopleSelected: false,
+        scroll: true 
       })
     } else {
       this.checkLocalStoragePeople(people)
@@ -83,7 +96,8 @@ class App extends Component {
         planets: [], 
         peopleSelected: true,  
         vehiclesSelected: false,        
-        planetsSelected: false       
+        planetsSelected: false,
+        scroll: false       
       })
     }
   }
@@ -110,7 +124,6 @@ class App extends Component {
       })
     } else {
       this.checkLocalStorageVehicles(vehicles)
-      console.log('vehicles hooked up')
       this.setState({  
         people: [],
         planets: [],
@@ -163,8 +176,18 @@ class App extends Component {
    }
 
   render() {
-    const { films, people, vehicles, planets, peopleSelected, planetsSelected, vehiclesSelected, favorites } = this.state
-    if (peopleSelected) {
+    const { 
+            films, 
+            people, 
+            vehicles, 
+            planets, 
+            peopleSelected, 
+            planetsSelected, 
+            vehiclesSelected, 
+            favorites, 
+            scroll 
+          } = this.state
+
     return (
       <div className="App">
         <header className="header">
@@ -174,77 +197,43 @@ class App extends Component {
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={!favorites.length ? 0 : favorites.length}
+            showFavorites={this.showFavorites}
+            favorites={favorites}
           />
         </header>
+        {peopleSelected && 
         <CardContainer 
           people={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-           />
-      </div>
-    );
-    } else if (vehiclesSelected) {
-      return (
-       <div className="App">
-        <header className="header">
-          <h1 className="app-title">SWAPI Box</h1>
-          <Nav 
-            showPeople={this.showPeople}
-            showPlanet={this.showPlanets}
-            showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={!favorites.length ? 0 : favorites.length}
-          />
-        </header>
+           />}
+        {vehiclesSelected && 
         <CardContainer 
           vehicles={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-          />
+          />}
+        {planetsSelected && 
+        <CardContainer 
+          planets={planets} 
+          addToFavorites={this.addToFavorites}
+          removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
+          />} 
+        {scroll && 
+        <Sidebar films={films}/>
+        }
       </div>
-    ); 
-    } else if (planetsSelected) {
-      return (
-       <div className="App">
-          <header className="header">
-            <h1 className="app-title">SWAPI Box</h1>
-            <Nav 
-            showPeople={this.showPeople}
-            showPlanet={this.showPlanets}
-            showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}
-            favoritesCount={!favorites.length ? 0 : favorites.length}
-          />
-          </header>
-          <CardContainer 
-            planets={planets} 
-            addToFavorites={this.addToFavorites}
-            removeFromFavorites={this.removeFromFavorites}
-            favorites={favorites}
-            />
-        </div>
     );
-    } else {
-      return (
-       <div className="App">
-          <header className="header">
-            <h1 className="app-title">SWAPI Box</h1>
-             <Nav 
-            showPeople={this.showPeople}
-            showPlanet={this.showPlanets}
-            showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}    
-            favoritesCount={!favorites.length ? 0 : favorites.length}  
-          />
-          </header>
-          <Sidebar films={films}/>
-        </div>
-      )
-    }
   }
 }
 
 export default App;
+
+  // removeFromFavorites = (id, type) => {
+  //   const favorites = this.state.favorites.filter(card => card.id !== id)
+  //   const category = this.state[type].filter(card => card.id !== id)
+  //   this.setState({ [type]: category, favorites: favorites })
+  // }
