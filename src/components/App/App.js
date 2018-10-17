@@ -44,13 +44,14 @@ class App extends Component {
     this.setLocalStorage('favorites', favorites)
   }
 
-  showFavorites = (allFavs) => {
-    const allFavorites = allFavs.map(fav => fav)
-    console.log(allFavorites)
-    const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
-    // const category = this.state[type].filter(card => card.id !== allFavorites.id)
-    // this.setState({ [type]: category, favorites: favorites })   
-  }
+  // showFavorites = (allFavs) => {
+  //   // console.log(allFavs)
+  //   // const allFavInfo = allFavs
+  //   // const allFavorites = allFavs.map(fav => fav)
+  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
+  //   const category = this.state[type].filter(card => card.id !== allFavorites.id)
+  //   this.setState({ [type]: category, favorites: favorites })   
+  // }
 
   showFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
@@ -224,12 +225,12 @@ class App extends Component {
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
           />}
-        {favoritesSelected && 
+        {/*{favoritesSelected && 
         <CardContainer 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-          />}
+          />}*/}
         {scroll &&
         <Sidebar films={films}/>
         }

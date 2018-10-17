@@ -104,16 +104,27 @@ class DataCleaner {
 	async returnPlanetData(planetCollection) {
 		// console.table(planetCollection)
 		const planetPromises = await planetCollection.map( async planet => {
-			const newPlanet = {}
-			newPlanet.name = planet.name
-			newPlanet.terrain = planet.terrain
-			newPlanet.population = planet.population
-			newPlanet.climate = planet.climate
-			newPlanet.residents = await this.getResidents(planet)
-			newPlanet.isFavorite = false
-			newPlanet.type = 'planets'
-			newPlanet.id = planet.name
-			return newPlanet
+			return {
+				name: planet.name,
+				id: planet.name,
+				isFavorite: false,
+				properties: [
+					`Terrain: ${planet.terrain}`,
+					`Population: ${planet.population}`,
+					`Climate: ${planet.climate}`,
+					`Residents: ${await this.getResidents(planet)}`
+					]
+			}
+			// const newPlanet = {}
+			// newPlanet.name = planet.name
+			// newPlanet.terrain = planet.terrain
+			// newPlanet.population = planet.population
+			// newPlanet.climate = planet.climate
+			// newPlanet.residents = await this.getResidents(planet)
+			// newPlanet.isFavorite = false
+			// newPlanet.type = 'planets'
+			// newPlanet.id = planet.name
+			// return newPlanet
 		})
 		return Promise.all(planetPromises)
 	}
