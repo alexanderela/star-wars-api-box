@@ -69,7 +69,6 @@ class DataCleaner {
 				planetName: homeWorldData.name, 
 				planetPop: homeWorldData.population
 			}
-			// return homeWorld
 		}
 		return homeWorld
 	}
@@ -85,7 +84,6 @@ class DataCleaner {
 				speciesName: speciesData.name, 
 				language: speciesData.language 
 			}
-			// return species
 		}
 		return species
 	}
@@ -104,7 +102,6 @@ class DataCleaner {
 	}
 
 	async returnPlanetData(planetCollection) {
-		// console.table(planetCollection)
 		const planetPromises = await planetCollection.map( async planet => {
 			const newPlanet = {}
 			newPlanet.name = planet.name
