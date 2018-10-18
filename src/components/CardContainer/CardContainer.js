@@ -8,11 +8,12 @@ const CardContainer = ({type, addToFavorites, removeFromFavorites, favorites}) =
 
 	cards = type.map(item => {
 		return <Card 
-							type={type}
-							key={type.name} 
+							type={item}
+							key={item.name} 
 							addToFavorites={addToFavorites}
         			removeFromFavorites={removeFromFavorites}
         			favorites={favorites}
+        			isFavorite={item.isFavorite}
         			/>		
 	})
 
