@@ -44,14 +44,28 @@ class DataCleaner {
 
 	async returnPeopleData(personCollection) {
 		const peoplePromises = await personCollection.map( async person => {
-			const newPerson = {}
-			newPerson.name = person.name
-			newPerson.homeWorld = await this.getHomeWorld(person)
-			newPerson.species = await this.getSpecies(person)
-			newPerson.isFavorite = false
-			newPerson.type = 'people'
-			newPerson.id = person.name
-			return newPerson
+		const { planetName, planetPop } = await this.getHomeWorld(person)
+		const { speciesName, language } = await this.getSpecies(person)
+
+		return {
+			name: person.name,
+			id: person.name,
+			isFavorite: false,
+			properties: [
+				`Home World: ${planetName}`,
+				`Species: ${speciesName}`,
+				`Population: ${planetPop}`,
+				`Language: ${language}`
+			] 
+		}
+			// const newPerson = {}
+			// newPerson.name = person.name
+			// newPerson.homeWorld = await this.getHomeWorld(person)
+			// newPerson.species = await this.getSpecies(person)
+			// newPerson.isFavorite = false
+			// newPerson.type = 'people'
+			// newPerson.id = person.name
+			// return newPerson
 		})
 		return Promise.all(peoplePromises)
 	}
@@ -63,11 +77,11 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		} else {
 			const homeWorldData = await response.json()
-			homeWorld = { 
+			homeWorld = {
 				planetName: homeWorldData.name, 
 				planetPop: homeWorldData.population
 			}
-			// return homeWorld
+			
 		}
 		return homeWorld
 	}
@@ -83,6 +97,7 @@ class DataCleaner {
 				speciesName: speciesData.name, 
 				language: speciesData.language 
 			}
+
 			// return species
 		}
 		return species
@@ -159,15 +174,26 @@ class DataCleaner {
 	async returnVehicleData(vehicleCollection) {
 		
 		const vehiclePromises = await vehicleCollection.map( async vehicle => {
-			const newVehicle = {}
-			newVehicle.name = vehicle.name
-			newVehicle.model = vehicle.model
-			newVehicle.class = vehicle.vehicle_class
-			newVehicle.passengers = vehicle.passengers
-			newVehicle.isFavorite = false
-			newVehicle.type = 'vehicles'
-			newVehicle.id = vehicle.name
-			return newVehicle
+			return {
+				name: vehicle.name,
+				id: vehicle.name,
+				isFavorite: false,
+				properties: [
+					`Model: ${vehicle.model}`,
+					`Class: ${vehicle.vehicle_class}`,
+					`Passengers: ${vehicle.passengers}`
+				]
+			}
+
+			// const newVehicle = {}
+			// newVehicle.name = vehicle.name
+			// newVehicle.model = vehicle.model
+			// newVehicle.class = vehicle.vehicle_class
+			// newVehicle.passengers = vehicle.passengers
+			// newVehicle.isFavorite = false
+			// newVehicle.type = 'vehicles'
+			// newVehicle.id = vehicle.name
+			// return newVehicle
 		})
 		return Promise.all(vehiclePromises)
 	}

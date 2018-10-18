@@ -30,19 +30,23 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
+    let favorites;
     if(this.state.favorites.includes(card)) {
-      } else if (!this.state.favorites.includes(card)) {
+      favorites = this.state.favorites.filter((favorite) => {
+        return favorite.id !== card.id
+      })
+    } else if (!this.state.favorites.includes(card)) {
+      favorites = [...this.state.favorites, card]
     }
-      const favorites = [...this.state.favorites, card]
-      this.setState({ favorites })
-      this.setLocalStorage('favorites', favorites)
+    this.setState({ favorites })
+    this.setLocalStorage('favorites', favorites)   
   }
 
-  removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id) 
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)
-  }
+  // removeFromFavorites = (id) => {
+  //   const favorites = this.state.favorites.filter(card => card.id !== id) 
+  //   this.setState({ favorites })
+  //   this.setLocalStorage('favorites', favorites)
+  // }
 
   // showFavorites = (allFavs) => {
   //   // console.log(allFavs)
@@ -83,6 +87,7 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
+    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
@@ -117,6 +122,7 @@ class App extends Component {
   
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
+    console.log(vehicles)
     if (this.state.vehiclesSelected === true) {
       this.setState({ 
         vehicles: [],
@@ -147,7 +153,8 @@ class App extends Component {
     }
 
   showPlanets = async (e) => {
-    const planets = await this.state.dataCleaner.getPlanet()  
+    const planets = await this.state.dataCleaner.getPlanet() 
+    console.log(planets) 
     if (this.state.planetsSelected === true) {
       this.setState({ 
         vehicles: [],
@@ -161,8 +168,8 @@ class App extends Component {
         // vehicles: [], 
         // people: [],
         planetsSelected: true,        
-        peopleSelected: false,        
-        vehiclesSelected: false  
+        // peopleSelected: false,        
+        // vehiclesSelected: false  
       })
     }
   }
