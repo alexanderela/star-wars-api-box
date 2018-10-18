@@ -213,27 +213,28 @@ class App extends Component {
         </header>
         {peopleSelected && 
         <CardContainer 
-          people={people}
+          type={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
            />}
         {vehiclesSelected && 
         <CardContainer 
-          vehicles={vehicles} 
+          type={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
           />}
         {planetsSelected && 
         <CardContainer 
-          planets={planets} 
+          type={planets} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
           />}
         {/*{favoritesSelected && 
-        <CardContainer 
+        <CardContainer
+          type={favorites} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}

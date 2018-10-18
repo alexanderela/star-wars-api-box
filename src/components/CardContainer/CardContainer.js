@@ -3,70 +3,56 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({people, vehicles, planets, addToFavorites, removeFromFavorites, favorites}) => {
-	// {people.length > 0 && <div/>}
-	// {vehicles.length > 0 && <div/>}
-	// {planets.length > 0 && <div/>}
+const CardContainer = ({type, addToFavorites, removeFromFavorites, favorites}) => {
+	let cards
 
-	// if(!favorites.length) {
-	// 	return 	 <p className="error-favorites">
-	// 						You have not selected any favorites yet!</p>
-	// 	} else {
-			
-	// 	}
-
-	if (people) {
-		const peopleCards = people.map((person) => {
-	// console.log(person)
-			return <Card 
-								people={people} {...person} 
-								person={person}
-								key={person.name} 
-								addToFavorites={addToFavorites}
-          			removeFromFavorites={removeFromFavorites}
-          			favorites={favorites}
-          			/>
-		})
-
-			return (
-				<div className='CardContainer'>
-					{ peopleCards }
-				</div>
-			);
-	} else if (vehicles) {
-
-		const vehicleCards = vehicles.map((vehicle) => {
-			return <Card 
-								vehicles={vehicle} {...vehicle} 
-								key={vehicle.name} 
-								addToFavorites={addToFavorites}
-          			removeFromFavorites={removeFromFavorites}
-          			favorites={favorites}
-								/>
+	cards = type.map(item => {
+		return <Card 
+							type={type}
+							key={type.name} 
+							addToFavorites={addToFavorites}
+        			removeFromFavorites={removeFromFavorites}
+        			favorites={favorites}
+        			/>		
 	})
 
-		return (
-			<div className='CardContainer'>
-				{ vehicleCards }
-			</div>
-		);
-	} else if (planets) {
-		const planetCards = planets.map((planet) => {
-			return <Card 
-								planets={planet} {...planet} 
-								key={planet.name} 
-								addToFavorites={addToFavorites}
-          			removeFromFavorites={removeFromFavorites}
-          			favorites={favorites}
-								/>
-	})
-
-		return (
-			<div className='CardContainer'>
-				{ planetCards }
-			</div>
-		);
-	}
+	// if (people) {
+	// 	cards = people.map((person) => {
+	// 		return <Card 
+	// 							people={people} {...person} 
+	// 							person={person}
+	// 							key={person.name} 
+	// 							addToFavorites={addToFavorites}
+ //          			removeFromFavorites={removeFromFavorites}
+ //          			favorites={favorites}
+ //          			/>
+	// 	})
+	// } else if (vehicles) {
+	// 	cards = vehicles.map((vehicle) => {
+	// 		return <Card 
+	// 							vehicles={vehicle} {...vehicle} 
+	// 							key={vehicle.name} 
+	// 							addToFavorites={addToFavorites}
+ //          			removeFromFavorites={removeFromFavorites}
+ //          			favorites={favorites}
+	// 							/>
+	// 	})
+	// } else if (planets) {
+	// 	cards = planets.map((planet) => {
+	// 		return <Card 
+	// 							planets={planet} {...planet} 
+	// 							key={planet.name} 
+	// 							addToFavorites={addToFavorites}
+ //          			removeFromFavorites={removeFromFavorites}
+ //          			favorites={favorites}
+	// 							/>
+	// 	})
+	// }
+	return (
+		<div className='CardContainer'>
+			{ cards }
+		</div>
+	)
 }
 
 CardContainer.propTypes = {

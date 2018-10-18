@@ -51,6 +51,7 @@ class DataCleaner {
 			name: person.name,
 			id: person.name,
 			isFavorite: false,
+			type: 'people',
 			properties: [
 				`Home World: ${planetName}`,
 				`Species: ${speciesName}`,
@@ -58,15 +59,7 @@ class DataCleaner {
 				`Language: ${language}`
 			] 
 		}
-			// const newPerson = {}
-			// newPerson.name = person.name
-			// newPerson.homeWorld = await this.getHomeWorld(person)
-			// newPerson.species = await this.getSpecies(person)
-			// newPerson.isFavorite = false
-			// newPerson.type = 'people'
-			// newPerson.id = person.name
-			// return newPerson
-		})
+	})
 		return Promise.all(peoplePromises)
 	}
 
@@ -81,7 +74,6 @@ class DataCleaner {
 				planetName: homeWorldData.name, 
 				planetPop: homeWorldData.population
 			}
-			
 		}
 		return homeWorld
 	}
@@ -97,8 +89,6 @@ class DataCleaner {
 				speciesName: speciesData.name, 
 				language: speciesData.language 
 			}
-
-			// return species
 		}
 		return species
 	}
@@ -117,12 +107,12 @@ class DataCleaner {
 	}
 
 	async returnPlanetData(planetCollection) {
-		// console.table(planetCollection)
 		const planetPromises = await planetCollection.map( async planet => {
 			return {
 				name: planet.name,
 				id: planet.name,
 				isFavorite: false,
+				type: 'planets',
 				properties: [
 					`Terrain: ${planet.terrain}`,
 					`Population: ${planet.population}`,
@@ -130,16 +120,6 @@ class DataCleaner {
 					`Residents: ${await this.getResidents(planet)}`
 					]
 			}
-			// const newPlanet = {}
-			// newPlanet.name = planet.name
-			// newPlanet.terrain = planet.terrain
-			// newPlanet.population = planet.population
-			// newPlanet.climate = planet.climate
-			// newPlanet.residents = await this.getResidents(planet)
-			// newPlanet.isFavorite = false
-			// newPlanet.type = 'planets'
-			// newPlanet.id = planet.name
-			// return newPlanet
 		})
 		return Promise.all(planetPromises)
 	}
@@ -178,22 +158,13 @@ class DataCleaner {
 				name: vehicle.name,
 				id: vehicle.name,
 				isFavorite: false,
+				type: 'vehicles',
 				properties: [
 					`Model: ${vehicle.model}`,
 					`Class: ${vehicle.vehicle_class}`,
 					`Passengers: ${vehicle.passengers}`
 				]
 			}
-
-			// const newVehicle = {}
-			// newVehicle.name = vehicle.name
-			// newVehicle.model = vehicle.model
-			// newVehicle.class = vehicle.vehicle_class
-			// newVehicle.passengers = vehicle.passengers
-			// newVehicle.isFavorite = false
-			// newVehicle.type = 'vehicles'
-			// newVehicle.id = vehicle.name
-			// return newVehicle
 		})
 		return Promise.all(vehiclePromises)
 	}
