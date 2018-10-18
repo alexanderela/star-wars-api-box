@@ -41,7 +41,7 @@ class Card extends Component {
 		}
 	}
 
-	setCardProperties = (type) => {
+	showCardProperties = (type) => {
 		const cardProperties = type.properties.map(property => {
 			return (
 				<p key={property[0]} className="card-text">
@@ -56,7 +56,7 @@ class Card extends Component {
 	render() {
 		const { type, addToFavorites, removeFromFavorites, favorites, isFavorite } = this.props
 		const { isSelected } = this.state
-		const cardProperties = this.setCardProperties(type)
+		const cardProperties = this.showCardProperties(type)
 
 		return (
 			<div className="Card">
