@@ -82,15 +82,6 @@ class App extends Component {
     this.setLocalStorage('favorites', favorites)
   }
 
-  // showFavorites = (allFavs) => {
-  //   // console.log(allFavs)
-  //   // const allFavInfo = allFavs
-  //   // const allFavorites = allFavs.map(fav => fav)
-  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
-  //   const category = this.state[type].filter(card => card.id !== allFavorites.id)
-  //   this.setState({ [type]: category, favorites: favorites })   
-  // }
-
   getFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
     this.setState({ films })
@@ -99,16 +90,19 @@ class App extends Component {
   getPeople = async () => {
     const people = await this.state.dataCleaner.getPerson()
     this.setState({ people })
+    this.setLocalStorage('people', people)
   }
 
   getPlanets = async () => {
     const planets = await this.state.dataCleaner.getPlanet()
     this.setState({ planets })
+    this.setLocalStorage('planets', planets)
   }
 
   getVehicles = async () => {
     const vehicles = await this.state.dataCleaner.getVehicle()
     this.setState({ vehicles })
+    this.setLocalStorage('vehicles', vehicles)
   }
 
   toggleCategoryState = (categoryName) => {
@@ -136,110 +130,52 @@ class App extends Component {
   }
 
   showPeople = async (e) => {  
-    // this.checkLocalStoragePeople(this.state.people)
     const { people, peopleSelected } = this.state
     if (!localStorage.people) {
       this.setLocalStorage('people', people)
-      
-    } else {
-        const retrievedPeople = this.getLocalStorage('people')
-        this.setState({ people: retrievedPeople })
-      }
+    } 
 
-    // this.setState({peopleSelected: true})
-
-    // console.log(people)
-    // if (this.state.peopleSelected === true) {
-    //   this.setState({
-    //     people: [], 
-    //     vehicles: [],
-    //     planets: [],
-    //     peopleSelected: false,
-    //     scroll: true 
-    //   })
-    // } else {
-    //   this.checkLocalStoragePeople(people)
-    //   this.setState({ 
-    //     // vehicles: [],
-    //     // planets: [], 
-    //     peopleSelected: true,  
-    //     vehiclesSelected: false,        
-    //     planetsSelected: false,
-    //     scroll: false       
-    //   })
-    // }
+    const retrievedPeople = this.getLocalStorage('people')
+    this.setState({ 
+      people: retrievedPeople,
+      peopleSelected: true,
+      planetsSelected: false,
+      vehiclesSelected: false,
+      scroll: false
+    })
   }
-
-  // checkLocalStoragePeople = (people) => {
-  //   if (!localStorage.people) {
-  //     this.setLocalStorage('people', people)
-  //   } else {
-  //       const retrievedPeople = this.getLocalStorage('people')
-  //       this.setState({ people: retrievedPeople })
-  //     }
-  //   }
-
   
   showVehicles = async (e) => {
-    // if (this.state.vehiclesSelected === true) {
-    //   this.setState({ 
-    //     vehicles: [],
-    //     people: [],
-    //     planets: [],
-    //     vehiclesSelected: false 
-    //   })
-    // } else {
-    //   this.checkLocalStorageVehicles(vehicles)
-    //   this.setState({  
-    //     // people: [],
-    //     // planets: [],
-    //     vehiclesSelected: true,  
-    //     peopleSelected: false,        
-    //     planetsSelected: false        
-    //   })
-    // }
-  }
-
-  checkLocalStorageVehicles = (vehicles) => {
+    const { vehicles, vehiclesSelected } = this.state
     if (!localStorage.vehicles) {
-      this.setState({ vehicles })
       this.setLocalStorage('vehicles', vehicles)
-    } else {
-        const retrievedVehicles = this.getLocalStorage('vehicles')
-        this.setState({ vehicles: retrievedVehicles })
-      }
     }
 
-  showPlanets = async (e) => {
-    // console.log(planets) 
-    // if (this.state.planetsSelected === true) {
-    //   this.setState({ 
-    //     vehicles: [],
-    //     people: [],
-    //     planets: [],
-    //     planetsSelected: false 
-    //   })
-    // } else {
-    //   this.checkLocalStoragePlanets(planets)
-    //   this.setState({  
-    //     // vehicles: [], 
-    //     // people: [],
-    //     planetsSelected: true,        
-    //     // peopleSelected: false,        
-    //     // vehiclesSelected: false  
-    //   })
-    // }
+    const retrievedVehicles = this.getLocalStorage('vehicles')
+    this.setState({
+      vehicles: retrievedVehicles,
+      vehiclesSelected: true,
+      peopleSelected: false,
+      planetsSelected: false,
+      scroll: false
+    })
   }
 
-  checkLocalStoragePlanets = (planets) => {
+  showPlanets = async (e) => {
+    const { planets, planetsSelected } = this.state
     if (!localStorage.planets) {
-      this.setState({ planets })
       this.setLocalStorage('planets', planets)
-    } else {
-        const retrievedPlanets = this.getLocalStorage('planets')
-        this.setState({ planets: retrievedPlanets })
-      }
-   }
+    }
+
+    const retrievedPlanets = this.getLocalStorage('planets')
+    this.setState({
+      planets: retrievedPlanets,
+      planetsSelected: true,
+      peopleSelected: false,
+      vehiclesSelected: false,
+      scroll: false
+    })
+  }
 
   render() {
     const { 
