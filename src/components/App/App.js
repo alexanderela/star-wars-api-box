@@ -26,21 +26,55 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    this.showFilm()
+    this.getFilm()
+    this.getPeople()
+    this.getPlanets()
+    this.getVehicles()
   }
 
-  addToFavorites = (card) => {
+  toggleFavorites = (entry) => {
+    console.log(entry)
     let favorites;
-    if(this.state.favorites.includes(card)) {
-      favorites = this.state.favorites.filter((favorite) => {
-        return favorite.id !== card.id
-      })
-    } else if (!this.state.favorites.includes(card)) {
-      favorites = [...this.state.favorites, card]
+    let category;
+    const { type, id } = entry
+    // const { favorites } = this.state
+    // entry.isFavorite = !entry.isFavorite
+      // debugger
+    category = this.state[type].map(card => {
+      if(card.id === id) {
+        card.isFavorite = !card.isFavorite
+      }
+      return card
+    })
+    if(this.state.favorites.includes(entry)) {
+      // entry.isFavorite = false
+      // faves = favorites.filter((favorite) => {
+      //   return favorite.id !== card.id
+      // })
+      favorites = this.state.favorites.filter(card => card.id !== id)
+      
+      this.setState({ [type]: category, favorites: favorites })
+      this.setLocalStorage('favorites', favorites)
+      this.setLocalStorage( [type], category)
+    } else if (!this.state.favorites.includes(entry)) {
+      entry.isFavorite = true
+      favorites = [...this.state.favorites, entry]
+      category = this.state[type].map(card => card)
+      this.setState({ [type]: category, favorites: favorites })      
+      this.setLocalStorage('favorites', favorites)   
+      this.setLocalStorage([type], category)
     }
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)   
   }
+
+  // toggleFavorites = (card) => {
+  //   card.isFavorite = !card.isFavorite
+  //   if (card.isFavorite === true) {
+  //     this.addToFavorites(card)
+  //   } else if (card.isFavorite === false) {
+  //     this.addToFavorites(card)
+  //   }
+  // }
+
 
   removeFromFavorites = (id) => {
     const favorites = this.state.favorites.filter(card => card.id !== id) 
@@ -48,18 +82,27 @@ class App extends Component {
     this.setLocalStorage('favorites', favorites)
   }
 
-  // showFavorites = (allFavs) => {
-  //   // console.log(allFavs)
-  //   // const allFavInfo = allFavs
-  //   // const allFavorites = allFavs.map(fav => fav)
-  //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
-  //   const category = this.state[type].filter(card => card.id !== allFavorites.id)
-  //   this.setState({ [type]: category, favorites: favorites })   
-  // }
-
-  showFilm = async () => {
+  getFilm = async () => {
     const films = await this.state.dataCleaner.getMovie()
     this.setState({ films })
+  }
+
+  getPeople = async () => {
+    const people = await this.state.dataCleaner.getPerson()
+    this.setState({ people })
+    this.setLocalStorage('people', people)
+  }
+
+  getPlanets = async () => {
+    const planets = await this.state.dataCleaner.getPlanet()
+    this.setState({ planets })
+    this.setLocalStorage('planets', planets)
+  }
+
+  getVehicles = async () => {
+    const vehicles = await this.state.dataCleaner.getVehicle()
+    this.setState({ vehicles })
+    this.setLocalStorage('vehicles', vehicles)
   }
 
   toggleCategoryState = (categoryName) => {
@@ -75,6 +118,7 @@ class App extends Component {
     }
   }
 
+
   setLocalStorage = (key, category) => {
     localStorage.setItem(key, JSON.stringify(category))
   }
@@ -86,103 +130,52 @@ class App extends Component {
   }
 
   showPeople = async (e) => {  
-    const people = await this.state.dataCleaner.getPerson()
-    // console.log(people)
-    if (this.state.peopleSelected === true) {
-      this.setState({
-        people: [], 
-        vehicles: [],
-        planets: [],
-        peopleSelected: false,
-        scroll: true 
-      })
-    } else {
-      this.checkLocalStoragePeople(people)
-      this.setState({ 
-        // vehicles: [],
-        // planets: [], 
-        peopleSelected: true,  
-        vehiclesSelected: false,        
-        planetsSelected: false,
-        scroll: false       
-      })
-    }
-  }
-
-  checkLocalStoragePeople = (people) => {
+    const { people, peopleSelected } = this.state
     if (!localStorage.people) {
-      this.setState({ people })
       this.setLocalStorage('people', people)
-    } else {
-        const retrievedPeople = this.getLocalStorage('people')
-        this.setState({ people: retrievedPeople })
-      }
-    }
+    } 
 
+    const retrievedPeople = this.getLocalStorage('people')
+    this.setState({ 
+      people: retrievedPeople,
+      peopleSelected: true,
+      planetsSelected: false,
+      vehiclesSelected: false,
+      scroll: false
+    })
+  }
   
   showVehicles = async (e) => {
-    const vehicles = await this.state.dataCleaner.getVehicle()
-    console.log(vehicles)
-    if (this.state.vehiclesSelected === true) {
-      this.setState({ 
-        vehicles: [],
-        people: [],
-        planets: [],
-        vehiclesSelected: false 
-      })
-    } else {
-      this.checkLocalStorageVehicles(vehicles)
-      this.setState({  
-        // people: [],
-        // planets: [],
-        vehiclesSelected: true,  
-        peopleSelected: false,        
-        planetsSelected: false        
-      })
-    }
-  }
-
-  checkLocalStorageVehicles = (vehicles) => {
+    const { vehicles, vehiclesSelected } = this.state
     if (!localStorage.vehicles) {
-      this.setState({ vehicles })
       this.setLocalStorage('vehicles', vehicles)
-    } else {
-        const retrievedVehicles = this.getLocalStorage('vehicles')
-        this.setState({ vehicles: retrievedVehicles })
-      }
     }
+
+    const retrievedVehicles = this.getLocalStorage('vehicles')
+    this.setState({
+      vehicles: retrievedVehicles,
+      vehiclesSelected: true,
+      peopleSelected: false,
+      planetsSelected: false,
+      scroll: false
+    })
+  }
 
   showPlanets = async (e) => {
-    const planets = await this.state.dataCleaner.getPlanet() 
-    console.log(planets) 
-    if (this.state.planetsSelected === true) {
-      this.setState({ 
-        vehicles: [],
-        people: [],
-        planets: [],
-        planetsSelected: false 
-      })
-    } else {
-      this.checkLocalStoragePlanets(planets)
-      this.setState({  
-        // vehicles: [], 
-        // people: [],
-        planetsSelected: true,        
-        // peopleSelected: false,        
-        // vehiclesSelected: false  
-      })
-    }
-  }
-
-  checkLocalStoragePlanets = (planets) => {
+    const { planets, planetsSelected } = this.state
     if (!localStorage.planets) {
-      this.setState({ planets })
       this.setLocalStorage('planets', planets)
-    } else {
-        const retrievedPlanets = this.getLocalStorage('planets')
-        this.setState({ planets: retrievedPlanets })
-      }
-   }
+    }
+
+    const retrievedPlanets = this.getLocalStorage('planets')
+    this.setState({
+      planets: retrievedPlanets,
+      planetsSelected: true,
+      peopleSelected: false,
+      vehiclesSelected: false,
+      scroll: false
+    })
+  }
 
   render() {
     const { 
@@ -213,30 +206,26 @@ class App extends Component {
         </header>
         {peopleSelected && 
         <CardContainer 
-          type={people}
-          addToFavorites={this.addToFavorites}
-          removeFromFavorites={this.removeFromFavorites}
+          entries={people}
+          toggleFavorites={this.toggleFavorites}
           favorites={favorites}
            />}
         {vehiclesSelected && 
         <CardContainer 
-          type={vehicles} 
-          addToFavorites={this.addToFavorites}
-          removeFromFavorites={this.removeFromFavorites}
+          entries={vehicles} 
+          toggleFavorites={this.toggleFavorites}
           favorites={favorites}
           />}
         {planetsSelected && 
         <CardContainer 
-          type={planets} 
-          addToFavorites={this.addToFavorites}
-          removeFromFavorites={this.removeFromFavorites}
+          entries={planets} 
+          toggleFavorites={this.toggleFavorites}
           favorites={favorites}
           />}
         {favoritesSelected && 
         <CardContainer
-          type={favorites} 
-          addToFavorites={this.addToFavorites}
-          removeFromFavorites={this.removeFromFavorites}
+          entries={favorites} 
+          toggleFavorites={this.toggleFavorites}
           favorites={favorites}
           />}
         {scroll &&

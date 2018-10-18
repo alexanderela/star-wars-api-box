@@ -43,6 +43,10 @@
  	border-radius: 50%;
 }
 
+.fav-btn:focus {
+  outline: 0;
+}
+
 
 .fav-btn-inactive {
 	background-color: #FFF;

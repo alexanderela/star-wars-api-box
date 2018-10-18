@@ -112,6 +112,10 @@ background: url('../../assets/SWAPI-background.jpg');
   width: 30%;
 }
 
+.cat-button:focus {
+  outline: 0;
+}
+
 .people-button:hover {
   background: #d9ffd9;
   box-shadow: #d9ffd9 0px 0px 20px 2px;
@@ -135,4 +139,11 @@ background: url('../../assets/SWAPI-background.jpg');
     #FF0 0px 0px 6px, 
     #FF0 0px 0px 10px;
 }
+
+/*@media (max-width: 940px) {
+  .cat-button {
+    font-size: 1.75rem;
+    width: 10rem;
+  }
+}*/
 

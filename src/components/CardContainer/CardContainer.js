@@ -3,17 +3,18 @@ import './CardContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({type, addToFavorites, removeFromFavorites, favorites}) => {
-	let cards
+const CardContainer = ({entries, toggleFavorites, favorites}) => {
+	// console.log(entries)
+  let cards
 
-	cards = type.map(item => {
-		return <Card 
-							type={item}
-							key={item.name} 
-							addToFavorites={addToFavorites}
-        			removeFromFavorites={removeFromFavorites}
+	cards = entries.map(entry => {
+		// console.log(entry)
+    return <Card 
+							entry={entry}
+							key={entry.name} 
+							toggleFavorites={toggleFavorites}
         			favorites={favorites}
-        			isFavorite={item.isFavorite}
+        			isFavorite={entry.isFavorite}
         			/>		
 	})
 
@@ -25,20 +26,8 @@ const CardContainer = ({type, addToFavorites, removeFromFavorites, favorites}) =
 }
 
 CardContainer.propTypes = {
-	people: PropTypes.oneOfType([
-  PropTypes.array,
-  PropTypes.object
-]),
-	vehicles: PropTypes.oneOfType([
-  PropTypes.array,
-  PropTypes.object
-]),
-	planets: PropTypes.oneOfType([
-  PropTypes.array,
-  PropTypes.object
-]),
-	addToFavorites: PropTypes.func,
-	removeFromFavorites: PropTypes.func,
+  entries: PropTypes.array,
+	toggleFavorites: PropTypes.func,
 	favorites: PropTypes.array
 }
 
