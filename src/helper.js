@@ -1,3 +1,5 @@
+import * as API from './apiCalls'
+
 class DataCleaner {
 	constructor() {
 		this.randomEpisode = Math.round(Math.random() * 6 + 1)
@@ -124,18 +126,13 @@ class DataCleaner {
 		return Promise.all(planetPromises)
 	}
 
-	async getResidents(planet) {
-		const getResidents = await this.getTenants(planet.residents)
-		return Promise.all(getResidents)
-	}
-
-	async getTenants(planetResidentCollection) {
-		const tenantPromises = planetResidentCollection.map( async resident => {
-			const response = await fetch(resident)
+	async getResidents(residentUrls) {
+		const tenantPromises = residentUrls.map( async residentUrl => {
+			const response = await fetch(residentUrl)
 			const residentData = await response.json()
 			return residentData.name
 		})
-		return Promise.all(tenantPromises)
+		return await Promise.all(tenantPromises)
 	}
 
 //Get vehicles

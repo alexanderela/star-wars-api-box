@@ -26,6 +26,7 @@ ShallowWrapper {
       "children": <button
         className="cat-button favorites-button"
         onClick={[Function]}
+
       >
         Favorites
         <span

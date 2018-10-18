@@ -9,6 +9,11 @@ import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
 import mockNewPerson from './mockData/mockNewPerson.js';
+import * as API from './apiCalls'
+
+jest.mock('./apiCalls', () => ({
+	getMovie: jest.fn().mockImplementation(() => mockMovieObj)
+}))
 
 describe('DataCleaner', () => {
 	const dataCleaner = new DataCleaner()
@@ -98,6 +103,45 @@ describe('DataCleaner', () => {
 			getPerson()
 			//Expectation
 			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
+		})
+
+		it('resolvess to expected', async () => {
+			//Setup
+			const mockReturnedPeopleData = [
+				{
+					name: 'Luke Skywalker',
+					homeWorld: 'Tatooine',
+					species: 'human',
+					isFavorite: false,
+					type: 'people'
+				},
+				{
+					name: 'C-3PO',
+					homeWorld: 'Tatooine',
+					species: 'droid',
+					isFavorite: false,
+					type: 'people'
+				}
+			]
+			const expected = [
+				{
+					name: 'Luke Skywalker', 
+					homeWorld: 'Tatooine', 
+					species: 'human', 
+					isFavorite: false, 
+					type: 'people'
+				},
+				{
+					name: 'C-3PO',
+					homeWorld: 'Tatooine',
+					species: 'droid',
+					isFavorite: false,
+					type: 'people'
+				}
+			]
+			Promise.all(mockReturnedPeopleData)
+
+			expect(Promise.all(mockReturnedPeopleData)).resolves.toEqual(expected)
 		})
 	})
 
