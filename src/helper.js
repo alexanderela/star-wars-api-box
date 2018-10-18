@@ -35,6 +35,7 @@ class DataCleaner {
 	async getPerson() {
 		let returnedPeopleData;
 		const response = await fetch(this.peopleUrl)
+			console.log('Fetch is calling')
 		if (response.status >= 400) {
 			throw new Error('Fetch has failed')
 		} else {
@@ -110,6 +111,7 @@ class DataCleaner {
 
 	async returnPlanetData(planetCollection) {
 		const planetPromises = await planetCollection.map( async planet => {
+			// debugger
 			return {
 				name: planet.name,
 				id: planet.name,
@@ -119,7 +121,7 @@ class DataCleaner {
 					`Terrain: ${planet.terrain}`,
 					`Population: ${planet.population}`,
 					`Climate: ${planet.climate}`,
-					`Residents: ${await this.getResidents(planet)}`
+					`Residents: ${await this.getResidents(planet.residents)}`
 					]
 			}
 		})

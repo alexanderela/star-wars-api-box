@@ -140,3 +140,10 @@ background: url('../../assets/SWAPI-background.jpg');
     #FF0 0px 0px 10px;
 }
 
+/*@media (max-width: 940px) {
+  .cat-button {
+    font-size: 1.75rem;
+    width: 10rem;
+  }
+}*/
+
