@@ -112,6 +112,10 @@ background: url('../../assets/SWAPI-background.jpg');
   width: 30%;
 }
 
+.cat-button:focus {
+  outline: 0;
+}
+
 .people-button:hover {
   background: #d9ffd9;
   box-shadow: #d9ffd9 0px 0px 20px 2px;
