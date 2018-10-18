@@ -8,46 +8,15 @@ const CardContainer = ({type, addToFavorites, removeFromFavorites, favorites}) =
 
 	cards = type.map(item => {
 		return <Card 
-							type={type}
-							key={type.name} 
+							type={item}
+							key={item.name} 
 							addToFavorites={addToFavorites}
         			removeFromFavorites={removeFromFavorites}
         			favorites={favorites}
+        			isFavorite={item.isFavorite}
         			/>		
 	})
 
-	// if (people) {
-	// 	cards = people.map((person) => {
-	// 		return <Card 
-	// 							people={people} {...person} 
-	// 							person={person}
-	// 							key={person.name} 
-	// 							addToFavorites={addToFavorites}
- //          			removeFromFavorites={removeFromFavorites}
- //          			favorites={favorites}
- //          			/>
-	// 	})
-	// } else if (vehicles) {
-	// 	cards = vehicles.map((vehicle) => {
-	// 		return <Card 
-	// 							vehicles={vehicle} {...vehicle} 
-	// 							key={vehicle.name} 
-	// 							addToFavorites={addToFavorites}
- //          			removeFromFavorites={removeFromFavorites}
- //          			favorites={favorites}
-	// 							/>
-	// 	})
-	// } else if (planets) {
-	// 	cards = planets.map((planet) => {
-	// 		return <Card 
-	// 							planets={planet} {...planet} 
-	// 							key={planet.name} 
-	// 							addToFavorites={addToFavorites}
- //          			removeFromFavorites={removeFromFavorites}
- //          			favorites={favorites}
-	// 							/>
-	// 	})
-	// }
 	return (
 		<div className='CardContainer'>
 			{ cards }

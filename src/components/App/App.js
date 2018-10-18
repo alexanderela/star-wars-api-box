@@ -42,11 +42,11 @@ class App extends Component {
     this.setLocalStorage('favorites', favorites)   
   }
 
-  // removeFromFavorites = (id) => {
-  //   const favorites = this.state.favorites.filter(card => card.id !== id) 
-  //   this.setState({ favorites })
-  //   this.setLocalStorage('favorites', favorites)
-  // }
+  removeFromFavorites = (id) => {
+    const favorites = this.state.favorites.filter(card => card.id !== id) 
+    this.setState({ favorites })
+    this.setLocalStorage('favorites', favorites)
+  }
 
   // showFavorites = (allFavs) => {
   //   // console.log(allFavs)
@@ -87,7 +87,7 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
-    console.log(people)
+    // console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
@@ -232,13 +232,13 @@ class App extends Component {
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
           />}
-        {/*{favoritesSelected && 
+        {favoritesSelected && 
         <CardContainer
           type={favorites} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-          />}*/}
+          />}
         {scroll &&
         <Sidebar films={films}/>
         }

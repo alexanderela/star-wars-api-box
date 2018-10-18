@@ -1,18 +1,8 @@
-export const makePlanetCard = category => {
-  const planetCard = category.map((item, i) => {
-    return {
-      name: item.name,
-      id: i + 'planets',
-      favorited: false,
-      properties: [
-        `Terrain: ${item.terrain}`,
-        `Population: ${item.population}`,
-        `Climate: ${item.climate}`,
-        `Residents: ${item.residents.map(resident => {
-          return resident.name
-        })}`
-      ]
-    }
-  })
-  return planetCard
-}
+// import React from 'react';
+
+// const setCardProperties = () => (
+//     const { properties } = this.props.type
+//     const cardProperties = properties.map(property => 
+//         (<p className="card-text"><span className="card-header"></span>{property}</p>)
+//     })
+//   )
