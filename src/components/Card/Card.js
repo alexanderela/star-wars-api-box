@@ -41,42 +41,40 @@ class Card extends Component {
 		}
 	}
 
-		setCardProperties = () => {
-			const cardProperties = this.props.type.properties.map(property => {
-				// console.log(property)
-				return (
-					<p key={property[0]} className="card-text">
-						<span className="card-header"></span>
-						{property}
-					</p>
-				)
-			})
-			return cardProperties
-		}
+	setCardProperties = (type) => {
+		const cardProperties = type.properties.map(property => {
+			return (
+				<p key={property[0]} className="card-text">
+					<span className="card-header"></span>
+					{property}
+				</p>
+			)
+		})
+		return cardProperties
+	}
 
 	render() {
 		const { type, addToFavorites, removeFromFavorites, favorites, isFavorite } = this.props
 		const { isSelected } = this.state
-
-		const cardProperties = this.setCardProperties()
+		const cardProperties = this.setCardProperties(type)
 
 		return (
-				<div className="Card">
-			    <div className="fav-btn-card-container">
-				    <h3>{type.name}</h3>
-				    <button 
-				    	className={ `fav-btn people-fav 
-				    		${(isSelected) 
-				    			? "fav-btn-active" 
-				    			: "fav-btn-inactive"}` }
-				    	onClick={() => this.selectCard(type)}
-				    >
-				    	<i className="fas fa-jedi"></i>
-				  </button>
-			   </div>
-			   {cardProperties}
-				</div>
-			)
+			<div className="Card">
+		    <div className="fav-btn-card-container">
+			    <h3>{type.name}</h3>
+			    <button 
+			    	className={ `fav-btn people-fav 
+			    		${(isSelected) 
+			    			? "fav-btn-active" 
+			    			: "fav-btn-inactive"}` }
+			    	onClick={() => this.selectCard(type)}
+			    >
+			    	<i className="fas fa-jedi"></i>
+			  </button>
+		   </div>
+		   {cardProperties}
+			</div>
+		)
 	}	
 }
 
