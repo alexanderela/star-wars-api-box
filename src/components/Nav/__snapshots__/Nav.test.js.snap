@@ -1,0 +1,3924 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav matches the snapshot 1`] = `
+ReactWrapper {
+  Symbol(enzyme.__unrendered__): <Nav
+    showPeople={[MockFunction]}
+    showPlanet={[MockFunction]}
+    showVehicle={[MockFunction]}
+    toggleCategoryState={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__node__): Object {
+    "instance": Nav {
+      "_reactInternalFiber": FiberNode {
+        "_debugID": 50,
+        "_debugIsCurrentlyTiming": false,
+        "_debugOwner": FiberNode {
+          "_debugID": 49,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="button-container"
+                  >
+                    <div
+                      class="nav-buttons"
+                    >
+                      <button
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
+                      >
+                        People
+                      </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      class="error-favorites"
+                    />
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "timeoutHandle": -1,
+              },
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "showPeople": [MockFunction],
+                          "showPlanet": [MockFunction],
+                          "showVehicle": [MockFunction],
+                          "toggleCategoryState": [MockFunction],
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "showPeople": [MockFunction],
+                          "showPlanet": [MockFunction],
+                          "showVehicle": [MockFunction],
+                          "toggleCategoryState": [MockFunction],
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "showPeople": [MockFunction],
+                    "showPlanet": [MockFunction],
+                    "showVehicle": [MockFunction],
+                    "toggleCategoryState": [MockFunction],
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="button-container"
+                >
+                  <div
+                    class="nav-buttons"
+                  >
+                    <button
+                      class="cat-button people-button 
+				      	cat-button-inactive"
+                      name="people"
+                    >
+                      People
+                    </button>
+                    <button
+                      class="cat-button planets-button 
+				      	cat-button-inactive"
+                      name="planets"
+                    >
+                      Planets
+                    </button>
+                    <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>
+                    <div
+                      class="FavoriteButton"
+                    >
+                      <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <p
+                    class="error-favorites"
+                  />
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "timeoutHandle": -1,
+            },
+            "tag": 5,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "showPeople": [MockFunction],
+                      "showPlanet": [MockFunction],
+                      "showVehicle": [MockFunction],
+                      "toggleCategoryState": [MockFunction],
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_debugSource": null,
+        "actualDuration": 0,
+        "actualStartTime": -1,
+        "alternate": null,
+        "child": FiberNode {
+          "_debugID": 51,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": [Circular],
+          "_debugSource": Object {
+            "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+            "lineNumber": 73,
+          },
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 52,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+              "lineNumber": 74,
+            },
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 54,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                "lineNumber": 75,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
+                "onClick": [Function],
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": FiberNode {
+                "_debugID": 55,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                  "lineNumber": 83,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
+                  "onClick": [Function],
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": FiberNode {
+                  "_debugID": 56,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                    "lineNumber": 91,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstContextDependency": null,
+                  "firstEffect": null,
+                  "index": 2,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "Vehicles",
+                    "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                    "name": "vehicles",
+                    "onClick": [Function],
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "Vehicles",
+                    "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                    "name": "vehicles",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 57,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                      "lineNumber": 99,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": FiberNode {
+                      "_debugID": 58,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugOwner": [Circular],
+                      "_debugSource": Object {
+                        "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                        "lineNumber": 8,
+                      },
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": FiberNode {
+                        "_debugID": 59,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugOwner": [Circular],
+                        "_debugSource": Object {
+                          "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                          "lineNumber": 9,
+                        },
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": FiberNode {
+                          "_debugID": 60,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugOwner": null,
+                          "_debugSource": null,
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": null,
+                          "childExpirationTime": 0,
+                          "effectTag": 0,
+                          "expirationTime": 0,
+                          "firstContextDependency": null,
+                          "firstEffect": null,
+                          "index": 0,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": "Favorites",
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": "Favorites",
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": FiberNode {
+                            "_debugID": 61,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugOwner": [Circular],
+                            "_debugSource": Object {
+                              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                              "lineNumber": 15,
+                            },
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "effectTag": 0,
+                            "expirationTime": 0,
+                            "firstContextDependency": null,
+                            "firstEffect": null,
+                            "index": 1,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": Object {
+                              "children": 0,
+                              "className": "favorites-count",
+                            },
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": Object {
+                              "children": 0,
+                              "className": "favorites-count",
+                            },
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": null,
+                            "stateNode": <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>,
+                            "tag": 7,
+                            "treeBaseDuration": 0,
+                            "type": "span",
+                            "updateQueue": null,
+                          },
+                          "stateNode": Favorites,
+                          "tag": 8,
+                          "treeBaseDuration": 0,
+                          "type": null,
+                          "updateQueue": null,
+                        },
+                        "childExpirationTime": 0,
+                        "effectTag": 0,
+                        "expirationTime": 0,
+                        "firstContextDependency": null,
+                        "firstEffect": null,
+                        "index": 0,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": Object {
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>,
+                          ],
+                          "className": "cat-button favorites-button",
+                          "onClick": [Function],
+                        },
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": Object {
+                          "children": Array [
+                            "Favorites",
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>,
+                          ],
+                          "className": "cat-button favorites-button",
+                          "onClick": [Function],
+                        },
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": null,
+                        "stateNode": <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "tag": 7,
+                        "treeBaseDuration": 0,
+                        "type": "button",
+                        "updateQueue": null,
+                      },
+                      "childExpirationTime": 0,
+                      "effectTag": 0,
+                      "expirationTime": 0,
+                      "firstContextDependency": null,
+                      "firstEffect": null,
+                      "index": 0,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": Object {
+                        "children": <button
+                          className="cat-button favorites-button"
+                          onClick={[Function]}
+                        >
+                          Favorites
+                          <span
+                            className="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "className": "FavoriteButton",
+                      },
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": Object {
+                        "children": <button
+                          className="cat-button favorites-button"
+                          onClick={[Function]}
+                        >
+                          Favorites
+                          <span
+                            className="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>,
+                        "className": "FavoriteButton",
+                      },
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": null,
+                      "stateNode": <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>,
+                      "tag": 7,
+                      "treeBaseDuration": 0,
+                      "type": "div",
+                      "updateQueue": null,
+                    },
+                    "childExpirationTime": 0,
+                    "effectTag": 1,
+                    "expirationTime": 0,
+                    "firstContextDependency": null,
+                    "firstEffect": null,
+                    "index": 3,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "checkIfAnyFavorites": [Function],
+                      "className": "FavoriteButton",
+                      "favorites": undefined,
+                      "showFavorites": undefined,
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "checkIfAnyFavorites": [Function],
+                      "className": "FavoriteButton",
+                      "favorites": undefined,
+                      "showFavorites": undefined,
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": null,
+                    "stateNode": null,
+                    "tag": 0,
+                    "treeBaseDuration": 0,
+                    "type": [Function],
+                    "updateQueue": null,
+                  },
+                  "stateNode": <button
+                    class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                  >
+                    Vehicles
+                  </button>,
+                  "tag": 7,
+                  "treeBaseDuration": 0,
+                  "type": "button",
+                  "updateQueue": null,
+                },
+                "stateNode": <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>,
+                "tag": 7,
+                "treeBaseDuration": 0,
+                "type": "button",
+                "updateQueue": null,
+              },
+              "stateNode": <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>,
+              "tag": 7,
+              "treeBaseDuration": 0,
+              "type": "button",
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": FiberNode {
+              "_debugID": 53,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                "lineNumber": 109,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 1,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "className": "error-favorites",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "className": "error-favorites",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": <p
+                class="error-favorites"
+              />,
+              "tag": 7,
+              "treeBaseDuration": 0,
+              "type": "p",
+              "updateQueue": null,
+            },
+            "stateNode": <div
+              class="nav-buttons"
+            >
+              <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
+                class="FavoriteButton"
+              >
+                <button
+                  class="cat-button favorites-button"
+                >
+                  Favorites
+                  <span
+                    class="favorites-count"
+                  >
+                    0
+                  </span>
+                </button>
+              </div>
+            </div>,
+            "tag": 7,
+            "treeBaseDuration": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "effectTag": 0,
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "children": Array [
+              <div
+                className="nav-buttons"
+              >
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />
+              </div>,
+              <p
+                className="error-favorites"
+              />,
+            ],
+            "className": "button-container",
+          },
+          "memoizedState": null,
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "children": Array [
+              <div
+                className="nav-buttons"
+              >
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />
+              </div>,
+              <p
+                className="error-favorites"
+              />,
+            ],
+            "className": "button-container",
+          },
+          "ref": null,
+          "return": [Circular],
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": <div
+            class="button-container"
+          >
+            <div
+              class="nav-buttons"
+            >
+              <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
+                class="FavoriteButton"
+              >
+                <button
+                  class="cat-button favorites-button"
+                >
+                  Favorites
+                  <span
+                    class="favorites-count"
+                  >
+                    0
+                  </span>
+                </button>
+              </div>
+            </div>
+            <p
+              class="error-favorites"
+            />
+          </div>,
+          "tag": 7,
+          "treeBaseDuration": 0,
+          "type": "div",
+          "updateQueue": null,
+        },
+        "childExpirationTime": 0,
+        "effectTag": 1,
+        "expirationTime": 0,
+        "firstContextDependency": null,
+        "firstEffect": null,
+        "index": 0,
+        "key": null,
+        "lastEffect": null,
+        "memoizedProps": Object {
+          "showPeople": [MockFunction],
+          "showPlanet": [MockFunction],
+          "showVehicle": [MockFunction],
+          "toggleCategoryState": [MockFunction],
+        },
+        "memoizedState": Object {
+          "favoritesExist": true,
+          "peopleSelected": false,
+          "planetsSelected": false,
+          "vehiclesSelected": false,
+        },
+        "mode": 0,
+        "nextEffect": null,
+        "pendingProps": Object {
+          "showPeople": [MockFunction],
+          "showPlanet": [MockFunction],
+          "showVehicle": [MockFunction],
+          "toggleCategoryState": [MockFunction],
+        },
+        "ref": null,
+        "return": FiberNode {
+          "_debugID": 49,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": null,
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": [Circular],
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "memoizedState": Object {
+            "context": null,
+            "mount": true,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "Component": [Function],
+            "context": null,
+            "props": Object {
+              "showPeople": [MockFunction],
+              "showPlanet": [MockFunction],
+              "showVehicle": [MockFunction],
+              "toggleCategoryState": [MockFunction],
+            },
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 47,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": [Circular],
+              "child": null,
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 1,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": null,
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="button-container"
+                  >
+                    <div
+                      class="nav-buttons"
+                    >
+                      <button
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
+                      >
+                        People
+                      </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      class="error-favorites"
+                    />
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "timeoutHandle": -1,
+              },
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": null,
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "showPeople": [MockFunction],
+                          "showPlanet": [MockFunction],
+                          "showVehicle": [MockFunction],
+                          "toggleCategoryState": [MockFunction],
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": Object {
+                  "callback": null,
+                  "expirationTime": 1,
+                  "next": null,
+                  "nextEffect": null,
+                  "payload": Object {
+                    "element": <WrapperComponent
+                      Component={[Function]}
+                      context={null}
+                      props={
+                        Object {
+                          "showPeople": [MockFunction],
+                          "showPlanet": [MockFunction],
+                          "showVehicle": [MockFunction],
+                          "toggleCategoryState": [MockFunction],
+                        }
+                      }
+                    />,
+                  },
+                  "tag": 0,
+                },
+              },
+            },
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 32,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": [Circular],
+            "index": 0,
+            "key": null,
+            "lastEffect": [Circular],
+            "memoizedProps": null,
+            "memoizedState": Object {
+              "element": <WrapperComponent
+                Component={[Function]}
+                context={null}
+                props={
+                  Object {
+                    "showPeople": [MockFunction],
+                    "showPlanet": [MockFunction],
+                    "showVehicle": [MockFunction],
+                    "toggleCategoryState": [MockFunction],
+                  }
+                }
+              />,
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": null,
+            "ref": null,
+            "return": null,
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": Object {
+              "containerInfo": <div>
+                <div
+                  class="button-container"
+                >
+                  <div
+                    class="nav-buttons"
+                  >
+                    <button
+                      class="cat-button people-button 
+				      	cat-button-inactive"
+                      name="people"
+                    >
+                      People
+                    </button>
+                    <button
+                      class="cat-button planets-button 
+				      	cat-button-inactive"
+                      name="planets"
+                    >
+                      Planets
+                    </button>
+                    <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>
+                    <div
+                      class="FavoriteButton"
+                    >
+                      <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <p
+                    class="error-favorites"
+                  />
+                </div>
+              </div>,
+              "context": Object {},
+              "current": [Circular],
+              "didError": false,
+              "earliestPendingTime": 0,
+              "earliestSuspendedTime": 0,
+              "expirationTime": 0,
+              "finishedWork": null,
+              "firstBatch": null,
+              "hydrate": false,
+              "interactionThreadID": 12,
+              "latestPendingTime": 0,
+              "latestPingedTime": 0,
+              "latestSuspendedTime": 0,
+              "memoizedInteractions": Set {},
+              "nextExpirationTimeToWorkOn": 0,
+              "nextScheduledRoot": null,
+              "pendingChildren": null,
+              "pendingCommitExpirationTime": 0,
+              "pendingContext": null,
+              "pendingInteractionMap": Map {},
+              "timeoutHandle": -1,
+            },
+            "tag": 5,
+            "treeBaseDuration": 0,
+            "type": null,
+            "updateQueue": Object {
+              "baseState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "showPeople": [MockFunction],
+                      "showPlanet": [MockFunction],
+                      "showVehicle": [MockFunction],
+                      "toggleCategoryState": [MockFunction],
+                    }
+                  }
+                />,
+              },
+              "firstCapturedEffect": null,
+              "firstCapturedUpdate": null,
+              "firstEffect": null,
+              "firstUpdate": null,
+              "lastCapturedEffect": null,
+              "lastCapturedUpdate": null,
+              "lastEffect": null,
+              "lastUpdate": null,
+            },
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": WrapperComponent {
+            "_reactInternalFiber": [Circular],
+            "_reactInternalInstance": Object {},
+            "context": Object {},
+            "props": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "refs": Object {},
+            "state": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "updater": Object {
+              "enqueueForceUpdate": [Function],
+              "enqueueReplaceState": [Function],
+              "enqueueSetState": [Function],
+              "isMounted": [Function],
+            },
+          },
+          "tag": 2,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "selfBaseDuration": 0,
+        "sibling": null,
+        "stateNode": [Circular],
+        "tag": 2,
+        "treeBaseDuration": 0,
+        "type": [Function],
+        "updateQueue": null,
+      },
+      "_reactInternalInstance": Object {},
+      "checkIfAnyFavorites": [Function],
+      "context": Object {},
+      "handlePeopleClick": [Function],
+      "handlePlanetClick": [Function],
+      "handleVehicleClick": [Function],
+      "props": Object {
+        "showPeople": [MockFunction],
+        "showPlanet": [MockFunction],
+        "showVehicle": [MockFunction],
+        "toggleCategoryState": [MockFunction],
+      },
+      "refs": Object {},
+      "state": Object {
+        "favoritesExist": true,
+        "peopleSelected": false,
+        "planetsSelected": false,
+        "vehiclesSelected": false,
+      },
+      "updater": Object {
+        "enqueueForceUpdate": [Function],
+        "enqueueReplaceState": [Function],
+        "enqueueSetState": [Function],
+        "isMounted": [Function],
+      },
+    },
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "showPeople": [MockFunction],
+      "showPlanet": [MockFunction],
+      "showVehicle": [MockFunction],
+      "toggleCategoryState": [MockFunction],
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": <div
+        class="button-container"
+      >
+        <div
+          class="nav-buttons"
+        >
+          <button
+            class="cat-button people-button 
+				      	cat-button-inactive"
+            name="people"
+          >
+            People
+          </button>
+          <button
+            class="cat-button planets-button 
+				      	cat-button-inactive"
+            name="planets"
+          >
+            Planets
+          </button>
+          <button
+            class="cat-button vehicles-button 
+				      	cat-button-inactive"
+            name="vehicles"
+          >
+            Vehicles
+          </button>
+          <div
+            class="FavoriteButton"
+          >
+            <button
+              class="cat-button favorites-button"
+            >
+              Favorites
+              <span
+                class="favorites-count"
+              >
+                0
+              </span>
+            </button>
+          </div>
+        </div>
+        <p
+          class="error-favorites"
+        />
+      </div>,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="nav-buttons"
+          >
+            <button
+              className="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
+              onClick={[Function]}
+            >
+              People
+            </button>
+            <button
+              className="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+              onClick={[Function]}
+            >
+              Planets
+            </button>
+            <button
+              className="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+              onClick={[Function]}
+            >
+              Vehicles
+            </button>
+            <FavoriteButton
+              checkIfAnyFavorites={[Function]}
+              className="FavoriteButton"
+            />
+          </div>,
+          <p
+            className="error-favorites"
+          />,
+        ],
+        "className": "button-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": <div
+            class="nav-buttons"
+          >
+            <button
+              class="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
+            >
+              People
+            </button>
+            <button
+              class="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+            >
+              Planets
+            </button>
+            <button
+              class="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+            >
+              Vehicles
+            </button>
+            <div
+              class="FavoriteButton"
+            >
+              <button
+                class="cat-button favorites-button"
+              >
+                Favorites
+                <span
+                  class="favorites-count"
+                >
+                  0
+                </span>
+              </button>
+            </div>
+          </div>,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>,
+              <button
+                className="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+                onClick={[Function]}
+              >
+                Planets
+              </button>,
+              <button
+                className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
+              >
+                Vehicles
+              </button>,
+              <FavoriteButton
+                checkIfAnyFavorites={[Function]}
+                className="FavoriteButton"
+              />,
+            ],
+            "className": "nav-buttons",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "People",
+                "className": "cat-button people-button 
+				      	cat-button-inactive",
+                "name": "people",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "People",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Planets",
+                "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                "name": "planets",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Planets",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Vehicles",
+                "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                "name": "vehicles",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Vehicles",
+              ],
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "checkIfAnyFavorites": [Function],
+                "className": "FavoriteButton",
+                "favorites": undefined,
+                "showFavorites": undefined,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="cat-button favorites-button"
+                    onClick={[Function]}
+                  >
+                    Favorites
+                    <span
+                      className="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>,
+                  "className": "FavoriteButton",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": <button
+                      class="cat-button favorites-button"
+                    >
+                      Favorites
+                      <span
+                        class="favorites-count"
+                      >
+                        0
+                      </span>
+                    </button>,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Favorites",
+                        <span
+                          className="favorites-count"
+                        >
+                          0
+                        </span>,
+                      ],
+                      "className": "cat-button favorites-button",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Favorites",
+                      Object {
+                        "instance": <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 0,
+                          "className": "favorites-count",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          0,
+                        ],
+                        "type": "span",
+                      },
+                    ],
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": <p
+            class="error-favorites"
+          />,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "error-favorites",
+          },
+          "ref": null,
+          "rendered": Array [
+            undefined,
+          ],
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": Nav {
+        "_reactInternalFiber": FiberNode {
+          "_debugID": 50,
+          "_debugIsCurrentlyTiming": false,
+          "_debugOwner": FiberNode {
+            "_debugID": 49,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="button-container"
+                    >
+                      <div
+                        class="nav-buttons"
+                      >
+                        <button
+                          class="cat-button people-button 
+				      	cat-button-inactive"
+                          name="people"
+                        >
+                          People
+                        </button>
+                        <button
+                          class="cat-button planets-button 
+				      	cat-button-inactive"
+                          name="planets"
+                        >
+                          Planets
+                        </button>
+                        <button
+                          class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                          name="vehicles"
+                        >
+                          Vehicles
+                        </button>
+                        <div
+                          class="FavoriteButton"
+                        >
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                      <p
+                        class="error-favorites"
+                      />
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "timeoutHandle": -1,
+                },
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "showPeople": [MockFunction],
+                            "showPlanet": [MockFunction],
+                            "showVehicle": [MockFunction],
+                            "toggleCategoryState": [MockFunction],
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "showPeople": [MockFunction],
+                            "showPlanet": [MockFunction],
+                            "showVehicle": [MockFunction],
+                            "toggleCategoryState": [MockFunction],
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "showPeople": [MockFunction],
+                      "showPlanet": [MockFunction],
+                      "showVehicle": [MockFunction],
+                      "toggleCategoryState": [MockFunction],
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="button-container"
+                  >
+                    <div
+                      class="nav-buttons"
+                    >
+                      <button
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
+                      >
+                        People
+                      </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      class="error-favorites"
+                    />
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "timeoutHandle": -1,
+              },
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "showPeople": [MockFunction],
+                        "showPlanet": [MockFunction],
+                        "showVehicle": [MockFunction],
+                        "toggleCategoryState": [MockFunction],
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "showPeople": [MockFunction],
+                  "showPlanet": [MockFunction],
+                  "showVehicle": [MockFunction],
+                  "toggleCategoryState": [MockFunction],
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "showPeople": [MockFunction],
+                  "showPlanet": [MockFunction],
+                  "showVehicle": [MockFunction],
+                  "toggleCategoryState": [MockFunction],
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "_debugSource": null,
+          "actualDuration": 0,
+          "actualStartTime": -1,
+          "alternate": null,
+          "child": FiberNode {
+            "_debugID": 51,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": [Circular],
+            "_debugSource": Object {
+              "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+              "lineNumber": 73,
+            },
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": FiberNode {
+              "_debugID": 52,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": [Circular],
+              "_debugSource": Object {
+                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                "lineNumber": 74,
+              },
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": null,
+              "child": FiberNode {
+                "_debugID": 54,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                  "lineNumber": 75,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
+                  "onClick": [Function],
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": FiberNode {
+                  "_debugID": 55,
+                  "_debugIsCurrentlyTiming": false,
+                  "_debugOwner": [Circular],
+                  "_debugSource": Object {
+                    "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                    "lineNumber": 83,
+                  },
+                  "actualDuration": 0,
+                  "actualStartTime": -1,
+                  "alternate": null,
+                  "child": null,
+                  "childExpirationTime": 0,
+                  "effectTag": 0,
+                  "expirationTime": 0,
+                  "firstContextDependency": null,
+                  "firstEffect": null,
+                  "index": 1,
+                  "key": null,
+                  "lastEffect": null,
+                  "memoizedProps": Object {
+                    "children": "Planets",
+                    "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                    "name": "planets",
+                    "onClick": [Function],
+                  },
+                  "memoizedState": null,
+                  "mode": 0,
+                  "nextEffect": null,
+                  "pendingProps": Object {
+                    "children": "Planets",
+                    "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                    "name": "planets",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "return": [Circular],
+                  "selfBaseDuration": 0,
+                  "sibling": FiberNode {
+                    "_debugID": 56,
+                    "_debugIsCurrentlyTiming": false,
+                    "_debugOwner": [Circular],
+                    "_debugSource": Object {
+                      "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                      "lineNumber": 91,
+                    },
+                    "actualDuration": 0,
+                    "actualStartTime": -1,
+                    "alternate": null,
+                    "child": null,
+                    "childExpirationTime": 0,
+                    "effectTag": 0,
+                    "expirationTime": 0,
+                    "firstContextDependency": null,
+                    "firstEffect": null,
+                    "index": 2,
+                    "key": null,
+                    "lastEffect": null,
+                    "memoizedProps": Object {
+                      "children": "Vehicles",
+                      "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                      "name": "vehicles",
+                      "onClick": [Function],
+                    },
+                    "memoizedState": null,
+                    "mode": 0,
+                    "nextEffect": null,
+                    "pendingProps": Object {
+                      "children": "Vehicles",
+                      "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                      "name": "vehicles",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "return": [Circular],
+                    "selfBaseDuration": 0,
+                    "sibling": FiberNode {
+                      "_debugID": 57,
+                      "_debugIsCurrentlyTiming": false,
+                      "_debugOwner": [Circular],
+                      "_debugSource": Object {
+                        "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                        "lineNumber": 99,
+                      },
+                      "actualDuration": 0,
+                      "actualStartTime": -1,
+                      "alternate": null,
+                      "child": FiberNode {
+                        "_debugID": 58,
+                        "_debugIsCurrentlyTiming": false,
+                        "_debugOwner": [Circular],
+                        "_debugSource": Object {
+                          "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                          "lineNumber": 8,
+                        },
+                        "actualDuration": 0,
+                        "actualStartTime": -1,
+                        "alternate": null,
+                        "child": FiberNode {
+                          "_debugID": 59,
+                          "_debugIsCurrentlyTiming": false,
+                          "_debugOwner": [Circular],
+                          "_debugSource": Object {
+                            "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                            "lineNumber": 9,
+                          },
+                          "actualDuration": 0,
+                          "actualStartTime": -1,
+                          "alternate": null,
+                          "child": FiberNode {
+                            "_debugID": 60,
+                            "_debugIsCurrentlyTiming": false,
+                            "_debugOwner": null,
+                            "_debugSource": null,
+                            "actualDuration": 0,
+                            "actualStartTime": -1,
+                            "alternate": null,
+                            "child": null,
+                            "childExpirationTime": 0,
+                            "effectTag": 0,
+                            "expirationTime": 0,
+                            "firstContextDependency": null,
+                            "firstEffect": null,
+                            "index": 0,
+                            "key": null,
+                            "lastEffect": null,
+                            "memoizedProps": "Favorites",
+                            "memoizedState": null,
+                            "mode": 0,
+                            "nextEffect": null,
+                            "pendingProps": "Favorites",
+                            "ref": null,
+                            "return": [Circular],
+                            "selfBaseDuration": 0,
+                            "sibling": FiberNode {
+                              "_debugID": 61,
+                              "_debugIsCurrentlyTiming": false,
+                              "_debugOwner": [Circular],
+                              "_debugSource": Object {
+                                "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/FavoriteButton/FavoriteButton.js",
+                                "lineNumber": 15,
+                              },
+                              "actualDuration": 0,
+                              "actualStartTime": -1,
+                              "alternate": null,
+                              "child": null,
+                              "childExpirationTime": 0,
+                              "effectTag": 0,
+                              "expirationTime": 0,
+                              "firstContextDependency": null,
+                              "firstEffect": null,
+                              "index": 1,
+                              "key": null,
+                              "lastEffect": null,
+                              "memoizedProps": Object {
+                                "children": 0,
+                                "className": "favorites-count",
+                              },
+                              "memoizedState": null,
+                              "mode": 0,
+                              "nextEffect": null,
+                              "pendingProps": Object {
+                                "children": 0,
+                                "className": "favorites-count",
+                              },
+                              "ref": null,
+                              "return": [Circular],
+                              "selfBaseDuration": 0,
+                              "sibling": null,
+                              "stateNode": <span
+                                class="favorites-count"
+                              >
+                                0
+                              </span>,
+                              "tag": 7,
+                              "treeBaseDuration": 0,
+                              "type": "span",
+                              "updateQueue": null,
+                            },
+                            "stateNode": Favorites,
+                            "tag": 8,
+                            "treeBaseDuration": 0,
+                            "type": null,
+                            "updateQueue": null,
+                          },
+                          "childExpirationTime": 0,
+                          "effectTag": 0,
+                          "expirationTime": 0,
+                          "firstContextDependency": null,
+                          "firstEffect": null,
+                          "index": 0,
+                          "key": null,
+                          "lastEffect": null,
+                          "memoizedProps": Object {
+                            "children": Array [
+                              "Favorites",
+                              <span
+                                className="favorites-count"
+                              >
+                                0
+                              </span>,
+                            ],
+                            "className": "cat-button favorites-button",
+                            "onClick": [Function],
+                          },
+                          "memoizedState": null,
+                          "mode": 0,
+                          "nextEffect": null,
+                          "pendingProps": Object {
+                            "children": Array [
+                              "Favorites",
+                              <span
+                                className="favorites-count"
+                              >
+                                0
+                              </span>,
+                            ],
+                            "className": "cat-button favorites-button",
+                            "onClick": [Function],
+                          },
+                          "ref": null,
+                          "return": [Circular],
+                          "selfBaseDuration": 0,
+                          "sibling": null,
+                          "stateNode": <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "tag": 7,
+                          "treeBaseDuration": 0,
+                          "type": "button",
+                          "updateQueue": null,
+                        },
+                        "childExpirationTime": 0,
+                        "effectTag": 0,
+                        "expirationTime": 0,
+                        "firstContextDependency": null,
+                        "firstEffect": null,
+                        "index": 0,
+                        "key": null,
+                        "lastEffect": null,
+                        "memoizedProps": Object {
+                          "children": <button
+                            className="cat-button favorites-button"
+                            onClick={[Function]}
+                          >
+                            Favorites
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "className": "FavoriteButton",
+                        },
+                        "memoizedState": null,
+                        "mode": 0,
+                        "nextEffect": null,
+                        "pendingProps": Object {
+                          "children": <button
+                            className="cat-button favorites-button"
+                            onClick={[Function]}
+                          >
+                            Favorites
+                            <span
+                              className="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>,
+                          "className": "FavoriteButton",
+                        },
+                        "ref": null,
+                        "return": [Circular],
+                        "selfBaseDuration": 0,
+                        "sibling": null,
+                        "stateNode": <div
+                          class="FavoriteButton"
+                        >
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>,
+                        "tag": 7,
+                        "treeBaseDuration": 0,
+                        "type": "div",
+                        "updateQueue": null,
+                      },
+                      "childExpirationTime": 0,
+                      "effectTag": 1,
+                      "expirationTime": 0,
+                      "firstContextDependency": null,
+                      "firstEffect": null,
+                      "index": 3,
+                      "key": null,
+                      "lastEffect": null,
+                      "memoizedProps": Object {
+                        "checkIfAnyFavorites": [Function],
+                        "className": "FavoriteButton",
+                        "favorites": undefined,
+                        "showFavorites": undefined,
+                      },
+                      "memoizedState": null,
+                      "mode": 0,
+                      "nextEffect": null,
+                      "pendingProps": Object {
+                        "checkIfAnyFavorites": [Function],
+                        "className": "FavoriteButton",
+                        "favorites": undefined,
+                        "showFavorites": undefined,
+                      },
+                      "ref": null,
+                      "return": [Circular],
+                      "selfBaseDuration": 0,
+                      "sibling": null,
+                      "stateNode": null,
+                      "tag": 0,
+                      "treeBaseDuration": 0,
+                      "type": [Function],
+                      "updateQueue": null,
+                    },
+                    "stateNode": <button
+                      class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                      name="vehicles"
+                    >
+                      Vehicles
+                    </button>,
+                    "tag": 7,
+                    "treeBaseDuration": 0,
+                    "type": "button",
+                    "updateQueue": null,
+                  },
+                  "stateNode": <button
+                    class="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                  >
+                    Planets
+                  </button>,
+                  "tag": 7,
+                  "treeBaseDuration": 0,
+                  "type": "button",
+                  "updateQueue": null,
+                },
+                "stateNode": <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>,
+                "tag": 7,
+                "treeBaseDuration": 0,
+                "type": "button",
+                "updateQueue": null,
+              },
+              "childExpirationTime": 0,
+              "effectTag": 0,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": null,
+              "index": 0,
+              "key": null,
+              "lastEffect": null,
+              "memoizedProps": Object {
+                "children": Array [
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>,
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>,
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>,
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />,
+                ],
+                "className": "nav-buttons",
+              },
+              "memoizedState": null,
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": Object {
+                "children": Array [
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>,
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>,
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>,
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />,
+                ],
+                "className": "nav-buttons",
+              },
+              "ref": null,
+              "return": [Circular],
+              "selfBaseDuration": 0,
+              "sibling": FiberNode {
+                "_debugID": 53,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": [Circular],
+                "_debugSource": Object {
+                  "fileName": "/Users/djcaraballo/Turing 2.0/Mod3/Mod3Projects/swapibox/src/components/Nav/Nav.js",
+                  "lineNumber": 109,
+                },
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": null,
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 0,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 1,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": Object {
+                  "className": "error-favorites",
+                },
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": Object {
+                  "className": "error-favorites",
+                },
+                "ref": null,
+                "return": [Circular],
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": <p
+                  class="error-favorites"
+                />,
+                "tag": 7,
+                "treeBaseDuration": 0,
+                "type": "p",
+                "updateQueue": null,
+              },
+              "stateNode": <div
+                class="nav-buttons"
+              >
+                <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>
+                <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>
+                <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>
+                <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>
+              </div>,
+              "tag": 7,
+              "treeBaseDuration": 0,
+              "type": "div",
+              "updateQueue": null,
+            },
+            "childExpirationTime": 0,
+            "effectTag": 0,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "children": Array [
+                <div
+                  className="nav-buttons"
+                >
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />
+                </div>,
+                <p
+                  className="error-favorites"
+                />,
+              ],
+              "className": "button-container",
+            },
+            "memoizedState": null,
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "children": Array [
+                <div
+                  className="nav-buttons"
+                >
+                  <button
+                    className="cat-button people-button 
+				      	cat-button-inactive"
+                    name="people"
+                    onClick={[Function]}
+                  >
+                    People
+                  </button>
+                  <button
+                    className="cat-button planets-button 
+				      	cat-button-inactive"
+                    name="planets"
+                    onClick={[Function]}
+                  >
+                    Planets
+                  </button>
+                  <button
+                    className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                    name="vehicles"
+                    onClick={[Function]}
+                  >
+                    Vehicles
+                  </button>
+                  <FavoriteButton
+                    checkIfAnyFavorites={[Function]}
+                    className="FavoriteButton"
+                  />
+                </div>,
+                <p
+                  className="error-favorites"
+                />,
+              ],
+              "className": "button-container",
+            },
+            "ref": null,
+            "return": [Circular],
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": <div
+              class="button-container"
+            >
+              <div
+                class="nav-buttons"
+              >
+                <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>
+                <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>
+                <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>
+                <div
+                  class="FavoriteButton"
+                >
+                  <button
+                    class="cat-button favorites-button"
+                  >
+                    Favorites
+                    <span
+                      class="favorites-count"
+                    >
+                      0
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <p
+                class="error-favorites"
+              />
+            </div>,
+            "tag": 7,
+            "treeBaseDuration": 0,
+            "type": "div",
+            "updateQueue": null,
+          },
+          "childExpirationTime": 0,
+          "effectTag": 1,
+          "expirationTime": 0,
+          "firstContextDependency": null,
+          "firstEffect": null,
+          "index": 0,
+          "key": null,
+          "lastEffect": null,
+          "memoizedProps": Object {
+            "showPeople": [MockFunction],
+            "showPlanet": [MockFunction],
+            "showVehicle": [MockFunction],
+            "toggleCategoryState": [MockFunction],
+          },
+          "memoizedState": Object {
+            "favoritesExist": true,
+            "peopleSelected": false,
+            "planetsSelected": false,
+            "vehiclesSelected": false,
+          },
+          "mode": 0,
+          "nextEffect": null,
+          "pendingProps": Object {
+            "showPeople": [MockFunction],
+            "showPlanet": [MockFunction],
+            "showVehicle": [MockFunction],
+            "toggleCategoryState": [MockFunction],
+          },
+          "ref": null,
+          "return": FiberNode {
+            "_debugID": 49,
+            "_debugIsCurrentlyTiming": false,
+            "_debugOwner": null,
+            "_debugSource": null,
+            "actualDuration": 0,
+            "actualStartTime": -1,
+            "alternate": null,
+            "child": [Circular],
+            "childExpirationTime": 0,
+            "effectTag": 1,
+            "expirationTime": 0,
+            "firstContextDependency": null,
+            "firstEffect": null,
+            "index": 0,
+            "key": null,
+            "lastEffect": null,
+            "memoizedProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "memoizedState": Object {
+              "context": null,
+              "mount": true,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "mode": 0,
+            "nextEffect": null,
+            "pendingProps": Object {
+              "Component": [Function],
+              "context": null,
+              "props": Object {
+                "showPeople": [MockFunction],
+                "showPlanet": [MockFunction],
+                "showVehicle": [MockFunction],
+                "toggleCategoryState": [MockFunction],
+              },
+            },
+            "ref": null,
+            "return": FiberNode {
+              "_debugID": 47,
+              "_debugIsCurrentlyTiming": false,
+              "_debugOwner": null,
+              "_debugSource": null,
+              "actualDuration": 0,
+              "actualStartTime": -1,
+              "alternate": FiberNode {
+                "_debugID": 47,
+                "_debugIsCurrentlyTiming": false,
+                "_debugOwner": null,
+                "_debugSource": null,
+                "actualDuration": 0,
+                "actualStartTime": -1,
+                "alternate": [Circular],
+                "child": null,
+                "childExpirationTime": 0,
+                "effectTag": 0,
+                "expirationTime": 1,
+                "firstContextDependency": null,
+                "firstEffect": null,
+                "index": 0,
+                "key": null,
+                "lastEffect": null,
+                "memoizedProps": null,
+                "memoizedState": null,
+                "mode": 0,
+                "nextEffect": null,
+                "pendingProps": null,
+                "ref": null,
+                "return": null,
+                "selfBaseDuration": 0,
+                "sibling": null,
+                "stateNode": Object {
+                  "containerInfo": <div>
+                    <div
+                      class="button-container"
+                    >
+                      <div
+                        class="nav-buttons"
+                      >
+                        <button
+                          class="cat-button people-button 
+				      	cat-button-inactive"
+                          name="people"
+                        >
+                          People
+                        </button>
+                        <button
+                          class="cat-button planets-button 
+				      	cat-button-inactive"
+                          name="planets"
+                        >
+                          Planets
+                        </button>
+                        <button
+                          class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                          name="vehicles"
+                        >
+                          Vehicles
+                        </button>
+                        <div
+                          class="FavoriteButton"
+                        >
+                          <button
+                            class="cat-button favorites-button"
+                          >
+                            Favorites
+                            <span
+                              class="favorites-count"
+                            >
+                              0
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                      <p
+                        class="error-favorites"
+                      />
+                    </div>
+                  </div>,
+                  "context": Object {},
+                  "current": [Circular],
+                  "didError": false,
+                  "earliestPendingTime": 0,
+                  "earliestSuspendedTime": 0,
+                  "expirationTime": 0,
+                  "finishedWork": null,
+                  "firstBatch": null,
+                  "hydrate": false,
+                  "interactionThreadID": 12,
+                  "latestPendingTime": 0,
+                  "latestPingedTime": 0,
+                  "latestSuspendedTime": 0,
+                  "memoizedInteractions": Set {},
+                  "nextExpirationTimeToWorkOn": 0,
+                  "nextScheduledRoot": null,
+                  "pendingChildren": null,
+                  "pendingCommitExpirationTime": 0,
+                  "pendingContext": null,
+                  "pendingInteractionMap": Map {},
+                  "timeoutHandle": -1,
+                },
+                "tag": 5,
+                "treeBaseDuration": 0,
+                "type": null,
+                "updateQueue": Object {
+                  "baseState": null,
+                  "firstCapturedEffect": null,
+                  "firstCapturedUpdate": null,
+                  "firstEffect": null,
+                  "firstUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "showPeople": [MockFunction],
+                            "showPlanet": [MockFunction],
+                            "showVehicle": [MockFunction],
+                            "toggleCategoryState": [MockFunction],
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                  "lastCapturedEffect": null,
+                  "lastCapturedUpdate": null,
+                  "lastEffect": null,
+                  "lastUpdate": Object {
+                    "callback": null,
+                    "expirationTime": 1,
+                    "next": null,
+                    "nextEffect": null,
+                    "payload": Object {
+                      "element": <WrapperComponent
+                        Component={[Function]}
+                        context={null}
+                        props={
+                          Object {
+                            "showPeople": [MockFunction],
+                            "showPlanet": [MockFunction],
+                            "showVehicle": [MockFunction],
+                            "toggleCategoryState": [MockFunction],
+                          }
+                        }
+                      />,
+                    },
+                    "tag": 0,
+                  },
+                },
+              },
+              "child": [Circular],
+              "childExpirationTime": 0,
+              "effectTag": 32,
+              "expirationTime": 0,
+              "firstContextDependency": null,
+              "firstEffect": [Circular],
+              "index": 0,
+              "key": null,
+              "lastEffect": [Circular],
+              "memoizedProps": null,
+              "memoizedState": Object {
+                "element": <WrapperComponent
+                  Component={[Function]}
+                  context={null}
+                  props={
+                    Object {
+                      "showPeople": [MockFunction],
+                      "showPlanet": [MockFunction],
+                      "showVehicle": [MockFunction],
+                      "toggleCategoryState": [MockFunction],
+                    }
+                  }
+                />,
+              },
+              "mode": 0,
+              "nextEffect": null,
+              "pendingProps": null,
+              "ref": null,
+              "return": null,
+              "selfBaseDuration": 0,
+              "sibling": null,
+              "stateNode": Object {
+                "containerInfo": <div>
+                  <div
+                    class="button-container"
+                  >
+                    <div
+                      class="nav-buttons"
+                    >
+                      <button
+                        class="cat-button people-button 
+				      	cat-button-inactive"
+                        name="people"
+                      >
+                        People
+                      </button>
+                      <button
+                        class="cat-button planets-button 
+				      	cat-button-inactive"
+                        name="planets"
+                      >
+                        Planets
+                      </button>
+                      <button
+                        class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                        name="vehicles"
+                      >
+                        Vehicles
+                      </button>
+                      <div
+                        class="FavoriteButton"
+                      >
+                        <button
+                          class="cat-button favorites-button"
+                        >
+                          Favorites
+                          <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                    <p
+                      class="error-favorites"
+                    />
+                  </div>
+                </div>,
+                "context": Object {},
+                "current": [Circular],
+                "didError": false,
+                "earliestPendingTime": 0,
+                "earliestSuspendedTime": 0,
+                "expirationTime": 0,
+                "finishedWork": null,
+                "firstBatch": null,
+                "hydrate": false,
+                "interactionThreadID": 12,
+                "latestPendingTime": 0,
+                "latestPingedTime": 0,
+                "latestSuspendedTime": 0,
+                "memoizedInteractions": Set {},
+                "nextExpirationTimeToWorkOn": 0,
+                "nextScheduledRoot": null,
+                "pendingChildren": null,
+                "pendingCommitExpirationTime": 0,
+                "pendingContext": null,
+                "pendingInteractionMap": Map {},
+                "timeoutHandle": -1,
+              },
+              "tag": 5,
+              "treeBaseDuration": 0,
+              "type": null,
+              "updateQueue": Object {
+                "baseState": Object {
+                  "element": <WrapperComponent
+                    Component={[Function]}
+                    context={null}
+                    props={
+                      Object {
+                        "showPeople": [MockFunction],
+                        "showPlanet": [MockFunction],
+                        "showVehicle": [MockFunction],
+                        "toggleCategoryState": [MockFunction],
+                      }
+                    }
+                  />,
+                },
+                "firstCapturedEffect": null,
+                "firstCapturedUpdate": null,
+                "firstEffect": null,
+                "firstUpdate": null,
+                "lastCapturedEffect": null,
+                "lastCapturedUpdate": null,
+                "lastEffect": null,
+                "lastUpdate": null,
+              },
+            },
+            "selfBaseDuration": 0,
+            "sibling": null,
+            "stateNode": WrapperComponent {
+              "_reactInternalFiber": [Circular],
+              "_reactInternalInstance": Object {},
+              "context": Object {},
+              "props": Object {
+                "Component": [Function],
+                "context": null,
+                "props": Object {
+                  "showPeople": [MockFunction],
+                  "showPlanet": [MockFunction],
+                  "showVehicle": [MockFunction],
+                  "toggleCategoryState": [MockFunction],
+                },
+              },
+              "refs": Object {},
+              "state": Object {
+                "context": null,
+                "mount": true,
+                "props": Object {
+                  "showPeople": [MockFunction],
+                  "showPlanet": [MockFunction],
+                  "showVehicle": [MockFunction],
+                  "toggleCategoryState": [MockFunction],
+                },
+              },
+              "updater": Object {
+                "enqueueForceUpdate": [Function],
+                "enqueueReplaceState": [Function],
+                "enqueueSetState": [Function],
+                "isMounted": [Function],
+              },
+            },
+            "tag": 2,
+            "treeBaseDuration": 0,
+            "type": [Function],
+            "updateQueue": null,
+          },
+          "selfBaseDuration": 0,
+          "sibling": null,
+          "stateNode": [Circular],
+          "tag": 2,
+          "treeBaseDuration": 0,
+          "type": [Function],
+          "updateQueue": null,
+        },
+        "_reactInternalInstance": Object {},
+        "checkIfAnyFavorites": [Function],
+        "context": Object {},
+        "handlePeopleClick": [Function],
+        "handlePlanetClick": [Function],
+        "handleVehicleClick": [Function],
+        "props": Object {
+          "showPeople": [MockFunction],
+          "showPlanet": [MockFunction],
+          "showVehicle": [MockFunction],
+          "toggleCategoryState": [MockFunction],
+        },
+        "refs": Object {},
+        "state": Object {
+          "favoritesExist": true,
+          "peopleSelected": false,
+          "planetsSelected": false,
+          "vehiclesSelected": false,
+        },
+        "updater": Object {
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+        },
+      },
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "showPeople": [MockFunction],
+        "showPlanet": [MockFunction],
+        "showVehicle": [MockFunction],
+        "toggleCategoryState": [MockFunction],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": <div
+          class="button-container"
+        >
+          <div
+            class="nav-buttons"
+          >
+            <button
+              class="cat-button people-button 
+				      	cat-button-inactive"
+              name="people"
+            >
+              People
+            </button>
+            <button
+              class="cat-button planets-button 
+				      	cat-button-inactive"
+              name="planets"
+            >
+              Planets
+            </button>
+            <button
+              class="cat-button vehicles-button 
+				      	cat-button-inactive"
+              name="vehicles"
+            >
+              Vehicles
+            </button>
+            <div
+              class="FavoriteButton"
+            >
+              <button
+                class="cat-button favorites-button"
+              >
+                Favorites
+                <span
+                  class="favorites-count"
+                >
+                  0
+                </span>
+              </button>
+            </div>
+          </div>
+          <p
+            class="error-favorites"
+          />
+        </div>,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="nav-buttons"
+            >
+              <button
+                className="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+                onClick={[Function]}
+              >
+                People
+              </button>
+              <button
+                className="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+                onClick={[Function]}
+              >
+                Planets
+              </button>
+              <button
+                className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+                onClick={[Function]}
+              >
+                Vehicles
+              </button>
+              <FavoriteButton
+                checkIfAnyFavorites={[Function]}
+                className="FavoriteButton"
+              />
+            </div>,
+            <p
+              className="error-favorites"
+            />,
+          ],
+          "className": "button-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": <div
+              class="nav-buttons"
+            >
+              <button
+                class="cat-button people-button 
+				      	cat-button-inactive"
+                name="people"
+              >
+                People
+              </button>
+              <button
+                class="cat-button planets-button 
+				      	cat-button-inactive"
+                name="planets"
+              >
+                Planets
+              </button>
+              <button
+                class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                name="vehicles"
+              >
+                Vehicles
+              </button>
+              <div
+                class="FavoriteButton"
+              >
+                <button
+                  class="cat-button favorites-button"
+                >
+                  Favorites
+                  <span
+                    class="favorites-count"
+                  >
+                    0
+                  </span>
+                </button>
+              </div>
+            </div>,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <button
+                  className="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                  onClick={[Function]}
+                >
+                  People
+                </button>,
+                <button
+                  className="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                  onClick={[Function]}
+                >
+                  Planets
+                </button>,
+                <button
+                  className="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                  onClick={[Function]}
+                >
+                  Vehicles
+                </button>,
+                <FavoriteButton
+                  checkIfAnyFavorites={[Function]}
+                  className="FavoriteButton"
+                />,
+              ],
+              "className": "nav-buttons",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": <button
+                  class="cat-button people-button 
+				      	cat-button-inactive"
+                  name="people"
+                >
+                  People
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "People",
+                  "className": "cat-button people-button 
+				      	cat-button-inactive",
+                  "name": "people",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "People",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": <button
+                  class="cat-button planets-button 
+				      	cat-button-inactive"
+                  name="planets"
+                >
+                  Planets
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Planets",
+                  "className": "cat-button planets-button 
+				      	cat-button-inactive",
+                  "name": "planets",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Planets",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": <button
+                  class="cat-button vehicles-button 
+				      	cat-button-inactive"
+                  name="vehicles"
+                >
+                  Vehicles
+                </button>,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Vehicles",
+                  "className": "cat-button vehicles-button 
+				      	cat-button-inactive",
+                  "name": "vehicles",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Vehicles",
+                ],
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "checkIfAnyFavorites": [Function],
+                  "className": "FavoriteButton",
+                  "favorites": undefined,
+                  "showFavorites": undefined,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": <div
+                    class="FavoriteButton"
+                  >
+                    <button
+                      class="cat-button favorites-button"
+                    >
+                      Favorites
+                      <span
+                        class="favorites-count"
+                      >
+                        0
+                      </span>
+                    </button>
+                  </div>,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="cat-button favorites-button"
+                      onClick={[Function]}
+                    >
+                      Favorites
+                      <span
+                        className="favorites-count"
+                      >
+                        0
+                      </span>
+                    </button>,
+                    "className": "FavoriteButton",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": <button
+                        class="cat-button favorites-button"
+                      >
+                        Favorites
+                        <span
+                          class="favorites-count"
+                        >
+                          0
+                        </span>
+                      </button>,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Favorites",
+                          <span
+                            className="favorites-count"
+                          >
+                            0
+                          </span>,
+                        ],
+                        "className": "cat-button favorites-button",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Favorites",
+                        Object {
+                          "instance": <span
+                            class="favorites-count"
+                          >
+                            0
+                          </span>,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 0,
+                            "className": "favorites-count",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            0,
+                          ],
+                          "type": "span",
+                        },
+                      ],
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": <p
+              class="error-favorites"
+            />,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "error-favorites",
+            },
+            "ref": null,
+            "rendered": Array [
+              undefined,
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
