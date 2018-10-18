@@ -46,15 +46,22 @@ class DataCleaner {
 
 	async returnPeopleData(personCollection) {
 		const peoplePromises = await personCollection.map( async person => {
-			const newPerson = {}
-			newPerson.name = person.name
-			newPerson.homeWorld = await this.getHomeWorld(person)
-			newPerson.species = await this.getSpecies(person)
-			newPerson.isFavorite = false
-			newPerson.type = 'people'
-			newPerson.id = person.name
-			return newPerson
-		})
+		const { planetName, planetPop } = await this.getHomeWorld(person)
+		const { speciesName, language } = await this.getSpecies(person)
+
+		return {
+			name: person.name,
+			id: person.name,
+			isFavorite: false,
+			type: 'people',
+			properties: [
+				`Home World: ${planetName}`,
+				`Species: ${speciesName}`,
+				`Population: ${planetPop}`,
+				`Language: ${language}`
+			] 
+		}
+	})
 		return Promise.all(peoplePromises)
 	}
 
@@ -65,7 +72,7 @@ class DataCleaner {
 			throw new Error('Fetch has failed')
 		} else {
 			const homeWorldData = await response.json()
-			homeWorld = { 
+			homeWorld = {
 				planetName: homeWorldData.name, 
 				planetPop: homeWorldData.population
 			}
@@ -103,16 +110,18 @@ class DataCleaner {
 
 	async returnPlanetData(planetCollection) {
 		const planetPromises = await planetCollection.map( async planet => {
-			const newPlanet = {}
-			newPlanet.name = planet.name
-			newPlanet.terrain = planet.terrain
-			newPlanet.population = planet.population
-			newPlanet.climate = planet.climate
-			newPlanet.residents = await this.getResidents(planet.residents)
-			newPlanet.isFavorite = false
-			newPlanet.type = 'planets'
-			newPlanet.id = planet.name
-			return newPlanet
+			return {
+				name: planet.name,
+				id: planet.name,
+				isFavorite: false,
+				type: 'planets',
+				properties: [
+					`Terrain: ${planet.terrain}`,
+					`Population: ${planet.population}`,
+					`Climate: ${planet.climate}`,
+					`Residents: ${await this.getResidents(planet)}`
+					]
+			}
 		})
 		return Promise.all(planetPromises)
 	}
@@ -142,15 +151,17 @@ class DataCleaner {
 	async returnVehicleData(vehicleCollection) {
 		
 		const vehiclePromises = await vehicleCollection.map( async vehicle => {
-			const newVehicle = {}
-			newVehicle.name = vehicle.name
-			newVehicle.model = vehicle.model
-			newVehicle.class = vehicle.vehicle_class
-			newVehicle.passengers = vehicle.passengers
-			newVehicle.isFavorite = false
-			newVehicle.type = 'vehicles'
-			newVehicle.id = vehicle.name
-			return newVehicle
+			return {
+				name: vehicle.name,
+				id: vehicle.name,
+				isFavorite: false,
+				type: 'vehicles',
+				properties: [
+					`Model: ${vehicle.model}`,
+					`Class: ${vehicle.vehicle_class}`,
+					`Passengers: ${vehicle.passengers}`
+				]
+			}
 		})
 		return Promise.all(vehiclePromises)
 	}

@@ -12,7 +12,6 @@ class Card extends Component {
 	}
 
 	selectCard = (card) => {
-		// console.log(card)
 		card.isFavorite = !card.isFavorite
 		this.setState({ 
 			isSelected: !this.state.isSelected
@@ -42,22 +41,48 @@ class Card extends Component {
 	}
 	}
 
-	// checkFavoriteHighlights = () => {
-	// 	if (this.props.favorites) {
-
-	// 	}
-	// }
+	console.log(this.props.type)
+	// const cardProperties = this.props.type.properties
 
 render() {
-	const { name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites, id } = this.props
+	// const { category, name, homeWorld, species, people, vehicles, planets, isFavorite, type, person, favorites, id } = this.props
+	const { type, addToFavorites, removeFromFavorites, favorites }
 	const { isSelected } = this.state
 
-if (people) {
+	{/*return (
+			<div className="Card">
+		    <div className="fav-btn-card-container">
+			    <h3>{type.name}</h3>
+			    <button 
+			    	className={ `fav-btn people-fav 
+			    		${(isSelected) ? "fav-btn-active" : "fav-btn-inactive"}` }
+			    	onClick={() => this.selectCard(person)}
+			    >
+			    	<i className="fas fa-jedi"></i>
+			    </button>
+		    </div>
+		    <p className="card-text" >
+		    	<span className="card-header">Species:
+		    	</span> {species.speciesName}</p>
+		    <p className="card-text">
+		    	<span className="card-header">Language:
+		    	</span> {species.language}</p>
+		    <p className="card-text">
+		    	<span className="card-header">Homeworld:
+		    	</span> {homeWorld.planetName}</p>
+		    <p className="card-text">
+		    	<span className="card-header">Population:
+		    	</span> {homeWorld.planetPop}</p>
+			</div>
+		)/*}
+
+
+if(people) {
 // console.log(id)
 	return (
 		<div className="Card">
 	    <div className="fav-btn-card-container">
-		    <h3>{name}</h3>
+		    <h3>{category.name}</h3>
 		    <button 
 		    	className={ `fav-btn people-fav 
 		    		${(isSelected) ? "fav-btn-active" : "fav-btn-inactive"}` }

@@ -20,7 +20,8 @@ class App extends Component {
       vehiclesSelected: false,
       planetsSelected: false,
       favorites: [],
-      scroll: true
+      scroll: true,
+      favoritesSelected: false
     }
   }
 
@@ -29,26 +30,31 @@ class App extends Component {
   }
 
   addToFavorites = (card) => {
+    let favorites;
     if(this.state.favorites.includes(card)) {
-      } else if (!this.state.favorites.includes(card)) {
+      favorites = this.state.favorites.filter((favorite) => {
+        return favorite.id !== card.id
+      })
+    } else if (!this.state.favorites.includes(card)) {
+      favorites = [...this.state.favorites, card]
     }
-      const favorites = [...this.state.favorites, card]
-      this.setState({ favorites })
-      this.setLocalStorage('favorites', favorites)
+    this.setState({ favorites })
+    this.setLocalStorage('favorites', favorites)   
   }
 
-  removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id) 
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)
-  }
+  // removeFromFavorites = (id) => {
+  //   const favorites = this.state.favorites.filter(card => card.id !== id) 
+  //   this.setState({ favorites })
+  //   this.setLocalStorage('favorites', favorites)
+  // }
 
   // showFavorites = (allFavs) => {
-  //   const allFavorites = allFavs.map(fav => fav)
-  //   console.log(allFavorites)
+  //   // console.log(allFavs)
+  //   // const allFavInfo = allFavs
+  //   // const allFavorites = allFavs.map(fav => fav)
   //   const favorites = this.state.favorites.filter(card => card.id !== allFavorites.id)
-  //   // const category = this.state[type].filter(card => card.id !== allFavorites.id)
-  //   // this.setState({ [type]: category, favorites: favorites })   
+  //   const category = this.state[type].filter(card => card.id !== allFavorites.id)
+  //   this.setState({ [type]: category, favorites: favorites })   
   // }
 
   showFilm = async () => {
@@ -81,6 +87,7 @@ class App extends Component {
 
   showPeople = async (e) => {  
     const people = await this.state.dataCleaner.getPerson()
+    console.log(people)
     if (this.state.peopleSelected === true) {
       this.setState({
         people: [], 
@@ -92,8 +99,8 @@ class App extends Component {
     } else {
       this.checkLocalStoragePeople(people)
       this.setState({ 
-        vehicles: [],
-        planets: [], 
+        // vehicles: [],
+        // planets: [], 
         peopleSelected: true,  
         vehiclesSelected: false,        
         planetsSelected: false,
@@ -115,6 +122,7 @@ class App extends Component {
   
   showVehicles = async (e) => {
     const vehicles = await this.state.dataCleaner.getVehicle()
+    console.log(vehicles)
     if (this.state.vehiclesSelected === true) {
       this.setState({ 
         vehicles: [],
@@ -125,8 +133,8 @@ class App extends Component {
     } else {
       this.checkLocalStorageVehicles(vehicles)
       this.setState({  
-        people: [],
-        planets: [],
+        // people: [],
+        // planets: [],
         vehiclesSelected: true,  
         peopleSelected: false,        
         planetsSelected: false        
@@ -145,7 +153,8 @@ class App extends Component {
     }
 
   showPlanets = async (e) => {
-    const planets = await this.state.dataCleaner.getPlanet()  
+    const planets = await this.state.dataCleaner.getPlanet() 
+    console.log(planets) 
     if (this.state.planetsSelected === true) {
       this.setState({ 
         vehicles: [],
@@ -156,11 +165,11 @@ class App extends Component {
     } else {
       this.checkLocalStoragePlanets(planets)
       this.setState({  
-        vehicles: [], 
-        people: [],
+        // vehicles: [], 
+        // people: [],
         planetsSelected: true,        
-        peopleSelected: false,        
-        vehiclesSelected: false  
+        // peopleSelected: false,        
+        // vehiclesSelected: false  
       })
     }
   }
@@ -185,7 +194,8 @@ class App extends Component {
             planetsSelected, 
             vehiclesSelected, 
             favorites, 
-            scroll 
+            scroll ,
+            favoritesSelected
           } = this.state
 
     return (
@@ -203,26 +213,33 @@ class App extends Component {
         </header>
         {peopleSelected && 
         <CardContainer 
-          people={people}
+          type={people}
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
            />}
         {vehiclesSelected && 
         <CardContainer 
-          vehicles={vehicles} 
+          type={vehicles} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
           />}
         {planetsSelected && 
         <CardContainer 
-          planets={planets} 
+          type={planets} 
           addToFavorites={this.addToFavorites}
           removeFromFavorites={this.removeFromFavorites}
           favorites={favorites}
-          />} 
-        {scroll && 
+          />}
+        {/*{favoritesSelected && 
+        <CardContainer
+          type={favorites} 
+          addToFavorites={this.addToFavorites}
+          removeFromFavorites={this.removeFromFavorites}
+          favorites={favorites}
+          />}*/}
+        {scroll &&
         <Sidebar films={films}/>
         }
       </div>

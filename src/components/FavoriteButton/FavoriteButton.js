@@ -3,7 +3,6 @@ import './FavoriteButton.css';
 import PropTypes from 'prop-types';
 
 const FavoriteButton = ({favorites, showFavorites, checkIfAnyFavorites}) => {
-console.log(favorites)
 	return(
 		<div className="FavoriteButton">
 	    <button 
