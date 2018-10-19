@@ -5,6 +5,7 @@ import CardContainer from '../CardContainer/CardContainer.js';
 import DataCleaner from '../../helper.js';
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import Nav from '../Nav/Nav.js';
+import ErrorPopup from '../ErrorPopup/ErrorPopup.js';
 
 
 class App extends Component {
@@ -21,7 +22,8 @@ class App extends Component {
       planetsSelected: false,
       favorites: [],
       scroll: true,
-      favoritesSelected: false
+      favoritesSelected: false,
+      showErrorPopup: false
     }
   }
 
@@ -33,7 +35,7 @@ class App extends Component {
   }
 
   toggleFavorites = (entry) => {
-    console.log(entry)
+    
     let favorites;
     let category;
     const { type, id } = entry
@@ -45,7 +47,6 @@ class App extends Component {
       return card
     })
 
-
     if (!this.state.favorites.includes(entry)) {
         entry.isFavorite = true
         favorites = [...this.state.favorites, entry]
@@ -53,13 +54,21 @@ class App extends Component {
         this.setState({ [type]: category, favorites: favorites })      
         this.setLocalStorage('favorites', favorites)   
         this.setLocalStorage([type], category)
-    } else if (this.state.favorites.includes(entry)) {
+    } else {
         favorites = this.state.favorites.filter(card => card.id !== id)
         entry.isFavorite = false
         this.setState({ [type]: category, favorites: favorites })
         this.setLocalStorage('favorites', favorites)
         this.setLocalStorage( [type], category)
     }
+  }
+
+  toggleErrorPopup = () => {
+    console.log('toggleErrorPopup hooked up')
+    this.setState({
+      showErrorPopup: !this.state.showErrorPopup
+    })
+
   }
 
   showFavorites = () => {
@@ -71,20 +80,9 @@ class App extends Component {
         vehiclesSelected: false, 
       })
     } else {
-        this.setState({favoritesSelected: false
-      })     
+        this.toggleErrorPopup()  
     }
-    }
-
-  // toggleFavorites = (card) => {
-  //   card.isFavorite = !card.isFavorite
-  //   if (card.isFavorite === true) {
-  //     this.addToFavorites(card)
-  //   } else if (card.isFavorite === false) {
-  //     this.addToFavorites(card)
-  //   }
-  // }
-
+  }
 
   removeFromFavorites = (id) => {
     const favorites = this.state.favorites.filter(card => card.id !== id) 
@@ -200,8 +198,9 @@ class App extends Component {
             planetsSelected, 
             vehiclesSelected, 
             favorites, 
-            scroll ,
-            favoritesSelected
+            scroll,
+            favoritesSelected,
+            showErrorPopup
           } = this.state
 
     return (
@@ -215,14 +214,24 @@ class App extends Component {
             toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
             favorites={favorites}
+            toggleErrorPopup={this.toggleErrorPopup}
           />
         </header>
+        {showErrorPopup 
+          ?
+          <ErrorPopup
+            text="close"
+            closeError={this.toggleErrorPopup}
+          />
+          : <div className="error-popup-placeholder"></div>
+        }
         {peopleSelected && 
         <CardContainer 
           entries={people}
           toggleFavorites={this.toggleFavorites}
           favorites={favorites}
            />}
+          }
         {vehiclesSelected && 
         <CardContainer 
           entries={vehicles} 
@@ -250,9 +259,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // removeFromFavorites = (id, type) => {
-  //   const favorites = this.state.favorites.filter(card => card.id !== id)
-  //   const category = this.state[type].filter(card => card.id !== id)
-  //   this.setState({ [type]: category, favorites: favorites })
-  // }

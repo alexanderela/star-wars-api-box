@@ -11,7 +11,6 @@ class Nav extends Component {
       peopleSelected: false,
       vehiclesSelected: false,
       planetsSelected: false,
-      favoritesExist: true
 		}
 	}
 
@@ -60,18 +59,10 @@ class Nav extends Component {
 		}
 	}
 
-	checkIfAnyFavorites = (e) => {
-		if(!this.props.favorites.length) {
-			this.setState({ favoritesExist: false })
-		} else {
-			this.props.showFavorites()
-		}
-	}
-
 render() {
-	const { showPeople, showVehicles, showPlanets, favorites, showFavorites } = this.props
-	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesExist } = this.state
-	console.log(favorites)
+	const { showPeople, showVehicles, showPlanets, favorites, showFavorites, toggleErrorPopup } = this.props
+	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
+
 	return(
 			<div className="button-container">
 				<div className="nav-buttons">
@@ -102,13 +93,9 @@ render() {
 				    <FavoriteButton 
 				    	className="FavoriteButton"
 				    	favorites={favorites}
-				    	checkIfAnyFavorites={this.checkIfAnyFavorites}
+				    	showFavorites={showFavorites}
 				    />
 				</div>
-				{favoritesExist 
-					? <p className="error-favorites"></p>
-					: <p className="error-favorites">
-							You have not selected any favorites yet!</p>} 
 			</div>
 		)
 	}
@@ -118,10 +105,13 @@ Nav.propTypes = {
 	showPeople: PropTypes.func,
 	showVehicle: PropTypes.func,
 	showPlanet: PropTypes.func,
-	favoritesCount: PropTypes.oneOfType([
+	favorites: PropTypes.oneOfType([
   PropTypes.array,
   PropTypes.number
-  ])
+  ]),
+  toggleCategoryState: PropTypes.func,
+  showFavorites: PropTypes.func,
+  toggleErrorPopup: PropTypes.func
 }
 
 export default Nav;
