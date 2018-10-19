@@ -38,7 +38,11 @@ background: url('../../assets/SWAPI-background.jpg');
   margin: 3rem 0 0 0;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #f9d500;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 3px;
+}
+
+.title-i {
+  -webkit-text-stroke-width: 7px;
 }
 
 .button-container {

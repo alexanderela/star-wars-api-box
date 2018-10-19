@@ -196,7 +196,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1 className="app-title">SWAPI Box</h1>
+          <h1 className="app-title">SWAP<span className="title-i">I</span> Box</h1>
           <Nav 
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
