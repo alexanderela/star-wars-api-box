@@ -47,7 +47,6 @@ class App extends Component {
     })
 
     if (!this.inFavorites(entry)) {
-      this.toggleErrorPopup()
       favorites = [...this.state.favorites, entry]
     } else {
       favorites = this.state.favorites.filter(card => card.id !== id)      
