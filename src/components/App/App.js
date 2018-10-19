@@ -65,7 +65,6 @@ class App extends Component {
     this.setState({
       showErrorPopup: !this.state.showErrorPopup
     })
-
   }
 
   showFavorites = () => {
