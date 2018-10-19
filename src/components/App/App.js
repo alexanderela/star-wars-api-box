@@ -5,6 +5,7 @@ import CardContainer from '../CardContainer/CardContainer.js';
 import DataCleaner from '../../DataCleaner.js';
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import Nav from '../Nav/Nav.js';
+import ErrorPopup from '../ErrorPopup/ErrorPopup.js';
 
 
 class App extends Component {
@@ -21,7 +22,8 @@ class App extends Component {
       planetsSelected: false,
       favorites: [],
       scroll: true,
-      favoritesSelected: false
+      favoritesSelected: false,
+      showErrorPopup: false
     }
   }
 
@@ -32,34 +34,37 @@ class App extends Component {
     this.getVehicles()
   }
 
-  toggleFavorites = (entry) => {
-    console.log(entry)
+  toggleFavorites = async (entry) => {
+    
     let favorites;
-    let category;
     const { type, id } = entry
 
-    category = this.state[type].map(card => {
+    const category = this.state[type].map(card => {
       if(card.id === id) {
-        card.isFavorite = !card.isFavorite
+        return {...card, isFavorite: !card.isFavorite}
       }
       return card
     })
 
-
-    if (!this.state.favorites.includes(entry)) {
-        entry.isFavorite = true
-        favorites = [...this.state.favorites, entry]
-        // category = this.state[type].map(card => card)
-        this.setState({ [type]: category, favorites: favorites })      
-        this.setLocalStorage('favorites', favorites)   
-        this.setLocalStorage([type], category)
-    } else if (this.state.favorites.includes(entry)) {
-        favorites = this.state.favorites.filter(card => card.id !== id)
-        entry.isFavorite = false
-        this.setState({ [type]: category, favorites: favorites })
-        this.setLocalStorage('favorites', favorites)
-        this.setLocalStorage( [type], category)
+    if (!this.inFavorites(entry)) {
+      favorites = [...this.state.favorites, entry]
+    } else {
+      favorites = this.state.favorites.filter(card => card.id !== id)      
     }
+
+    await this.setState({ [type]: category, favorites: favorites })
+    await this.setLocalStorage('favorites', favorites)
+    await this.setLocalStorage( [type], category)
+  }
+
+  inFavorites = (entry) => {
+    return this.state.favorites.find((fav) => fav.id === entry.id)
+  }
+
+  toggleErrorPopup = () => {
+    this.setState({
+      showErrorPopup: !this.state.showErrorPopup
+    })
   }
 
   showFavorites = () => {
@@ -71,25 +76,8 @@ class App extends Component {
         vehiclesSelected: false, 
       })
     } else {
-        this.setState({favoritesSelected: false
-      })     
+        this.toggleErrorPopup()  
     }
-    }
-
-  // toggleFavorites = (card) => {
-  //   card.isFavorite = !card.isFavorite
-  //   if (card.isFavorite === true) {
-  //     this.addToFavorites(card)
-  //   } else if (card.isFavorite === false) {
-  //     this.addToFavorites(card)
-  //   }
-  // }
-
-
-  removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id) 
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)
   }
 
   getFilm = async () => {
@@ -200,8 +188,9 @@ class App extends Component {
             planetsSelected, 
             vehiclesSelected, 
             favorites, 
-            scroll ,
-            favoritesSelected
+            scroll,
+            favoritesSelected,
+            showErrorPopup
           } = this.state
 
     return (
@@ -215,14 +204,24 @@ class App extends Component {
             toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
             favorites={favorites}
+            toggleErrorPopup={this.toggleErrorPopup}
           />
         </header>
+        {showErrorPopup 
+          ?
+          <ErrorPopup
+            text="close"
+            closeError={this.toggleErrorPopup}
+          />
+          : <div className="error-popup-placeholder"></div>
+        }
         {peopleSelected && 
         <CardContainer 
           entries={people}
           toggleFavorites={this.toggleFavorites}
           favorites={favorites}
            />}
+          }
         {vehiclesSelected && 
         <CardContainer 
           entries={vehicles} 
@@ -250,9 +249,3 @@ class App extends Component {
 }
 
 export default App;
-
-  // removeFromFavorites = (id, type) => {
-  //   const favorites = this.state.favorites.filter(card => card.id !== id)
-  //   const category = this.state[type].filter(card => card.id !== id)
-  //   this.setState({ [type]: category, favorites: favorites })
-  // }

@@ -61,6 +61,12 @@ background: url('../../assets/SWAPI-background.jpg');
   margin: 1rem 0;
 }
 
+.error-popup-placeholder {
+  height: 2rem; 
+  margin: 0 0 3rem; 
+}
+
+
 .nav-buttons {
   align-items: center;
   bottom: 0px;
@@ -77,6 +83,7 @@ background: url('../../assets/SWAPI-background.jpg');
 
 .cat-button {
   background: #000;
+  border: 1px solid #FFF;
   border-radius: 0px 100px 100px 0px;
   color: #fff;
   cursor: pointer;
