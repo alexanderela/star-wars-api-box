@@ -221,7 +221,6 @@ class App extends Component {
           toggleFavorites={this.toggleFavorites}
           favorites={favorites}
            />}
-          }
         {vehiclesSelected && 
         <CardContainer 
           entries={vehicles} 
