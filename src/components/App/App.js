@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
-import DataCleaner from '../../helper.js';
+import DataCleaner from '../../DataCleaner.js';
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import Nav from '../Nav/Nav.js';
 

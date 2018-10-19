@@ -12,7 +12,7 @@ import mockNewPerson from './mockData/mockNewPerson.js';
 import fetchData from './apiCalls'
 
 jest.mock('./apiCalls', () => ({
-	getMovie: jest.fn().mockImplementation(() => mockMovieObj)
+	fetchData: jest.fn().mockImplementation(() => mockDataObj)
 }))
 
 describe('DataCleaner', () => {
@@ -22,15 +22,20 @@ describe('DataCleaner', () => {
 		it('calls returnMovieInfo with the correct parameters',  async () => {
 			//Setup
 			const mockRandomEpisode = 5
-			const mockReturnedMovieData = await films.results[mockRandomEpisode]
-			const returnMovieInfo = jest.fn()
-			const getMovie = jest.fn(() => {
-				returnMovieInfo(mockReturnedMovieData);
-			})
+			const mockMovieDataCollection = await films.results[mockRandomEpisode]
+			const returnMovieInfo = await jest.fn().mockImplementation(() => )
 			//Execution
-			getMovie()
+			dataCleaner.getMovie()
+			// const mockRandomEpisode = 5
+			// const mockReturnedMovieData = await films.results[mockRandomEpisode]
+			// const returnMovieInfo = jest.fn()
+			// const getMovie = jest.fn(() => {
+			// 	returnMovieInfo(mockReturnedMovieData);
+			// })
+			//Execution
+			// getMovie()
 			//Expectation
-			expect(returnMovieInfo).toHaveBeenCalledWith(mockReturnedMovieData)
+			// expect(returnMovieInfo).toHaveBeenCalledWith(mockReturnedMovieData)
 		})
 	})
 

@@ -2,7 +2,7 @@ import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
-		
+
 	}
 
 //Get films
@@ -10,8 +10,8 @@ class DataCleaner {
 		const randomEpisode = Math.round(Math.random() * 6 + 1)
 		const movieUrl = ("https://swapi.co/api/films/")
 		const movieData = await fetchData(movieUrl)
-		const returnedMovieData = await movieData.results[randomEpisode]
-		const film = await this.returnMovieInfo(returnedMovieData)
+		const movieDataCollection = await movieData.results[randomEpisode]
+		const film = await this.returnMovieInfo(movieDataCollection)
 		return film
 	}
 
