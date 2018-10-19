@@ -1,25 +1,14 @@
-.button-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  padding-right: 16px;
-  top: 80px;
-  width: 80%;
-}
-
-.nav-buttons {
+.nav-button-container {
   align-items: center;
   bottom: 0px;
   display: flex;
   height: 5rem;
   justify-content: space-around;
-  /*margin: 0 0 5rem 0;*/
   padding-right: 16px;
   top: 80px;
   transform: translatex(0%);
   transition: transform 0.2s ease;
-  width: 100%;
+  width: 80%;
 }
 
 .cat-button {
@@ -85,4 +74,11 @@
   text-shadow: 
     #FF0 0px 0px 6px, 
     #FF0 0px 0px 10px;
+}
+
+@media (max-width: 960px) {
+  .cat-button {
+    font-size: 1.75rem;
+    width: 10rem;
+  }
 }
