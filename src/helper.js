@@ -1,4 +1,4 @@
-import * as API from './apiCalls'
+import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
@@ -12,15 +12,19 @@ class DataCleaner {
 
 //Get films
 	async getMovie() {
-		const response = await fetch(this.movieUrl)
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-		 	const movieData = await response.json()
-		 	const returnedMovieData = await movieData.results[this.randomEpisode] 
-		 	const film = await this.returnMovieInfo(returnedMovieData)
-		 	return film
-		}
+		const movieData = await fetchData(this.movieUrl)
+		const returnedMovieData = await movieData.results[this.randomEpisode]
+		const film = await this.returnMovieInfo(returnedMovieData)
+		return film
+		// const response = await fetch(this.movieUrl)
+		// if (response.status >= 400) {
+		// 	throw new Error('Fetch has failed')
+		// } else {
+		//  	const movieData = await response.json()
+		//  	const returnedMovieData = await movieData.results[this.randomEpisode] 
+		//  	const film = await this.returnMovieInfo(returnedMovieData)
+		//  	return film
+		// }
 	}
 
 	async returnMovieInfo(film) {
