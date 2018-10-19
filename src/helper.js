@@ -2,9 +2,6 @@ import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
-		this.randomEpisode = Math.round(Math.random() * 6 + 1)
-		this.movieUrl = ("https://swapi.co/api/films/")
-		this.peopleUrl = ("https://swapi.co/api/people/")
 		this.planetUrl = ("https://swapi.co/api/planets/")
 		this.speciesUrl = ("https://swapi.co/api/species/")
 		this.vehicleUrl = ("https://swapi.co/api/vehicles/")
@@ -12,19 +9,12 @@ class DataCleaner {
 
 //Get films
 	async getMovie() {
-		const movieData = await fetchData(this.movieUrl)
-		const returnedMovieData = await movieData.results[this.randomEpisode]
+		const randomEpisode = Math.round(Math.random() * 6 + 1)
+		const movieUrl = ("https://swapi.co/api/films/")
+		const movieData = await fetchData(movieUrl)
+		const returnedMovieData = await movieData.results[randomEpisode]
 		const film = await this.returnMovieInfo(returnedMovieData)
 		return film
-		// const response = await fetch(this.movieUrl)
-		// if (response.status >= 400) {
-		// 	throw new Error('Fetch has failed')
-		// } else {
-		//  	const movieData = await response.json()
-		//  	const returnedMovieData = await movieData.results[this.randomEpisode] 
-		//  	const film = await this.returnMovieInfo(returnedMovieData)
-		//  	return film
-		// }
 	}
 
 	async returnMovieInfo(film) {
@@ -37,15 +27,9 @@ class DataCleaner {
 
 //Get people
 	async getPerson() {
-		let returnedPeopleData;
-		const response = await fetch(this.peopleUrl)
-			console.log('Fetch is calling')
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-			const peopleData = await response.json()
-			returnedPeopleData = await this.returnPeopleData(peopleData.results)
-		}
+		const peopleUrl = ("https://swapi.co/api/people/")
+		const peopleData = await fetchData(peopleUrl)
+		const returnedPeopleData = await this.returnPeopleData(peopleData.results)
 		return Promise.all(returnedPeopleData)
 	}
 
@@ -71,33 +55,35 @@ class DataCleaner {
 	}
 
 	async getHomeWorld(person) {
-		let homeWorld;
-		const response = await fetch(person.homeworld)
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-			const homeWorldData = await response.json()
-			homeWorld = {
-				planetName: homeWorldData.name, 
-				planetPop: homeWorldData.population
-			}
+		const personHomeUrl = person.homeworld
+		const homeWorldData = await fetchData(personHomeUrl)
+		const homeWorld = {
+			planetName: homeWorldData.name,
+			planetPop: homeWorldData.population
 		}
 		return homeWorld
 	}
 
 	async getSpecies(person) {
-		let species;
-		const response = await fetch(person.species[0])
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		} else {
-			const speciesData = await response.json()
-			species = { 
-				speciesName: speciesData.name, 
-				language: speciesData.language 
-			}
+		const speciesUrl = person.species[0]
+		const speciesData = await fetchData(speciesUrl)
+		const species = {
+			speciesName: speciesData.name,
+			language: speciesData.language
 		}
 		return species
+		// let species;
+		// const response = await fetch(person.species[0])
+		// if (response.status >= 400) {
+		// 	throw new Error('Fetch has failed')
+		// } else {
+		// 	const speciesData = await response.json()
+		// 	species = { 
+		// 		speciesName: speciesData.name, 
+		// 		language: speciesData.language 
+		// 	}
+		// }
+		// return species
 	}
 
 //Get planets
