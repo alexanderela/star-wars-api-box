@@ -33,15 +33,10 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 }
 
 Card.propTypes = {
-		people: PropTypes.oneOfType([
-  PropTypes.array,
-  PropTypes.object
-]),
-	vehicles: PropTypes.object,
-	planets: PropTypes.object,
-	addToFavorites: PropTypes.func,
-	removeFromFavorites: PropTypes.func,
-	favorites: PropTypes.array
+	entry: PropTypes.object,
+	toggleFavorites: PropTypes.func,
+	favorites: PropTypes.array,
+	isFavorite: PropTypes.bool,
 }
 
 export default Card

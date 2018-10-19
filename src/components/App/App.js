@@ -37,34 +37,44 @@ class App extends Component {
     let favorites;
     let category;
     const { type, id } = entry
-    // const { favorites } = this.state
-    // entry.isFavorite = !entry.isFavorite
-      // debugger
+
     category = this.state[type].map(card => {
       if(card.id === id) {
         card.isFavorite = !card.isFavorite
       }
       return card
     })
-    if(this.state.favorites.includes(entry)) {
-      // entry.isFavorite = false
-      // faves = favorites.filter((favorite) => {
-      //   return favorite.id !== card.id
-      // })
-      favorites = this.state.favorites.filter(card => card.id !== id)
-      
-      this.setState({ [type]: category, favorites: favorites })
-      this.setLocalStorage('favorites', favorites)
-      this.setLocalStorage( [type], category)
-    } else if (!this.state.favorites.includes(entry)) {
-      entry.isFavorite = true
-      favorites = [...this.state.favorites, entry]
-      category = this.state[type].map(card => card)
-      this.setState({ [type]: category, favorites: favorites })      
-      this.setLocalStorage('favorites', favorites)   
-      this.setLocalStorage([type], category)
+
+
+    if (!this.state.favorites.includes(entry)) {
+        entry.isFavorite = true
+        favorites = [...this.state.favorites, entry]
+        // category = this.state[type].map(card => card)
+        this.setState({ [type]: category, favorites: favorites })      
+        this.setLocalStorage('favorites', favorites)   
+        this.setLocalStorage([type], category)
+    } else if (this.state.favorites.includes(entry)) {
+        favorites = this.state.favorites.filter(card => card.id !== id)
+        entry.isFavorite = false
+        this.setState({ [type]: category, favorites: favorites })
+        this.setLocalStorage('favorites', favorites)
+        this.setLocalStorage( [type], category)
     }
   }
+
+  showFavorites = () => {
+    if(this.state.favorites.length) {
+      this.setState({ 
+        favoritesSelected: true,
+        peopleSelected: false,
+        planetsSelected: false,
+        vehiclesSelected: false, 
+      })
+    } else {
+        this.setState({favoritesSelected: false
+      })     
+    }
+    }
 
   // toggleFavorites = (card) => {
   //   card.isFavorite = !card.isFavorite
@@ -141,6 +151,7 @@ class App extends Component {
       peopleSelected: true,
       planetsSelected: false,
       vehiclesSelected: false,
+      favoritesSelected: false,
       scroll: false
     })
   }
@@ -157,6 +168,7 @@ class App extends Component {
       vehiclesSelected: true,
       peopleSelected: false,
       planetsSelected: false,
+      favoritesSelected: false,
       scroll: false
     })
   }
@@ -173,6 +185,7 @@ class App extends Component {
       planetsSelected: true,
       peopleSelected: false,
       vehiclesSelected: false,
+      favoritesSelected: false,
       scroll: false
     })
   }
