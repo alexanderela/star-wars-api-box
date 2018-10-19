@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataCleaner from './helper.js';
+import DataCleaner from './DataCleaner.js';
 import films from './mockData/mockFilms.js';
 import people from './mockData/mockPeople.js';
 import planets from './mockData/mockPlanets.js';
@@ -9,52 +9,33 @@ import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
 import mockNewPerson from './mockData/mockNewPerson.js';
-import * as API from './apiCalls'
+import fetchData from './apiCalls'
 
 jest.mock('./apiCalls', () => ({
-	getMovie: jest.fn().mockImplementation(() => mockMovieObj)
+	fetchData: jest.fn().mockImplementation(() => mockDataObj)
 }))
 
 describe('DataCleaner', () => {
 	const dataCleaner = new DataCleaner()
 
 	describe('getMovie', () => {
-		it('calls fetch with the correct parameters', async () => {
-			//Setup
-			const expected = "https://swapi.co/api/films/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 200,
-				json: () => Promise.resolve()
-			}))
-			//Execution
-			dataCleaner.getMovie()
-			//Expectation
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
-
-		it('throws an error if fetch fails', () => {
-			//Setup & Execution
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(people)
-			}))
-			//Expectation
-			expect(dataCleaner.getMovie()).rejects.toEqual(expected)
-		})
-
 		it('calls returnMovieInfo with the correct parameters',  async () => {
 			//Setup
 			const mockRandomEpisode = 5
-			const mockReturnedMovieData = await films.results[mockRandomEpisode]
-			const returnMovieInfo = jest.fn()
-			const getMovie = jest.fn(() => {
-				returnMovieInfo(mockReturnedMovieData);
-			})
+			const mockMovieDataCollection = await films.results[mockRandomEpisode]
+			const returnMovieInfo = await jest.fn().mockImplementation(() => )
 			//Execution
-			getMovie()
+			dataCleaner.getMovie()
+			// const mockRandomEpisode = 5
+			// const mockReturnedMovieData = await films.results[mockRandomEpisode]
+			// const returnMovieInfo = jest.fn()
+			// const getMovie = jest.fn(() => {
+			// 	returnMovieInfo(mockReturnedMovieData);
+			// })
+			//Execution
+			// getMovie()
 			//Expectation
-			expect(returnMovieInfo).toHaveBeenCalledWith(mockReturnedMovieData)
+			// expect(returnMovieInfo).toHaveBeenCalledWith(mockReturnedMovieData)
 		})
 	})
 
@@ -73,24 +54,6 @@ describe('DataCleaner', () => {
 
 	
 	describe('getPerson', () => {
-		it('calls fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/people/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 200,
-				json: () => Promise.resolve()
-			}))
-			dataCleaner.getPerson()
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
-
-		it('throws an error if the fetch call fails', async () => {
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(people)
-			}))
-			await expect(dataCleaner.getPerson()).rejects.toEqual(expected)
-		})
 
 		it('calls returnPeopleData with the correct parameters', async () => {
 			//Setup
@@ -105,7 +68,7 @@ describe('DataCleaner', () => {
 			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
 		})
 
-		it('resolvess to expected', async () => {
+		it('resolves to expected', async () => {
 			//Setup
 			const mockReturnedPeopleData = [
 				{
@@ -182,67 +145,15 @@ describe('DataCleaner', () => {
 
 	
 	describe('getHomeWorld', () => {
-		it('calls fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/planets/1/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 200,
-				json: () => Promise.resolve(mockNewPerson)
-			}))
-			await dataCleaner.getHomeWorld(mockNewPerson)
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
 
-		it('throws an error if the fetch call fails', () => {
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(planets)
-			}))
-			 expect(dataCleaner.getHomeWorld(mockNewPerson)).rejects.toEqual(expected)
-		})
 	})
 
 	
 	describe('getSpecies', () => {
-		it('calls fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/species/1/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status:200,
-				json: () => Promise.resolve(mockNewPerson)
-			}))
-			dataCleaner.getSpecies(mockNewPerson)
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
 
-		it('throws an error if the fetch call fails', async () => {
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(mockNewPerson)
-			}))
-			await expect(dataCleaner.getSpecies(mockNewPerson)).rejects.toEqual(expected)
-		})
 	})
 
 	describe('getPlanet', () => {
-		it('calls fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/planets/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status:200,
-				json: () => Promise.resolve(planets)
-			}))
-			dataCleaner.getPlanet()
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
-
-		it('throws an error if the fetch call fails', async () => {
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(planets)
-			}))
-			await expect(dataCleaner.getPlanet()).rejects.toEqual(expected)
-		})
 
 		it('calls returnPlanetData with the correct parameters', async () => {
 			//Setup
@@ -339,24 +250,6 @@ describe('DataCleaner', () => {
 	})
 
 	describe('getVehicle', () => {
-		it('should call fetch with the correct parameters', async () => {
-			const expected = "https://swapi.co/api/vehicles/"
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status:200,
-				json: () => Promise.resolve(vehicles)
-			}))
-			dataCleaner.getVehicle()
-			await expect(window.fetch).toHaveBeenCalledWith(expected)
-		})
-
-		it('throws an error if the fetch call fails', async () => {
-			const expected = Error('Fetch has failed')
-			window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-				status: 500,
-				json: () => Promise.resolve(vehicles)
-			}))
-			await expect(dataCleaner.getPlanet()).rejects.toEqual(expected)
-		})
 
 		it('should call returnVehicleData with the correct parameters', async () => {
 			//Setup
