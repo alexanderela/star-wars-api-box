@@ -2,7 +2,7 @@ import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
-		this.speciesUrl = ("https://swapi.co/api/species/")
+		
 	}
 
 //Get films
@@ -114,8 +114,7 @@ class DataCleaner {
 		return Promise.all(vehicleDataCollection)
 	}
 
-	async returnVehicleData(vehicleCollection) {
-		
+	async returnVehicleData(vehicleCollection) {	
 		const vehiclePromises = await vehicleCollection.map( async vehicle => {
 			return {
 				name: vehicle.name,
@@ -131,8 +130,6 @@ class DataCleaner {
 		})
 		return Promise.all(vehiclePromises)
 	}
-
 }
-
 
 export default DataCleaner;

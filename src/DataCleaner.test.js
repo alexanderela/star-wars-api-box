@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DataCleaner from './helper.js';
+import DataCleaner from './DataCleaner.js';
 import films from './mockData/mockFilms.js';
 import people from './mockData/mockPeople.js';
 import planets from './mockData/mockPlanets.js';
