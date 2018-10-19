@@ -2,7 +2,6 @@ import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
-		this.planetUrl = ("https://swapi.co/api/planets/")
 		this.speciesUrl = ("https://swapi.co/api/species/")
 		this.vehicleUrl = ("https://swapi.co/api/vehicles/")
 	}
@@ -72,31 +71,14 @@ class DataCleaner {
 			language: speciesData.language
 		}
 		return species
-		// let species;
-		// const response = await fetch(person.species[0])
-		// if (response.status >= 400) {
-		// 	throw new Error('Fetch has failed')
-		// } else {
-		// 	const speciesData = await response.json()
-		// 	species = { 
-		// 		speciesName: speciesData.name, 
-		// 		language: speciesData.language 
-		// 	}
-		// }
-		// return species
 	}
 
 //Get planets
 	async getPlanet() {
-		let returnedPlanetData;
-		const response = await fetch(this.planetUrl)
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		}	else {
-			const planetData = await response.json()
-			returnedPlanetData = await this.returnPlanetData(planetData.results)			
-			}
-		return Promise.all(returnedPlanetData)
+		const planetUrl = ("https://swapi.co/api/planets/")
+		const planetData = await fetchData(planetUrl)
+		const planetDataCollection = await this.returnPlanetData(planetData.results)
+		return Promise.all(planetDataCollection)
 	}
 
 	async returnPlanetData(planetCollection) {
