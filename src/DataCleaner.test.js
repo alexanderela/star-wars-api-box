@@ -9,7 +9,7 @@ import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
 import mockNewPerson from './mockData/mockNewPerson.js';
-import * as API from './apiCalls'
+import fetchData from './apiCalls'
 
 jest.mock('./apiCalls', () => ({
 	getMovie: jest.fn().mockImplementation(() => mockMovieObj)
