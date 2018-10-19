@@ -3,7 +3,6 @@ import fetchData from './apiCalls'
 class DataCleaner {
 	constructor() {
 		this.speciesUrl = ("https://swapi.co/api/species/")
-		this.vehicleUrl = ("https://swapi.co/api/vehicles/")
 	}
 
 //Get films
@@ -28,8 +27,8 @@ class DataCleaner {
 	async getPerson() {
 		const peopleUrl = ("https://swapi.co/api/people/")
 		const peopleData = await fetchData(peopleUrl)
-		const returnedPeopleData = await this.returnPeopleData(peopleData.results)
-		return Promise.all(returnedPeopleData)
+		const peopleDataCollection = await this.returnPeopleData(peopleData.results)
+		return Promise.all(peopleDataCollection)
 	}
 
 	async returnPeopleData(personCollection) {
@@ -83,7 +82,6 @@ class DataCleaner {
 
 	async returnPlanetData(planetCollection) {
 		const planetPromises = await planetCollection.map( async planet => {
-			// debugger
 			return {
 				name: planet.name,
 				id: planet.name,
@@ -94,16 +92,15 @@ class DataCleaner {
 					`Population: ${planet.population}`,
 					`Climate: ${planet.climate}`,
 					`Residents: ${await this.getResidents(planet.residents)}`
-					]
+				]
 			}
 		})
 		return Promise.all(planetPromises)
 	}
 
 	async getResidents(residentUrls) {
-		const tenantPromises = residentUrls.map( async residentUrl => {
-			const response = await fetch(residentUrl)
-			const residentData = await response.json()
+		const tenantPromises = residentUrls.map(async residentUrl => {
+			const residentData = await fetchData(residentUrl)
 			return residentData.name
 		})
 		return await Promise.all(tenantPromises)
@@ -111,15 +108,10 @@ class DataCleaner {
 
 //Get vehicles
 	async getVehicle() {
-		let returnedVehicleData;
-		const response = await fetch(this.vehicleUrl)
-		if (response.status >= 400) {
-			throw new Error('Fetch has failed')
-		}	else {
-			const vehicleData = await response.json()
-			returnedVehicleData = await this.returnVehicleData(vehicleData.results)
-		}
-		return Promise.all(returnedVehicleData)
+		const vehicleUrl = ("https://swapi.co/api/vehicles/")
+		const vehicleData = await fetchData(vehicleUrl)
+		const vehicleDataCollection = await this.returnVehicleData(vehicleData.results)
+		return Promise.all(vehicleDataCollection)
 	}
 
 	async returnVehicleData(vehicleCollection) {
