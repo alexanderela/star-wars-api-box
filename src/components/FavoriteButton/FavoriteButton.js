@@ -2,12 +2,11 @@ import React from 'react';
 import './FavoriteButton.css';
 import PropTypes from 'prop-types';
 
-const FavoriteButton = ({favorites, showFavorites, checkIfAnyFavorites}) => {
+const FavoriteButton = ({favorites, checkIfAnyFavorites}) => {
 	return(
 		<div className="FavoriteButton">
 	    <button 
 	    	className="cat-button favorites-button"
-	    	// onClick={() => showFavorites(favorites)}
 	    	onClick={() => checkIfAnyFavorites(favorites)}
 	    	>
 	      Favorites

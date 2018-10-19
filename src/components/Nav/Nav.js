@@ -61,14 +61,17 @@ class Nav extends Component {
 	}
 
 	checkIfAnyFavorites = (e) => {
-		if(!this.props.favoritesCount) {
+		if(!this.props.favorites.length) {
 			this.setState({ favoritesExist: false })
+		} else {
+			this.props.showFavorites()
 		}
 	}
 
 render() {
 	const { showPeople, showVehicles, showPlanets, favorites, showFavorites } = this.props
 	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesExist } = this.state
+	console.log(favorites)
 	return(
 			<div className="button-container">
 				<div className="nav-buttons">
@@ -100,13 +103,12 @@ render() {
 				    	className="FavoriteButton"
 				    	favorites={favorites}
 				    	checkIfAnyFavorites={this.checkIfAnyFavorites}
-				      showFavorites={showFavorites}
 				    />
 				</div>
-				{!favoritesExist 
-					? <p className="error-favorites">
-							You have not selected any favorites yet!</p> 
-					: <p className="error-favorites"></p>}
+				{favoritesExist 
+					? <p className="error-favorites"></p>
+					: <p className="error-favorites">
+							You have not selected any favorites yet!</p>} 
 			</div>
 		)
 	}
