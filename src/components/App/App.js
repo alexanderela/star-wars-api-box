@@ -34,37 +34,35 @@ class App extends Component {
     this.getVehicles()
   }
 
-  toggleFavorites = (entry) => {
+  toggleFavorites = async (entry) => {
     
     let favorites;
-    let category;
     const { type, id } = entry
 
-    category = this.state[type].map(card => {
+    const category = this.state[type].map(card => {
       if(card.id === id) {
-        card.isFavorite = !card.isFavorite
+        return {...card, isFavorite: !card.isFavorite}
       }
       return card
     })
 
-    if (!this.state.favorites.includes(entry)) {
-        entry.isFavorite = true
-        favorites = [...this.state.favorites, entry]
-        // category = this.state[type].map(card => card)
-        this.setState({ [type]: category, favorites: favorites })      
-        this.setLocalStorage('favorites', favorites)   
-        this.setLocalStorage([type], category)
+    if (!this.inFavorites(entry)) {
+      this.toggleErrorPopup()
+      favorites = [...this.state.favorites, entry]
     } else {
-        favorites = this.state.favorites.filter(card => card.id !== id)
-        entry.isFavorite = false
-        this.setState({ [type]: category, favorites: favorites })
-        this.setLocalStorage('favorites', favorites)
-        this.setLocalStorage( [type], category)
+      favorites = this.state.favorites.filter(card => card.id !== id)      
     }
+
+    await this.setState({ [type]: category, favorites: favorites })
+    await this.setLocalStorage('favorites', favorites)
+    await this.setLocalStorage( [type], category)
+  }
+
+  inFavorites = (entry) => {
+    return this.state.favorites.find((fav) => fav.id === entry.id)
   }
 
   toggleErrorPopup = () => {
-    console.log('toggleErrorPopup hooked up')
     this.setState({
       showErrorPopup: !this.state.showErrorPopup
     })
@@ -82,12 +80,6 @@ class App extends Component {
     } else {
         this.toggleErrorPopup()  
     }
-  }
-
-  removeFromFavorites = (id) => {
-    const favorites = this.state.favorites.filter(card => card.id !== id) 
-    this.setState({ favorites })
-    this.setLocalStorage('favorites', favorites)
   }
 
   getFilm = async () => {
