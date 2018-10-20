@@ -256,35 +256,3 @@ class App extends Component {
 
 export default App;
 
-// {scroll &&
-//         <Sidebar films={films}/>
-//         }
-
-// {peopleSelected && 
-//         <CardContainer 
-//           entries={people}
-//           toggleFavorites={this.toggleFavorites}
-//           favorites={favorites}
-//            />}
-        
-// {vehiclesSelected && 
-// <CardContainer 
-//   entries={vehicles} 
-//   toggleFavorites={this.toggleFavorites}
-//   favorites={favorites}
-//   />}
-
-
-// {planetsSelected && 
-// <CardContainer 
-//   entries={planets} 
-//   toggleFavorites={this.toggleFavorites}
-//   favorites={favorites}
-//   />}
-        // {favoritesSelected && 
-        // <CardContainer
-        //   entries={favorites} 
-        //   toggleFavorites={this.toggleFavorites}
-        //   favorites={favorites}
-        //   />}
-        
