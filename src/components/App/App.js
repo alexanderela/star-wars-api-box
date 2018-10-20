@@ -36,10 +36,8 @@ class App extends Component {
   }
 
   toggleFavorites = async (entry) => {
-    
     let favorites;
     const { type, id } = entry
-
     const category = this.state[type].map(card => {
       if(card.id === id) {
         return {...card, isFavorite: !card.isFavorite}

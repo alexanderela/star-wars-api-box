@@ -1,9 +1,9 @@
 .CardContainer {
+  background: url('../../assets/SWAPI-background.jpg');
 	border: 1px solid black;
   border-radius: 10px;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat( auto-fit, minmax(17rem, 1fr) );
-  background: url('../../assets/SWAPI-background.jpg');
   margin: 0 5rem 3rem;
 }
