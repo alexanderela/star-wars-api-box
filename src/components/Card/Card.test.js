@@ -49,7 +49,7 @@ describe('Card', () => {
 	mockFavs = [{
           name: "Dina Carballo",
           id: "Dina Carballo",
-          isFavorite: false, 
+          isFavorite: true, 
           type:"people",
           properties: [
 						{header: 'Homeworld: ', text: "Earth"},
@@ -61,7 +61,7 @@ describe('Card', () => {
         {
           name: "Alex Ela",
           id: "Alex Ela",
-          isFavorite: false, 
+          isFavorite: true, 
           type:"people",
           properties: [
 						{header: 'Homeworld: ', text: "Earth"},
@@ -69,7 +69,19 @@ describe('Card', () => {
 						{header: 'Population: ', text: "7,000,000,000"},
 						{header: 'Language: ', text: "Galactic Basic"}
 					] 
-        }]
+        }, 
+        {
+          "name": "Luke Skywalker",
+          "id": "Luke Skywalker",
+          "isFavorite": true, 
+          "type":"people",
+          "properties": [
+						{"header": 'Homeworld: ', "text": "Tatooine"},
+						{"header": 'Species: ', "text": "human"},
+						{"header": 'Population: ', "text": "200,000"},
+						{"header": 'Language: ', "text": "Galactic Basic"}
+						] 
+	        }]
 
 	beforeEach(() => {
 		mockEntry = mockPerson
@@ -102,6 +114,40 @@ describe('Card', () => {
 		wrapper.find('.fav-btn').simulate('click')
 		expect(mockToggleFavs).toHaveBeenCalled()
 	})
+
+	it('changes fav button class to active on click', () => {
+		mockEntry = {
+	          "name": "Luke Skywalker",
+	          "id": "Luke Skywalker",
+	          "isFavorite": true, 
+	          "type":"people",
+	          "properties": [
+							{"header": 'Homeworld: ', "text": "Tatooine"},
+							{"header": 'Species: ', "text": "human"},
+							{"header": 'Population: ', "text": "200,000"},
+							{"header": 'Language: ', "text": "Galactic Basic"}
+						] 
+	        }
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
+	})
+
+	it.only('changes fav button class to active on click', () => {
+	mockEntry = {
+          "name": "Luke Skywalker",
+          "id": "Luke Skywalker",
+          "isFavorite": true, 
+          "type":"people",
+          "properties": [
+						{"header": 'Homeworld: ', "text": "Tatooine"},
+						{"header": 'Species: ', "text": "human"},
+						{"header": 'Population: ', "text": "200,000"},
+						{"header": 'Language: ', "text": "Galactic Basic"}
+					] 
+        }
+	wrapper.find('button').simulate('click')
+	expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
+})
 
 	// it('highlights vehicle favorite button on click', () => {
 	// 	const mockVehicles = {
@@ -139,12 +185,12 @@ describe('Card', () => {
 	// 	expect(wrapper.state().isSelected).toBe(true)
 	// })
 
-	it('prints default entry if data provides no residents', () => {
-		mockEntry = mockPlanet
-		expect(wrapper.find('.planet-residents')).toBeDefined()
-	})
+	// it('prints default entry if data provides no residents', () => {
+	// 	mockEntry = mockPlanet
+	// 	expect(wrapper.find('.planet-residents')).toBeDefined()
+	// })
 
-	
+
 // })
 
 	// it('adds cards to favorites if card.type is true', () => {

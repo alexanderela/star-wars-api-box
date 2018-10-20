@@ -34,7 +34,7 @@ ShallowWrapper {
       Array [
         Object {
           "id": "Dina Carballo",
-          "isFavorite": false,
+          "isFavorite": true,
           "name": "Dina Carballo",
           "properties": Array [
             Object {
@@ -58,7 +58,7 @@ ShallowWrapper {
         },
         Object {
           "id": "Alex Ela",
-          "isFavorite": false,
+          "isFavorite": true,
           "name": "Alex Ela",
           "properties": Array [
             Object {
