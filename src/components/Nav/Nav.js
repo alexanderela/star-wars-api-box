@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './Nav.css'
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import PropTypes from 'prop-types';
@@ -64,39 +65,43 @@ render() {
 	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
 
 	return(
-			<div className="button-container">
-				<div className="nav-buttons">
-				    <button 
-				      className={`cat-button people-button 
-				      	${peopleSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="people"
-				      onClick={this.handlePeopleClick}
-				    >People</button>
-				    <button 
-				      className={`cat-button planets-button 
-				      	${planetsSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="planets"
-				      onClick={this.handlePlanetClick}
-				    >Planets</button>
-				    <button 
-				      className={`cat-button vehicles-button 
-				      	${vehiclesSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="vehicles"
-				      onClick={this.handleVehicleClick}
-				    >Vehicles</button>
-				    <FavoriteButton 
-				    	className="FavoriteButton"
-				    	favorites={favorites}
-				    	showFavorites={showFavorites}
-				    />
-				</div>
-			</div>
+		<div className="Nav">
+		    <button 
+		      className={`cat-button people-button 
+		      	${peopleSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="people"
+		      onClick={this.handlePeopleClick}
+		    >
+		    	<NavLink to="/people" className="nav">People</NavLink>
+		    </button>
+		    <button 
+		      className={`cat-button planets-button 
+		      	${planetsSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="planets"
+		      onClick={this.handlePlanetClick}
+		    >
+		    	<NavLink to="/planets" className="nav">Planets</NavLink>
+		    </button>
+		    <button 
+		      className={`cat-button vehicles-button 
+		      	${vehiclesSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="vehicles"
+		      onClick={this.handleVehicleClick}
+		    >
+		    	<NavLink to="/vehicles" className="nav">Vehicles</NavLink>
+		    </button>
+		    <FavoriteButton 
+		    	className="FavoriteButton"
+		    	favorites={favorites}
+		    	showFavorites={showFavorites}
+		    />
+		</div>
 		)
 	}
 }

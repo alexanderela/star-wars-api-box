@@ -1,25 +1,23 @@
-.button-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  padding-right: 16px;
-  top: 80px;
-  width: 80%;
-}
-
-.nav-buttons {
+.Nav {
   align-items: center;
   bottom: 0px;
   display: flex;
   height: 5rem;
   justify-content: space-around;
-  /*margin: 0 0 5rem 0;*/
   padding-right: 16px;
   top: 80px;
   transform: translatex(0%);
   transition: transform 0.2s ease;
-  width: 100%;
+  width: 80%;
+}
+
+.nav {
+  text-decoration: none;
+  color: white;
+}
+
+.nav:hover {
+  color: #000;
 }
 
 .cat-button {

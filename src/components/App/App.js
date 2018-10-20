@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
@@ -41,7 +42,7 @@ class App extends Component {
 
     const category = this.state[type].map(card => {
       if(card.id === id) {
-        return {...card, isFavorite: true}
+        return {...card, isFavorite: !card.isFavorite}
       }
       return card
     })
@@ -214,36 +215,44 @@ class App extends Component {
           />
           : <div className="error-popup-placeholder"></div>
         }
-        {peopleSelected && 
-        <CardContainer 
-          entries={people}
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
-           />}
-        {vehiclesSelected && 
-        <CardContainer 
-          entries={vehicles} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        <Route exact path="/" render={(props) => <Sidebar {...props} films={films} />}
+        />
+        <Route 
+          exact path="/people" 
+          render={(props) => <CardContainer {...props} 
+            entries={people} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {planetsSelected && 
-        <CardContainer 
-          entries={planets} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        />
+        <Route 
+          exact path="/vehicles" 
+          render={(props) => <CardContainer {...props} 
+            entries={vehicles} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {favoritesSelected && 
-        <CardContainer
-          entries={favorites} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        />
+        <Route 
+          exact path="/planets" 
+          render={(props) => <CardContainer {...props} 
+            entries={planets} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {scroll &&
-        <Sidebar films={films}/>
-        }
+        />
+        <Route 
+          exact path="/favorites" 
+          render={(props) => <CardContainer {...props} 
+            entries={favorites} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
+          />}
+        />
       </div>
     );
   }
 }
 
 export default App;
+
