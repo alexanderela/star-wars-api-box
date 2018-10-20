@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Card.css'
 import PropTypes from 'prop-types';
-import CardHelper from '../CardHelper/CardHelper'
 
 const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => { 
 	const cardProperties = entry.properties.map(property => {
