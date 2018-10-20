@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, NavLink } from 'react-router-dom';
+
 import './FavoriteButton.css';
 import PropTypes from 'prop-types';
 
@@ -9,7 +11,7 @@ const FavoriteButton = ({favorites, showFavorites}) => {
 	    	className="cat-button favorites-button"
 	    	onClick={() => showFavorites()}
 	    	>
-	      Favorites
+	      <NavLink to="/favorites" className="nav">Favorites</NavLink>
 	      	<span 
 	      		className="favorites-count">
 	      		{favorites ? favorites.length : 0}

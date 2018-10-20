@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
@@ -41,7 +42,7 @@ class App extends Component {
 
     const category = this.state[type].map(card => {
       if(card.id === id) {
-        return {...card, isFavorite: true}
+        return {...card, isFavorite: !card.isFavorite}
       }
       return card
     })

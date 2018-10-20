@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './Nav.css'
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import PropTypes from 'prop-types';
@@ -73,7 +74,9 @@ render() {
 				      		: "cat-button-inactive" }`}
 				      name="people"
 				      onClick={this.handlePeopleClick}
-				    >People</button>
+				    >
+				    	<NavLink to="/people" className="nav">People</NavLink>
+				    </button>
 				    <button 
 				      className={`cat-button planets-button 
 				      	${planetsSelected 
@@ -81,7 +84,9 @@ render() {
 				      		: "cat-button-inactive" }`}
 				      name="planets"
 				      onClick={this.handlePlanetClick}
-				    >Planets</button>
+				    >
+				    	<NavLink to="/planets" className="nav">Planets</NavLink>
+				    </button>
 				    <button 
 				      className={`cat-button vehicles-button 
 				      	${vehiclesSelected 
@@ -89,7 +94,9 @@ render() {
 				      		: "cat-button-inactive" }`}
 				      name="vehicles"
 				      onClick={this.handleVehicleClick}
-				    >Vehicles</button>
+				    >
+				    	<NavLink to="/vehicles" className="nav">Vehicles</NavLink>
+				    </button>
 				    <FavoriteButton 
 				    	className="FavoriteButton"
 				    	favorites={favorites}
