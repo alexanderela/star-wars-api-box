@@ -58,9 +58,13 @@ class DataCleaner {
 		const homeWorldData = await fetchData(personHomeUrl)
 		const homeWorld = {
 			planetName: homeWorldData.name,
-			planetPop: homeWorldData.population
+			planetPop: this.numberCommas(homeWorldData.population)
 		}
 		return homeWorld
+	}
+
+	numberCommas(x) {
+  	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 	async getSpecies(person) {
@@ -90,7 +94,7 @@ class DataCleaner {
 				type: 'planets',
 				properties: [
 					{header: 'Terrain: ', text: `${planet.terrain}`},
-					{header: 'Population: ', text: `${planet.population}`},
+					{header: 'Population: ', text: `${this.numberCommas(planet.population)}`},
 					{header: 'Climate: ', text: `${planet.climate}`},
 					{header: 'Residents: ', text: `${await this.getResidents(planet.residents)}`}
 				]
