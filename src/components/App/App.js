@@ -29,9 +29,6 @@ class App extends Component {
 
   async componentDidMount() {
     this.getFilm()
-    this.getPeople()
-    this.getPlanets()
-    this.getVehicles()
   }
 
   toggleFavorites = async (entry) => {
@@ -197,9 +194,12 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <h1 className="app-title">SWAP<span className="title-i">I</span> Box</h1>
-          <Nav 
+          <Nav
+            getPeople={this.getPeople} 
             showPeople={this.showPeople}
+            getPlanets={this.getPlanets}
             showPlanet={this.showPlanets}
+            getVehicles={this.getVehicles}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
