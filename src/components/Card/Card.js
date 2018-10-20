@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => { 
 	const cardProperties = entry.properties.map(property => {
+		// console.log(entry)
 		return (
-			<p key={property[0]} className="card-text">
+			<p key={property.header} className="card-text">
 				<span className="card-header">
 					{property.header}
 				</span>
@@ -16,10 +17,10 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 
 	return (
 		<div className="Card">
-	    <div className="fav-btn-card-container">
+	    <div className="fav-btns-card-container">
 		    <h3>{entry.name}</h3>
 		    <button 
-		    	className={ `fav-btn people-fav 
+		    	className={ `fav-btn 
 		    		${(isFavorite || favorites.includes(entry)) 
 		    			? "fav-btn-active" 
 		    			: "fav-btn-inactive"}` }
