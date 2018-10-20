@@ -29,9 +29,6 @@ class App extends Component {
 
   async componentDidMount() {
     this.getFilm()
-    this.getPeople()
-    this.getPlanets()
-    this.getVehicles()
   }
 
   toggleFavorites = async (entry) => {
@@ -196,10 +193,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1 className="app-title">SWAPI Box</h1>
-          <Nav 
+          <h1 className="app-title">SWAP<span className="title-i">I</span> Box</h1>
+          <Nav
+            getPeople={this.getPeople} 
             showPeople={this.showPeople}
+            getPlanets={this.getPlanets}
             showPlanet={this.showPlanets}
+            getVehicles={this.getVehicles}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
@@ -221,7 +221,6 @@ class App extends Component {
           toggleFavorites={this.toggleFavorites}
           favorites={favorites}
            />}
-          }
         {vehiclesSelected && 
         <CardContainer 
           entries={vehicles} 

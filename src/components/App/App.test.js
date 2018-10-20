@@ -57,24 +57,22 @@ describe('App component', () => {
 	})
 
 	describe('componentDidMount', () => {
-		it('invokes showFilm function on componentDidMount', () => {
-			wrapper.instance().showFilm = jest.fn()
+		it('invokes getFilm function on componentDidMount', () => {
+			wrapper.instance().getFilm = jest.fn()
 			wrapper.instance().componentDidMount()
-			expect(wrapper.instance().showFilm).toHaveBeenCalled()
+			expect(wrapper.instance().getFilm).toHaveBeenCalled()
 		})
 	})
 
-	describe('addToFavorites', () => {
-		it('adds cards to favorites', () => {
+	describe('toggleFavorites', () => {
+		it('adds cards to favorites if not already contained in the favorites array', () => {
 			const card = { "name": "Luke Skywalker", "species": "human" }
 			const expected = [card]
 			wrapper.instance().addToFavorites(card)
 			expect(wrapper.state().favorites).toEqual(expected)
 		})
-	})
-
-	describe('removeFromFavorites', () => {
-		it('removes cards from favorites', () => {
+	
+		it('removes cards from favorites array', () => {
 			expected = []
 			const mockId = "Luke"
 			const mockCard = [{ "name": "Luke", "id": "Luke" }]
@@ -82,21 +80,84 @@ describe('App component', () => {
 			wrapper.instance().removeFromFavorites(mockId)
 			expect(wrapper.state().favorites).toEqual(expected)
 		})
+		//sets local storage
 	})
 
-	describe('showFilm', () => {
-		it('sets film to state', async () => {
-			mockFilm = {
-				opening_crawl: "Heyy youu guyyyys", 
-				episode_id: 7, 
-				title: "The Force Awakens"
-			}
-			wrapper.state().dataCleaner.getMovie = jest.fn().mockImplementation(() => Promise.resolve(
-				mockFilm))
-			await wrapper.instance().showFilm()
-			await expect(wrapper.state().films).toEqual(mockFilm)
+	describe('isInFavorites', () => {
+		it('should find a match for the given entry', () => {
+
 		})
 	})
+
+	describe('toggleErrorPopup', () => {
+		it('should reverse the state of showError popup', () => {
+
+		})
+	})
+
+	describe('showFavorites', () => {
+		it('if there are favorites it should change favoritesSelected to true', () => {
+
+		})
+
+		it('if there are no favorites it should trigger error message to be displayed', () => {
+
+		})
+	})
+
+	describe('getFilm', () => {
+		it('should call getMovie', () => {
+
+		})
+
+		it('should setState', () => {
+
+		})
+	})
+
+	describe('getPeople', () => {
+		it('should call getPerson', () => {
+
+		})
+
+		it('should setState', () => {
+			
+		})
+	})
+
+	describe('getPlanets', () => {
+		it('should call getPlanet', () => {
+
+		})
+
+		it('should setState', () => {
+			
+		})
+	})
+
+	describe('getVehicles', () => {
+		it('should call getVehicle', () => {
+
+		})
+
+		it('should setState', () => {
+			
+		})
+	})
+
+	// describe('showFilm', () => {
+	// 	it('sets film to state', async () => {
+	// 		mockFilm = {
+	// 			opening_crawl: "Heyy youu guyyyys", 
+	// 			episode_id: 7, 
+	// 			title: "The Force Awakens"
+	// 		}
+	// 		wrapper.state().dataCleaner.getMovie = jest.fn().mockImplementation(() => Promise.resolve(
+	// 			mockFilm))
+	// 		await wrapper.instance().showFilm()
+	// 		await expect(wrapper.state().films).toEqual(mockFilm)
+	// 	})
+	// })
 
 	describe('toggleCategoryState', () => {
 		it('selects people in state when toggleCategory is called', () => {
@@ -205,15 +266,15 @@ describe('App component', () => {
 		})
 	})
 
-	describe('checkLocalStoragePeople', () => {
-		it('gets people data from local storage if it already exists there', () => {
-			const mockPeople = [{ "name": "Luke", "species": "human" }]
-			wrapper.instance().setLocalStorage('people', mockPeople)	
-			wrapper.instance().checkLocalStoragePeople(mockPeople)
-			expect(wrapper.state().people).toEqual(mockPeople)
-			localStorage.clear()
-		})
-	})
+	// describe('checkLocalStoragePeople', () => {
+	// 	it('gets people data from local storage if it already exists there', () => {
+	// 		const mockPeople = [{ "name": "Luke", "species": "human" }]
+	// 		wrapper.instance().setLocalStorage('people', mockPeople)	
+	// 		wrapper.instance().checkLocalStoragePeople(mockPeople)
+	// 		expect(wrapper.state().people).toEqual(mockPeople)
+	// 		localStorage.clear()
+	// 	})
+	// })
 
 	describe('showVehicles', () => {
 		it('should toggle the state of vehicles if it is already selected', async () => {
@@ -248,20 +309,20 @@ describe('App component', () => {
 		})
 	})
 
-	describe('checkLocalStorageVehicles', () => {
-		it('gets vehicle data from local storage if it already exists there', () => {
-			mockVehicle = [{
-				"class": "wheeled", 
-				"model": "Digger Crawler",
-				"name": "Sand Crawler", 
-				"passengers": "30"
-			}]
-			wrapper.instance().setLocalStorage('vehicles', mockVehicle)	
-			wrapper.instance().checkLocalStorageVehicles(mockVehicle)
-			expect(wrapper.state().vehicles).toEqual(mockVehicle)
-			localStorage.clear()
-		})
-	})
+	// describe('checkLocalStorageVehicles', () => {
+	// 	it('gets vehicle data from local storage if it already exists there', () => {
+	// 		mockVehicle = [{
+	// 			"class": "wheeled", 
+	// 			"model": "Digger Crawler",
+	// 			"name": "Sand Crawler", 
+	// 			"passengers": "30"
+	// 		}]
+	// 		wrapper.instance().setLocalStorage('vehicles', mockVehicle)	
+	// 		wrapper.instance().checkLocalStorageVehicles(mockVehicle)
+	// 		expect(wrapper.state().vehicles).toEqual(mockVehicle)
+	// 		localStorage.clear()
+	// 	})
+	// })
 
 	describe('showPlanets', () => {
 		it('should toggle the state of planets if it is already selected', async () => {
@@ -295,17 +356,17 @@ describe('App component', () => {
 		})
 	})
 
-	describe('checkLocalStoragePlanets', () => {
-		it('gets planet data from local storage if it already exists there', () => {
-			mockPlanet = [{"name": "Alderaan", 
-				"terrain": "grasslands, mountains", 
-				"population": "2000000000", "climate": "temperate", 
-			"residents": 
-				["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}]
-			wrapper.instance().setLocalStorage('planets', mockPlanet)	
-			wrapper.instance().checkLocalStoragePlanets(mockPlanet)
-			expect(wrapper.state().planets).toEqual(mockPlanet)
-			localStorage.clear()
-		})
-	})
+	// describe('checkLocalStoragePlanets', () => {
+	// 	it('gets planet data from local storage if it already exists there', () => {
+	// 		mockPlanet = [{"name": "Alderaan", 
+	// 			"terrain": "grasslands, mountains", 
+	// 			"population": "2000000000", "climate": "temperate", 
+	// 		"residents": 
+	// 			["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}]
+	// 		wrapper.instance().setLocalStorage('planets', mockPlanet)	
+	// 		wrapper.instance().checkLocalStoragePlanets(mockPlanet)
+	// 		expect(wrapper.state().planets).toEqual(mockPlanet)
+	// 		localStorage.clear()
+	// 	})
+	// })
 })
