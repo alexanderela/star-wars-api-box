@@ -64,37 +64,39 @@ render() {
 	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
 
 	return(
-		<div className="nav-button-container">
-		    <button 
-		      className={`cat-button people-button 
-		      	${peopleSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="people"
-		      onClick={this.handlePeopleClick}
-		    >People</button>
-		    <button 
-		      className={`cat-button planets-button 
-		      	${planetsSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="planets"
-		      onClick={this.handlePlanetClick}
-		    >Planets</button>
-		    <button 
-		      className={`cat-button vehicles-button 
-		      	${vehiclesSelected 
-		      		? "cat-button-active" 
-		      		: "cat-button-inactive" }`}
-		      name="vehicles"
-		      onClick={this.handleVehicleClick}
-		    >Vehicles</button>
-		    <FavoriteButton 
-		    	className="FavoriteButton"
-		    	favorites={favorites}
-		    	showFavorites={showFavorites}
-		    />
-		</div>
+			<div className="button-container">
+				<div className="nav-buttons">
+				    <button 
+				      className={`cat-button people-button 
+				      	${peopleSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="people"
+				      onClick={this.handlePeopleClick}
+				    >People</button>
+				    <button 
+				      className={`cat-button planets-button 
+				      	${planetsSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="planets"
+				      onClick={this.handlePlanetClick}
+				    >Planets</button>
+				    <button 
+				      className={`cat-button vehicles-button 
+				      	${vehiclesSelected 
+				      		? "cat-button-active" 
+				      		: "cat-button-inactive" }`}
+				      name="vehicles"
+				      onClick={this.handleVehicleClick}
+				    >Vehicles</button>
+				    <FavoriteButton 
+				    	className="FavoriteButton"
+				    	favorites={favorites}
+				    	showFavorites={showFavorites}
+				    />
+				</div>
+			</div>
 		)
 	}
 }
