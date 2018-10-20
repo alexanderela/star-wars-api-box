@@ -215,12 +215,7 @@ class App extends Component {
           />
           : <div className="error-popup-placeholder"></div>
         }
-        {peopleSelected && 
-        <CardContainer 
-          entries={people}
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
-           />}
+        
         {vehiclesSelected && 
         <CardContainer 
           entries={vehicles} 
@@ -242,6 +237,14 @@ class App extends Component {
         
         <Route exact path="/" render={(props) => <Sidebar {...props} films={films} />}
         />
+        <Route 
+          exact path="/people" 
+          render={(props) => <CardContainer {...props} 
+            entries={people} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
+          />}
+        />
       </div>
     );
   }
@@ -252,3 +255,10 @@ export default App;
 // {scroll &&
 //         <Sidebar films={films}/>
 //         }
+
+// {peopleSelected && 
+//         <CardContainer 
+//           entries={people}
+//           toggleFavorites={this.toggleFavorites}
+//           favorites={favorites}
+//            />}
