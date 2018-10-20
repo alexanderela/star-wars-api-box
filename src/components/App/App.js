@@ -215,20 +215,6 @@ class App extends Component {
           />
           : <div className="error-popup-placeholder"></div>
         }
-
-        {planetsSelected && 
-        <CardContainer 
-          entries={planets} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
-          />}
-        {favoritesSelected && 
-        <CardContainer
-          entries={favorites} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
-          />}
-        
         <Route exact path="/" render={(props) => <Sidebar {...props} films={films} />}
         />
         <Route 
@@ -247,7 +233,22 @@ class App extends Component {
             favorites={favorites} 
           />}
         />
-
+        <Route 
+          exact path="/planets" 
+          render={(props) => <CardContainer {...props} 
+            entries={planets} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
+          />}
+        />
+        <Route 
+          exact path="/favorites" 
+          render={(props) => <CardContainer {...props} 
+            entries={favorites} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
+          />}
+        />
       </div>
     );
   }
@@ -272,3 +273,18 @@ export default App;
 //   toggleFavorites={this.toggleFavorites}
 //   favorites={favorites}
 //   />}
+
+
+// {planetsSelected && 
+// <CardContainer 
+//   entries={planets} 
+//   toggleFavorites={this.toggleFavorites}
+//   favorites={favorites}
+//   />}
+        // {favoritesSelected && 
+        // <CardContainer
+        //   entries={favorites} 
+        //   toggleFavorites={this.toggleFavorites}
+        //   favorites={favorites}
+        //   />}
+        
