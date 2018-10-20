@@ -18,7 +18,7 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 		    <h3>{entry.name}</h3>
 		    <button 
 		    	className={ `fav-btn people-fav 
-		    		${(isFavorite) 
+		    		${(isFavorite || favorites.includes(entry)) 
 		    			? "fav-btn-active" 
 		    			: "fav-btn-inactive"}` }
 		    	onClick={() => toggleFavorites(entry)}
