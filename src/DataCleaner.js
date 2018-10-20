@@ -19,7 +19,8 @@ class DataCleaner {
 		return ({
 			opening_crawl: film.opening_crawl,
 	 		episode_id: film.episode_id,
-	 		title: film.title
+	 		title: film.title,
+	 		date: film.release_date.slice(0,4)
 		})
 	}
 

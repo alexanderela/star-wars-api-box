@@ -29,6 +29,9 @@ class App extends Component {
 
   async componentDidMount() {
     this.getFilm()
+    this.getPeople()
+    this.getVehicles()
+    this.getPlanets()
   }
 
   toggleFavorites = async (entry) => {
@@ -38,7 +41,7 @@ class App extends Component {
 
     const category = this.state[type].map(card => {
       if(card.id === id) {
-        return {...card, isFavorite: !card.isFavorite}
+        return {...card, isFavorite: true}
       }
       return card
     })
@@ -112,7 +115,6 @@ class App extends Component {
       this.showVehicles()
     }
   }
-
 
   setLocalStorage = (key, category) => {
     localStorage.setItem(key, JSON.stringify(category))
@@ -195,11 +197,8 @@ class App extends Component {
         <header className="header">
           <h1 className="app-title">SWAP<span className="title-i">I</span> Box</h1>
           <Nav
-            getPeople={this.getPeople} 
             showPeople={this.showPeople}
-            getPlanets={this.getPlanets}
             showPlanet={this.showPlanets}
-            getVehicles={this.getVehicles}
             showVehicle={this.showVehicles}
             toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}

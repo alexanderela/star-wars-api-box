@@ -15,8 +15,6 @@ class Nav extends Component {
 	}
 
 	handlePeopleClick = (e) => {
-		this.props.getPeople()
-    
 		if (this.state.peopleSelected === true) {
 			const { name } = e.target
 			this.setState({ peopleSelected: false })
@@ -32,8 +30,6 @@ class Nav extends Component {
 	}
 
 	handlePlanetClick = (e) => {
-		this.props.getPlanets()
-    
 		const { name } = e.target
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })
@@ -49,8 +45,6 @@ class Nav extends Component {
 	}
 
 	handleVehicleClick = (e) => {
-		this.props.getVehicles()
-
 		const { name } = e.target
 		if (this.state.vehiclesSelected === true) {
 			this.setState({ vehiclesSelected: false })
