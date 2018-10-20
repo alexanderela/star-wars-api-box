@@ -43,10 +43,10 @@ class DataCleaner {
 			isFavorite: false,
 			type: 'people',
 			properties: [
-				`Home World: ${planetName}`,
-				`Species: ${speciesName}`,
-				`Population: ${planetPop}`,
-				`Language: ${language}`
+				{header: 'Homeworld: ', text: `${planetName}`},
+				{header: 'Species: ', text: `${speciesName}`},
+				{header: 'Population: ', text: `${planetPop}`},
+				{header: 'Language: ', text: `${language}`}
 			] 
 		}
 	})
@@ -89,10 +89,10 @@ class DataCleaner {
 				isFavorite: false,
 				type: 'planets',
 				properties: [
-					`Terrain: ${planet.terrain}`,
-					`Population: ${planet.population}`,
-					`Climate: ${planet.climate}`,
-					`Residents: ${await this.getResidents(planet.residents)}`
+					{header: 'Terrain: ', text: `${planet.terrain}`},
+					{header: 'Population: ', text: `${planet.population}`},
+					{header: 'Climate: ', text: `${planet.climate}`},
+					{header: 'Residents: ', text: `${await this.getResidents(planet.residents)}`}
 				]
 			}
 		})
@@ -123,9 +123,9 @@ class DataCleaner {
 				isFavorite: false,
 				type: 'vehicles',
 				properties: [
-					`Model: ${vehicle.model}`,
-					`Class: ${vehicle.vehicle_class}`,
-					`Passengers: ${vehicle.passengers}`
+					{header: 'Model: ', text: `${vehicle.model}`},
+					{header: 'Class: ', text: `${vehicle.vehicle_class}`},
+					{header: 'Passengers: ', text: `${vehicle.passengers}`}
 				]
 			}
 		})

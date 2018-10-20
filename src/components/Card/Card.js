@@ -6,8 +6,10 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 	const cardProperties = entry.properties.map(property => {
 		return (
 			<p key={property[0]} className="card-text">
-				<span className="card-header"></span>
-				{property}
+				<span className="card-header">
+					{property.header}
+				</span>
+				{property.text}
 			</p>
 		)
 	})
