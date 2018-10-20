@@ -239,12 +239,16 @@ class App extends Component {
           toggleFavorites={this.toggleFavorites}
           favorites={favorites}
           />}
-        {scroll &&
-        <Sidebar films={films}/>
-        }
+        
+        <Route exact path="/" render={(props) => <Sidebar {...props} films={films} />}
+        />
       </div>
     );
   }
 }
 
 export default App;
+
+// {scroll &&
+//         <Sidebar films={films}/>
+//         }
