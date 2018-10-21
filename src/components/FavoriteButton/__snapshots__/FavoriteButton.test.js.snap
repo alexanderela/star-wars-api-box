@@ -24,7 +24,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <button
-        className="cat-button favorites-button"
+        className="cat-button favorites-button 
+            cat-button-inactive"
+        name="favorites"
         onClick={[Function]}
       >
         <NavLink
@@ -64,7 +66,9 @@ ShallowWrapper {
             0
           </span>,
         ],
-        "className": "cat-button favorites-button",
+        "className": "cat-button favorites-button 
+            cat-button-inactive",
+        "name": "favorites",
         "onClick": [Function],
       },
       "ref": null,
@@ -108,7 +112,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <button
-          className="cat-button favorites-button"
+          className="cat-button favorites-button 
+            cat-button-inactive"
+          name="favorites"
           onClick={[Function]}
         >
           <NavLink
@@ -148,7 +154,9 @@ ShallowWrapper {
               0
             </span>,
           ],
-          "className": "cat-button favorites-button",
+          "className": "cat-button favorites-button 
+            cat-button-inactive",
+          "name": "favorites",
           "onClick": [Function],
         },
         "ref": null,

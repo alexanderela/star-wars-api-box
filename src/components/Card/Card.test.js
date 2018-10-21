@@ -48,8 +48,8 @@ describe('Card', () => {
 						] 
 	        }
 	mockFavs = [{
-          name: "Dina Carballo",
-          id: "Dina Carballo",
+          name: "Dina Caraballo",
+          id: "Dina Caraballo",
           isFavorite: true, 
           type:"people",
           properties: [
