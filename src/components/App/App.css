@@ -34,7 +34,7 @@ body {
 .app-title {
   color: #f9d500;
   font-family: "STARWARS";
-  font-size: 10em;
+  font-size: 10rem;
   margin: 3rem 0 0 0;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #f9d500;
@@ -50,9 +50,65 @@ body {
   margin: 0 0 3rem; 
 }
 
+@media (max-width: 1060px) {
+  .app-title {
+    font-size: 10rem;
+  }
+}
+
 @media (max-width: 940px) {
   .cat-button {
     font-size: 1.75rem;
-    width: 10rem;
+    width: 9rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .app-title {
+    font-size: 8rem;
+  }
+  .title-i {
+    -webkit-text-stroke-width: 3px;
+  }
+}
+
+@media (max-width: 565px) {
+  .cat-button {
+    font-size: 1.75rem;
+    width: 9rem;
+  }
+  .app-title {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .cat-button {
+    font-size: 0.75rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .cat-button {
+    width: 4rem;
+  }
+}
+
+@media (max-width: 405px) {
+  .app-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 365px) {
+  .cat-button {
+    font-size: 0.5rem;
   }
 }
