@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './Nav';
 import { shallow, mount } from 'enzyme';
+import { Route, NavLink } from 'react-router-dom';
 import people from '../../mockData/mockPeople.js';
 
 describe('Nav', () => {
@@ -12,7 +13,7 @@ describe('Nav', () => {
 	beforeEach(() => {
     mockFunction = jest.fn()
     mockEvent = { target: true }
-		wrapper = mount(<Nav   
+		wrapper = shallow(<Nav   
 						showPeople={mockFunction}
             showPlanet={mockFunction}
             showVehicle={mockFunction}

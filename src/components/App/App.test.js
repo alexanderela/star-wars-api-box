@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow, mount } from 'enzyme';
-import DataCleaner from '../../helper.js';
+import { BrowserRouter } from 'react-router-dom';
+import DataCleaner from '../../DataCleaner.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 import Nav from '../Nav/Nav.js';
 import films from '../../mockData/mockFilms.js';
@@ -14,11 +15,15 @@ import mockPerson from '../../mockData/mockPerson.js';
 import mockSpecies from '../../mockData/mockSpecies.js';
 
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(
+  <BrowserRouter>
+  	<App />
+  </BrowserRouter>, 
+  div);
+  ReactDOM.unmountComponentAtNode(div);
+});
 
 let wrapper;
 let mockEvent;

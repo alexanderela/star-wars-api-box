@@ -10,7 +10,7 @@ class ErrorPopup extends Component {
 		return(
 			<div className="ErrorPopup">
 				<div className="popup-inner">
-					<h1>You have not selected any favorites yet!</h1>
+					<h1>You have no favorites selected!</h1>
 					<button 
 						onClick={this.props.closeError}>X</button>
 				</div>

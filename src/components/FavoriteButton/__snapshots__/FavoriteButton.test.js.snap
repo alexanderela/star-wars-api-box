@@ -26,9 +26,15 @@ ShallowWrapper {
       "children": <button
         className="cat-button favorites-button"
         onClick={[Function]}
-
       >
-        Favorites
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          className="nav"
+          to="/favorites"
+        >
+          Favorites
+        </NavLink>
         <span
           className="favorites-count"
         >
@@ -44,7 +50,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Favorites",
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="nav"
+            to="/favorites"
+          >
+            Favorites
+          </NavLink>,
           <span
             className="favorites-count"
           >
@@ -56,7 +69,21 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        "Favorites",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "aria-current": "page",
+            "children": "Favorites",
+            "className": "nav",
+            "to": "/favorites",
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -84,7 +111,14 @@ ShallowWrapper {
           className="cat-button favorites-button"
           onClick={[Function]}
         >
-          Favorites
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            className="nav"
+            to="/favorites"
+          >
+            Favorites
+          </NavLink>
           <span
             className="favorites-count"
           >
@@ -100,7 +134,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Favorites",
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              className="nav"
+              to="/favorites"
+            >
+              Favorites
+            </NavLink>,
             <span
               className="favorites-count"
             >
@@ -112,7 +153,21 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "Favorites",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "aria-current": "page",
+              "children": "Favorites",
+              "className": "nav",
+              "to": "/favorites",
+            },
+            "ref": null,
+            "rendered": "Favorites",
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
