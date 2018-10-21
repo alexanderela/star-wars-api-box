@@ -21,7 +21,7 @@ ShallowWrapper {
         className="popup-inner"
       >
         <h1>
-          You have not selected any favorites yet!
+          You have no favorites selected!
         </h1>
         <button>
           X
@@ -37,7 +37,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1>
-            You have not selected any favorites yet!
+            You have no favorites selected!
           </h1>,
           <button>
             X
@@ -52,10 +52,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "You have not selected any favorites yet!",
+            "children": "You have no favorites selected!",
           },
           "ref": null,
-          "rendered": "You have not selected any favorites yet!",
+          "rendered": "You have no favorites selected!",
           "type": "h1",
         },
         Object {
@@ -85,7 +85,7 @@ ShallowWrapper {
           className="popup-inner"
         >
           <h1>
-            You have not selected any favorites yet!
+            You have no favorites selected!
           </h1>
           <button>
             X
@@ -101,7 +101,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <h1>
-              You have not selected any favorites yet!
+              You have no favorites selected!
             </h1>,
             <button>
               X
@@ -116,10 +116,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "You have not selected any favorites yet!",
+              "children": "You have no favorites selected!",
             },
             "ref": null,
-            "rendered": "You have not selected any favorites yet!",
+            "rendered": "You have no favorites selected!",
             "type": "h1",
           },
           Object {

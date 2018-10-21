@@ -22,6 +22,11 @@ h1 {
 }
 
 button {
+
+	cursor: pointer;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
   background-color: #f9d500;
   border: none;
   border-radius: 10px;
@@ -29,5 +34,7 @@ button {
 	cursor: pointer;
   font-weight: 700;
   margin: 0.1rem 0 0 0.3rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.35rem 0.5rem;
 }
+
+

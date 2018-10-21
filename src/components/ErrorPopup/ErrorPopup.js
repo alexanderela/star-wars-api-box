@@ -6,20 +6,17 @@ class ErrorPopup extends Component {
     super(props);
   }
 
-  render() {
-    return (
-      <div className="ErrorPopup">
-        <div className="popup-inner">
-          <h1>You have not selected any favorites yet!</h1>
-          <button
-            onClick={this.props.closeError}
-          >
-X
-          </button>
-        </div>
-      </div>
-    );
-  }
+	render() {
+		return(
+			<div className="ErrorPopup">
+				<div className="popup-inner">
+					<h1>You have no favorites selected!</h1>
+					<button 
+						onClick={this.props.closeError}>X</button>
+				</div>
+			</div>
+		)
+	}
 }
 
 export default ErrorPopup;
