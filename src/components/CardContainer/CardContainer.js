@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
 const CardContainer = ({ entries, toggleFavorites, favorites }) => {
-  // console.log(entries)
-  let cards;
-
-  cards = entries.map(entry => (
+  const cards = entries.map(entry => (
     <Card
       entry={entry}
       key={entry.name}
@@ -25,9 +22,9 @@ const CardContainer = ({ entries, toggleFavorites, favorites }) => {
 };
 
 CardContainer.propTypes = {
-  entries: PropTypes.array,
-  toggleFavorites: PropTypes.func,
-  favorites: PropTypes.array,
+  entries: PropTypes.shape([]).isRequired,
+  toggleFavorites: PropTypes.func.isRequired,
+  favorites: PropTypes.shape([]).isRequired,
 };
 
 export default CardContainer;
