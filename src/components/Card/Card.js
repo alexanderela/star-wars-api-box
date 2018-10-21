@@ -35,9 +35,9 @@ const Card = ({
 };
 
 Card.propTypes = {
-  entry: PropTypes.shape({}).isRequired,
+  entry: PropTypes.object.isRequired,
   toggleFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.shape([]).isRequired,
+  favorites: PropTypes.array.isRequired,
   isFavorite: PropTypes.bool.isRequired,
 };
 
