@@ -17,7 +17,7 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 
 	return (
 		<div className="Card">
-	    <div className="fav-btns-card-container">
+	    <div className="fav-btn-card-container">
 		    <h3>{entry.name}</h3>
 		    <button 
 		    	className={ `fav-btn 
