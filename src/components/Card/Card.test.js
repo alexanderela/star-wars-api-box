@@ -5,7 +5,7 @@ import Card from './Card';
 import { shallow, mount } from 'enzyme';
 import people from '../../mockData/mockPeople.js';
 
-describe('Card', () => {
+describe('Card component', () => {
 	let wrapper;
 	let mockFavs;
 	let mockEntry;
@@ -48,8 +48,8 @@ describe('Card', () => {
 						] 
 	        }
 	mockFavs = [{
-          name: "Dina Carballo",
-          id: "Dina Carballo",
+          name: "Dina Caraballo",
+          id: "Dina Caraballo",
           isFavorite: true, 
           type:"people",
           properties: [
@@ -116,8 +116,29 @@ describe('Card', () => {
 		expect(mockToggleFavs).toHaveBeenCalled()
 	})
 
-	it('changes fav button class to active on click', () => {
-		mockEntry = {
+	it('changes fav button class to active if isFavorite is true', () => {
+		wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={[]} 
+			isFavorite={true}/>)
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-active')).toBe(true)
+	})
+
+	it('changes fav button class to inactive if card is not in the favorites array in state', () => {
+	  wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={[]} 
+			isFavorite={false}/>)
+
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
+	});
+
+	it('changes fav button class to active if card is in the favorites array in state', () => {
+	  mockEntry = {
 	          "name": "Luke Skywalker",
 	          "id": "Luke Skywalker",
 	          "isFavorite": true, 
@@ -129,157 +150,14 @@ describe('Card', () => {
 							{"header": 'Language: ', "text": "Galactic Basic"}
 						] 
 	        }
+
+	  wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={mockFavs} 
+			isFavorite={true}/>)
+
 		wrapper.find('button').simulate('click')
-		expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
-	})
-
-	it.only('changes fav button class to active on click', () => {
-	mockEntry = {
-          "name": "Luke Skywalker",
-          "id": "Luke Skywalker",
-          "isFavorite": true, 
-          "type":"people",
-          "properties": [
-						{"header": 'Homeworld: ', "text": "Tatooine"},
-						{"header": 'Species: ', "text": "human"},
-						{"header": 'Population: ', "text": "200,000"},
-						{"header": 'Language: ', "text": "Galactic Basic"}
-					] 
-        }
-	wrapper.find('button').simulate('click')
-	expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
-})
-
-	// it('highlights vehicle favorite button on click', () => {
-	// 	const mockVehicles = {
-	// 		"class": "wheeled", 
-	// 		"model": "Digger Crawler",
-	// 		"name": "Sand Crawler", 
-	// 		"passengers": "30",
-	// 		"id": "Sand Crawler",
-	// 		"isFavorite": false,
-	// 		"type": "vehicles"
-	// 	}	
-	// 	const mockAdd = jest.fn()	
-	// 	wrapper = shallow(<Card vehicles={mockVehicles} {...mockVehicles}
-	// 		addToFavorites={mockAdd}/>)		
-	// 	wrapper.find('.vehicle-fav').simulate('click')
-	// 	expect(wrapper.state().isSelected).toBe(true)
-	// })
-
-	// it('highlights planet favorite button on click', () => {
-	// 	const mockPlanets = {
-	// 		"name": "Alderaan", 
-	// 		"terrain": "grasslands, mountains", 
-	// 		"population": "2000000000", 
-	// 		"climate": "temperate", 
-	// 		"residents": 
-	// 		["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"],
- //      "id": "Alderaan",
-	// 		"isFavorite": false,
-	// 		"type": "planets"
-	// 	}
-	// 	const mockAdd = jest.fn()
-	// 	wrapper = shallow(<Card planets={mockPlanets} {...mockPlanets}
-	// 		addToFavorites={mockAdd}/>)		
-	// 	wrapper.find('.planet-fav').simulate('click')
-	// 	expect(wrapper.state().isSelected).toBe(true)
-	// })
-
-	// it('prints default entry if data provides no residents', () => {
-	// 	mockEntry = mockPlanet
-	// 	expect(wrapper.find('.planet-residents')).toBeDefined()
-	// })
-
-
-// })
-
-	// it('adds cards to favorites if card.type is true', () => {
-	// 	const mockPeople = {
- //          "name": "Luke Skywalker",
- //          "homeWorld": { 
- //            "planetName":"Tatooine",
- //            "planetPop": "200000"
- //            },
- //          "species": {
- //              "speciesName": "Human",
- //              "language": "Galactic Basic"
- //            },
- //          "id": "Luke Skywalker",
-	// 				"isFavorite": false,
-	// 				"type": "people"
- //        }
-
-	// 	const mockAdd = jest.fn()
-	// 	const wrapper = shallow(<Card 
-	// 		person={mockPeople} 
-	// 		addToFavorites={mockAdd}
-	// 		people={people} {...mockPeople}
-	// 	 />)
-	// 	const mockFavs = [{"name": "mustang", id: "mustang"}, {"name": "camaro", "id": "camaro"}]
-	// 	wrapper.state().favorites = mockFavs
-	// 	wrapper.instance().selectCard(mockPeople)
-	// 	expect(mockAdd).toHaveBeenCalled()		
-	// })
-
-	// it('removes cards from favorites if card.type is false', () => {
-	// 	const mockPeople = {
- //          "name": "Luke Skywalker",
- //          "homeWorld": { 
- //            "planetName":"Tatooine",
- //            "planetPop": "200000"
- //            },
- //          "species": {
- //              "speciesName": "Human",
- //              "language": "Galactic Basic"
- //            },
- //          "id": "Luke Skywalker",
-	// 				"isFavorite": true,
-	// 				"type": "people"
- //        }
-	// 	const mockRemove = jest.fn()
-	// 	const wrapper = shallow(<Card 
-	// 		person={mockPeople} 
-	// 		removeFromFavorites={mockRemove}
-	// 		people={people} {...mockPeople}/>)
-	// 	wrapper.instance().selectCard(mockPeople)
-	// 	expect(mockRemove).toHaveBeenCalled()		
-	// })
-
-// describe('componentDidMount', () => {
-// 	it.only('sets isSelected state to true if item is in favorites', () => {
-// 		const wrapper = shallow(<Card favorites={people.results}/>)
-// 		wrapper.instance().componentDidMount()
-// 		expect(wrapper.state().isSelected).toBe(true)
-// 	})
-
-	// it('doesnt change isSelected state if item is already in favorites', () => {
-		
-
-	// })
-
-})
-
-	// it('toggles isFavorite property upon calling selectCard', () => {
-	// 	const mockPeople = {
- //          "name": "Luke Skywalker",
- //          "homeWorld": { 
- //            "planetName":"Tatooine",
- //            "planetPop": "200000"
- //            },
- //          "species": {
- //              "speciesName": "Human",
- //              "language": "Galactic Basic"
- //            },
- //          "id": "Luke Skywalker",
-	// 				"isFavorite": true,
-	// 				"type": "people"
- //        }
-	// 	const mockRemove = jest.fn()        
-	// 	const wrapper = shallow(<Card 
-	// 		person={mockPeople} 
-	// 		removeFromFavorites={mockRemove}
-	// 		people={people} {...mockPeople}/>)
-	// 	wrapper.instance().selectCard(mockPeople)
-	// 	expect(mockPeople.prop().isFavorite).toBe(false)		
-	// })		
+		expect(wrapper.find('button').hasClass('fav-btn-active')).toBe(true)
+	});
+})	

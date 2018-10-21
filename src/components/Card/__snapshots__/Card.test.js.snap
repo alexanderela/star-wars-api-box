@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card matches the snapshot 1`] = `
+exports[`Card component matches the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
@@ -33,9 +33,9 @@ ShallowWrapper {
     favorites={
       Array [
         Object {
-          "id": "Dina Carballo",
+          "id": "Dina Caraballo",
           "isFavorite": true,
-          "name": "Dina Carballo",
+          "name": "Dina Caraballo",
           "properties": Array [
             Object {
               "header": "Homeworld: ",
@@ -80,6 +80,30 @@ ShallowWrapper {
           ],
           "type": "people",
         },
+        Object {
+          "id": "Luke Skywalker",
+          "isFavorite": true,
+          "name": "Luke Skywalker",
+          "properties": Array [
+            Object {
+              "header": "Homeworld: ",
+              "text": "Tatooine",
+            },
+            Object {
+              "header": "Species: ",
+              "text": "human",
+            },
+            Object {
+              "header": "Population: ",
+              "text": "200,000",
+            },
+            Object {
+              "header": "Language: ",
+              "text": "Galactic Basic",
+            },
+          ],
+          "type": "people",
+        },
       ]
     }
     isFavorite={false}
@@ -100,7 +124,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="fav-btns-card-container"
+          className="fav-btn-card-container"
         >
           <h3>
             Luke Skywalker
@@ -181,7 +205,7 @@ ShallowWrapper {
               />
             </button>,
           ],
-          "className": "fav-btns-card-container",
+          "className": "fav-btn-card-container",
         },
         "ref": null,
         "rendered": Array [
@@ -368,7 +392,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <div
-            className="fav-btns-card-container"
+            className="fav-btn-card-container"
           >
             <h3>
               Luke Skywalker
@@ -449,7 +473,7 @@ ShallowWrapper {
                 />
               </button>,
             ],
-            "className": "fav-btns-card-container",
+            "className": "fav-btn-card-container",
           },
           "ref": null,
           "rendered": Array [
