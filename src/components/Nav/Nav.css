@@ -33,11 +33,11 @@
   margin: 16px 0px;
   padding: 0px;
   padding-left: 0px;
-  transition: 
+/*  transition: 
     color 0.2s ease, 
     padding 0.2s ease, 
     text-shadow 0.2s ease,
-    width 0.5s ease;
+    width 0.5s ease;*/
   width: 12rem;
 }
 
@@ -52,7 +52,7 @@
 
 .cat-button:hover {
   border-left: gray double 15px;
-  color:black;
+  color: #000;
   cursor: pointer;
   padding:0px 16px 0px 0px;
 }
@@ -90,5 +90,32 @@
   .cat-button {
     font-size: 1.75rem;
     width: 10rem;
+  }
+}
+
+
+@media (max-width: 860px) {
+  .cat-button {
+    font-size: 1.5rem;
+    width: 8rem;
+  }
+  .favorites-count {
+    width: 1rem;
+  }
+}
+
+@media (max-width: 690px) {
+  .cat-button {
+    font-size: 1.25rem;
+    width: 6rem;
+  }
+  .favorites-count {
+    width: 0.5rem;
+  }
+}
+
+@media (max-width: 405px) {
+  .favorites-count {
+    width: 0.5rem;
   }
 }
