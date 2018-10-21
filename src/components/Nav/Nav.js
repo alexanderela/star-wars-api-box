@@ -16,11 +16,9 @@ class Nav extends Component {
 		}
 	}
 
-	handlePeopleClick = (e) => {
+	handlePeopleClick = () => {
 		if (this.state.peopleSelected === true) {
-			const { name } = e.target
 			this.setState({ peopleSelected: false })
-			// this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: true,      
@@ -32,8 +30,7 @@ class Nav extends Component {
 		}
 	}
 
-	handlePlanetClick = (e) => {
-		const { name } = e.target
+	handlePlanetClick = () => {
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })
 		} else {
@@ -47,11 +44,9 @@ class Nav extends Component {
 		}
 	}
 
-	handleVehicleClick = (e) => {
-		const { name } = e.target
+	handleVehicleClick = () => {
 		if (this.state.vehiclesSelected === true) {
 			this.setState({ vehiclesSelected: false })
-			// this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 				
 				peopleSelected: false,      
@@ -63,11 +58,9 @@ class Nav extends Component {
 		}
 	}
 
-	handleFavoritesClick = (e) => {
-		const { name } = e.target
+	handleFavoritesClick = () => {
 		if (this.state.favoritesSelected === true) {
 			this.setState({ favoritesSelected: false })
-			// this.props.toggleCategoryState(name)
 		} else {
 			this.setState({
 				peopleSelected: false,
