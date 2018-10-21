@@ -128,7 +128,6 @@ class App extends Component {
     if (!localStorage.people) {
       await this.getPeople()
     } else if (localStorage.people) {
-      console.log('hitting conditional else block')
       const retrievedPeople = this.getLocalStorage('people')
       this.setState({ 
         people: retrievedPeople,
@@ -198,7 +197,6 @@ class App extends Component {
             showPeople={this.showPeople}
             showPlanet={this.showPlanets}
             showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
             favorites={favorites}
             toggleErrorPopup={this.toggleErrorPopup}

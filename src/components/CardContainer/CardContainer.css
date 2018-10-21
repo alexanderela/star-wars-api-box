@@ -7,3 +7,9 @@
   grid-template-columns: repeat( auto-fit, minmax(17rem, 1fr) );
   margin: 0 5rem 3rem;
 }
+
+@media (max-width: 720px) {
+  .CardContainer {
+   margin: 0 auto 3rem
+  }
+}
