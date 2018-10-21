@@ -46,7 +46,7 @@ class App extends Component {
       return card
     })
 
-    if (!this.inFavorites(entry)) {
+    if (!this.isInFavorites(entry)) {
       favorites = [...this.state.favorites, entry]
     } else {
       favorites = this.state.favorites.filter(card => card.id !== id)      
@@ -57,7 +57,7 @@ class App extends Component {
     await this.setLocalStorage( [type], category)
   }
 
-  inFavorites = (entry) => {
+  isInFavorites = (entry) => {
     return this.state.favorites.find((fav) => fav.id === entry.id)
   }
 

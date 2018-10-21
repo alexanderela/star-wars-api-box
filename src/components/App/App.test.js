@@ -33,6 +33,43 @@ let mockVehicle;
 let mockPlanet;
 let mockFilm;
 let expected;
+let mockEntry;
+let	mockFavs = [{
+          name: "Dina Caraballo",
+          id: "Dina Caraballo",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        },
+        {
+          name: "Alex Ela",
+          id: "Alex Ela",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        }, 
+        {
+          "name": "Luke Skywalker",
+          "id": "Luke Skywalker",
+          "isFavorite": true, 
+          "type":"people",
+          "properties": [
+						{"header": 'Homeworld: ', "text": "Tatooine"},
+						{"header": 'Species: ', "text": "human"},
+						{"header": 'Population: ', "text": "200,000"},
+						{"header": 'Language: ', "text": "Galactic Basic"}
+						] 
+	        }]
 
 beforeEach(() => {
 	wrapper = shallow(<App />);	
@@ -89,34 +126,64 @@ describe('App component', () => {
 	})
 
 	describe('isInFavorites', () => {
-		xit('should find a match for the given entry', () => {
+		it('should find a match for the given entry', () => {
+			mockEntry =	{
+        "name": "Luke Skywalker",
+        "id": "Luke Skywalker",
+        "isFavorite": true, 
+        "type":"people",
+        "properties": [
+					{"header": 'Homeworld: ', "text": "Tatooine"},
+					{"header": 'Species: ', "text": "human"},
+					{"header": 'Population: ', "text": "200,000"},
+					{"header": 'Language: ', "text": "Galactic Basic"}
+					] 
+        }
 
+      wrapper.setState({ favorites: mockFavs })
+			expect(wrapper.instance().isInFavorites(mockEntry)).toEqual(mockEntry)
 		})
 	})
 
 	describe('toggleErrorPopup', () => {
-		xit('should reverse the state of showError popup', () => {
-
+		it('should reverse the state of showError popup', () => {
+			wrapper.instance().toggleErrorPopup()
+			expect(wrapper.state().showErrorPopup).toBe(true)
 		})
 	})
 
 	describe('showFavorites', () => {
-		xit('if there are favorites it should change favoritesSelected to true', () => {
-
+		it('if there are favorites it should change favoritesSelected to true', () => {
+			wrapper.setState({ favorites: mockFavs })
+			wrapper.instance().showFavorites()
+			expect(wrapper.state().favoritesSelected).toBe(true)
 		})
 
-		xit('if there are no favorites it should trigger error message to be displayed', () => {
-
+		it('if there are no favorites it should call toggleErrorPopup', () => {
+			const spy = spyOn(wrapper.instance(), 'toggleErrorPopup')
+			wrapper.setState({ favorites: [] })
+			wrapper.instance().showFavorites()
+			expect(spy).toHaveBeenCalled()
 		})
 	})
 
 	describe('getFilm', () => {
-		xit('should call getMovie', () => {
-
+		beforeEach(() => {
+			const mockDataCleaner = new DataCleaner
+			wrapper.setState({ dataCleaner: mockDataCleaner})
 		})
 
-		xit('should setState', () => {
+		it('should call getMovie', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getMovie')
+			await wrapper.instance().getFilm()
+			await expect(spy).toHaveBeenCalled()
+		})
 
+		it('should setState', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getMovie')
+			expected = await wrapper.state().dataCleaner.getMovie()
+			await wrapper.instance().getFilm()
+			await expect(wrapper.state().films).toEqual(expected)
 		})
 	})
 
