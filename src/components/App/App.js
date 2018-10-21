@@ -113,19 +113,6 @@ class App extends Component {
     }
   }
 
-  toggleCategoryState = (categoryName) => {
-    if (categoryName === 'people') {
-      this.setState({ peopleSelected: true })
-      this.showPeople()
-    } else if (categoryName === 'planets') {
-      this.setState({ planetsSelected: true })
-      this.showPlanets()
-    } else if (categoryName === 'vehicles') {
-      this.setState({ vehiclesSelected: true })
-      this.showVehicles()
-    }
-  }
-
   setLocalStorage = (key, category) => {
     localStorage.setItem(key, JSON.stringify(category))
   }

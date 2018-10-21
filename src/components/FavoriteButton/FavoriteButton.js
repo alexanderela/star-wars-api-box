@@ -4,11 +4,15 @@ import { Route, NavLink } from 'react-router-dom';
 import './FavoriteButton.css';
 import PropTypes from 'prop-types';
 
-const FavoriteButton = ({ favorites, showFavorites }) => (
+const FavoriteButton = ({ favorites, handleFavoritesClick, favoritesSelected }) => (
   <div className="FavoriteButton">
     <button
-      className="cat-button favorites-button"
-      onClick={() => showFavorites()}
+      className={`cat-button favorites-button 
+            ${favoritesSelected 
+              ? "cat-button-active" 
+              : "cat-button-inactive" }`}
+      name="favorites"
+      onClick={(e) => handleFavoritesClick(e)}
     >
       <NavLink to="/favorites" className="nav">Favorites</NavLink>
       <span
@@ -25,7 +29,8 @@ FavoriteButton.propTypes = {
     PropTypes.array,
     PropTypes.number,
   ]),
-  showFavorites: PropTypes.func,
+  handleFavoritesClick: PropTypes.func,
+  favoritesSelected: PropTypes.bool
 };
 
 export default FavoriteButton;
