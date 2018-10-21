@@ -1,8 +1,10 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow, mount } from 'enzyme';
-import DataCleaner from '../../helper.js';
+import { BrowserRouter } from 'react-router-dom';
+import DataCleaner from '../../DataCleaner.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 import Nav from '../Nav/Nav.js';
 import films from '../../mockData/mockFilms.js';
@@ -14,11 +16,15 @@ import mockPerson from '../../mockData/mockPerson.js';
 import mockSpecies from '../../mockData/mockSpecies.js';
 
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(
+  <BrowserRouter>
+  	<App />
+  </BrowserRouter>, 
+  div);
+  ReactDOM.unmountComponentAtNode(div);
+});
 
 let wrapper;
 let mockEvent;
@@ -27,182 +33,276 @@ let mockVehicle;
 let mockPlanet;
 let mockFilm;
 let expected;
+let mockEntry;
+let	mockFavs = [{
+          name: "Dina Caraballo",
+          id: "Dina Caraballo",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        },
+        {
+          name: "Alex Ela",
+          id: "Alex Ela",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        }, 
+        {
+          "name": "Luke Skywalker",
+          "id": "Luke Skywalker",
+          "isFavorite": true, 
+          "type":"people",
+          "properties": [
+						{"header": 'Homeworld: ', "text": "Tatooine"},
+						{"header": 'Species: ', "text": "human"},
+						{"header": 'Population: ', "text": "200,000"},
+						{"header": 'Language: ', "text": "Galactic Basic"}
+						] 
+	        }]
 
 beforeEach(() => {
 	wrapper = shallow(<App />);	
 	mockEvent = { target: true }
 })
 
+afterEach(() => {
+	localStorage.clear()
+})
 
 describe('App component', () => {
 	it('matches the snapshot', () => {
 		expect(wrapper).toMatchSnapshot();
 	})
 
-	it('has the correct default state for films', () => {
+	it('has the correct default state for all categories', () => {
 		expect(wrapper.state().films).not.toBe('{}')
-	}) //Does this apply to the App component itself or a function within the App?
+		expect(wrapper.state().people).toEqual([])
+		expect(wrapper.state().vehicles).toEqual([])
+		expect(wrapper.state().planets).toEqual([])
+		expect(wrapper.state().favorites).toEqual([])
+	})
 
 	it('passes the correct favoritesCount props to Nav', () => {
-		wrapper.setState({ favorites: [] })
+		wrapper.setState({ favorites: [{name: 'alvin', type: 'chipmunk'}] })
 		const navComponent = wrapper.find(Nav)
-		expect(navComponent.props().favoritesCount).toEqual(0)
+		expect(navComponent.props().favorites.length).toEqual(1)
 	})
 
 	it('passes favoritesCount props to Nav if they exist in state', () => {
 		const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
 		wrapper.setState({ favorites: mockVehicles })
 		const navComponent = wrapper.find(Nav)
-		expect(navComponent.props().favoritesCount).toEqual(2)
+		expect(navComponent.props().favorites.length).toEqual(2)
 	})
 
 	describe('componentDidMount', () => {
-		it('invokes getFilm function on componentDidMount', () => {
+		it('invokes corrects functions on componentDidMount', () => {
 			wrapper.instance().getFilm = jest.fn()
+			wrapper.instance().showPeople = jest.fn()
+			wrapper.instance().showVehicles = jest.fn()
+			wrapper.instance().showPlanets = jest.fn()
+			wrapper.instance().getFavorites = jest.fn()
 			wrapper.instance().componentDidMount()
 			expect(wrapper.instance().getFilm).toHaveBeenCalled()
+			expect(wrapper.instance().showPeople).toHaveBeenCalled()
+			expect(wrapper.instance().showVehicles).toHaveBeenCalled()
+			expect(wrapper.instance().showPlanets).toHaveBeenCalled()
+			expect(wrapper.instance().getFavorites).toHaveBeenCalled()
 		})
 	})
 
 	describe('toggleFavorites', () => {
 		it('adds cards to favorites if not already contained in the favorites array', () => {
-			const card = { "name": "Luke Skywalker", "species": "human" }
-			const expected = [card]
-			wrapper.instance().addToFavorites(card)
+			mockEntry = {
+		        "name": "Sand Cralwer",
+		        "id": "Sand Cralwer",
+		        "isFavorite": false, 
+		        "type":"vehicles",
+		        "properties": [
+							{"header": 'Model: ', "text": "Digger Crawler"},
+							{"header": 'Class: ', "text": "wheeled"},
+							{"header": 'Passengers: ', "text": "1"}
+						] 
+		      }
+			wrapper.setState({ favorites: []})
+			wrapper.instance().toggleFavorites(mockEntry)
+			expect(wrapper.state().favorites).toEqual([mockEntry])
+		})
+
+		it('removes cards from favorites if they are already in favorites array', async () => {
+			expected = [{
+          name: "Dina Caraballo",
+          id: "Dina Caraballo",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        },
+        {
+          name: "Alex Ela",
+          id: "Alex Ela",
+          isFavorite: true, 
+          type:"people",
+          properties: [
+						{header: 'Homeworld: ', text: "Earth"},
+						{header: 'Species: ', text: "human"},
+						{header: 'Population: ', text: "7,000,000,000"},
+						{header: 'Language: ', text: "Galactic Basic"}
+					] 
+        }]
+			mockEntry =	{
+        "name": "Luke Skywalker",
+        "id": "Luke Skywalker",
+        "isFavorite": true, 
+        "type":"people",
+        "properties": [
+					{"header": 'Homeworld: ', "text": "Tatooine"},
+					{"header": 'Species: ', "text": "human"},
+					{"header": 'Population: ', "text": "200,000"},
+					{"header": 'Language: ', "text": "Galactic Basic"}
+					] 
+        }
+			wrapper.setState({ favorites: mockFavs })
+			wrapper.instance().toggleFavorites(mockEntry)
 			expect(wrapper.state().favorites).toEqual(expected)
 		})
-	
-		it('removes cards from favorites array', () => {
-			expected = []
-			const mockId = "Luke"
-			const mockCard = [{ "name": "Luke", "id": "Luke" }]
-			wrapper.setState({ favorites: mockCard })
-			wrapper.instance().removeFromFavorites(mockId)
-			expect(wrapper.state().favorites).toEqual(expected)
-		})
-		//sets local storage
+
 	})
 
 	describe('isInFavorites', () => {
 		it('should find a match for the given entry', () => {
+			mockEntry =	{
+        "name": "Luke Skywalker",
+        "id": "Luke Skywalker",
+        "isFavorite": true, 
+        "type":"people",
+        "properties": [
+					{"header": 'Homeworld: ', "text": "Tatooine"},
+					{"header": 'Species: ', "text": "human"},
+					{"header": 'Population: ', "text": "200,000"},
+					{"header": 'Language: ', "text": "Galactic Basic"}
+					] 
+        }
 
+      wrapper.setState({ favorites: mockFavs })
+			expect(wrapper.instance().isInFavorites(mockEntry)).toEqual(mockEntry)
 		})
 	})
 
 	describe('toggleErrorPopup', () => {
 		it('should reverse the state of showError popup', () => {
-
+			wrapper.instance().toggleErrorPopup()
+			expect(wrapper.state().showErrorPopup).toBe(true)
 		})
 	})
 
 	describe('showFavorites', () => {
 		it('if there are favorites it should change favoritesSelected to true', () => {
-
+			wrapper.setState({ favorites: mockFavs })
+			wrapper.instance().showFavorites()
+			expect(wrapper.state().favoritesSelected).toBe(true)
 		})
 
-		it('if there are no favorites it should trigger error message to be displayed', () => {
-
+		it('if there are no favorites it should call toggleErrorPopup', () => {
+			const spy = spyOn(wrapper.instance(), 'toggleErrorPopup')
+			wrapper.setState({ favorites: [] })
+			wrapper.instance().showFavorites()
+			expect(spy).toHaveBeenCalled()
 		})
 	})
 
 	describe('getFilm', () => {
-		it('should call getMovie', () => {
-
+		beforeEach(() => {
+			const mockDataCleaner = new DataCleaner
+			wrapper.setState({ dataCleaner: mockDataCleaner})
 		})
 
-		it('should setState', () => {
+		it('should call getMovie', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getMovie')
+			await wrapper.instance().getFilm()
+			await expect(spy).toHaveBeenCalled()
+		})
 
+		it('should setState', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getMovie')
+			expected = await wrapper.state().dataCleaner.getMovie()
+			await wrapper.instance().getFilm()
+			await expect(wrapper.state().films).toEqual(expected)
 		})
 	})
 
 	describe('getPeople', () => {
-		it('should call getPerson', () => {
-
+		beforeEach(() => {
+			const mockDataCleaner = new DataCleaner
+			wrapper.setState({ dataCleaner: mockDataCleaner})
 		})
 
-		it('should setState', () => {
-			
+		it('should call getPerson', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getPerson')
+			await wrapper.instance().getPeople()
+			await expect(spy).toHaveBeenCalled()
+		})
+
+		it('should setState', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getPerson')
+			expected = await wrapper.state().dataCleaner.getPerson()
+			await wrapper.instance().getPeople()
+			await expect(wrapper.state().people).toEqual(expected)
 		})
 	})
 
 	describe('getPlanets', () => {
-		it('should call getPlanet', () => {
-
+		beforeEach(() => {
+			const mockDataCleaner = new DataCleaner
+			wrapper.setState({ dataCleaner: mockDataCleaner})
 		})
 
-		it('should setState', () => {
-			
+		it('should call getPlanet', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getPlanet')
+			await wrapper.instance().getPlanets()
+			await expect(spy).toHaveBeenCalled()
+		})
+
+		it('should setState', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getPlanet')
+			expected = await wrapper.state().dataCleaner.getPlanet()
+			await wrapper.instance().getPlanets()
+			await expect(wrapper.state().planets).toEqual(expected)
 		})
 	})
 
 	describe('getVehicles', () => {
-		it('should call getVehicle', () => {
-
+		beforeEach(() => {
+			const mockDataCleaner = new DataCleaner
+			wrapper.setState({ dataCleaner: mockDataCleaner})
 		})
 
-		it('should setState', () => {
-			
-		})
-	})
-
-	// describe('showFilm', () => {
-	// 	it('sets film to state', async () => {
-	// 		mockFilm = {
-	// 			opening_crawl: "Heyy youu guyyyys", 
-	// 			episode_id: 7, 
-	// 			title: "The Force Awakens"
-	// 		}
-	// 		wrapper.state().dataCleaner.getMovie = jest.fn().mockImplementation(() => Promise.resolve(
-	// 			mockFilm))
-	// 		await wrapper.instance().showFilm()
-	// 		await expect(wrapper.state().films).toEqual(mockFilm)
-	// 	})
-	// })
-
-	describe('toggleCategoryState', () => {
-		it('selects people in state when toggleCategory is called', () => {
-			const category = 'people'
-			wrapper.setState({ peopleSelected: false })
-			wrapper.instance().toggleCategoryState(category)
-			expect(wrapper.state().peopleSelected).toEqual(true)
+		it('should call getVehicle', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getVehicle')
+			await wrapper.instance().getVehicles()
+			await expect(spy).toHaveBeenCalled()
 		})
 
-		it('invokes showPeople when toggleCategory is called', () => {
-			const instance = wrapper.instance()
-			const category = 'people'
-			const spy = jest.spyOn(instance, 'showPeople')
-			wrapper.instance().toggleCategoryState(category)
-			expect(spy).toHaveBeenCalled()
-		})
-
-		it('selects vehicles in state when toggleCategory is called', () => {
-			const category = 'vehicles'
-			wrapper.setState({ vehiclesSelected: false })
-			wrapper.instance().toggleCategoryState(category)
-			expect(wrapper.state().vehiclesSelected).toEqual(true)
-		})
-
-		it('invokes showVehicles when toggleCategory is called', () => {
-			const instance = wrapper.instance()
-			const category = 'vehicles'
-			const spy = jest.spyOn(instance, 'showVehicles')
-			wrapper.instance().toggleCategoryState(category)
-			expect(spy).toHaveBeenCalled()
-		})
-
-		it('selects planets in state when toggleCategory is called', () => {
-			const category = 'planets'
-			wrapper.setState({ planetsSelected: false })
-			wrapper.instance().toggleCategoryState(category)
-			expect(wrapper.state().planetsSelected).toEqual(true)
-		})
-
-		it('invokes showPlanets when toggleCategory is called', () => {
-			const instance = wrapper.instance()
-			const category = 'planets'
-			const spy = jest.spyOn(instance, 'showPlanets')
-			wrapper.instance().toggleCategoryState(category)
-			expect(spy).toHaveBeenCalled()
+		it('should setState', async () => {
+			const spy = spyOn(wrapper.state().dataCleaner, 'getVehicle')
+			expected = await wrapper.state().dataCleaner.getVehicle()
+			await wrapper.instance().getVehicles()
+			await expect(wrapper.state().vehicles).toEqual(expected)
 		})
 	})
 
@@ -229,113 +329,77 @@ describe('App component', () => {
 	})
 
 	describe('showPeople', () => {
-		it('should toggle the state of people if it is already selected', async () => {
-			mockFilm = {
-				opening_crawl: "Heyy youu guyyyys", 
-				episode_id: 7, 
-				title: "The Force Awakens"
-			}
-			wrapper.setState({ peopleSelected: true, films: mockFilm })
-			await wrapper.instance().showPeople()
-			await expect(wrapper.state().peopleSelected).toBe(false)
-		})
-
 		it('sets people to state ', async () => {
-				mockLuke = {
-		      "name": "Luke Skywalker",
-		      "homeWorld": { 
-		        "planetName":"Tatooine",
-		        "planetPop": "200000"
-		        },
-		      "species": {
-		          "speciesName": "Human",
-		          "language": "Galactic Basic"
-		        }
-		    }
+			mockLuke = {
+        "name": "Luke Skywalker",
+        "id": "Luke Skywalker",
+        "isFavorite": false, 
+        "type":"people",
+        "properties": [
+					{"header": 'Homeworld: ', "text": "Tatooine"},
+					{"header": 'Species: ', "text": "human"},
+					{"header": 'Population: ', "text": "200,000"},
+					{"header": 'Language: ', "text": "Galactic Basic"}
+				] 
+      }
 			wrapper.state().dataCleaner.getPerson = jest.fn().mockImplementation(() => Promise.resolve(
 		 		mockLuke))
 			await wrapper.instance().showPeople()
 		  await expect(wrapper.state().people).toEqual(mockLuke)
 		})
-
-		it('renders a card container displaying people if peopleSelected is true', () => {
-			wrapper.setState({ peopleSelected: true })
-		  const spy = spyOn(wrapper.instance(), 'showPeople');
-		  wrapper.instance().showPeople()
+		
+		it('calls getVehicles if there are no vehicles in local storage', async () => {
+			const spy = spyOn(wrapper.instance(), 'showVehicles')
+			localStorage.clear()
+			wrapper.instance().showVehicles()
 			expect(spy).toHaveBeenCalled()
+		})
+
+		it('retrieves vehicles from local storage if there are vehicles in local storage', async () => {
+			localStorage.setItem('vehicles', JSON.stringify(mockFavs))
+			const spy = spyOn(wrapper.instance(), 'getLocalStorage')	
+			wrapper.instance().showVehicles()	
+			expect(spy).toHaveBeenCalled()				
 		})
 	})
 
-	// describe('checkLocalStoragePeople', () => {
-	// 	it('gets people data from local storage if it already exists there', () => {
-	// 		const mockPeople = [{ "name": "Luke", "species": "human" }]
-	// 		wrapper.instance().setLocalStorage('people', mockPeople)	
-	// 		wrapper.instance().checkLocalStoragePeople(mockPeople)
-	// 		expect(wrapper.state().people).toEqual(mockPeople)
-	// 		localStorage.clear()
-	// 	})
-	// })
-
 	describe('showVehicles', () => {
-		it('should toggle the state of vehicles if it is already selected', async () => {
-			mockFilm = {
-				opening_crawl: "Heyy youu guyyyys", 
-				episode_id: 7, 
-				title: "The Force Awakens"
-			}
-			wrapper.setState({ vehiclesSelected: true, films: mockFilm })
-			await wrapper.instance().showVehicles()
-			await expect(wrapper.state().vehiclesSelected).toBe(false)
+		beforeEach(() => {
+			mockVehicle = {
+          "name": "Sand Cralwer",
+          "id": "Sand Cralwer",
+          "isFavorite": false, 
+          "type":"vehicles",
+          "properties": [
+						{"header": 'Model: ', "text": "Digger Crawler"},
+						{"header": 'Class: ', "text": "wheeled"},
+						{"header": 'Passengers: ', "text": "1"}
+					] 
+        }
 		})
-
 		it('sets vehicles to state ', async () => {
-				mockVehicle = {
-					"class": "wheeled", 
-					"model": "Digger Crawler",
-					"name": "Sand Crawler", 
-					"passengers": "30"
-				}		
 			wrapper.state().dataCleaner.getVehicle = jest.fn().mockImplementation(() => Promise.resolve(
 		 		mockVehicle))
 			await wrapper.instance().showVehicles()
 		  await expect(wrapper.state().vehicles).toEqual(mockVehicle)
 		})
 
-		it('renders a card container displaying vehicles if vehiclesSelected is true', () => {
-			wrapper.setState({ vehiclesSelected: true })
-			const spy = spyOn(wrapper.instance(), 'showVehicles');
-			wrapper.instance().showVehicles()
+		it('calls getPeople if there are no people in local storage', async () => {
+			const spy = spyOn(wrapper.instance(), 'showPeople')
+			localStorage.clear()
+			wrapper.instance().showPeople()
 			expect(spy).toHaveBeenCalled()
+		})
+
+		it('retrieves people from local storage if there are people in local storage', async () => {
+			localStorage.setItem('people', JSON.stringify(mockVehicle))
+			const spy = spyOn(wrapper.instance(), 'getLocalStorage')	
+			wrapper.instance().showPeople()	
+			expect(spy).toHaveBeenCalled()				
 		})
 	})
 
-	// describe('checkLocalStorageVehicles', () => {
-	// 	it('gets vehicle data from local storage if it already exists there', () => {
-	// 		mockVehicle = [{
-	// 			"class": "wheeled", 
-	// 			"model": "Digger Crawler",
-	// 			"name": "Sand Crawler", 
-	// 			"passengers": "30"
-	// 		}]
-	// 		wrapper.instance().setLocalStorage('vehicles', mockVehicle)	
-	// 		wrapper.instance().checkLocalStorageVehicles(mockVehicle)
-	// 		expect(wrapper.state().vehicles).toEqual(mockVehicle)
-	// 		localStorage.clear()
-	// 	})
-	// })
-
 	describe('showPlanets', () => {
-		it('should toggle the state of planets if it is already selected', async () => {
-			mockFilm = {
-				opening_crawl: "Heyy youu guyyyys", 
-				episode_id: 7, 
-				title: "The Force Awakens"
-			}
-			wrapper.setState({ planetsSelected: true, films: mockFilm })
-			await wrapper.instance().showPlanets()
-			await expect(wrapper.state().planetsSelected).toBe(false)
-		})
-
 		it('sets planets to state ', async () => {
 			mockPlanet = {"name": "Alderaan", 
 				"terrain": "grasslands, mountains", 
@@ -346,27 +410,20 @@ describe('App component', () => {
 		 		mockPlanet))
 			await wrapper.instance().showPlanets()
 		  await expect(wrapper.state().planets).toEqual(mockPlanet)	
-		})
-
-		it('renders a card container displaying planets if planetsSelected is true', () => {
-			wrapper.setState({ planetsSelected: true })
-			const spy = spyOn(wrapper.instance(), 'showPlanets');
-			wrapper.instance().showPlanets()
-			expect(spy).toHaveBeenCalled()	
-		})
 	})
 
-	// describe('checkLocalStoragePlanets', () => {
-	// 	it('gets planet data from local storage if it already exists there', () => {
-	// 		mockPlanet = [{"name": "Alderaan", 
-	// 			"terrain": "grasslands, mountains", 
-	// 			"population": "2000000000", "climate": "temperate", 
-	// 		"residents": 
-	// 			["Leia Organa", "Bail Prestor Organa", "Raymus Antilles"]}]
-	// 		wrapper.instance().setLocalStorage('planets', mockPlanet)	
-	// 		wrapper.instance().checkLocalStoragePlanets(mockPlanet)
-	// 		expect(wrapper.state().planets).toEqual(mockPlanet)
-	// 		localStorage.clear()
-	// 	})
-	// })
+		it('calls getPlanets if there are no planets in local storage', async () => {
+			const spy = spyOn(wrapper.instance(), 'showPlanets')
+			localStorage.clear()
+			wrapper.instance().showPlanets()
+			expect(spy).toHaveBeenCalled()
+		})
+
+		it('retrieves planets from local storage if there are planets in local storage', async () => {
+			localStorage.setItem('planets', JSON.stringify(mockVehicle))
+			const spy = spyOn(wrapper.instance(), 'getLocalStorage')	
+			wrapper.instance().showPlanets()	
+			expect(spy).toHaveBeenCalled()				
+		})
+	})
 })

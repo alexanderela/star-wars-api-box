@@ -24,249 +24,50 @@ ShallowWrapper {
           <h1
             className="app-title"
           >
-            SWAPI Box
-          </h1>
-          <Nav
-            favoritesCount={0}
-            showPeople={[Function]}
-            showPlanet={[Function]}
-            showVehicle={[Function]}
-            toggleCategoryState={[Function]}
-          />
-        </header>,
-        <Sidebar
-          films={Object {}}
-        />,
-      ],
-      "className": "App",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h1
-              className="app-title"
+            SWAP
+            <span
+              className="title-i"
             >
-              SWAPI Box
-            </h1>,
-            <Nav
-              favoritesCount={0}
-              showPeople={[Function]}
-              showPlanet={[Function]}
-              showVehicle={[Function]}
-              toggleCategoryState={[Function]}
-            />,
-          ],
-          "className": "header",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "SWAPI Box",
-              "className": "app-title",
-            },
-            "ref": null,
-            "rendered": "SWAPI Box",
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "favoritesCount": 0,
-              "showPeople": [Function],
-              "showPlanet": [Function],
-              "showVehicle": [Function],
-              "toggleCategoryState": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": "header",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "films": Object {},
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <header
-            className="header"
-          >
-            <h1
-              className="app-title"
-            >
-              SWAPI Box
-            </h1>
-            <Nav
-              favoritesCount={0}
-              showPeople={[Function]}
-              showPlanet={[Function]}
-              showVehicle={[Function]}
-              toggleCategoryState={[Function]}
-            />
-          </header>,
-          <Sidebar
-            films={Object {}}
-          />,
-        ],
-        "className": "App",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <h1
-                className="app-title"
-              >
-                SWAPI Box
-              </h1>,
-              <Nav
-                favoritesCount={0}
-                showPeople={[Function]}
-                showPlanet={[Function]}
-                showVehicle={[Function]}
-                toggleCategoryState={[Function]}
-              />,
-            ],
-            "className": "header",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "SWAPI Box",
-                "className": "app-title",
-              },
-              "ref": null,
-              "rendered": "SWAPI Box",
-              "type": "h1",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "favoritesCount": 0,
-                "showPeople": [Function],
-                "showPlanet": [Function],
-                "showVehicle": [Function],
-                "toggleCategoryState": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": "header",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "films": Object {},
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getDerivedStateFromProps": true,
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
-`;
-
-exports[`matches the snapshot 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "host",
-    "props": Object {
-      "children": Array [
-        <header
-          className="header"
-        >
-          <h1
-            className="app-title"
-          >
-            SWAPI Box
+              I
+            </span>
+             Box
           </h1>
           <Nav
             favorites={Array []}
+            showFavorites={[Function]}
             showPeople={[Function]}
             showPlanet={[Function]}
             showVehicle={[Function]}
-            toggleCategoryState={[Function]}
+            toggleErrorPopup={[Function]}
           />
         </header>,
-        false,
-        false,
-        false,
-        <Sidebar
-          films={Object {}}
+        <div
+          className="error-popup-placeholder"
+        />,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/people"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/vehicles"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/planets"
+          render={[Function]}
+        />,
+        <Route
+          exact={true}
+          path="/favorites"
+          render={[Function]}
         />,
       ],
       "className": "App",
@@ -282,14 +83,21 @@ ShallowWrapper {
             <h1
               className="app-title"
             >
-              SWAPI Box
+              SWAP
+              <span
+                className="title-i"
+              >
+                I
+              </span>
+               Box
             </h1>,
             <Nav
               favorites={Array []}
+              showFavorites={[Function]}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
-              toggleCategoryState={[Function]}
+              toggleErrorPopup={[Function]}
             />,
           ],
           "className": "header",
@@ -301,11 +109,34 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "SWAPI Box",
+              "children": Array [
+                "SWAP",
+                <span
+                  className="title-i"
+                >
+                  I
+                </span>,
+                " Box",
+              ],
               "className": "app-title",
             },
             "ref": null,
-            "rendered": "SWAPI Box",
+            "rendered": Array [
+              "SWAP",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "I",
+                  "className": "title-i",
+                },
+                "ref": null,
+                "rendered": "I",
+                "type": "span",
+              },
+              " Box",
+            ],
             "type": "h1",
           },
           Object {
@@ -314,10 +145,11 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "favorites": Array [],
+              "showFavorites": [Function],
               "showPeople": [Function],
               "showPlanet": [Function],
               "showVehicle": [Function],
-              "toggleCategoryState": [Function],
+              "toggleErrorPopup": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -326,15 +158,77 @@ ShallowWrapper {
         ],
         "type": "header",
       },
-      false,
-      false,
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "error-popup-placeholder",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "films": Object {},
+          "exact": true,
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/people",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/vehicles",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/planets",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites",
+          "render": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -356,21 +250,50 @@ ShallowWrapper {
             <h1
               className="app-title"
             >
-              SWAPI Box
+              SWAP
+              <span
+                className="title-i"
+              >
+                I
+              </span>
+               Box
             </h1>
             <Nav
               favorites={Array []}
+              showFavorites={[Function]}
               showPeople={[Function]}
               showPlanet={[Function]}
               showVehicle={[Function]}
-              toggleCategoryState={[Function]}
+              toggleErrorPopup={[Function]}
             />
           </header>,
-          false,
-          false,
-          false,
-          <Sidebar
-            films={Object {}}
+          <div
+            className="error-popup-placeholder"
+          />,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/people"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/vehicles"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/planets"
+            render={[Function]}
+          />,
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
           />,
         ],
         "className": "App",
@@ -386,14 +309,21 @@ ShallowWrapper {
               <h1
                 className="app-title"
               >
-                SWAPI Box
+                SWAP
+                <span
+                  className="title-i"
+                >
+                  I
+                </span>
+                 Box
               </h1>,
               <Nav
                 favorites={Array []}
+                showFavorites={[Function]}
                 showPeople={[Function]}
                 showPlanet={[Function]}
                 showVehicle={[Function]}
-                toggleCategoryState={[Function]}
+                toggleErrorPopup={[Function]}
               />,
             ],
             "className": "header",
@@ -405,11 +335,34 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "SWAPI Box",
+                "children": Array [
+                  "SWAP",
+                  <span
+                    className="title-i"
+                  >
+                    I
+                  </span>,
+                  " Box",
+                ],
                 "className": "app-title",
               },
               "ref": null,
-              "rendered": "SWAPI Box",
+              "rendered": Array [
+                "SWAP",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "I",
+                    "className": "title-i",
+                  },
+                  "ref": null,
+                  "rendered": "I",
+                  "type": "span",
+                },
+                " Box",
+              ],
               "type": "h1",
             },
             Object {
@@ -418,10 +371,11 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "favorites": Array [],
+                "showFavorites": [Function],
                 "showPeople": [Function],
                 "showPlanet": [Function],
                 "showVehicle": [Function],
-                "toggleCategoryState": [Function],
+                "toggleErrorPopup": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -430,15 +384,77 @@ ShallowWrapper {
           ],
           "type": "header",
         },
-        false,
-        false,
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "error-popup-placeholder",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "films": Object {},
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/people",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/vehicles",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/planets",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites",
+            "render": [Function],
           },
           "ref": null,
           "rendered": null,

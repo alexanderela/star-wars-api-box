@@ -19,7 +19,8 @@ class DataCleaner {
 		return ({
 			opening_crawl: film.opening_crawl,
 	 		episode_id: film.episode_id,
-	 		title: film.title
+	 		title: film.title,
+	 		date: film.release_date.slice(0,4)
 		})
 	}
 
@@ -42,10 +43,10 @@ class DataCleaner {
 			isFavorite: false,
 			type: 'people',
 			properties: [
-				`Home World: ${planetName}`,
-				`Species: ${speciesName}`,
-				`Population: ${planetPop}`,
-				`Language: ${language}`
+				{header: 'Homeworld: ', text: `${planetName}`},
+				{header: 'Species: ', text: `${speciesName}`},
+				{header: 'Population: ', text: `${planetPop}`},
+				{header: 'Language: ', text: `${language}`}
 			] 
 		}
 	})
@@ -57,9 +58,13 @@ class DataCleaner {
 		const homeWorldData = await fetchData(personHomeUrl)
 		const homeWorld = {
 			planetName: homeWorldData.name,
-			planetPop: homeWorldData.population
+			planetPop: this.numberCommas(homeWorldData.population)
 		}
 		return homeWorld
+	}
+
+	numberCommas(x) {
+  	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 	async getSpecies(person) {
@@ -88,10 +93,10 @@ class DataCleaner {
 				isFavorite: false,
 				type: 'planets',
 				properties: [
-					`Terrain: ${planet.terrain}`,
-					`Population: ${planet.population}`,
-					`Climate: ${planet.climate}`,
-					`Residents: ${await this.getResidents(planet.residents)}`
+					{header: 'Terrain: ', text: `${planet.terrain}`},
+					{header: 'Population: ', text: `${this.numberCommas(planet.population)}`},
+					{header: 'Climate: ', text: `${planet.climate}`},
+					{header: 'Residents: ', text: `${await this.getResidents(planet.residents)}`}
 				]
 			}
 		})
@@ -122,9 +127,9 @@ class DataCleaner {
 				isFavorite: false,
 				type: 'vehicles',
 				properties: [
-					`Model: ${vehicle.model}`,
-					`Class: ${vehicle.vehicle_class}`,
-					`Passengers: ${vehicle.passengers}`
+					{header: 'Model: ', text: `${vehicle.model}`},
+					{header: 'Class: ', text: `${vehicle.vehicle_class}`},
+					{header: 'Passengers: ', text: `${vehicle.passengers}`}
 				]
 			}
 		})

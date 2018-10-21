@@ -35,7 +35,7 @@ class Sidebar extends Component {
 			    <div className="title">
 			      <p>Episode {this.romanizeNum(films.episode_id)}</p>
 			      <h1 className="film-title">{films.title}</h1>
-			      <p>Released: {films.date}</p>
+			      <p>Released:  {films.date}</p>
 			    </div>
 			    
 			    <p>{films.opening_crawl}</p>

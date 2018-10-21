@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './Nav.css'
 import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import PropTypes from 'prop-types';
@@ -11,98 +12,109 @@ class Nav extends Component {
       peopleSelected: false,
       vehiclesSelected: false,
       planetsSelected: false,
+      favoritesSelected: false
 		}
 	}
 
-	handlePeopleClick = (e) => {
-		this.props.getPeople()
-    
+	handlePeopleClick = () => {
 		if (this.state.peopleSelected === true) {
-			const { name } = e.target
 			this.setState({ peopleSelected: false })
-			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: true,      
 				vehiclesSelected: false,
-      	planetsSelected: false 
+      	planetsSelected: false,
+      	favoritesSelected: false 
 			})	
 			this.props.showPeople()
 		}
 	}
 
-	handlePlanetClick = (e) => {
-		this.props.getPlanets()
-    
-		const { name } = e.target
+	handlePlanetClick = () => {
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })
-			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: false,      
 				vehiclesSelected: false,
-				planetsSelected: true 
+				planetsSelected: true,
+				favoritesSelected: false 
 			})	
 			this.props.showPlanet()
 		}
 	}
 
-	handleVehicleClick = (e) => {
-		this.props.getVehicles()
-
-		const { name } = e.target
+	handleVehicleClick = () => {
 		if (this.state.vehiclesSelected === true) {
 			this.setState({ vehiclesSelected: false })
-			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 				
 				peopleSelected: false,      
 				vehiclesSelected: true,
-				planetsSelected: false, 
+				planetsSelected: false,
+				favoritesSelected: false 
 			})	
 			this.props.showVehicle()
 		}
 	}
 
+	handleFavoritesClick = () => {
+		if (this.state.favoritesSelected === true) {
+			this.setState({ favoritesSelected: false })
+		} else {
+			this.setState({
+				peopleSelected: false,
+				vehiclesSelected: false,
+				planetsSelected: false,
+				favoritesSelected: true
+			})
+			this.props.showFavorites()
+		}
+	}
+
 render() {
 	const { showPeople, showVehicles, showPlanets, favorites, showFavorites, toggleErrorPopup } = this.props
-	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
+	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesSelected } = this.state
 
 	return(
-			<div className="button-container">
-				<div className="nav-buttons">
-				    <button 
-				      className={`cat-button people-button 
-				      	${peopleSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="people"
-				      onClick={this.handlePeopleClick}
-				    >People</button>
-				    <button 
-				      className={`cat-button planets-button 
-				      	${planetsSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="planets"
-				      onClick={this.handlePlanetClick}
-				    >Planets</button>
-				    <button 
-				      className={`cat-button vehicles-button 
-				      	${vehiclesSelected 
-				      		? "cat-button-active" 
-				      		: "cat-button-inactive" }`}
-				      name="vehicles"
-				      onClick={this.handleVehicleClick}
-				    >Vehicles</button>
-				    <FavoriteButton 
-				    	className="FavoriteButton"
-				    	favorites={favorites}
-				    	showFavorites={showFavorites}
-				    />
-				</div>
-			</div>
+		<div className="Nav">
+		    <button 
+		      className={`cat-button people-button 
+		      	${peopleSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="people"
+		      onClick={this.handlePeopleClick}
+		    >
+		    	<NavLink to="/people" className="nav">People</NavLink>
+		    </button>
+		    <button 
+		      className={`cat-button planets-button 
+		      	${planetsSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="planets"
+		      onClick={this.handlePlanetClick}
+		    >
+		    	<NavLink to="/planets" className="nav">Planets</NavLink>
+		    </button>
+		    <button 
+		      className={`cat-button vehicles-button 
+		      	${vehiclesSelected 
+		      		? "cat-button-active" 
+		      		: "cat-button-inactive" }`}
+		      name="vehicles"
+		      onClick={this.handleVehicleClick}
+		    >
+		    	<NavLink to="/vehicles" className="nav">Vehicles</NavLink>
+		    </button>
+		    <FavoriteButton 
+		    	className="FavoriteButton"
+		    	favorites={favorites}
+		    	handleFavoritesClick={this.handleFavoritesClick}
+		    	favoritesSelected={favoritesSelected}
+		    />
+		</div>
 		)
 	}
 }

@@ -1,34 +1,30 @@
 import React from 'react';
 import './CardContainer.css';
-import Card from '../Card/Card';
 import PropTypes from 'prop-types';
+import Card from '../Card/Card';
 
-const CardContainer = ({entries, toggleFavorites, favorites}) => {
-	// console.log(entries)
-  let cards
+const CardContainer = ({ entries, toggleFavorites, favorites }) => {
+  const cards = entries.map(entry => (
+    <Card
+      entry={entry}
+      key={entry.name}
+      toggleFavorites={toggleFavorites}
+      favorites={favorites}
+      isFavorite={entry.isFavorite}
+    />
+  ));
 
-	cards = entries.map(entry => {
-		// console.log(entry)
-    return <Card 
-							entry={entry}
-							key={entry.name} 
-							toggleFavorites={toggleFavorites}
-        			favorites={favorites}
-        			isFavorite={entry.isFavorite}
-        			/>		
-	})
-
-	return (
-		<div className='CardContainer'>
-			{ cards }
-		</div>
-	)
-}
+  return (
+    <div className="CardContainer">
+      { cards }
+    </div>
+  );
+};
 
 CardContainer.propTypes = {
-  entries: PropTypes.array,
-	toggleFavorites: PropTypes.func,
-	favorites: PropTypes.array
-}
+  entries: PropTypes.array.isRequired,
+  toggleFavorites: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired,
+};
 
 export default CardContainer;

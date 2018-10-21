@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
@@ -29,13 +30,15 @@ class App extends Component {
 
   async componentDidMount() {
     this.getFilm()
+    this.showPeople()
+    this.showVehicles()
+    this.showPlanets()
+    this.getFavorites()
   }
 
   toggleFavorites = async (entry) => {
-    
     let favorites;
     const { type, id } = entry
-
     const category = this.state[type].map(card => {
       if(card.id === id) {
         return {...card, isFavorite: !card.isFavorite}
@@ -43,7 +46,7 @@ class App extends Component {
       return card
     })
 
-    if (!this.inFavorites(entry)) {
+    if (!this.isInFavorites(entry)) {
       favorites = [...this.state.favorites, entry]
     } else {
       favorites = this.state.favorites.filter(card => card.id !== id)      
@@ -54,7 +57,7 @@ class App extends Component {
     await this.setLocalStorage( [type], category)
   }
 
-  inFavorites = (entry) => {
+  isInFavorites = (entry) => {
     return this.state.favorites.find((fav) => fav.id === entry.id)
   }
 
@@ -100,19 +103,15 @@ class App extends Component {
     this.setLocalStorage('vehicles', vehicles)
   }
 
-  toggleCategoryState = (categoryName) => {
-    if (categoryName === 'people') {
-      this.setState({ peopleSelected: true })
-      this.showPeople()
-    } else if (categoryName === 'planets') {
-      this.setState({ planetsSelected: true })
-      this.showPlanets()
-    } else if (categoryName === 'vehicles') {
-      this.setState({ vehiclesSelected: true })
-      this.showVehicles()
+  getFavorites = async () => {
+    const { favorites } = this.state
+    if (!localStorage.favorites && favorites.length) {
+      this.setLocalStorage('favorites', favorites)
+    } else if (localStorage.favorites) {
+      const newFavorites = await this.getLocalStorage('favorites')
+      this.setState({favorites: newFavorites})
     }
   }
-
 
   setLocalStorage = (key, category) => {
     localStorage.setItem(key, JSON.stringify(category))
@@ -127,52 +126,52 @@ class App extends Component {
   showPeople = async (e) => {  
     const { people, peopleSelected } = this.state
     if (!localStorage.people) {
-      this.setLocalStorage('people', people)
-    } 
-
-    const retrievedPeople = this.getLocalStorage('people')
-    this.setState({ 
-      people: retrievedPeople,
-      peopleSelected: true,
-      planetsSelected: false,
-      vehiclesSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
+      await this.getPeople()
+    } else if (localStorage.people) {
+      const retrievedPeople = this.getLocalStorage('people')
+      this.setState({ 
+        people: retrievedPeople,
+        peopleSelected: true,
+        planetsSelected: false,
+        vehiclesSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
+    }
   }
   
   showVehicles = async (e) => {
     const { vehicles, vehiclesSelected } = this.state
     if (!localStorage.vehicles) {
-      this.setLocalStorage('vehicles', vehicles)
+      await this.getVehicles()
+    } else if (localStorage.vehicles) {
+      const retrievedVehicles = this.getLocalStorage('vehicles')
+      this.setState({
+        vehicles: retrievedVehicles,
+        vehiclesSelected: true,
+        peopleSelected: false,
+        planetsSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
     }
-
-    const retrievedVehicles = this.getLocalStorage('vehicles')
-    this.setState({
-      vehicles: retrievedVehicles,
-      vehiclesSelected: true,
-      peopleSelected: false,
-      planetsSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
   }
 
   showPlanets = async (e) => {
     const { planets, planetsSelected } = this.state
     if (!localStorage.planets) {
-      this.setLocalStorage('planets', planets)
+      await this.getPlanets()
+    } else if (localStorage.planets) {
+      const retrievedPlanets = this.getLocalStorage('planets')
+      this.setState({
+        planets: retrievedPlanets,
+        planetsSelected: true,
+        peopleSelected: false,
+        vehiclesSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
     }
-
-    const retrievedPlanets = this.getLocalStorage('planets')
-    this.setState({
-      planets: retrievedPlanets,
-      planetsSelected: true,
-      peopleSelected: false,
-      vehiclesSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
   }
 
   render() {
@@ -195,13 +194,9 @@ class App extends Component {
         <header className="header">
           <h1 className="app-title">SWAP<span className="title-i">I</span> Box</h1>
           <Nav
-            getPeople={this.getPeople} 
             showPeople={this.showPeople}
-            getPlanets={this.getPlanets}
             showPlanet={this.showPlanets}
-            getVehicles={this.getVehicles}
             showVehicle={this.showVehicles}
-            toggleCategoryState={this.toggleCategoryState}
             showFavorites={this.showFavorites}
             favorites={favorites}
             toggleErrorPopup={this.toggleErrorPopup}
@@ -215,36 +210,44 @@ class App extends Component {
           />
           : <div className="error-popup-placeholder"></div>
         }
-        {peopleSelected && 
-        <CardContainer 
-          entries={people}
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
-           />}
-        {vehiclesSelected && 
-        <CardContainer 
-          entries={vehicles} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        <Route exact path="/" render={(props) => <Sidebar {...props} films={films} />}
+        />
+        <Route 
+          exact path="/people" 
+          render={(props) => <CardContainer {...props} 
+            entries={people} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {planetsSelected && 
-        <CardContainer 
-          entries={planets} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        />
+        <Route 
+          exact path="/vehicles" 
+          render={(props) => <CardContainer {...props} 
+            entries={vehicles} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {favoritesSelected && 
-        <CardContainer
-          entries={favorites} 
-          toggleFavorites={this.toggleFavorites}
-          favorites={favorites}
+        />
+        <Route 
+          exact path="/planets" 
+          render={(props) => <CardContainer {...props} 
+            entries={planets} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
           />}
-        {scroll &&
-        <Sidebar films={films}/>
-        }
+        />
+        <Route 
+          exact path="/favorites" 
+          render={(props) => <CardContainer {...props} 
+            entries={favorites} 
+            toggleFavorites={this.toggleFavorites} 
+            favorites={favorites} 
+          />}
+        />
       </div>
     );
   }
 }
 
 export default App;
+
