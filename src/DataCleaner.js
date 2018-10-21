@@ -1,15 +1,25 @@
-import fetchData from './apiCalls'
+// import fetchData from './apiCalls'
 
 class DataCleaner {
 	constructor() {
 
 	}
 
+	async fetchData(url) {
+		const response = await fetch(url)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const cleanResponse = await response.json()
+			return cleanResponse
+		}
+	}
+
 //Get films
 	async getMovie() {
 		const randomEpisode = Math.round(Math.random() * 6 + 1)
 		const movieUrl = ("https://swapi.co/api/films/")
-		const movieData = await fetchData(movieUrl)
+		const movieData = await this.fetchData(movieUrl)
 		const movieDataCollection = await movieData.results[randomEpisode]
 		const film = await this.returnMovieInfo(movieDataCollection)
 		return film
@@ -27,7 +37,7 @@ class DataCleaner {
 //Get people
 	async getPerson() {
 		const peopleUrl = ("https://swapi.co/api/people/")
-		const peopleData = await fetchData(peopleUrl)
+		const peopleData = await this.fetchData(peopleUrl)
 		const peopleDataCollection = await this.returnPeopleData(peopleData.results)
 		return Promise.all(peopleDataCollection)
 	}
@@ -55,7 +65,7 @@ class DataCleaner {
 
 	async getHomeWorld(person) {
 		const personHomeUrl = person.homeworld
-		const homeWorldData = await fetchData(personHomeUrl)
+		const homeWorldData = await this.fetchData(personHomeUrl)
 		const homeWorld = {
 			planetName: homeWorldData.name,
 			planetPop: this.numberCommas(homeWorldData.population)
@@ -69,7 +79,7 @@ class DataCleaner {
 
 	async getSpecies(person) {
 		const speciesUrl = person.species[0]
-		const speciesData = await fetchData(speciesUrl)
+		const speciesData = await this.fetchData(speciesUrl)
 		const species = {
 			speciesName: speciesData.name,
 			language: speciesData.language
@@ -80,7 +90,7 @@ class DataCleaner {
 //Get planets
 	async getPlanet() {
 		const planetUrl = ("https://swapi.co/api/planets/")
-		const planetData = await fetchData(planetUrl)
+		const planetData = await this.fetchData(planetUrl)
 		const planetDataCollection = await this.returnPlanetData(planetData.results)
 		return Promise.all(planetDataCollection)
 	}
@@ -105,7 +115,7 @@ class DataCleaner {
 
 	async getResidents(residentUrls) {
 		const tenantPromises = residentUrls.map(async residentUrl => {
-			const residentData = await fetchData(residentUrl)
+			const residentData = await this.fetchData(residentUrl)
 			return residentData.name
 		})
 		return await Promise.all(tenantPromises)
@@ -114,7 +124,7 @@ class DataCleaner {
 //Get vehicles
 	async getVehicle() {
 		const vehicleUrl = ("https://swapi.co/api/vehicles/")
-		const vehicleData = await fetchData(vehicleUrl)
+		const vehicleData = await this.fetchData(vehicleUrl)
 		const vehicleDataCollection = await this.returnVehicleData(vehicleData.results)
 		return Promise.all(vehicleDataCollection)
 	}

@@ -22,9 +22,9 @@ const CardContainer = ({ entries, toggleFavorites, favorites }) => {
 };
 
 CardContainer.propTypes = {
-  entries: PropTypes.array.isRequired,
-  toggleFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired,
+  entries: PropTypes.array,
+  toggleFavorites: PropTypes.func,
+  favorites: PropTypes.array,
 };
 
 export default CardContainer;

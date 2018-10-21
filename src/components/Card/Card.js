@@ -35,10 +35,10 @@ const Card = ({
 };
 
 Card.propTypes = {
-  entry: PropTypes.object.isRequired,
-  toggleFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired,
-  isFavorite: PropTypes.bool.isRequired,
+  entry: PropTypes.object,
+  toggleFavorites: PropTypes.func,
+  favorites: PropTypes.array,
+  isFavorite: PropTypes.bool,
 };
 
 export default Card;
