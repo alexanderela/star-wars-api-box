@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import './Card.css'
+import React from 'react';
+import './Card.css';
 import PropTypes from 'prop-types';
 
 const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => { 
@@ -35,10 +35,10 @@ const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
 }
 
 Card.propTypes = {
-	entry: PropTypes.object,
-	toggleFavorites: PropTypes.func,
-	favorites: PropTypes.array,
-	isFavorite: PropTypes.bool,
-}
+  entry: PropTypes.object,
+  toggleFavorites: PropTypes.func,
+  favorites: PropTypes.array,
+  isFavorite: PropTypes.bool,
+};
 
-export default Card
+export default Card;

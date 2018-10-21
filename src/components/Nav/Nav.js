@@ -12,6 +12,7 @@ class Nav extends Component {
       peopleSelected: false,
       vehiclesSelected: false,
       planetsSelected: false,
+      favoritesSelected: false
 		}
 	}
 
@@ -19,12 +20,13 @@ class Nav extends Component {
 		if (this.state.peopleSelected === true) {
 			const { name } = e.target
 			this.setState({ peopleSelected: false })
-			this.props.toggleCategoryState(name)
+			// this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: true,      
 				vehiclesSelected: false,
-      	planetsSelected: false 
+      	planetsSelected: false,
+      	favoritesSelected: false 
 			})	
 			this.props.showPeople()
 		}
@@ -34,12 +36,12 @@ class Nav extends Component {
 		const { name } = e.target
 		if (this.state.planetsSelected === true) {
 			this.setState({ planetsSelected: false })
-			this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 
 				peopleSelected: false,      
 				vehiclesSelected: false,
-				planetsSelected: true 
+				planetsSelected: true,
+				favoritesSelected: false 
 			})	
 			this.props.showPlanet()
 		}
@@ -49,20 +51,37 @@ class Nav extends Component {
 		const { name } = e.target
 		if (this.state.vehiclesSelected === true) {
 			this.setState({ vehiclesSelected: false })
-			this.props.toggleCategoryState(name)
+			// this.props.toggleCategoryState(name)
 		} else {
 			this.setState({ 				
 				peopleSelected: false,      
 				vehiclesSelected: true,
-				planetsSelected: false, 
+				planetsSelected: false,
+				favoritesSelected: false 
 			})	
 			this.props.showVehicle()
 		}
 	}
 
+	handleFavoritesClick = (e) => {
+		const { name } = e.target
+		if (this.state.favoritesSelected === true) {
+			this.setState({ favoritesSelected: false })
+			// this.props.toggleCategoryState(name)
+		} else {
+			this.setState({
+				peopleSelected: false,
+				vehiclesSelected: false,
+				planetsSelected: false,
+				favoritesSelected: true
+			})
+			this.props.showFavorites()
+		}
+	}
+
 render() {
 	const { showPeople, showVehicles, showPlanets, favorites, showFavorites, toggleErrorPopup } = this.props
-	const { peopleSelected, planetsSelected, vehiclesSelected } = this.state
+	const { peopleSelected, planetsSelected, vehiclesSelected, favoritesSelected } = this.state
 
 	return(
 		<div className="Nav">
@@ -99,7 +118,8 @@ render() {
 		    <FavoriteButton 
 		    	className="FavoriteButton"
 		    	favorites={favorites}
-		    	showFavorites={showFavorites}
+		    	handleFavoritesClick={this.handleFavoritesClick}
+		    	favoritesSelected={favoritesSelected}
 		    />
 		</div>
 		)

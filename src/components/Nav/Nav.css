@@ -12,8 +12,8 @@
 }
 
 .nav {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 .nav:hover {
@@ -34,10 +34,10 @@
   padding: 0px;
   padding-left: 0px;
   transition: 
-    width 0.5s ease,
-    padding 0.2s ease, 
     color 0.2s ease, 
-    text-shadow 0.2s ease;
+    padding 0.2s ease, 
+    text-shadow 0.2s ease,
+    width 0.5s ease;
   width: 12rem;
 }
 
@@ -83,4 +83,12 @@
   text-shadow: 
     #FF0 0px 0px 6px, 
     #FF0 0px 0px 10px;
+}
+
+
+@media (max-width: 960px) {
+  .cat-button {
+    font-size: 1.75rem;
+    width: 10rem;
+  }
 }

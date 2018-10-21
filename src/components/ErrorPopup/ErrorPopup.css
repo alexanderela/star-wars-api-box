@@ -1,35 +1,40 @@
 .ErrorPopup {
-  display: flex;
   align-items: flex-start;
-  justify-content: center; 
+  display: flex;
   flex-direction: row;
   height: 2rem;
+  justify-content: center; 
   margin: 0 0 3rem;
-  z-index: 100;
   overflow: hidden;
+  z-index: 100;
 }
 
 .popup-inner {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
-
 }
 
 h1 {
-  font-size: 1.5rem;
   color: #f9d500;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 button {
+
 	cursor: pointer;
   color: #000;
   font-weight: 700;
   font-size: 0.75rem;
   background-color: #f9d500;
-  border-radius: 10px;
-  margin: 0.1rem 0 0 0.3rem;
   border: none;
+  border-radius: 10px;
+  color: #000;
+	cursor: pointer;
+  font-weight: 700;
+  margin: 0.1rem 0 0 0.3rem;
   padding: 0.35rem 0.5rem;
 }
+
+

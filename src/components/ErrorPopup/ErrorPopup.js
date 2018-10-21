@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import "./ErrorPopup.css"
+import './ErrorPopup.css';
 
 class ErrorPopup extends Component {
-	constructor(props) {
-		super(props)
-	}
+  constructor(props) {
+    super(props);
+  }
 
 	render() {
 		return(
@@ -19,4 +19,4 @@ class ErrorPopup extends Component {
 	}
 }
 
-export default ErrorPopup
+export default ErrorPopup;

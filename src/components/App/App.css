@@ -10,7 +10,7 @@
 }
 
 body {
-background: url('../../assets/SWAPI-background.jpg');
+  background: url('../../assets/SWAPI-background.jpg');
 }
 
 .App {
@@ -56,4 +56,3 @@ background: url('../../assets/SWAPI-background.jpg');
     width: 10rem;
   }
 }
-
