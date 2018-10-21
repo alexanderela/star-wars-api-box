@@ -21,11 +21,11 @@ describe('Nav', () => {
             toggleCategoryState={mockFunction}/>)
 	})
 
-	it('matches the snapshot', () => {
+	xit('matches the snapshot', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
 
-	it('activates People category on click of People button', () => {
+	xit('activates People category on click of People button', () => {
 		const expectedState = {
       peopleSelected: true,
       vehiclesSelected: false,
@@ -35,7 +35,7 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('deactivates People category on 2nd click of People button', () => {
+	xit('deactivates People category on 2nd click of People button', () => {
 		const expectedState = {
       peopleSelected: false,
       vehiclesSelected: false,
@@ -46,7 +46,7 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('activates Planets category on click of Planets button', () => {
+	xit('activates Planets category on click of Planets button', () => {
 		const expectedState = {
       peopleSelected: false,
       vehiclesSelected: false,
@@ -56,7 +56,7 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('deactivates Planets category on 2nd click of Planets button', () => {
+	xit('deactivates Planets category on 2nd click of Planets button', () => {
 		const expectedState = {
       peopleSelected: false,
       vehiclesSelected: false,
@@ -67,7 +67,7 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('activates Vehicles category on click of Vehicles button', () => {
+	xit('activates Vehicles category on click of Vehicles button', () => {
 		const expectedState = {
       peopleSelected: false,
       vehiclesSelected: true,
@@ -77,7 +77,7 @@ describe('Nav', () => {
 		expect(wrapper.state()).toEqual(expectedState)
 	})
 
-	it('deactivates Vehicles category on 2nd click of Vehicles button', () => {
+	xit('deactivates Vehicles category on 2nd click of Vehicles button', () => {
 		const expectedState = {
       peopleSelected: false,
       vehiclesSelected: false,

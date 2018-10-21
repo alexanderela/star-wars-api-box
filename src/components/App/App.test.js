@@ -16,7 +16,7 @@ import mockPerson from '../../mockData/mockPerson.js';
 import mockSpecies from '../../mockData/mockSpecies.js';
 
 
-it('renders without crashing', () => {
+xit('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
   <BrowserRouter>
@@ -41,21 +41,21 @@ beforeEach(() => {
 
 
 describe('App component', () => {
-	it('matches the snapshot', () => {
+	xit('matches the snapshot', () => {
 		expect(wrapper).toMatchSnapshot();
 	})
 
-	it('has the correct default state for films', () => {
+	xit('has the correct default state for films', () => {
 		expect(wrapper.state().films).not.toBe('{}')
 	}) //Does this apply to the App component itself or a function within the App?
 
-	it('passes the correct favoritesCount props to Nav', () => {
+	xit('passes the correct favoritesCount props to Nav', () => {
 		wrapper.setState({ favorites: [] })
 		const navComponent = wrapper.find(Nav)
 		expect(navComponent.props().favoritesCount).toEqual(0)
 	})
 
-	it('passes favoritesCount props to Nav if they exist in state', () => {
+	xit('passes favoritesCount props to Nav if they exist in state', () => {
 		const mockVehicles = [{"make": "mustang"}, {"make": "camaro"}]
 		wrapper.setState({ favorites: mockVehicles })
 		const navComponent = wrapper.find(Nav)
@@ -63,7 +63,7 @@ describe('App component', () => {
 	})
 
 	describe('componentDidMount', () => {
-		it('invokes getFilm function on componentDidMount', () => {
+		xit('invokes getFilm function on componentDidMount', () => {
 			wrapper.instance().getFilm = jest.fn()
 			wrapper.instance().componentDidMount()
 			expect(wrapper.instance().getFilm).toHaveBeenCalled()
@@ -71,14 +71,14 @@ describe('App component', () => {
 	})
 
 	describe('toggleFavorites', () => {
-		it('adds cards to favorites if not already contained in the favorites array', () => {
+		xit('adds cards to favorites if not already contained in the favorites array', () => {
 			const card = { "name": "Luke Skywalker", "species": "human" }
 			const expected = [card]
 			wrapper.instance().addToFavorites(card)
 			expect(wrapper.state().favorites).toEqual(expected)
 		})
 	
-		it('removes cards from favorites array', () => {
+		xit('removes cards from favorites array', () => {
 			expected = []
 			const mockId = "Luke"
 			const mockCard = [{ "name": "Luke", "id": "Luke" }]
@@ -90,63 +90,63 @@ describe('App component', () => {
 	})
 
 	describe('isInFavorites', () => {
-		it('should find a match for the given entry', () => {
+		xit('should find a match for the given entry', () => {
 
 		})
 	})
 
 	describe('toggleErrorPopup', () => {
-		it('should reverse the state of showError popup', () => {
+		xit('should reverse the state of showError popup', () => {
 
 		})
 	})
 
 	describe('showFavorites', () => {
-		it('if there are favorites it should change favoritesSelected to true', () => {
+		xit('if there are favorites it should change favoritesSelected to true', () => {
 
 		})
 
-		it('if there are no favorites it should trigger error message to be displayed', () => {
+		xit('if there are no favorites it should trigger error message to be displayed', () => {
 
 		})
 	})
 
 	describe('getFilm', () => {
-		it('should call getMovie', () => {
+		xit('should call getMovie', () => {
 
 		})
 
-		it('should setState', () => {
+		xit('should setState', () => {
 
 		})
 	})
 
 	describe('getPeople', () => {
-		it('should call getPerson', () => {
+		xit('should call getPerson', () => {
 
 		})
 
-		it('should setState', () => {
+		xit('should setState', () => {
 			
 		})
 	})
 
 	describe('getPlanets', () => {
-		it('should call getPlanet', () => {
+		xit('should call getPlanet', () => {
 
 		})
 
-		it('should setState', () => {
+		xit('should setState', () => {
 			
 		})
 	})
 
 	describe('getVehicles', () => {
-		it('should call getVehicle', () => {
+		xit('should call getVehicle', () => {
 
 		})
 
-		it('should setState', () => {
+		xit('should setState', () => {
 			
 		})
 	})
@@ -166,14 +166,14 @@ describe('App component', () => {
 	// })
 
 	describe('toggleCategoryState', () => {
-		it('selects people in state when toggleCategory is called', () => {
+		xit('selects people in state when toggleCategory is called', () => {
 			const category = 'people'
 			wrapper.setState({ peopleSelected: false })
 			wrapper.instance().toggleCategoryState(category)
 			expect(wrapper.state().peopleSelected).toEqual(true)
 		})
 
-		it('invokes showPeople when toggleCategory is called', () => {
+		xit('invokes showPeople when toggleCategory is called', () => {
 			const instance = wrapper.instance()
 			const category = 'people'
 			const spy = jest.spyOn(instance, 'showPeople')
@@ -181,14 +181,14 @@ describe('App component', () => {
 			expect(spy).toHaveBeenCalled()
 		})
 
-		it('selects vehicles in state when toggleCategory is called', () => {
+		xit('selects vehicles in state when toggleCategory is called', () => {
 			const category = 'vehicles'
 			wrapper.setState({ vehiclesSelected: false })
 			wrapper.instance().toggleCategoryState(category)
 			expect(wrapper.state().vehiclesSelected).toEqual(true)
 		})
 
-		it('invokes showVehicles when toggleCategory is called', () => {
+		xit('invokes showVehicles when toggleCategory is called', () => {
 			const instance = wrapper.instance()
 			const category = 'vehicles'
 			const spy = jest.spyOn(instance, 'showVehicles')
@@ -196,14 +196,14 @@ describe('App component', () => {
 			expect(spy).toHaveBeenCalled()
 		})
 
-		it('selects planets in state when toggleCategory is called', () => {
+		xit('selects planets in state when toggleCategory is called', () => {
 			const category = 'planets'
 			wrapper.setState({ planetsSelected: false })
 			wrapper.instance().toggleCategoryState(category)
 			expect(wrapper.state().planetsSelected).toEqual(true)
 		})
 
-		it('invokes showPlanets when toggleCategory is called', () => {
+		xit('invokes showPlanets when toggleCategory is called', () => {
 			const instance = wrapper.instance()
 			const category = 'planets'
 			const spy = jest.spyOn(instance, 'showPlanets')
@@ -213,7 +213,7 @@ describe('App component', () => {
 	})
 
 	describe('setLocalStorage', () => {
-		it('sets people data to local storage', () => {
+		xit('sets people data to local storage', () => {
 			const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
 			{"class": "tires", "model": "Mustang"}]
 			wrapper.instance().setLocalStorage('mockData', mockData)
@@ -223,7 +223,7 @@ describe('App component', () => {
 	})
 
 	describe('getLocalStorage', () => {
-		it('gets and parses data from local storage', () => {
+		xit('gets and parses data from local storage', () => {
 			localStorage.clear()
 			const mockData = [{ "class": "wheeled", "model": "Digger Crawler" }, 
 			{"class": "tires", "model": "Mustang"}]
@@ -235,7 +235,7 @@ describe('App component', () => {
 	})
 
 	describe('showPeople', () => {
-		it('should toggle the state of people if it is already selected', async () => {
+		xit('should toggle the state of people if it is already selected', async () => {
 			mockFilm = {
 				opening_crawl: "Heyy youu guyyyys", 
 				episode_id: 7, 
@@ -246,7 +246,7 @@ describe('App component', () => {
 			await expect(wrapper.state().peopleSelected).toBe(false)
 		})
 
-		it('sets people to state ', async () => {
+		xit('sets people to state ', async () => {
 				mockLuke = {
 		      "name": "Luke Skywalker",
 		      "homeWorld": { 
@@ -264,7 +264,7 @@ describe('App component', () => {
 		  await expect(wrapper.state().people).toEqual(mockLuke)
 		})
 
-		it('renders a card container displaying people if peopleSelected is true', () => {
+		xit('renders a card container displaying people if peopleSelected is true', () => {
 			wrapper.setState({ peopleSelected: true })
 		  const spy = spyOn(wrapper.instance(), 'showPeople');
 		  wrapper.instance().showPeople()
@@ -283,7 +283,7 @@ describe('App component', () => {
 	// })
 
 	describe('showVehicles', () => {
-		it('should toggle the state of vehicles if it is already selected', async () => {
+		xit('should toggle the state of vehicles if it is already selected', async () => {
 			mockFilm = {
 				opening_crawl: "Heyy youu guyyyys", 
 				episode_id: 7, 
@@ -294,7 +294,7 @@ describe('App component', () => {
 			await expect(wrapper.state().vehiclesSelected).toBe(false)
 		})
 
-		it('sets vehicles to state ', async () => {
+		xit('sets vehicles to state ', async () => {
 				mockVehicle = {
 					"class": "wheeled", 
 					"model": "Digger Crawler",
@@ -307,7 +307,7 @@ describe('App component', () => {
 		  await expect(wrapper.state().vehicles).toEqual(mockVehicle)
 		})
 
-		it('renders a card container displaying vehicles if vehiclesSelected is true', () => {
+		xit('renders a card container displaying vehicles if vehiclesSelected is true', () => {
 			wrapper.setState({ vehiclesSelected: true })
 			const spy = spyOn(wrapper.instance(), 'showVehicles');
 			wrapper.instance().showVehicles()
@@ -331,7 +331,7 @@ describe('App component', () => {
 	// })
 
 	describe('showPlanets', () => {
-		it('should toggle the state of planets if it is already selected', async () => {
+		xit('should toggle the state of planets if it is already selected', async () => {
 			mockFilm = {
 				opening_crawl: "Heyy youu guyyyys", 
 				episode_id: 7, 
@@ -342,7 +342,7 @@ describe('App component', () => {
 			await expect(wrapper.state().planetsSelected).toBe(false)
 		})
 
-		it('sets planets to state ', async () => {
+		xit('sets planets to state ', async () => {
 			mockPlanet = {"name": "Alderaan", 
 				"terrain": "grasslands, mountains", 
 				"population": "2000000000", "climate": "temperate", 
@@ -354,7 +354,7 @@ describe('App component', () => {
 		  await expect(wrapper.state().planets).toEqual(mockPlanet)	
 		})
 
-		it('renders a card container displaying planets if planetsSelected is true', () => {
+		xit('renders a card container displaying planets if planetsSelected is true', () => {
 			wrapper.setState({ planetsSelected: true })
 			const spy = spyOn(wrapper.instance(), 'showPlanets');
 			wrapper.instance().showPlanets()

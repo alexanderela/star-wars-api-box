@@ -1,5 +1,4 @@
 const fetchData = async (url) => {
-  console.log('Fetch called')
 	const response = await fetch(url)
 	if (response.status >= 400) {
 		throw new Error('Fetch has failed')

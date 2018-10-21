@@ -5,7 +5,7 @@ import Card from './Card';
 import { shallow, mount } from 'enzyme';
 import people from '../../mockData/mockPeople.js';
 
-describe('Card', () => {
+describe('Card component', () => {
 	let wrapper;
 	let mockFavs;
 	let mockEntry;
@@ -116,8 +116,29 @@ describe('Card', () => {
 		expect(mockToggleFavs).toHaveBeenCalled()
 	})
 
-	it('changes fav button class to active on click', () => {
-		mockEntry = {
+	it('changes fav button class to active if isFavorite is true', () => {
+		wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={[]} 
+			isFavorite={true}/>)
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-active')).toBe(true)
+	})
+
+	it('changes fav button class to inactive if card is not in the favorites array in state', () => {
+	  wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={[]} 
+			isFavorite={false}/>)
+
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
+	});
+
+	it('changes fav button class to active if card is in the favorites array in state', () => {
+	  mockEntry = {
 	          "name": "Luke Skywalker",
 	          "id": "Luke Skywalker",
 	          "isFavorite": true, 
@@ -129,26 +150,18 @@ describe('Card', () => {
 							{"header": 'Language: ', "text": "Galactic Basic"}
 						] 
 	        }
-		wrapper.find('button').simulate('click')
-		expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
-	})
 
-	it.only('changes fav button class to active on click', () => {
-	mockEntry = {
-          "name": "Luke Skywalker",
-          "id": "Luke Skywalker",
-          "isFavorite": true, 
-          "type":"people",
-          "properties": [
-						{"header": 'Homeworld: ', "text": "Tatooine"},
-						{"header": 'Species: ', "text": "human"},
-						{"header": 'Population: ', "text": "200,000"},
-						{"header": 'Language: ', "text": "Galactic Basic"}
-					] 
-        }
-	wrapper.find('button').simulate('click')
-	expect(wrapper.find('button').hasClass('fav-btn-inactive')).toBe(true)
-})
+	  wrapper = shallow(<Card entry={mockEntry} 
+			key={mockEntry.id}
+			toggleFavorites={mockToggleFavs} 
+			favorites={mockFavs} 
+			isFavorite={true}/>)
+
+		wrapper.find('button').simulate('click')
+		expect(wrapper.find('button').hasClass('fav-btn-active')).toBe(true)
+	});
+
+
 
 	// it('highlights vehicle favorite button on click', () => {
 	// 	const mockVehicles = {
