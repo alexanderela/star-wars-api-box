@@ -30,9 +30,10 @@ class App extends Component {
 
   async componentDidMount() {
     this.getFilm()
-    this.getPeople()
-    this.getVehicles()
-    this.getPlanets()
+    this.showPeople()
+    this.showVehicles()
+    this.showPlanets()
+    this.getFavorites()
   }
 
   toggleFavorites = async (entry) => {
@@ -102,6 +103,16 @@ class App extends Component {
     this.setLocalStorage('vehicles', vehicles)
   }
 
+  getFavorites = async () => {
+    const { favorites } = this.state
+    if (!localStorage.favorites && favorites.length) {
+      this.setLocalStorage('favorites', favorites)
+    } else if (localStorage.favorites) {
+      const newFavorites = await this.getLocalStorage('favorites')
+      this.setState({favorites: newFavorites})
+    }
+  }
+
   toggleCategoryState = (categoryName) => {
     if (categoryName === 'people') {
       this.setState({ peopleSelected: true })
@@ -128,52 +139,53 @@ class App extends Component {
   showPeople = async (e) => {  
     const { people, peopleSelected } = this.state
     if (!localStorage.people) {
-      this.setLocalStorage('people', people)
-    } 
-
-    const retrievedPeople = this.getLocalStorage('people')
-    this.setState({ 
-      people: retrievedPeople,
-      peopleSelected: true,
-      planetsSelected: false,
-      vehiclesSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
+      await this.getPeople()
+    } else if (localStorage.people) {
+      console.log('hitting conditional else block')
+      const retrievedPeople = this.getLocalStorage('people')
+      this.setState({ 
+        people: retrievedPeople,
+        peopleSelected: true,
+        planetsSelected: false,
+        vehiclesSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
+    }
   }
   
   showVehicles = async (e) => {
     const { vehicles, vehiclesSelected } = this.state
     if (!localStorage.vehicles) {
-      this.setLocalStorage('vehicles', vehicles)
+      await this.getVehicles()
+    } else if (localStorage.vehicles) {
+      const retrievedVehicles = this.getLocalStorage('vehicles')
+      this.setState({
+        vehicles: retrievedVehicles,
+        vehiclesSelected: true,
+        peopleSelected: false,
+        planetsSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
     }
-
-    const retrievedVehicles = this.getLocalStorage('vehicles')
-    this.setState({
-      vehicles: retrievedVehicles,
-      vehiclesSelected: true,
-      peopleSelected: false,
-      planetsSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
   }
 
   showPlanets = async (e) => {
     const { planets, planetsSelected } = this.state
     if (!localStorage.planets) {
-      this.setLocalStorage('planets', planets)
+      await this.getPlanets()
+    } else if (localStorage.planets) {
+      const retrievedPlanets = this.getLocalStorage('planets')
+      this.setState({
+        planets: retrievedPlanets,
+        planetsSelected: true,
+        peopleSelected: false,
+        vehiclesSelected: false,
+        favoritesSelected: false,
+        scroll: false
+      })
     }
-
-    const retrievedPlanets = this.getLocalStorage('planets')
-    this.setState({
-      planets: retrievedPlanets,
-      planetsSelected: true,
-      peopleSelected: false,
-      vehiclesSelected: false,
-      favoritesSelected: false,
-      scroll: false
-    })
   }
 
   render() {
