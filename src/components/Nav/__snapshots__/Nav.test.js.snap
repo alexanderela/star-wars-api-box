@@ -70,6 +70,8 @@ ShallowWrapper {
         </button>,
         <FavoriteButton
           className="FavoriteButton"
+          favoritesSelected={false}
+          handleFavoritesClick={[Function]}
         />,
       ],
       "className": "Nav",
@@ -191,7 +193,8 @@ ShallowWrapper {
         "props": Object {
           "className": "FavoriteButton",
           "favorites": undefined,
-          "showFavorites": undefined,
+          "favoritesSelected": false,
+          "handleFavoritesClick": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -254,6 +257,8 @@ ShallowWrapper {
           </button>,
           <FavoriteButton
             className="FavoriteButton"
+            favoritesSelected={false}
+            handleFavoritesClick={[Function]}
           />,
         ],
         "className": "Nav",
@@ -375,7 +380,8 @@ ShallowWrapper {
           "props": Object {
             "className": "FavoriteButton",
             "favorites": undefined,
-            "showFavorites": undefined,
+            "favoritesSelected": false,
+            "handleFavoritesClick": [Function],
           },
           "ref": null,
           "rendered": null,
