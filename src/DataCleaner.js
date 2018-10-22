@@ -1,5 +1,3 @@
-// import fetchData from './apiCalls'
-
 class DataCleaner {
 	constructor() {
 

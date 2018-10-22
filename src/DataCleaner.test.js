@@ -9,6 +9,7 @@ import resolvedPeople from './mockData/mockResolvedPeople.js';
 import mockPerson from './mockData/mockPerson.js';
 import mockSpecies from './mockData/mockSpecies.js';
 import mockNewPerson from './mockData/mockNewPerson.js';
+import * as fetchData from './apiCalls'
 
 // jest.mock('./apiCalls', () => ({
 // 	fetchData: jest.fn().mockImplementation(() => mockDataObj)
@@ -21,44 +22,23 @@ describe('DataCleaner', () => {
 	})
 
 	describe('getMovie', () => {
-		it('calls fetchData with the correct parameters', async () => {
-			mockDataCleaner.fetchData = jest.fn().mockImplementation(() => Promise.resolve(films))
-			// fetchData = await jest.fn().mockImplementation(() => films)
-			await mockDataCleaner.getMovie()
-			await expect(mockDataCleaner.fetchData).toHaveBeenCalled()
-		})
-
-		xit('calls returnMovieInfo with the correct parameters',  async () => {
-			//Setup
+		it('calls returnMovieInfo',  async () => {
 			const spy = spyOn(mockDataCleaner, 'returnMovieInfo')
-			const mockRandomEpisode = 5
-			const mockMovieDataCollection = await films.results[mockRandomEpisode]
-			// const returnMovieInfo = await jest.fn().mockImplementation(() => )
-			// //Execution
-			mockDataCleaner.getMovie()
-			// const mockRandomEpisode = 5
-			const mockReturnedMovieData = await films.results[mockRandomEpisode]
-			// const returnMovieInfo = jest.fn()
-			// const getMovie = jest.fn(() => {
-			// 	returnMovieInfo(mockReturnedMovieData);
-			// })
-			//Execution
-			// getMovie()
-			//Expectation
-			expect(spy).toHaveBeenCalledWith(mockReturnedMovieData)
+			await mockDataCleaner.getMovie()
+			expect(spy).toHaveBeenCalled()
 		})
 	})
 
-	
 	describe('returnMovieInfo', () => {
 		const mockFilm = {
 				opening_crawl: 'opening title',
 		 		episode_id: 'episode number',
-		 		title: 'title'
+		 		title: 'title',
+		 		date: '1977'
 		}
 
-		xit('returns an object with the correct format', () => {
-			expect(typeof dataCleaner.returnMovieInfo(mockFilm)).toBe('object')
+		it('returns an object with the correct format', () => {
+			expect(typeof mockDataCleaner.returnMovieInfo(mockFilm)).toBe('object')
 		})
 	})
 
@@ -107,56 +87,15 @@ describe('DataCleaner', () => {
 		// 	await expect(mockDataCleaner.fetchData).toHaveBeenCalled()
 		// })
 
-		xit('calls returnPeopleData with the correct parameters', async () => {
-			//Setup
-			const mockPeopleData = await people.results
-			const returnPeopleData = jest.fn()
-			const getPerson = jest.fn(() => {
-				returnPeopleData(mockPeopleData)
-			})
-			//Execution
-			getPerson()
-			//Expectation
-			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
-		})
-
-		it('resolves to expected', async () => {
-			//Setup
-			const mockReturnedPeopleData = [
-				{
-					name: 'Luke Skywalker',
-					homeWorld: "https://swapi.co/api/planets/1/",
-					species: "https://swapi.co/api/species/1/",
-					isFavorite: false,
-					type: 'people'
-				},
-				{
-					name: 'C-3PO',
-					homeWorld: "https://swapi.co/api/planets/1/",
-					species: "https://swapi.co/api/species/2/",
-					isFavorite: false,
-					type: 'people'
-				}
-			]
-			const expected = [
-				{
-					name: 'Luke Skywalker', 
-					homeWorld: 'Tatooine', 
-					species: 'human', 
-					isFavorite: false, 
-					type: 'people'
-				},
-				{
-					name: 'C-3PO',
-					homeWorld: 'Tatooine',
-					species: 'droid',
-					isFavorite: false,
-					type: 'people'
-				}
-			]
-			Promise.all(mockReturnedPeopleData)
-
-			expect(Promise.all(mockReturnedPeopleData)).resolves.toEqual(expected)
+		it('calls returnPeopleData with the correct parameters', async () => {
+			const mockPeopleData = people.results
+			const spy = spyOn(mockDataCleaner, 'returnPeopleData')
+			// mockDataCleaner.returnPeopleData = jest.fn()
+			// const getPerson = jest.fn(() => {
+			// 	return mockPeopleData
+			// })
+			await mockDataCleaner.getPerson()
+			expect(spy).toHaveBeenCalledWith(mockPeopleData)
 		})
 	})
 
