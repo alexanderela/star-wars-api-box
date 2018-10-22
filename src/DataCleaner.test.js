@@ -31,12 +31,12 @@ describe('DataCleaner', () => {
 		})
 	})
 
-	
 	describe('returnMovieInfo', () => {
 		const mockFilm = {
 				opening_crawl: 'opening title',
 		 		episode_id: 'episode number',
-		 		title: 'title'
+		 		title: 'title',
+		 		date: '1977'
 		}
 
 		it('returns an object with the correct format', () => {
@@ -60,6 +60,13 @@ describe('DataCleaner', () => {
 			
 			await DataCleaner.getPerson()
 			expect(DataCleaner.returnPeopleData).toHaveBeenCalled()
+		})
+
+		it('calls returnPeopleData with the correct parameters', async () => {
+			const mockPeopleData = people.results
+			const spy = spyOn(mockDataCleaner, 'returnPeopleData')
+			await mockDataCleaner.getPerson()
+			expect(spy).toHaveBeenCalledWith(mockPeopleData)
 		})
 
 		xit('resolves to expected', async () => {

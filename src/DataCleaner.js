@@ -126,4 +126,3 @@ export const returnVehicleData = async (vehicleCollection) => {
 	})
 	return Promise.all(vehiclePromises)
 }
-
