@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Sidebar from '../Sidebar/Sidebar.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 import DataCleaner from '../../DataCleaner.js';
-import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 import Nav from '../Nav/Nav.js';
 import ErrorPopup from '../ErrorPopup/ErrorPopup.js';
 
@@ -124,7 +123,6 @@ class App extends Component {
   }
 
   showPeople = async (e) => {  
-    const { people, peopleSelected } = this.state
     if (!localStorage.people) {
       await this.getPeople()
     } else if (localStorage.people) {
@@ -141,7 +139,6 @@ class App extends Component {
   }
   
   showVehicles = async (e) => {
-    const { vehicles, vehiclesSelected } = this.state
     if (!localStorage.vehicles) {
       await this.getVehicles()
     } else if (localStorage.vehicles) {
@@ -158,7 +155,6 @@ class App extends Component {
   }
 
   showPlanets = async (e) => {
-    const { planets, planetsSelected } = this.state
     if (!localStorage.planets) {
       await this.getPlanets()
     } else if (localStorage.planets) {
@@ -180,12 +176,7 @@ class App extends Component {
             people, 
             vehicles, 
             planets, 
-            peopleSelected, 
-            planetsSelected, 
-            vehiclesSelected, 
             favorites, 
-            scroll,
-            favoritesSelected,
             showErrorPopup
           } = this.state
 
