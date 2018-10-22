@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
 
 @font-face {
-  font-family: "STARWARS";
+  font-family: "Death Star";
   font-style:normal;
   font-weight:normal;
   src: 
-      url("./swapi.ttf") format("truetype"),
-      url("./swapi.svg#swapi") format("svg");
+      url("../../assets/Header_Font/sharkshock_death-star/Death Star.otf") format("truetype")
 }
 
 body {
@@ -33,7 +32,7 @@ body {
 
 .app-title {
   color: #f9d500;
-  font-family: "STARWARS";
+  font-family: "Death Star";
   font-size: 10rem;
   margin: 3rem 0 0 0;
   -webkit-text-fill-color: transparent;

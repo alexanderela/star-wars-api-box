@@ -1,6 +1,15 @@
 import * as API from './apiCalls'
 
-//Get films
+	async fetchData(url) {
+		const response = await fetch(url)
+		if (response.status >= 400) {
+			throw new Error('Fetch has failed')
+		} else {
+			const cleanResponse = await response.json()
+			return cleanResponse
+		}
+	}
+
 export const getMovie = async () => {
 	const randomEpisode = Math.round(Math.random() * 6 + 1)
 	const movieUrl = ("https://swapi.co/api/films/")
@@ -19,7 +28,6 @@ export const returnMovieInfo = async (film) => {
 	})
 }
 
-//Get people
 export const getPerson = async () => {
 	const peopleUrl = ("https://swapi.co/api/people/")
 	const peopleData = await API.fetchData(peopleUrl)
@@ -58,10 +66,6 @@ export const getHomeWorld = async (person) => {
 	return homeWorld
 }
 
-// export const numberCommas = async (x) => {
-// 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// }
-
 export const getSpecies = async (person) => {
 	const speciesUrl = person.species[0]
 	const speciesData = await API.fetchData(speciesUrl)
@@ -72,7 +76,6 @@ export const getSpecies = async (person) => {
 	return species
 }
 
-//Get planets
 export const getPlanet = async () => {
 	const planetUrl = ("https://swapi.co/api/planets/")
 	const planetData = await API.fetchData(planetUrl)
@@ -106,7 +109,6 @@ export const getResidents = async (residentUrls) => {
 	return await Promise.all(tenantPromises)
 }
 
-//Get vehicles
 export const getVehicle = async () => {
 	const vehicleUrl = ("https://swapi.co/api/vehicles/")
 	const vehicleData = await API.fetchData(vehicleUrl)
@@ -130,4 +132,3 @@ export const returnVehicleData = async (vehicleCollection) => {
 	})
 	return Promise.all(vehiclePromises)
 }
-

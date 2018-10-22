@@ -12,11 +12,6 @@ import mockNewPerson from './mockData/mockNewPerson.js';
 import * as API from './apiCalls';
 import * as DataCleaner from './DataCleaner.js';
 
-// jest.mock('./apiCalls', () => ({
-// 	fetchData: jest.fn().mockImplementation(() => mockDataObj)
-// }))
-// let mockDataCleaner;
-
 describe('DataCleaner', () => {
 
 	describe('getMovie', () => {
@@ -35,33 +30,20 @@ describe('DataCleaner', () => {
 			DataCleaner.returnMovieInfo = jest.fn().mockImplementation(() => films)
 			await DataCleaner.getMovie()
 
-			// const spy = spyOn(mockDataCleaner, 'returnMovieInfo')
-			// const returnMovieInfo = await jest.fn().mockImplementation(() => )
-			// //Execution
-			// mockDataCleaner.getMovie()
-			// const mockRandomEpisode = 5
-			// const mockReturnedMovieData = await films.results[mockRandomEpisode]
-			// const returnMovieInfo = jest.fn()
-			// const getMovie = jest.fn(() => {
-			// 	returnMovieInfo(mockReturnedMovieData);
-			// })
-			//Execution
-			// getMovie()
-			//Expectation
 			expect(DataCleaner.returnMovieInfo).toHaveBeenCalled()
 		})
 	})
 
-	
 	describe('returnMovieInfo', () => {
 		const mockFilm = {
 				opening_crawl: 'opening title',
 		 		episode_id: 'episode number',
-		 		title: 'title'
+		 		title: 'title',
+		 		date: '1977'
 		}
 
-		xit('returns an object with the correct format', () => {
-			expect(typeof dataCleaner.returnMovieInfo(mockFilm)).toBe('object')
+		it('returns an object with the correct format', () => {
+			expect(typeof mockDataCleaner.returnMovieInfo(mockFilm)).toBe('object')
 		})
 	})
 
@@ -122,12 +104,10 @@ describe('DataCleaner', () => {
 				}
 			]
 			Promise.all(mockReturnedPeopleData)
-
 			expect(Promise.all(mockReturnedPeopleData)).resolves.toEqual(expected)
 		})
 	})
 
-	
 	describe('returnPeopleData', () => {
 		xit('should call getHomeWorld', async () => {
 			//Setup
