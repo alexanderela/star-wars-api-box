@@ -58,10 +58,6 @@ export const getHomeWorld = async (person) => {
 	return homeWorld
 }
 
-// export const numberCommas = async (x) => {
-// 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-// }
-
 export const getSpecies = async (person) => {
 	const speciesUrl = person.species[0]
 	const speciesData = await API.fetchData(speciesUrl)

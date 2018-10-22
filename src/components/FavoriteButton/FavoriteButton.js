@@ -15,9 +15,7 @@ const FavoriteButton = ({ favorites, handleFavoritesClick, favoritesSelected }) 
       onClick={e => handleFavoritesClick(e)}
     >
       <NavLink to="/favorites" className="nav">Favorites</NavLink>
-      <span
-        className="favorites-count"
-      >
+      <span className="favorites-count">
         {favorites ? favorites.length : 0}
       </span>
     </button>

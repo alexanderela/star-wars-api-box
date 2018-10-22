@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import DataCleaner from './DataCleaner.js';
 import films from './mockData/mockFilms.js';
 import people from './mockData/mockPeople.js';
 import planets from './mockData/mockPlanets.js';
@@ -11,11 +10,6 @@ import mockSpecies from './mockData/mockSpecies.js';
 import mockNewPerson from './mockData/mockNewPerson.js';
 import * as API from './apiCalls';
 import * as DataCleaner from './DataCleaner.js';
-
-// jest.mock('./apiCalls', () => ({
-// 	fetchData: jest.fn().mockImplementation(() => mockDataObj)
-// }))
-// let mockDataCleaner;
 
 describe('DataCleaner', () => {
 
@@ -28,26 +22,11 @@ describe('DataCleaner', () => {
 		})
 
 		it('calls returnMovieInfo with the correct parameters',  async () => {
-			//Setup
 			API.fetchData = jest.fn().mockImplementation(() => Promise.resolve(films))
 			const mockRandomEpisode = 5
 			const mockMovieDataCollection = await films.results[mockRandomEpisode]
 			DataCleaner.returnMovieInfo = jest.fn().mockImplementation(() => films)
 			await DataCleaner.getMovie()
-
-			// const spy = spyOn(mockDataCleaner, 'returnMovieInfo')
-			// const returnMovieInfo = await jest.fn().mockImplementation(() => )
-			// //Execution
-			// mockDataCleaner.getMovie()
-			// const mockRandomEpisode = 5
-			// const mockReturnedMovieData = await films.results[mockRandomEpisode]
-			// const returnMovieInfo = jest.fn()
-			// const getMovie = jest.fn(() => {
-			// 	returnMovieInfo(mockReturnedMovieData);
-			// })
-			//Execution
-			// getMovie()
-			//Expectation
 			expect(DataCleaner.returnMovieInfo).toHaveBeenCalled()
 		})
 	})
@@ -60,8 +39,8 @@ describe('DataCleaner', () => {
 		 		title: 'title'
 		}
 
-		xit('returns an object with the correct format', () => {
-			expect(typeof dataCleaner.returnMovieInfo(mockFilm)).toBe('object')
+		it('returns an object with the correct format', () => {
+			expect(typeof DataCleaner.returnMovieInfo(mockFilm)).toBe('object')
 		})
 	})
 
@@ -74,17 +53,13 @@ describe('DataCleaner', () => {
 			await expect(API.fetchData).toHaveBeenCalled()
 		})
 
-		xit('calls returnPeopleData with the correct parameters', async () => {
-			//Setup
-			const mockPeopleData = await people.results
-			const returnPeopleData = jest.fn()
-			const getPerson = jest.fn(() => {
-				returnPeopleData(mockPeopleData)
-			})
-			//Execution
-			getPerson()
-			//Expectation
-			expect(returnPeopleData).toHaveBeenCalledWith(mockPeopleData)
+		it('calls returnPeopleData', async () => {
+			const mockPeopleData = await people
+			API.fetchData = jest.fn().mockImplementation(() => Promise.resolve(people))
+			const returnPeopleData = jest.fn().mockImplementation((mockPeopleData) => people.results)
+			
+			await DataCleaner.getPerson()
+			expect(DataCleaner.returnPeopleData).toHaveBeenCalled()
 		})
 
 		xit('resolves to expected', async () => {
