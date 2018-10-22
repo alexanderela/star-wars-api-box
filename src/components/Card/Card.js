@@ -2,9 +2,7 @@ import React from 'react';
 import './Card.css';
 import PropTypes from 'prop-types';
 
-const Card = ({
-  entry, toggleFavorites, favorites, isFavorite,
-}) => {
+const Card = ({ entry, toggleFavorites, favorites, isFavorite }) => {
   const cardProperties = entry.properties.map(property => (
     <p key={property.header} className="card-text">
       <span className="card-header">
