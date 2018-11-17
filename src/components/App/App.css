@@ -62,12 +62,37 @@ body {
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 900px) {
+  .app-title {
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 790px) {
   .app-title {
     font-size: 8rem;
   }
+}
+
+
+@media (max-width: 690px) {
+  .app-title {
+    font-size: 7rem;
+  }
   .title-i {
     -webkit-text-stroke-width: 3px;
+  }
+}
+
+@media (max-width: 622px) {
+  .app-title {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 553px) {
+  .app-title {
+    font-size: 5.5rem;
   }
 }
 
@@ -75,9 +100,6 @@ body {
   .cat-button {
     font-size: 1.75rem;
     width: 9rem;
-  }
-  .app-title {
-    font-size: 7rem;
   }
 }
 
@@ -90,7 +112,7 @@ body {
 
 @media (max-width: 480px) {
   .app-title {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 }
 
