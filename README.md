@@ -8,7 +8,7 @@ This app lets users view various pieces of Star Wars fan trivia, orgainzed by ca
 ## Deployed App
 [Star Wars API (SWAPI) Box](https://infallible-einstein-c548f9.netlify.com/)
 
-[![A screen recording of the application](https://github.com/djcaraballo/SWAPI-box/blob/master/src/assets/SWAPI-screenshots/ScreenVideo.gif)
+![A screen recording of the application](https://github.com/djcaraballo/SWAPI-box/blob/master/src/assets/SWAPI-screenshots/ScreenVideo.gif)
 
 ## Getting Started
 This is a general guide to setting up a Recharge API development environment on your local machine.
