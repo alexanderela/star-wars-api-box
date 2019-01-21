@@ -2,7 +2,7 @@
   "name": "swapibox",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexanderela.github.io/swapibox",
+  "homepage": "https://alexanderela.github.io/star-wars-api-box",
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
