@@ -21,6 +21,9 @@ This project was created using the [Star Wars API](https://swapi.co). Users are 
 #### Retrieve and Save Unique API Keys
 This application uses data from the [Star Wars API](https://swapi.co). You will need a free API key to fetch the data. Click [here](https://swapi.co) to create a free account and receive your key.
 
+
+
+
 #### Save and Export API Key
 Check out [this site](https://gist.github.com/derzorngottes/3b57edc1f996dddcab25) to learn more about saving API keys.
 
@@ -57,6 +60,48 @@ Project spec can be found [here](http://frontend.turing.io/projects/swapi-box.ht
 #### Vehicles Cards
 ![Alt text](./src/assets/SWAPI-screenshots/vehicles.png "Vehicles Page")
 
+Hi , 
+
+I’m a software developer in Denver currently attending the Front-End Engineering program at Turing School of Software & Design. 
+I found your contact info on LinkedIn and [insert reason for contacting them].
+
+In researching [company] I found [insert relevant findings].
+
+Would I be able to ask you a few questions over the phone sometime this week or next?
+
+Thanks,
+
+Alexander Ela
+(818) 445-8285
+ela.alexander@gmail.com
+
+
+Hi Zac,
+
+I hope you had a wonderful and restful holiday!
+When would be a good time for you to schedule the code pairing we discussed last month?
+I remember you mentioning the second week of January but I just wanted to double check.
+
+Thanks,
+
+LS_COLORS="di=4;33"
+LS_COLORS="fi=1;95"
+
+LS_COLORS="di=4;33:fi=1;95"
+
+
 #### Favorites Cards
 ![Alt text](./src/assets/SWAPI-screenshots/favorites.png "Favorites Page")
 
+export CLICOLOR=1
+LS_COLORS=$LS_COLORS:'di=1;33:fi=95' ; export LS_COLORS
+
+export CLICOLOR=1
+export LSCOLORS=Exfxcxdxbxegedabagacad
+
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\[\033[00;92m\]\u :: \[\033[00;96m\]\W \[\033[00m\]-\[\033[00;91m\]\$(parse_git_branch)\[\033[93m\] $\[\033[00m\] "

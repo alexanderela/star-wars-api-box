@@ -1,0 +1,16 @@
+{
+  "main.css": "/swapibox/static/css/main.9aac762d.chunk.css",
+  "main.js": "/swapibox/static/js/main.17c7b6f4.chunk.js",
+  "main.js.map": "/swapibox/static/js/main.17c7b6f4.chunk.js.map",
+  "static/js/1.64609869.chunk.js": "/swapibox/static/js/1.64609869.chunk.js",
+  "static/js/1.64609869.chunk.js.map": "/swapibox/static/js/1.64609869.chunk.js.map",
+  "runtime~main.js": "/swapibox/static/js/runtime~main.c9f58f50.js",
+  "runtime~main.js.map": "/swapibox/static/js/runtime~main.c9f58f50.js.map",
+  "static/css/main.9aac762d.chunk.css.map": "/swapibox/static/css/main.9aac762d.chunk.css.map",
+  "static/media/App.css": "/swapibox/static/media/Death Star.ade91cb0.otf",
+  "static/media/Card.css": "/swapibox/static/media/swapi_rough_gray.a5bc7f4f.jpg",
+  "static/media/CardContainer.css": "/swapibox/static/media/SWAPI-background.5d6a625d.jpg",
+  "index.html": "/swapibox/index.html",
+  "precache-manifest.092637f7d872c2a01aaa8c84d381b2a8.js": "/swapibox/precache-manifest.092637f7d872c2a01aaa8c84d381b2a8.js",
+  "service-worker.js": "/swapibox/service-worker.js"
+}
