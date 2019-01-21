@@ -6,7 +6,7 @@
 This app lets users view various pieces of Star Wars fan trivia, orgainzed by category and displayed on individual 'cards' within a user-friendly interface.  The project uses the [Star Wars API (SWAPI)](https://swapi.co) to gather trivia information about Star Wars films and characters.  The app's title screen features a scrolling text from a randomly selected Star Wars film.  Users have the ability to select favorite card, which they can then view on a separate 'Favorites' page.
 
 ## Deployed App
-[Star Wars API (SWAPI) Box](https://infallible-einstein-c548f9.netlify.com/)
+[Star Wars API (SWAPI) Box](https://djcaraballo.github.io/SWAPI-box/)
 
 ![A screen recording of the application](https://github.com/djcaraballo/SWAPI-box/blob/master/src/assets/SWAPI-screenshots/ScreenVideo.gif)
 
