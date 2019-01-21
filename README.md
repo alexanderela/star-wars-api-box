@@ -131,4 +131,5 @@ Project spec can be found [here](http://frontend.turing.io/projects/swapi-box.ht
 #### Favorites Cards
 ![Alt text](./src/assets/SWAPI-screenshots/favorites.png "Favorites Page")
 
+
 ## This README relied upon Open Food Source's extensive and excellent [Set Up](https://github.com/openfoodfoundation/openfoodnetwork/blob/master/GETTING_STARTED.md) and [Contibution](https://github.com/openfoodfoundation/openfoodnetwork/blob/master/CONTRIBUTING.md) docs.
