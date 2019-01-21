@@ -98,13 +98,12 @@ git push origin branch-name-here
 * Keep your PR small, with a single focus
 
 ## Technologies Used
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Other technologies used:
 - React.js
 - React Router
 - Jest
 - Enzyme
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Project Requirements
 Project spec can be found [here](http://frontend.turing.io/projects/swapi-box.html)
